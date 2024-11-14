@@ -14,13 +14,16 @@ public class HistoryFlowHandler : MonoBehaviour
     [SerializeField] private float _tipingSpeed;
     private WaitForSeconds _sleepTime;
     private InGameDataBase _gameData;
-    private bool _canWeGoNext;
+    [HideInInspector]public bool CanWeGoNext;
     private bool _isTipeTextComplete;
     private int _index;
     private Coroutine _tipeText;
+    private Coroutine _historyFlow;
+    [SerializeField] private NotationHandler _notationHandler;
     [SerializeField] private Image _heroLeft;
     [SerializeField] private Image _heroRight;
     [SerializeField] private ButtonsHandler _buttonsHandler;
+    private bool _isWeHaveButtons;
 
     [Inject]
     private void Construct(InGameDataBase gameData, InputSystem_Actions input)
@@ -32,19 +35,30 @@ public class HistoryFlowHandler : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ControlingHistoryFlowCoroutine());
+
+        _historyFlow = StartCoroutine(ControlingHistoryFlowCoroutine());
+    }
+
+    public void ChangeFlowHistory(HistoryPattern historyPattern)
+    { 
+        _gameData.HistoryPattern = historyPattern;
+        StopCoroutine(_historyFlow);
+        _historyFlow = StartCoroutine(ControlingHistoryFlowCoroutine());
+        
     }
 
     private void SwipeStory(InputAction.CallbackContext context)
     {
         if (_isTipeTextComplete)
         {
-            _canWeGoNext = true;
+            CanWeGoNext = true;
+            _notationHandler.DeActivaidNotation();
         }
         else 
         { 
             TipeFullText(); 
         }
+        
 
     }
 
@@ -72,7 +86,7 @@ public class HistoryFlowHandler : MonoBehaviour
         _index = 0;
         foreach (var storyLine in _gameData.HistoryPattern.StoryHierarhy)
         {
-            _canWeGoNext = false;
+            CanWeGoNext = false;
             if (storyLine.HeroType == HeroType.HeroLeft) 
             {
                 _heroLeft.gameObject.SetActive(true);
@@ -84,22 +98,26 @@ public class HistoryFlowHandler : MonoBehaviour
                 _heroRight.gameObject.SetActive(true);
                 _heroRight.sprite = storyLine.HeroSprite;
             }
-
-            if (storyLine.ButtonsAmound == 0)
+            if (storyLine.ButtonSetting.Count > 0)
             {
-                _buttonsHandler.DeActivatedButtons();
+                _buttonsHandler.ActivedButtons(storyLine.ButtonSetting, this);
+                CanWeGoNext = false;
 
             }
 
-            else
+            else if (storyLine.ButtonSetting.Count == 0)
             {
-                _buttonsHandler.ActivedButtons(storyLine.ButtonsAmound, new List<string>());
-                    
-             }
-          
+                _buttonsHandler.DeActivatedButtons();
+            }
+            if (storyLine.Notation.Length > 0) 
+            {
+                _notationHandler.ActivaidNotation(storyLine.Notation);
+            }
+
+            
             _tipeText = StartCoroutine(TypeText(storyLine.Text));
             _backGround.sprite = storyLine.Background;
-            yield return new WaitWhile(() => _canWeGoNext == false);
+            yield return new WaitWhile(() => CanWeGoNext == false);
             _heroLeft.gameObject.SetActive(false);
             _heroRight.gameObject.SetActive(false);
             _index++;

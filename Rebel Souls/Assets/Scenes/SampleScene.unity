@@ -5082,7 +5082,7 @@ MonoBehaviour:
   _historyDisc: {fileID: 1155300054}
   _historyBackground: {fileID: 492804064}
   _startHistory: {fileID: 1081385797}
-  _historyPattern: {fileID: 11400000, guid: 8a348950c3fed7746a4f906503b2e0e0, type: 2}
+  _historyPattern: {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
 --- !u!114 &1785594311
 MonoBehaviour:
   m_ObjectHideFlags: 0

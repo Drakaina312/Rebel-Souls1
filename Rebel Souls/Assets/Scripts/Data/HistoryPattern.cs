@@ -13,10 +13,19 @@ public class HistoryPattern : ScriptableObject
 [Serializable]
 public struct StoryHierarhy
 {
-    public int Indexator;
+    public string LineKey;
     public HeroType HeroType;
-    public int ButtonsAmound;
+    public List<ButtonSetting> ButtonSetting;
     public Sprite HeroSprite;
     public Sprite Background;
+    [TextArea(1,3)]public string Notation;
     [TextArea(1,10)]public string Text;
+}
+[Serializable]
+public struct ButtonSetting
+{ 
+    public string  StoryKey;
+    public string ButtonsName;
+    public HistoryPattern HistoryPattern;
+
 }

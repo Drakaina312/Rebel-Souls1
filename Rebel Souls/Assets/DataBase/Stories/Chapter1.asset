@@ -14,503 +14,567 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StoryChapterName: OV
   StoryHierarhy:
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u0442\u044C \u043F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435
       \u0438 \u043F\u0435\u0440\u0435\u0439\u0442\u0438 \u0441\u0440\u0430\u0437\u0443
       \u043A \u0438\u0441\u0442\u043E\u0440\u0438\u0438?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting:
+    - StoryKey: a
+      ButtonsName: "\u041A\u0443\u043A\u0443"
+      HistoryPattern: {fileID: 11400000, guid: 8919f6d9f6410ee43b1aedb0a0c96e76, type: 2}
+      Notation: 
+    - StoryKey: b
+      ButtonsName: "\u0413\u0430\u0432 \u0433\u0430\u0432"
+      HistoryPattern: {fileID: 11400000, guid: a40230f6d2670b14db1c358a4c207fcb, type: 2}
+      Notation: 
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0447\u0438\u0442\u0430\u0442\u0435\u043B\u044C!
       \u041D\u0430 \u043F\u0435\u0440\u0432\u044B\u0439 \u0432\u0437\u0433\u043B\u044F\u0434
       \u044D\u0442\u0430 \u0438\u0441\u0442\u043E\u0440\u0438\u044F \u043C\u043E\u0436\u0435\u0442
       \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u044C\u0441\u044F \u0432\u044B\u0434\u0443\u043C\u043A\u043E\u0439."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041D\u043E, \u0443\u0432\u0435\u0440\u044F\u044E \u0442\u0435\u0431\u044F,
       \u0432\u0441\u0451, \u043E \u0447\u0451\u043C \u0442\u044B \u043F\u0440\u043E\u0447\u0442\u0451\u0448\u044C
       \u0441\u0435\u0433\u043E\u0434\u043D\u044F \u2014 \u0430\u0431\u0441\u043E\u043B\u044E\u0442\u043D\u0430\u044F
       \u043F\u0440\u0430\u0432\u0434\u0430."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0422\u044B, \u0434\u043E\u043B\u0436\u043D\u043E \u0431\u044B\u0442\u044C,
       \u0441\u043B\u044B\u0448\u0430\u043B \u043E \u043F\u0430\u0440\u0430\u043B\u0435\u043B\u043B\u044C\u043D\u044B\u0445
       \u0432\u0441\u0435\u043B\u0435\u043D\u043D\u044B\u0445. \u0422\u043E\u043B\u044C\u043A\u043E
       \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044C."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041C\u044B \u043D\u0435 \u043C\u043E\u0436\u0435\u043C \u0437\u043D\u0430\u0442\u044C,
       \u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043D\u0430 \u0441\u0430\u043C\u043E\u043C
       \u0434\u0435\u043B\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442
       \u043C\u0438\u0440\u043E\u0432 \u0438 \u0440\u0435\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0435\u0439.
       \u0414\u0435\u0441\u044F\u0442\u043A\u0438, \u0441\u043E\u0442\u043D\u0438,
       \u0442\u044B\u0441\u044F\u0447\u0438, \u043C\u0438\u043B\u043B\u0438\u043E\u043D\u044B?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0410 \u0447\u0442\u043E \u0435\u0441\u043B\u0438 \u043D\u0430 \u0441\u0430\u043C\u043E\u043C
       \u0434\u0435\u043B\u0435 \u0438\u0445 \u0441\u0442\u043E\u043B\u044C\u043A\u043E,
       \u0447\u0442\u043E \u043D\u0435\u0442 \u0447\u0438\u0441\u043B\u0430 \u0432
       \u043C\u0438\u0440\u0435, \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0433\u043E
       \u0438\u0445 \u043E\u0431\u044A\u044F\u0442\u044C? \u041D\u0438 \u0432 \u044D\u0442\u043E\u043C,
       \u043D\u0438 \u0432 \u043A\u0430\u043A\u043E\u043C \u0434\u0440\u0443\u0433\u043E\u043C."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0414\u0430\u0432 \u0438\u043C\u0435\u043D\u0430 \u0446\u0438\u0444\u0440\u0430\u043C
       \u0438 \u0438\u0437\u043E\u0431\u0440\u0435\u0442\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u044B
       \u0441\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044F, \u043D\u0435 \u0437\u0430\u0433\u043D\u0430\u043B
       \u043B\u0438 \u043E\u043D \u0441\u0435\u0431\u044F \u0432 \u0443\u0433\u043E\u043B?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0427\u0442\u043E \u0435\u0441\u043B\u0438 \u0447\u0438\u0441\u043B\u043E
       \u2014 \u044D\u0442\u043E \u043D\u0438\u0447\u0442\u043E \u0438\u043D\u043E\u0435,
       \u043A\u0430\u043A \u0441\u043F\u043E\u0441\u043E\u0431 \u0438\u0437\u0431\u0430\u0432\u0438\u0442\u044C\u0441\u044F
       \u043E\u0442 \u0432\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0435\u0439 \u0442\u0440\u0435\u0432\u043E\u0433\u0438?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0423\u043F\u043E\u0440\u044F\u0434\u043E\u0447\u0438\u0432\u0430\u044F,
       \u0447\u0435\u043B\u043E\u0432\u0435\u043A \u043E\u0431\u0440\u0435\u0442\u0430\u0435\u0442
       \u043C\u043D\u0438\u043C\u044B\u0439 \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044C
       \u043D\u0430\u0434 \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0435\u0439.
       \u041A\u043E\u043D\u0442\u0440\u043E\u043B\u044C, \u043A\u043E\u0442\u043E\u0440\u044B\u0439
       \u0443\u0441\u043F\u043E\u043A\u0430\u0438\u0432\u0430\u0435\u0442."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0410 \u0447\u0442\u043E \u0435\u0441\u043B\u0438 \u044F \u0441\u043A\u0430\u0436\u0443
       \u0442\u0435\u0431\u0435, \u0447\u0442\u043E \u0442\u044B \u043D\u0435 \u043E\u0434\u0438\u043D.
       \u0418 \u0432 \u0434\u0440\u0443\u0433\u0438\u0445 \u043C\u0438\u0440\u0430\u0445
       \u0435\u0441\u0442\u044C \u0442\u0430\u043A\u043E\u0439 \u0436\u0435 \u0442\u044B."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0412 \u043E\u0434\u043D\u043E\u043C \u0442\u044B \u0441\u0438\u043B\u0451\u043D,
       \u043A\u0430\u043A \u0431\u044B\u043A. \u0412 \u0434\u0440\u0443\u0433\u043E\u043C
       \u2014 \u0441\u043B\u0430\u0431 \u0438 \u043D\u0435\u043C\u043E\u0449\u0435\u043D.
       \u0412 \u0442\u0440\u0435\u0442\u044C\u0435\u043C \u2014 \u0434\u0430\u0432\u043D\u043E
       \u0443\u043C\u0435\u0440. \u0410 \u0432 \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u043E\u043C
       \u0435\u0449\u0451 \u043D\u0435 \u0440\u043E\u0434\u0438\u043B\u0441\u044F."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0418, \u043A\u0430\u0437\u0430\u043B\u043E\u0441\u044C \u0431\u044B,
       \u0435\u0441\u043B\u0438 \u0432\u044B \u0442\u0430\u043A\u0438\u0435 \u0440\u0430\u0437\u043D\u044B\u0435
       \u0432 \u044D\u0442\u0438\u0445 \u043C\u0438\u0440\u0430\u0445, \u043F\u043E\u0447\u0435\u043C\u0443
       \u044D\u0442\u043E \u0432\u0441\u0451 \u0442\u043E\u0442 \u0436\u0435 \u0442\u044B?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041A\u0430\u043A \u0440\u0430\u0437\u043D\u044B\u0435 \u043B\u0438\u0447\u043D\u043E\u0441\u0442\u0438
       \u043C\u043E\u0433\u0443\u0442 \u0431\u044B\u0442\u044C \u0447\u0435\u043C-\u0442\u043E
       \u0435\u0434\u0438\u043D\u044B\u043C, \u0432\u0437\u0430\u0438\u043C\u043E\u0441\u0432\u044F\u0437\u0430\u043D\u043D\u044B\u043C?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F \u044D\u0433\u0440\u0435\u0433\u043E\u0440\u0443."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0412 \u043D\u0430\u0448\u0435\u043C \u043C\u0438\u0440\u0435 \u043F\u0440\u0438\u043D\u044F\u0442\u043E
       \u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0435\u0433\u043E \u0430\u043D\u0442\u0438\u043D\u0430\u0443\u0447\u043D\u043E\u0439,
       \u043C\u0430\u0440\u0433\u0438\u043D\u0430\u043B\u044C\u043D\u043E\u0439 \u0442\u0435\u043E\u0440\u0438\u0435\u0439."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0412 \u0434\u0440\u0443\u0433\u043E\u043C \u2014 \u044D\u0442\u043E
       \u043E\u0431\u0449\u0435\u043F\u0440\u0438\u043D\u044F\u0442\u0430\u044F \u0440\u0435\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C,
       \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F \u043A\u043E\u0442\u043E\u0440\u043E\u0439
       \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u043E \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0438\u0432\u043D\u043E
       \u0440\u0430\u0437\u0432\u0438\u0432\u0430\u0435\u0442\u0441\u044F."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0422\u043E\u043B\u044C\u043A\u043E \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044C,
       \u0447\u0442\u043E \u043B\u044E\u0434\u0438, \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044E\u0449\u0438\u0435
       \u0438 \u043C\u044B\u0441\u043B\u044F\u0449\u0438\u0435 \u0432\u043E \u0431\u043B\u0430\u0433\u043E
       \u043E\u0434\u043D\u043E\u0439 \u0446\u0435\u043B\u0438... \u042D\u0442\u043E
       \u043E\u0434\u0438\u043D \u0435\u0434\u0438\u043D\u044B\u0439 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u043C."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0422\u044B \u043A\u043E\u0433\u0434\u0430-\u043D\u0438\u0431\u0443\u0434\u044C
       \u0447\u0443\u0432\u0441\u0442\u0432\u043E\u0432\u0430\u043B \u043F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435
       \u044D\u0433\u0440\u0435\u0433\u043E\u0440\u0430? \u0425\u043E\u0442\u044C
       \u0440\u0430\u0437 \u0432 \u0436\u0438\u0437\u043D\u0438 \u0438\u0441\u043F\u044B\u0442\u044B\u0432\u0430\u043B
       \u0435\u0433\u043E \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0442\u044C?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u042D\u0442\u043E \u043E\u0449\u0443\u0449\u0435\u043D\u0438\u0435 \u0441\u043E\u043F\u0440\u0438\u0447\u0430\u0441\u0442\u043D\u043E\u0441\u0442\u0438."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0423 \u043D\u0430\u0441 \u043F\u0440\u0438\u043D\u044F\u0442\u043E \u043E\u0449\u0443\u0449\u0430\u0442\u044C
       \u0435\u0433\u043E \u043D\u0430 \u043A\u043E\u043D\u0446\u0435\u0440\u0442\u0430\u0445,
       \u043C\u0430\u0442\u0447\u0430\u0445, \u0432 \u043F\u044B\u043B\u0443 \u0441\u0440\u0430\u0436\u0435\u043D\u0438\u044F
       \u0437\u0430 \u0441\u0432\u043E\u044E \u0441\u0442\u0440\u0430\u043D\u0443."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0413\u0434\u0435-\u0442\u043E, \u0433\u0434\u0435 \u043B\u044E\u0434\u0438
       \u0438\u0441\u043A\u0440\u0435\u043D\u043D\u0435 \u043E\u0431\u044A\u0435\u0434\u0438\u043D\u044F\u044E\u0442\u0441\u044F
       \u0432 \u0441\u0432\u043E\u0438\u0445 \u044D\u043C\u043E\u0446\u0438\u044F\u0445
       \u0438 \u0447\u0443\u0432\u0441\u0442\u0432\u0430\u0445."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0413\u0434\u0435-\u0442\u043E, \u0433\u0434\u0435 \u0447\u0438\u0441\u043B\u0430
       \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u044E\u0442.
       \u0421\u043A\u043E\u043B\u044C\u043A\u043E \u043D\u0430\u0441 \u0432 \u0442\u043E\u043B\u043F\u0435?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0414\u0435\u0441\u044F\u0442\u043A\u0438, \u0441\u043E\u0442\u043D\u0438,
       \u0442\u044B\u0441\u044F\u0447\u0438? \u0422\u044B \u043D\u0435 \u0437\u043D\u0430\u0435\u0448\u044C.
       \u041D\u043E \u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435 \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0435\u0442
       \u043E\u0442\u0431\u0440\u043E\u0441\u0438\u0442\u044C \u0446\u0438\u0444\u0440\u044B."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0418 \u0442\u0440\u0435\u0432\u043E\u0433\u0430 \u043D\u0435 \u0441\u043D\u0435\u0434\u0430\u0435\u0442
       \u043D\u0443\u0442\u0440\u043E, \u043F\u043E\u0442\u043E\u043C\u0443 \u0447\u0442\u043E
       \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044C \u0438 \u043D\u0435 \u043D\u0443\u0436\u0435\u043D
       \u0442\u0430\u043C, \u0433\u0434\u0435 \u0435\u0441\u0442\u044C \u0430\u0443\u0440\u0430
       \u044D\u0433\u0440\u0435\u0433\u043E\u0440\u0430."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041C\u0435\u0436\u0434\u0443 \u0432\u0441\u0435\u043C\u0438 \u0442\u0432\u043E\u0438\u043C\u0438
       \u0441\u0443\u0449\u043D\u043E\u0441\u0442\u044F\u043C\u0438 \u0438 \u043B\u0438\u0447\u043D\u043E\u0441\u0442\u044F\u043C\u0438
       \u0442\u0430\u043A\u0436\u0435 \u0435\u0441\u0442\u044C \u0441\u0432\u043E\u0439
       \u044D\u0433\u0440\u0435\u0433\u043E\u0440. \u041C\u0435\u0436\u0434\u0443
       \u043C\u043E\u0438\u043C\u0438 \u2014 \u043C\u043E\u0439."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u042D\u0442\u0430 \u0438\u0441\u0442\u043E\u0440\u0438\u044F \u2014 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0430\u044F
       \u0436\u0438\u0437\u043D\u044C \u043E\u0434\u043D\u043E\u0439 \u0438\u0437
       \u0447\u0430\u0441\u0442\u0438\u0446 \u043C\u043E\u0435\u0433\u043E \u044D\u0433\u0440\u0435\u0433\u043E\u0440\u0430.
       \u041D\u0430\u0437\u043E\u0432\u0435\u043C \u0435\u0451 \"\u0414\u0440\u0443\u0433\u0430\u044F
       \u042F\"."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u0442\u0435\u0431\u0435 \u043F\u043E\u043D\u0440\u0430\u0432\u044F\u0442\u0441\u044F
       \u0435\u0451 \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F,
       \u043F\u043E\u0442\u043E\u043C\u0443 \u0447\u0442\u043E \u043C\u0435\u043D\u044F
       \u043E\u043D\u0438 \u043D\u0435 \u043E\u0441\u0442\u0430\u0432\u0438\u043B\u0438
       \u0440\u0430\u0432\u043D\u043E\u0434\u0443\u0448\u043D\u044B\u043C\u0438."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041D\u0430\u0441\u0442\u043E\u043B\u044C\u043A\u043E, \u0447\u0442\u043E
       \u043C\u043D\u0435 \u043F\u0440\u0438\u0448\u043B\u043E\u0441\u044C \u043F\u0440\u0435\u043E\u0434\u043E\u043B\u0435\u0442\u044C
       \u0431\u043E\u043B\u044C\u0448\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E
       \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439, \u0434\u0430\u0431\u044B
       \u0435\u0451 \u0438\u0441\u0442\u043E\u0440\u0438\u044F \u0443\u0432\u0438\u0434\u0435\u043B\u0430
       \u043C\u043E\u0439 \u043C\u0438\u0440."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0414\u043E\u043B\u0436\u043D\u0430 \u043F\u0440\u0435\u0434\u0443\u043F\u0440\u0435\u0434\u0438\u0442\u044C:
       \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0441\u0446\u0435\u043D\u044B
       \u043C\u043E\u0433\u0443\u0442 \u0431\u044B\u0442\u044C \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E
       \u0436\u0435\u0441\u0442\u043E\u043A\u0438\u043C\u0438 \u0438\u043B\u0438 \u043E\u0442\u043A\u0440\u043E\u0432\u0435\u043D\u043D\u044B\u043C\u0438
       \u2014 \u0438\u0437 \u043F\u0435\u0441\u043D\u0438 \u0441\u043B\u043E\u0432
       \u043D\u0435 \u0432\u044B\u043A\u0438\u043D\u0435\u0448\u044C."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0427\u0438\u0442\u0430\u0439 \u0441 \u043E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u043E\u0441\u0442\u044C\u044E.
       \u0418 \u043F\u043E\u043C\u043D\u0438. \u0422\u044B \u043D\u0435 \u043E\u0434\u0438\u043D."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0425\u043E\u0447\u0435\u0448\u044C \u0443\u0437\u043D\u0430\u0442\u044C
       \u043E \u0441\u0442\u0430\u0442\u0430\u0445, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
       \u0435\u0441\u0442\u044C \u0432 \u0438\u0433\u0440\u0435?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041F\u0440\u0438 \u043F\u0440\u043E\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u0438
       \u0438\u0433\u0440\u044B \u0443 \u0442\u0435\u0431\u044F \u0431\u0443\u0434\u0435\u0442
       \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0432\u043B\u0438\u044F\u0442\u044C
       \u043D\u0430 \u0445\u043E\u0434 \u0441\u043E\u0431\u044B\u0442\u0438\u0439."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0412\u043E\u0442 \u043D\u0435\u043C\u043D\u043E\u0433\u043E \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438
       \u043E \u0441\u0442\u0430\u0442\u0430\u0445."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041B\u0438\u0434\u0435\u0440\u0441\u0442\u0432\u043E \"\U0001F4AA\"
       \u2014 \u0441\u0442\u0430\u0442, \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u044F\u044E\u0449\u0438\u0439
       \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440 \u0433\u0435\u0440\u043E\u0438\u043D\u0438."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041F\u043E \u043F\u0443\u0442\u0438 \u043B\u0438\u0434\u0435\u0440\u0430
       \u0442\u0435\u0431\u0435 \u043F\u0440\u0435\u0434\u0441\u0442\u043E\u0438\u0442
       \u043C\u043D\u043E\u0433\u0438\u0435 \u0432\u043E\u043F\u0440\u043E\u0441\u044B
       \u0440\u0435\u0448\u0430\u0442\u044C \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u043E."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0413\u0435\u0440\u043E\u0438\u043D\u044F-\u043B\u0438\u0434\u0435\u0440
       \u043B\u0435\u0437\u0435\u0442 \u043D\u0430 \u0440\u043E\u0436\u043E\u043D,
       \u0441\u0430\u043C\u0430 \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442
       \u0440\u0435\u0448\u0435\u043D\u0438\u044F \u0438 \u043D\u0435 \u0437\u0430\u0432\u0438\u0441\u0438\u0442
       \u043E\u0442 \u0434\u0440\u0443\u0433\u0438\u0445."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041D\u043E \u043F\u043E \u0434\u0430\u043D\u043D\u043E\u043C\u0443 \u043F\u0443\u0442\u0438
       \u0442\u0435\u0431\u0435 \u043F\u0440\u0435\u0434\u0441\u0442\u043E\u0438\u0442
       \u0442\u0435\u0440\u044F\u0442\u044C \u0437\u043D\u0430\u0447\u0438\u043C\u044B\u0445
       \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0435\u0439. \u0412 \u0442\u043E\u043C
       \u0447\u0438\u0441\u043B\u0435 \u0438 \u043F\u043E \u043F\u0440\u0438\u0447\u0438\u043D\u0435
       \u0438\u0445 \u0433\u0438\u0431\u0435\u043B\u0438."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0413\u043E\u0442\u043E\u0432\u0430 \u043B\u0438 \u0442\u044B \u0443\u0431\u0438\u0442\u044C
       \u0440\u0430\u0434\u0438 \u043F\u043E\u0431\u0435\u0434\u044B?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041F\u043E\u0434\u0447\u0438\u043D\u0435\u043D\u0438\u0435 \"\u270C\"\u2014
       \u0442\u0430\u043A\u0436\u0435 \u0441\u0442\u0430\u0442 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0430."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041F\u043E \u0434\u0430\u043D\u043D\u043E\u043C\u0443 \u043F\u0443\u0442\u0438
       \u0433\u0435\u0440\u043E\u0438\u043D\u044F \u0431\u043E\u043B\u0435\u0435 \u043B\u043E\u044F\u043B\u044C\u043D\u0430\u044F
       \u0438 \u0432\u0435\u0434\u043E\u043C\u0430\u044F. \u0412\u043E \u043C\u043D\u043E\u0433\u043E\u043C
       \u0435\u0439 \u0431\u0443\u0434\u0443\u0442 \u043F\u043E\u043C\u043E\u0433\u0430\u0442\u044C
       \u0434\u0440\u0443\u0433\u0438\u0435 \u0433\u0435\u0440\u043E\u0438 \u0438\u0441\u0442\u043E\u0440\u0438\u0438."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0414\u0430\u043D\u043D\u044B\u0439 \u043F\u0443\u0442\u044C \u0433\u043E\u0440\u0430\u0437\u0434\u043E
       \u043F\u0440\u043E\u0449\u0435 \u0438 \u043B\u0435\u0433\u0447\u0435, \u0432
       \u0441\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0438 \u0441 \u041B\u0438\u0434\u0435\u0440\u0441\u0442\u0432\u043E\u043C."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041D\u043E \u0433\u043E\u0442\u043E\u0432\u0430 \u043B\u0438 \u0442\u044B
       \u0441\u043B\u0435\u043F\u043E \u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u044C
       \u0437\u0430 \u0434\u0440\u0443\u0433\u0438\u043C\u0438, \u043D\u0435 \u0438\u043C\u0435\u044F
       \u043F\u0440\u0430\u0432\u0430 \u0433\u043E\u043B\u043E\u0441\u0430?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0421\u0442\u0430\u0442\u044B \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0430
       \u043F\u0440\u044F\u043C\u043E \u0438\u043B\u0438 \u043A\u043E\u0441\u0432\u0435\u043D\u043D\u043E
       \u0431\u0443\u0434\u0443\u0442 \u0432\u043B\u0438\u044F\u0442\u044C \u043D\u0430
       \u0432\u0437\u0430\u0438\u043C\u043E\u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u044F
       \u0441 \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u043C\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430\u043C\u0438."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0412\u0435\u0434\u044C \u0443 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0435\u0439
       \u0442\u0430\u043A\u0436\u0435 \u0435\u0441\u0442\u044C \u0441\u0432\u043E\u0439
       \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440. \u0421 \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u043C\u0438
       \u043F\u0440\u043E\u0441\u0442\u043E \u043D\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u0441\u044F
       \u0443\u0436\u0438\u0442\u044C\u0441\u044F."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0410\u0432\u0442\u043E\u0440\u0438\u0442\u0435\u0442 \"\U0001F451\"
       \u2014 \u043A\u0440\u0430\u0439\u043D\u0435 \u0432\u0430\u0436\u043D\u044B\u0439
       \u0441\u0442\u0430\u0442, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043D\u0435\u043B\u044C\u0437\u044F
       \u0438\u0433\u043D\u043E\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0413\u0435\u0440\u043E\u0438\u043D\u044F \u0441 \u0432\u044B\u0441\u043E\u043A\u0438\u043C
       \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u0435\u043C \u0430\u0432\u0442\u043E\u0440\u0438\u0442\u0435\u0442\u0430
       \u0441\u043C\u043E\u0436\u0435\u0442 \u0438\u0437\u043C\u0435\u043D\u0438\u0442\u044C
       \u043C\u0438\u0440."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0421 \u043D\u0438\u0437\u043A\u0438\u043C \u2014 \u043E\u0441\u0442\u0430\u043D\u0435\u0442\u0441\u044F
       \u043D\u0435\u0443\u0441\u043B\u044B\u0448\u0430\u043D\u043D\u043E\u0439."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0412\u044B\u0431\u043E\u0440\u044B \u0442\u0430\u043A\u0436\u0435 \u0432\u043B\u0438\u044F\u044E\u0442
       \u043D\u0430 \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u044F \"\U0001F495\"
       \u0441 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430\u043C\u0438,
       \u043F\u043E\u044D\u0442\u043E\u043C\u0443 \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u0439
       \u043E\u0431\u0434\u0443\u043C\u0430\u043D\u043D\u043E."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041F\u043E \u043C\u0435\u0440\u0435 \u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u044F
       \u0438\u0441\u0442\u043E\u0440\u0438\u0438 \u0431\u0443\u0434\u0443\u0442 \u043F\u043E\u044F\u0432\u043B\u044F\u0442\u044C\u0441\u044F
       \u0438 \u0434\u0440\u0443\u0433\u0438\u0435 \u0445\u0430\u0440\u0430\u0442\u043A\u0435\u0440\u0438\u0441\u0442\u0438\u043A\u0438."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041E \u043D\u0438\u0445 \u044F \u0441\u043E\u043E\u0431\u0449\u0443
       \u0442\u0435\u0431\u0435 \u043F\u043E\u0437\u0436\u0435."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 0
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u041D\u0443 \u0447\u0442\u043E \u0436, \u043F\u043E\u0440\u0430 \u043D\u0430\u0447\u0430\u0442\u044C
       \u0438\u0441\u0442\u043E\u0440\u0438\u044E. \u041F\u0440\u0438\u044F\u0442\u043D\u043E\u0433\u043E
       \u0447\u0442\u0435\u043D\u0438\u044F."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 390042434819215950, guid: ba9808fdf717764479258630c58aba37, type: 3}
+    Notation: 
     Text: "\u0425\u043E\u0447\u0435\u0448\u044C \u0432\u044B\u0431\u0440\u0430\u0442\u044C
       \u0440\u0435\u0436\u0438\u043C \u0441 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430\u043C\u0438?"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -2191668444884831948, guid: 6ce5256563fb27e4298c40e61aa9e854, type: 3}
+    Notation: 
     Text: "\u0413\u043B\u0430\u0432\u0430 \u043F\u0435\u0440\u0432\u0430\u044F: \"\u041A\u043E\u0448\u043A\u0430
       \u0441\u0430\u043C\u0430 \u0432\u044B\u0431\u0438\u0440\u0430\u0435\u0442 \u0441\u0435\u0431\u0435
       \u0445\u043E\u0437\u044F\u0438\u043D\u0430\"."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -2191668444884831948, guid: 6ce5256563fb27e4298c40e61aa9e854, type: 3}
+    Notation: 
     Text: "\xAB\u041D\u0438\u0447\u0435\u0433\u043E, \u043A\u0440\u043E\u043C\u0435
       \u043E\u0434\u043D\u043E\u0439 \u0438\u0437 \u0432\u0430\u0448\u0438\u0445
       \u0434\u0435\u0432\u044F\u0442\u0438 \u0436\u0438\u0437\u043D\u0435\u0439,
       \u043F\u043E\u0447\u0442\u0435\u043D\u043D\u044B\u0439 \u043A\u043E\u0448\u0430\u0447\u0438\u0439
       \u043A\u043E\u0440\u043E\u043B\u044C!\xBB"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -2191668444884831948, guid: 6ce5256563fb27e4298c40e61aa9e854, type: 3}
+    Notation: 
     Text: "\xAB\u0420\u043E\u043C\u0435\u043E \u0438 \u0414\u0436\u0443\u043B\u044C\u0435\u0442\u0442\u0430\xBB,
       \u0423\u0438\u043B\u044C\u044F\u043C \u0428\u0435\u043A\u0441\u043F\u0438\u0440,
       1957 \u0433\u043E\u0434 \u043E\u0431\u0449\u0435\u043F\u0440\u0438\u043D\u044F\u0442\u043E\u0433\u043E
       \u043B\u0435\u0442\u043E\u0438\u0441\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044F."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u0420\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u2014 \u044D\u0442\u043E
       \u0432\u0441\u0435\u0433\u0434\u0430 \u0442\u0440\u0443\u0434\u043D\u044B\u0439,
       \u043C\u0443\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u043F\u0440\u043E\u0446\u0435\u0441\u0441,
@@ -518,22 +582,24 @@ MonoBehaviour:
       \u0442\u0430\u043A \u0438 \u0434\u043B\u044F \u0434\u0438\u0442\u044F. \u0421\u0432\u043E\u0439
       \u043E\u0447\u0435\u0440\u0435\u0434\u043D\u043E\u0439 \u043F\u0435\u0440\u0432\u044B\u0439
       \u0432\u0437\u0434\u043E\u0445 \u044F \u0441\u0434\u0435\u043B\u0430\u043B\u0430"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u0440\u0430\u043D\u043D\u0438\u043C \u043E\u0441\u0435\u043D\u043D\u0438\u043C
       \u0443\u0442\u0440\u043E\u043C, \u043A\u043E\u0433\u0434\u0430 \u043D\u0430\u043A\u0440\u0430\u043F\u044B\u0432\u0430\u043B
       \u043C\u0435\u0440\u0437\u043A\u0438\u0439 \u043C\u0435\u043B\u043A\u0438\u0439
       \u0434\u043E\u0436\u0434\u044C, \u0443\u043F\u0440\u044F\u043C\u043E \u0446\u0435\u043B\u044F\u0449\u0438\u0439
       \u043F\u0440\u044F\u043C\u043E \u0432 \u043D\u0430\u0448\u0443 \u043A\u0430\u0440\u0442\u043E\u043D\u043D\u0443\u044E
       \u043A\u043E\u0440\u043E\u0431\u043A\u0443 \u043F\u043E\u0434 \u043A\u0443\u0441\u0442\u043E\u043C"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u0448\u0438\u043F\u043E\u0432\u043D\u0438\u043A\u0430. \u041C\u0430\u043C\u0430-\u043A\u043E\u0448\u043A\u0430
       \u0431\u044B\u043B\u0430 \u043F\u043E-\u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u043C\u0443
       \u0437\u0430\u0431\u043E\u0442\u043B\u0438\u0432\u0430 \u0438 \u0434\u043E\u0431\u0440\u0430
@@ -541,11 +607,12 @@ MonoBehaviour:
       \u0432\u044B\u043B\u0438\u0437\u044B\u0432\u0430\u043B\u0430 \u043D\u0430\u0441
       \u043D\u0435\u0443\u0441\u0442\u0430\u043D\u043D\u043E, \u043F\u043E\u0434\u0441\u043E\u0432\u044B\u0432\u0430\u043B\u0430
       \u043D\u0430\u0431\u0443\u0445\u0448\u0438\u0435"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u043E\u0442 \u043C\u043E\u043B\u043E\u043A\u0430 \u0441\u043E\u0441\u043A\u0438
       \u043F\u0440\u044F\u043C\u043E \u043F\u043E\u0434 \u0440\u0430\u0437\u043D\u043E\u0446\u0432\u0435\u0442\u043D\u044B\u0435
       \u043D\u043E\u0441\u044B \u0438 \u043D\u0438\u0437\u043A\u043E, \u0443\u0442\u0440\u043E\u0431\u043D\u043E
@@ -553,11 +620,12 @@ MonoBehaviour:
       \u0447\u0442\u043E \u044F \u043F\u043E\u043C\u043D\u0438\u043B\u0430 \u2014
       \u043F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u044B\u0439 \u0433\u043E\u043B\u043E\u0434
       \u0438"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u0441\u043E\u043D\u043B\u0438\u0432\u043E\u0441\u0442\u044C, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
       \u0441\u043C\u0435\u043D\u044F\u043B\u0438 \u0434\u0440\u0443\u0433 \u0434\u0440\u0443\u0433\u0430,
       \u043A\u0430\u043A \u043A\u043E\u043B\u0435\u0441\u043E \u0421\u0430\u043D\u0441\u0430\u0440\u044B.
@@ -565,11 +633,12 @@ MonoBehaviour:
       \u043A\u0430\u043A \u0432 \u043C\u043E\u0438 \u0433\u043B\u0430\u0437\u0430
       \u0432\u043F\u0435\u0440\u0432\u044B\u0435 \u043F\u0440\u043E\u043D\u0438\u043A
       \u0434\u043D\u0435\u0432\u043D\u043E\u0439 \u0441\u0432\u0435\u0442, "
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u044F \u0443\u0436\u0435 \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E
       \u043F\u043E\u0434\u0440\u043E\u0441\u043B\u0430 \u0438 \u043E\u043A\u0440\u0435\u043F\u043B\u0430.
       \u041D\u043E \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0438\u0435 \u043B\u0430\u043F\u044B
@@ -577,11 +646,12 @@ MonoBehaviour:
       \u043D\u0435 \u0441\u043B\u0443\u0448\u0430\u043B\u0438\u0441\u044C \u2014
       \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F \u043F\u043E\u043B\u0443\u0447\u0430\u043B\u0438\u0441\u044C
       \u0430\u0441\u0438\u043D\u0445\u0440\u043E\u043D\u043D\u044B\u0435,"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u044F \u043F\u0435\u0440\u0435\u0432\u0430\u043B\u0438\u0432\u0430\u043B\u0430\u0441\u044C
       \u0441 \u0431\u043E\u043A\u0443 \u043D\u0430 \u0431\u043E\u043A, \u0445\u0432\u043E\u0441\u0442
       \u0432\u044B\u0442\u044F\u0433\u0438\u0432\u0430\u043B\u0441\u044F \u0442\u0440\u0443\u0431\u043E\u0439
@@ -589,11 +659,12 @@ MonoBehaviour:
       \u044F \u043C\u043E\u0433\u043B\u0430 \u043D\u0430 \u0434\u0430\u043D\u043D\u043E\u043C
       \u044D\u0442\u0430\u043F\u0435 \u2014 \u043F\u0440\u043E\u043D\u0437\u0438\u0442\u0435\u043B\u044C\u043D\u043E
       \u043F\u0438\u0449\u0430\u0442\u044C "
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u043E\u0442 \u043D\u0435\u0433\u043E\u0434\u043E\u0432\u0430\u043D\u0438\u044F
       \u0438 \u043F\u044B\u0442\u0430\u0442\u044C\u0441\u044F \u043F\u043E\u043B\u0437\u0430\u0442\u044C
       \u043F\u043E \u0434\u043D\u0443 \u043A\u043E\u0440\u043E\u0431\u043A\u0438
@@ -601,43 +672,47 @@ MonoBehaviour:
       \u0441\u043E\u0431\u0440\u0430\u0442\u044C\u044F\u043C\u0438. \u042F \u0430\u0431\u0441\u043E\u043B\u044E\u0442\u043D\u043E
       \u043D\u0435 \u043F\u043E\u043C\u043D\u0438\u043B\u0430 \u043D\u0438\u043A\u0430\u043A\u0438\u0445
       \u0444\u0430\u043A\u0442\u043E\u0432 \u043E \u0441\u0435\u0431\u0435, "
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u043A\u0440\u043E\u043C\u0435 \u043E\u0434\u043D\u043E\u0433\u043E \u2014
       \u044F \u0430\u043D\u0438\u043C\u043E\u0440\u0444. \u0427\u0435\u043B\u043E\u0432\u0435\u043A,
       \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u044B\u0439 \u043F\u0440\u0435\u0432\u0440\u0430\u0449\u0430\u0442\u044C\u0441\u044F
       \u0432 \u043A\u043E\u0448\u043A\u0443. \u041F\u043E\u0447\u0435\u043C\u0443
       \u0436\u0435 \u044F \u0440\u043E\u0434\u0438\u043B\u0430\u0441\u044C \u043A\u043E\u0442\u0435\u043D\u043A\u043E\u043C,
       \u0441\u043F\u0440\u043E\u0441\u0438\u0442\u0435 \u0432\u044B? "
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u041F\u043E\u043D\u044F\u0442\u0438\u044F \u043D\u0435 \u0438\u043C\u0435\u044E,
       \u043D\u043E \u0443 \u044D\u0442\u043E\u0433\u043E \u0442\u043E\u0447\u043D\u043E
       \u0434\u043E\u043B\u0436\u043D\u043E \u0431\u044B\u0442\u044C \u043A\u0430\u043A\u043E\u0435-\u0442\u043E
       \u043E\u0431\u044A\u044F\u0441\u043D\u0435\u043D\u0438\u0435. \u0423 \u043C\u0435\u043D\u044F
       \u0435\u0433\u043E \u043D\u0435\u0442. \u041F\u043E\u043A\u0430 \u043D\u0435\u0442."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u0418 \u043D\u0435\u0441\u043C\u043E\u0442\u0440\u044F \u043D\u0430 \u043F\u043E\u043B\u043D\u043E\u0435
       \u043E\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435 \u0437\u0430\u0431\u043E\u0442,
       \u044D\u0442\u0430 \u0441\u0442\u0430\u0434\u0438\u044F \u043C\u043E\u0435\u0433\u043E
       \u043E\u0447\u0435\u0440\u0435\u0434\u043D\u043E\u0433\u043E \u043F\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u044F
       \u043D\u0430 \u0441\u0432\u0435\u0442 \u0431\u044B\u043B\u0430 \u0441\u0430\u043C\u043E\u0439
       \u043D\u0435\u043B\u044E\u0431\u0438\u043C\u043E\u0439 \u2014 \u0431\u0435\u0437\u0437\u0430\u0449\u0438\u0442\u043D\u044B\u0439,"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u0444\u0438\u0437\u0438\u0447\u0435\u0441\u043A\u0438 \u0441\u043B\u0430\u0431\u044B\u0439
       \u043A\u043E\u0442\u0435\u043D\u043E\u043A \u0443\u043C\u0435\u0449\u0430\u043B
       \u0432\u043D\u0443\u0442\u0440\u0438 \u0441\u0432\u043E\u0435\u0433\u043E \u0440\u0430\u0437\u0443\u043C\u0430
@@ -645,44 +720,48 @@ MonoBehaviour:
       \u0438 \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432, \u043F\u0440\u0438\u0441\u0443\u0449\u0438\u0445
       \u0432\u0437\u0440\u043E\u0441\u043B\u043E\u043C\u0443 \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u0443,
       \u0447\u0442\u043E \u0445\u043E\u0442\u0435\u043B\u043E\u0441\u044C"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u044D\u0442\u0438\u043C \u0441 \u043A\u0435\u043C-\u0442\u043E \u043F\u043E\u0434\u0435\u043B\u0438\u0442\u044C\u0441\u044F.
       \u041D\u043E, \u0443\u0432\u044B, \u0431\u044B\u043B\u043E \u043D\u0435 \u0441
       \u043A\u0435\u043C \u2014 \u043C\u0430\u043C\u0430-\u043A\u043E\u0448\u043A\u0430
       \u043D\u0435 \u043E\u0431\u043B\u0430\u0434\u0430\u043B\u0430 \u0447\u0435\u043B\u043E\u0432\u0435\u0447\u0435\u0441\u043A\u043E\u0439
       \u0440\u0430\u0437\u0443\u043C\u043D\u043E\u0441\u0442\u044C\u044E, \u0410
       \u043F\u0440\u043E\u0445\u043E\u0434\u044F\u0449\u0438\u0435 \u043C\u0438\u043C\u043E"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u043B\u044E\u0434\u0438 \u0432 \u043A\u043E\u0440\u043D\u0435 \u043D\u0435\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E
       \u0442\u0440\u0430\u043A\u0442\u043E\u0432\u0430\u043B\u0438 \u043A\u043E\u0448\u0430\u0447\u0438\u0439
       \u044F\u0437\u044B\u043A, \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u044F
       \u0435\u0433\u043E \u0437\u0430 \u0431\u0435\u0441\u0442\u043E\u043B\u043A\u043E\u0432\u044B\u0439
       \u043F\u0438\u0441\u043A \u043D\u0435\u0441\u043C\u044B\u0448\u043B\u0435\u043D\u043E\u0433\u043E
       \u043A\u043E\u0442\u0435\u043D\u043A\u0430. \u0412 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u043C"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u0438\u0442\u043E\u0433\u0435, \u043A\u043E\u0433\u0434\u0430 \u044F
       \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u043F\u043E\u0434\u0440\u043E\u0441\u043B\u0430
       \u0434\u043B\u044F \u0442\u043E\u0433\u043E, \u0447\u0442\u043E\u0431\u044B
       \u0441\u044A\u0435\u0445\u0430\u0442\u044C \u043E\u0442 \u0440\u043E\u0434\u0438\u0442\u0435\u043B\u044F
       \u0432 \u043B\u0438\u0446\u0435 \u0442\u0440\u0435\u0445\u0446\u0432\u0435\u0442\u043D\u043E\u0439
       \u043A\u043E\u0448\u043A\u0438 \u041C\u0430\u0440\u043A\u0438\u0437\u044B,"
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u043C\u043D\u0435 \u043F\u0440\u0438\u0448\u043B\u043E\u0441\u044C \u043F\u043E\u043A\u0438\u043D\u0443\u0442\u044C
       \u0443\u044E\u0442\u043D\u0443\u044E \u043A\u043E\u0440\u043E\u0431\u043A\u0443,
       \u0441\u0442\u0430\u0432\u0448\u0443\u044E \u043C\u043D\u0435 \u0434\u043E\u043C\u043E\u043C,
@@ -690,11 +769,12 @@ MonoBehaviour:
       \u0443\u0432\u043B\u0435\u043A\u0430\u0442\u0435\u043B\u044C\u043D\u0443\u044E
       \u0436\u0438\u0437\u043D\u044C \u0430\u043D\u0438\u043C\u043E\u0440\u0444\u0430
       \u0432 \u043E\u0447\u0435\u0440\u0435\u0434\u043D\u043E\u0439 \u0440\u0430\u0437. "
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u0417\u0430\u0431\u043E\u0442\u043B\u0438\u0432\u0430\u044F \u043C\u0430\u043C\u0430-\u043A\u043E\u0448\u043A\u0430
       \u043F\u0440\u043E\u0432\u043E\u0434\u0438\u043B\u0430 \u043C\u0435\u043D\u044F
       \u0434\u043E \u043A\u043E\u043D\u0446\u0430 \u043A\u0432\u0430\u0440\u0442\u0430\u043B\u0430,
@@ -702,19 +782,21 @@ MonoBehaviour:
       \u043D\u0435\u043B\u0435\u0433\u043A\u0438\u0439 \u043F\u0443\u0442\u044C \u0442\u0430\u043A,
       \u043A\u0430\u043A \u0443\u043C\u0435\u043B\u0430 \u2014 \u043C\u0443\u0440\u043B\u044B\u043A\u0430\u044F
       \u0438 "
-  - Indexator: 0
+  - LineKey: 
     HeroType: 0
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\u043F\u043E\u0442\u0438\u0440\u0430\u044F\u0441\u044C \u0441\u0432\u043E\u0438\u043C
       \u043F\u0435\u0441\u0442\u0440\u044B\u043C \u0431\u043E\u043A\u043E\u043C \u043E
       \u043C\u043E\u0439 \u0443\u0433\u043E\u043B\u044C\u043D\u043E-\u0447\u0435\u0440\u043D\u044B\u0439."
-  - Indexator: 0
+  - LineKey: 
     HeroType: 1
-    ButtonsAmound: 2
+    ButtonSetting: []
     HeroSprite: {fileID: -7232521027535748977, guid: 978551ee96ec338458eeaa9664a0ccab, type: 3}
     Background: {fileID: -8251505574100086631, guid: a69cc0f68990d9c4988704b555cd2ccf, type: 3}
+    Notation: 
     Text: "\"\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0442\u0435\u0431\u0435,
       \u041C\u0430\u0440\u043A\u0438\u0437\u0430, \u0447\u0442\u043E \u0441\u0442\u0430\u043B\u0430
       \u0434\u043B\u044F \u043C\u0435\u043D\u044F \u043F\u043E\u0438\u0441\u0442\u0438\u043D\u0435
