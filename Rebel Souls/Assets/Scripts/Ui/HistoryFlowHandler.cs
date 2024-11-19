@@ -23,6 +23,7 @@ public class HistoryFlowHandler : MonoBehaviour
     [SerializeField] private Image _heroLeft;
     [SerializeField] private Image _heroRight;
     [SerializeField] private ButtonsHandler _buttonsHandler;
+    [SerializeField] private TextResizer _textResizer;
     private bool _isWeHaveButtons;
 
     [Inject]
@@ -56,17 +57,21 @@ public class HistoryFlowHandler : MonoBehaviour
         }
         else 
         { 
-            TipeFullText(); 
+            StartCoroutine(TipeFullText()); 
         }
         
 
     }
 
-    private void TipeFullText()
+    private IEnumerator TipeFullText()
     {
         StopCoroutine(_tipeText);
         _textArea.text = _gameData.HistoryPattern.StoryHierarhy[_index].Text;
         _isTipeTextComplete = true;
+        Debug.Log("конец печати");
+        yield return new WaitForSeconds(0.01f);
+
+        _textResizer.UpdateSize();
     }
     private IEnumerator TypeText(string fullText)
     {
@@ -75,7 +80,9 @@ public class HistoryFlowHandler : MonoBehaviour
         for (int i = 0; i < fullText.Length; i++)
         {
             _textArea.text += fullText[i];
+            _textResizer.UpdateSize();
             yield return _sleepTime;
+            
         }
 
         _isTipeTextComplete = true;
@@ -111,7 +118,7 @@ public class HistoryFlowHandler : MonoBehaviour
             }
             if (storyLine.Notation.Length > 0) 
             {
-                _notationHandler.ActivaidNotation(storyLine.Notation);
+                StartCoroutine(_notationHandler.ActivaidNotation(storyLine.Notation));
             }
 
             

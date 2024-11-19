@@ -7,6 +7,7 @@ public class ProjectInstaler : MonoInstaller
     {
         BindInGameDataBase();
         BindInPutAction();
+        BindMasterSave();
 
     }
 
@@ -28,6 +29,15 @@ public class ProjectInstaler : MonoInstaller
     {
         Container
                     .Bind<InputSystem_Actions>()
+                    .FromNew()
+                    .AsSingle()
+                    .NonLazy();
+    }
+
+    private void BindMasterSave()
+    {
+        Container
+                    .Bind<MasterSave>()
                     .FromNew()
                     .AsSingle()
                     .NonLazy();
