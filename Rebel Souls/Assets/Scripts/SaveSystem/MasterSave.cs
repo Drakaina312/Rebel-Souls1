@@ -8,35 +8,33 @@ public class MasterSave
 {
     private string _savePuff = Application.dataPath + "/MySaves/playerData.json";
     public Profile CurrentProfile;
-    public SaveData SaveData { get; private set; }
-    public void ChooseCurrentProfile(Profile profile, bool isNewProfileCreation = false) 
+    public bool IsDataLoadComnplete;
+
+    public SaveData SaveData { get; private set; } = new SaveData();    
+    public void ChooseCurrentProfile(Profile profile)
     {  
             CurrentProfile = profile;
-        if (isNewProfileCreation == true) 
+    }
+
+    public void CreatNewProfile(Profile profile)
+    {
+        if (SaveData.IfCanAddNewProfile(profile))
         {
-            SaveAllData(isNewProfileCreation);
+            CurrentProfile = SaveData.FindProfile(profile);
         }
+        else
+        {
+            Debug.LogError(" невозможно создть профиль ");
+        }
+
+        SaveAllData();
     }
 
     public void SaveAllData()
     {
-        SaveData saveData = new SaveData(CurrentProfile);
-        saveData.AddDataToSave("Пупка");
-        Debug.Log(saveData.Test);
-        string JsonString = JsonUtility.ToJson(saveData);
+        string JsonString = JsonUtility.ToJson(SaveData);
         File.WriteAllText(_savePuff, JsonString);
-        Debug.Log("сохранение успешно" + JsonString);
     }
-    public void SaveAllData(bool isNewProfileCreation)
-    { 
-        SaveData saveData = new SaveData(CurrentProfile, isNewProfileCreation);
-        saveData.AddDataToSave("Пупка");
-        Debug.Log(saveData.Profiles[0].ProfileName);
-        string JsonString = JsonUtility.ToJson(saveData);
-        File.WriteAllText(_savePuff, JsonString);
-        Debug.Log("сохранение успешно" + JsonString);
-    }
-
     public void LoadAllData()
     {
         if (File.Exists(_savePuff))
@@ -44,6 +42,7 @@ public class MasterSave
             string jsonString = File.ReadAllText(_savePuff);
             SaveData = JsonUtility.FromJson<SaveData>(jsonString);
             Debug.Log(SaveData.Test + " загрузка данных ");
+            IsDataLoadComnplete = true;
         }
     }
 }
@@ -55,35 +54,35 @@ public class SaveData
     public Profile[] Profiles = new Profile[6]
     {
         new Profile("", false),
-        new Profile("", true),
+        new Profile("", false),
         new Profile("", true),
         new Profile("", true),
         new Profile("", true),
         new Profile("", true),
         
     };
-    public SaveData(Profile profileToSave, bool isNewProfileCreation = false)
-    {
-       
-        if (isNewProfileCreation)
-        {
-            
-            //Profile profile = Profiles.FirstOrDefault(profile=> profile.IsBlocked == false && profile.IsEmpty == true);
-            Profile profile = Profiles[0];
-            if (profile != null)
-            {
-             profile.ProfileName = profileToSave.ProfileName;    
-            }
-        }
-        foreach (Profile profile in Profiles)
-        { 
-            Debug.Log(profile.ProfileName);
-        }
-    }
+  
     public void AddDataToSave(string textToSave)
     { 
         Test = textToSave;
 
     }
-       
+
+    public Profile FindProfile(Profile profile)
+    {
+        return Profiles.FirstOrDefault(profilee => profilee.ProfileName == profile.ProfileName);
+    }
+
+    public bool IfCanAddNewProfile(Profile profile)
+    {
+       Profile profileToFind = Profiles.FirstOrDefault(profilee => profilee.IsBlocked == false && profilee.IsEmpty == true);
+        if (profileToFind != null)
+        {
+            profileToFind.ProfileName = profile.ProfileName;
+            profileToFind.IsBlocked = false;
+            profileToFind.IsEmpty = false;
+            return true; 
+        }
+        else return false;
+    }
 }

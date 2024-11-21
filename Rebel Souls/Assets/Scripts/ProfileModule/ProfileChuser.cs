@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Zenject;
@@ -11,12 +13,11 @@ public class ProfileChuser : MonoBehaviour
     public void Conctruct(MasterSave masterSave) 
     {
         _masterSave = masterSave;
+        StartCoroutine(LoadDataCourutine());
     }
     public void AddNewProfile(string profileName)
     {
-        Debug.Log(profileName);
         ProfileButton profileButton = _profileButtonHendler.ProfileButtonsList.FirstOrDefault(button => button.IsBlocked != true && button.IsEmpty == true);
-        Debug.Log(profileButton);
 
         if (profileButton != null)
         {
@@ -24,8 +25,30 @@ public class ProfileChuser : MonoBehaviour
             profileButton.IsEmpty = false;
             Profile newProfile = new Profile(profileName, false);
             newProfile.IsEmpty = false;
-            _masterSave.ChooseCurrentProfile(newProfile, true);
-           
+            _masterSave.CreatNewProfile(newProfile);
+            profileButton.ProfileToChoose = _masterSave.CurrentProfile;
+
+        }
+        else 
+        {
+            Debug.LogError(" Не удалось создать профиль ");
+        }
+    }
+
+    private IEnumerator LoadDataCourutine()
+    {
+        yield return new WaitWhile(() => _masterSave.IsDataLoadComnplete == false);
+        int i = 0;
+        foreach (var profileButton in _profileButtonHendler.ProfileButtonsList)
+        {
+            if (profileButton.IsBlocked == false && _masterSave.SaveData.Profiles[i].IsEmpty == false)
+
+            { 
+                profileButton.ProfileName.text = _masterSave.SaveData.Profiles[i].ProfileName;
+                profileButton.ProfileToChoose = _masterSave.SaveData.Profiles[i];
+                profileButton.IsEmpty = false;
+                i ++;
+            }
         }
 
     }
