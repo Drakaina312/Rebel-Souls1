@@ -17,6 +17,7 @@ public class HistoryChouser : MonoBehaviour
     [SerializeField] private HistoryPattern _historyPattern;
     [SerializeField] private DataActs _dataActs;
     private MasterSave _masterSave;
+    [SerializeField] private ActsChanger _actsChanger;
     [Inject]
     private void Construct(InGameDataBase gameData, MasterSave testSave)
     { 
@@ -27,13 +28,16 @@ public class HistoryChouser : MonoBehaviour
     }    
     public void OpenHistory()
     { 
+        
         _panelHandler.OpenPanel();
-        _historyDisc.text = _dataToLoad.HistoryDisc;
+        _actsChanger.ChangePanel(_dataToLoad.ActsInfo);
+        //_historyDisc.text = _dataToLoad.HistoryDisc;
         _historyBackground.sprite = _dataToLoad.Background;
         _dataBase.HistoryPattern = _historyPattern;
         _startHistory.onClick.RemoveAllListeners();
         _startHistory.onClick.AddListener(()=> OpenNewScene(_dataToLoad.NumberScene));
-        _masterSave.CurrentProfile.AddStatistic(_dataActs.MassiveStatistics);
+        //_masterSave.CurrentProfile.AddStatistic(_dataActs.MassiveStatistics);
+        _masterSave.CurrentProfile.SaveBooks(_dataActs.StatisticBook);
         _masterSave.SaveAllData();
 
     }

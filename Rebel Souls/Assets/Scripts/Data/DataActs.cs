@@ -6,7 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DataActs", menuName = "Scriptable Objects/DataActs")]
 public class DataActs : ScriptableObject
 {
+    public StatsBook StatisticBook;
     public List<HistoryPattern> MassiveChapters;
-    public List<StatisticInfo> MassiveStatistics;
-
 }

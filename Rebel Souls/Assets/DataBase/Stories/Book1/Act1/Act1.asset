@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273da034a107add46b87ead35f998895, type: 3}
   m_Name: Act1
   m_EditorClassIdentifier: 
+  StatisticBook:
+    BookName: "\u041F\u0443\u043F\u043A\u0430"
+    SavePuff: 
+    Statistics:
+    - StatisticName: "\u0421\u0438\u043B\u0430"
+      StatisticCount: 0
+    - StatisticName: "\u041B\u043E\u0432\u043A\u043E\u0441\u0442\u044C"
+      StatisticCount: 0
+    - StatisticName: "\u041C\u0443\u0434\u0440\u043E\u0441\u0442\u044C"
+      StatisticCount: 0
   MassiveChapters:
   - {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
-  MassiveStatistics:
-  - StatisticName: "\u0421\u0438\u043B\u0430"
-    StatisticCount: 0
-  - StatisticName: "\u041B\u043E\u0432\u043A\u043E\u0441\u0442\u044C"
-    StatisticCount: 0
-  - StatisticName: "\u0413\u0440\u0430\u0446\u0438\u044F"
-    StatisticCount: 0
-  - StatisticName: "\u041C\u0430\u0448\u0430"
-    StatisticCount: 7
-  - StatisticName: "\u041B\u0435\u043D\u0430"
-    StatisticCount: 0

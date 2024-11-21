@@ -8,51 +8,29 @@ public class Profile
     public int ProfileID;
     public bool IsBlocked;
     public bool IsEmpty = true;
-    public SavesActEdge[] MassiveActs;
-    public StatisticInfo[] Statistics;
+    public StatsBook[] SavesBooks;
     public Profile(string profileName, bool isBlocked)
     {
         ProfileName = profileName;
         IsBlocked = isBlocked;
     }
-    public void AddNewAct(SavesActEdge act)
+
+    public void SaveBooks(StatsBook statsBook)
     {
-        if (MassiveActs != null)
+        if (SavesBooks != null)
         {
-            SavesActEdge[] newMassiveActs = new SavesActEdge[MassiveActs.Length + 1];
-            for (int i = 0; i < MassiveActs.Length; i++)
+            StatsBook[] newmassiveacts = new StatsBook[SavesBooks.Length + 1];
+            for (int i = 0; i < SavesBooks.Length; i++)
             {
-                newMassiveActs[i] = MassiveActs[i];
+                newmassiveacts[i] = SavesBooks[i];
             }
-            newMassiveActs[newMassiveActs.Length - 1] = act;
-            MassiveActs = newMassiveActs;
+            newmassiveacts[newmassiveacts.Length - 1] = statsBook;
+            SavesBooks = newmassiveacts;
         }
         else
         {
-            MassiveActs = new SavesActEdge[1] { act };
+            SavesBooks = new StatsBook[1] { statsBook };
         }
-    }
 
-    internal void AddNewStatistic(StatisticInfo massiveStatistics)
-    {
-
-        if (Statistics != null)
-        {
-            StatisticInfo[] newmassiveacts = new StatisticInfo[Statistics.Length + 1];
-            for (int i = 0; i < Statistics.Length; i++)
-            {
-                newmassiveacts[i] = Statistics[i];
-            }
-            newmassiveacts[newmassiveacts.Length - 1] = massiveStatistics;
-            Statistics = newmassiveacts;
-        }
-        else
-        {
-            Statistics = new StatisticInfo[1] { massiveStatistics };
-        }
-    }
-    public void AddStatistic(List<StatisticInfo> addStatistic) 
-    {
-        Statistics = addStatistic.ToArray();
     }
 }
