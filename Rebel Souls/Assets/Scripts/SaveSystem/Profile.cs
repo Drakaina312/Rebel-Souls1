@@ -17,14 +17,14 @@ public class Profile
     }
 
 
-    public StatsBook FindChapterStats(ChapterSortingConditions chapterSortingConditions)
+    public StatsBook FindChapterStatsFromSave(ChapterSortingConditions chapterSortingConditions)
     {
         return BooksStat.FirstOrDefault(predict =>
         predict.ChapterSortingConditions.BookName == chapterSortingConditions.BookName &&
         predict.ChapterSortingConditions.ActName == chapterSortingConditions.ActName &&
         predict.ChapterSortingConditions.ChapterName == chapterSortingConditions.ChapterName);
     }
-    public void SaveStats(ActStatistics actStatistics, ChapterSortingConditions chapterSortingCondition)
+    public void SaveStatsForFirstLaunch(ActStatistics actStatistics, ChapterSortingConditions chapterSortingCondition, DialogSequence previousChapter = null)
     {
         if (BooksStat == null)
         {
@@ -37,24 +37,69 @@ public class Profile
 
         }
 
-        StatsBook chapterStats = FindChapterStats(chapterSortingCondition);
+        StatsBook chapterStats = FindChapterStatsFromSave(chapterSortingCondition);
         if (chapterStats != null)
         {
-            chapterStats.AddNewStatistic(actStatistics.ActStats.ToArray());
-            Debug.Log(chapterStats.Statistics[0].StatisticName);
+            Debug.Log("Глава существует");
+            //chapterStats.AddNewStatistic(actStatistics.ActStats.ToArray());
         }
         else
         {
-            StatsBook[] newStatistics = new StatsBook[BooksStat.Length + 1];
-            newStatistics[newStatistics.Length - 1] = new StatsBook();
-            newStatistics[newStatistics.Length - 1].Statistics = actStatistics.ActStats.ToArray();
-            newStatistics[newStatistics.Length - 1].ChapterSortingConditions = chapterSortingCondition;
 
+            StatsBook[] newChapterStatistics = new StatsBook[BooksStat.Length + 1];
+            if (previousChapter == null)
+            {
+                newChapterStatistics[newChapterStatistics.Length - 1] = new StatsBook()
+                {
+                    ChapterSortingConditions = chapterSortingCondition,
+                    Statistics = actStatistics.ActStats.ToArray()
+                };
+            }
+            else
+            {
+                StatisticInfo[] previousChapterStats = FindChapterStatsFromSave(previousChapter.ChapterSortingCondition).Statistics;
+                StatisticInfo[] newStats = new StatisticInfo[previousChapterStats.Length];
+                int i = 0;
+                foreach (var prevousStat in previousChapterStats)
+                {
+                    newStats[i] = new StatisticInfo()
+                    {
+                        StatisticCount = prevousStat.StatisticCount,
+                        StatisticName = prevousStat.StatisticName,
+                       
+                    };
+                    Debug.Log(newStats[i].StatisticName);
+                    Debug.Log(newStats[i].StatisticCount);
+
+                    i++;
+                }
+
+                newChapterStatistics[newChapterStatistics.Length - 1] = new StatsBook()
+                {
+                    ChapterSortingConditions = chapterSortingCondition,
+                    Statistics = newStats
+                };
+
+                Debug.Log(newChapterStatistics[newChapterStatistics.Length - 1].Statistics[0].StatisticName);
+                Debug.Log(newChapterStatistics[newChapterStatistics.Length - 1].Statistics[0].StatisticCount);
+
+
+            }
             for (int i = 0; i < BooksStat.Length; i++)
             {
-                newStatistics[i] = BooksStat[i];
+                newChapterStatistics[i] = BooksStat[i];
             }
-            BooksStat = newStatistics;
+            BooksStat = newChapterStatistics;
+
+            foreach (var item in BooksStat)
+            {
+                foreach (var ss in item.Statistics)
+                {
+                    Debug.Log(item.ChapterSortingConditions.ChapterName);
+                    Debug.Log(ss.StatisticName);
+                    Debug.Log(ss.StatisticCount);
+                }
+            }
         }
 
     }

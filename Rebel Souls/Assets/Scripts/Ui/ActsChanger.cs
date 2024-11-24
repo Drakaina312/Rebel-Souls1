@@ -44,7 +44,11 @@ public class ActsChanger : MonoBehaviour
             ChaptersPanel.ChaptersInfo[index].ChaptersName.text = chapter.ChaptersName;
             Debug.Log(" назначили главу " + index);
             ChaptersPanel.ChaptersInfo[index].ChaptersButton.onClick.RemoveAllListeners();
-            ChaptersPanel.ChaptersInfo[index].ChaptersButton.onClick.AddListener(() => AddActionOnChapterClick(chapter.FirstDialigues));
+            if (chapter.PreviousChapterForLoadStats == null)
+                ChaptersPanel.ChaptersInfo[index].ChaptersButton.onClick.AddListener(() => AddActionOnChapterClick(chapter.FirstDialigues));
+            else
+                ChaptersPanel.ChaptersInfo[index].ChaptersButton.onClick.AddListener(() => AddActionOnChapterClick(chapter.FirstDialigues, chapter.PreviousChapterForLoadStats));
+
 
             index++;
 
@@ -58,7 +62,14 @@ public class ActsChanger : MonoBehaviour
     private void AddActionOnChapterClick(DialogSequence dialogSequence)
     {
         _inGameDataBase.DIalogSequenceStart = dialogSequence;
-        _masterSave.CurrentProfile.SaveStats(_inGameDataBase.ActStatistics, dialogSequence.ChapterSortingCondition);
+        _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_inGameDataBase.ActStatistics, dialogSequence.ChapterSortingCondition);
+
+        SceneManager.LoadScene(1);
+    }
+    private void AddActionOnChapterClick(DialogSequence dialogSequence, DialogSequence previousChapter)
+    {
+        _inGameDataBase.DIalogSequenceStart = dialogSequence;
+        _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_inGameDataBase.ActStatistics, dialogSequence.ChapterSortingCondition, previousChapter);
 
         SceneManager.LoadScene(1);
     }

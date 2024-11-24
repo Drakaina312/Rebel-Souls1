@@ -15,7 +15,9 @@ MonoBehaviour:
   ChaptersButtonsName:
   - ChaptersName: jfjdk
     FirstDialigues: {fileID: 11400000, guid: 9e04981ce813f2d4e8889d5e80191d9a, type: 2}
+    PreviousChapterForLoadStats: {fileID: 0}
     SceneNumber: 0
   - ChaptersName: Ch2
     FirstDialigues: {fileID: 11400000, guid: fcee63501c2e1c9448b5d005e5ae4676, type: 2}
+    PreviousChapterForLoadStats: {fileID: 11400000, guid: 9e04981ce813f2d4e8889d5e80191d9a, type: 2}
     SceneNumber: 0

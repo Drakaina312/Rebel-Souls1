@@ -1,1 +1,87 @@
-{"Test":"","Profiles":[{"ProfileName":"Levon","ProfileID":0,"IsBlocked":false,"IsEmpty":false,"BooksStat":[{"ChapterSortingConditions":{"BookName":"Levon","ActName":"Levon","ChapterName":"Lev"},"Statistics":[{"StatisticName":"Power","StatisticCount":0},{"StatisticName":"Intelegent","StatisticCount":0}]},{"ChapterSortingConditions":{"BookName":"Levon","ActName":"Levon","ChapterName":"Ks"},"Statistics":[{"StatisticName":"Power","StatisticCount":0},{"StatisticName":"Intelegent","StatisticCount":0}]}]},{"ProfileName":"","ProfileID":0,"IsBlocked":false,"IsEmpty":true,"BooksStat":[]},{"ProfileName":"","ProfileID":0,"IsBlocked":true,"IsEmpty":true,"BooksStat":[]},{"ProfileName":"","ProfileID":0,"IsBlocked":true,"IsEmpty":true,"BooksStat":[]},{"ProfileName":"","ProfileID":0,"IsBlocked":true,"IsEmpty":true,"BooksStat":[]},{"ProfileName":"","ProfileID":0,"IsBlocked":true,"IsEmpty":true,"BooksStat":[]}]}
+{
+  "Test": "",
+  "Profiles": [
+    {
+      "ProfileName": "Levon",
+      "ProfileID": 0,
+      "IsBlocked": false,
+      "IsEmpty": false,
+      "BooksStat": [
+        {
+          "ChapterSortingConditions": {
+            "BookName": "Levon",
+            "ActName": "Levon",
+            "ChapterName": "Lev"
+          },
+          "Statistics": [
+            {
+              "StatisticName": "Power",
+              "StatisticCount": 5
+            },
+            {
+              "StatisticName": "Intelegent",
+              "StatisticCount": 5
+            }
+          ]
+        },
+        {
+          "ChapterSortingConditions": {
+            "BookName": "Levon",
+            "ActName": "Levon",
+            "ChapterName": "Ks"
+          },
+          "Statistics": [
+            {
+              "StatisticName": "Power",
+              "StatisticCount": 5
+            },
+            {
+              "StatisticName": "Intelegent",
+              "StatisticCount": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ProfileName": "",
+      "ProfileID": 0,
+      "IsBlocked": false,
+      "IsEmpty": true,
+      "BooksStat": [
+      ]
+    },
+    {
+      "ProfileName": "",
+      "ProfileID": 0,
+      "IsBlocked": true,
+      "IsEmpty": true,
+      "BooksStat": [
+      ]
+    },
+    {
+      "ProfileName": "",
+      "ProfileID": 0,
+      "IsBlocked": true,
+      "IsEmpty": true,
+      "BooksStat": [
+      ]
+    },
+    {
+      "ProfileName": "",
+      "ProfileID": 0,
+      "IsBlocked": true,
+      "IsEmpty": true,
+      "BooksStat": [
+      ]
+    },
+    {
+      "ProfileName": "",
+      "ProfileID": 0,
+      "IsBlocked": true,
+      "IsEmpty": true,
+      "BooksStat": [
+      ]
+    }
+  ]
+}

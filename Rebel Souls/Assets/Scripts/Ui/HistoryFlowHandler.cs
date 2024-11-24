@@ -40,7 +40,7 @@ public class HistoryFlowHandler : MonoBehaviour
     {
 
         _historyFlow = StartCoroutine(ControlingHistoryFlowCoroutine());
-        _masterSave.CurrentProfile.SaveStats(_gameData.ActStatistics, _gameData.DIalogSequenceStart.ChapterSortingCondition);
+        _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_gameData.ActStatistics, _gameData.DIalogSequenceStart.ChapterSortingCondition);
         _masterSave.SaveAllData();
     }
 

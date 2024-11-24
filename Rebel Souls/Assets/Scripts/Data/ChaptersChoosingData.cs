@@ -14,6 +14,7 @@ public struct ChaptersInfo
 {
     public string ChaptersName;
     public DialogSequence FirstDialigues;
+    public DialogSequence PreviousChapterForLoadStats;
     public int SceneNumber;
 }
 
