@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d757ff5dc3981468cc3fb272edc647, type: 3}
-  m_Name: UIActData1
+  m_Script: {fileID: 11500000, guid: 273da034a107add46b87ead35f998895, type: 3}
+  m_Name: ActStatistics
   m_EditorClassIdentifier: 
-  ChaptersButtonsName:
-  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 1. \u041A\u043E\u0448\u043A\u0438"
-    FirstDialigues: {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
+  ActStats:
+  - StatisticName: Power
+    StatisticCount: 0
+  - StatisticName: Intelegent
+    StatisticCount: 0

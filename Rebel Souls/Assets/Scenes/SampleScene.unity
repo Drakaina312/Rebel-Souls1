@@ -18308,13 +18308,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edcc3e1c63469e4896f537a92126bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dataToLoad: {fileID: 11400000, guid: 81c1d0355dd76f8479135f3d96cc9e77, type: 2}
+  _actToChoose: {fileID: 11400000, guid: be6d0fdd3e529ab41bbc404d5d6dfba8, type: 2}
   _panelHandler: {fileID: 906615254}
   _historyDisc: {fileID: 1155300054}
   _historyBackground: {fileID: 492804064}
   _startHistory: {fileID: 1081385797}
-  _historyPattern: {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
-  _dataActs: {fileID: 11400000, guid: fbe0c9ebd3aaf8a41b795b6f6fad77c1, type: 2}
   _actsChanger: {fileID: 124444852}
 --- !u!114 &1785594311
 MonoBehaviour:
@@ -18582,7 +18580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3138.043, y: -0.00024414062}
+  m_AnchoredPosition: {x: 5584.4307, y: -0.00024414062}
   m_SizeDelta: {x: 4376.9795, y: -0.00048828}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797849308
@@ -24787,13 +24785,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edcc3e1c63469e4896f537a92126bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dataToLoad: {fileID: 11400000, guid: 81c1d0355dd76f8479135f3d96cc9e77, type: 2}
+  _actToChoose: {fileID: 0}
   _panelHandler: {fileID: 906615254}
   _historyDisc: {fileID: 1155300054}
   _historyBackground: {fileID: 492804064}
   _startHistory: {fileID: 1081385797}
-  _historyPattern: {fileID: 0}
-  _dataActs: {fileID: 0}
   _actsChanger: {fileID: 0}
 --- !u!114 &2066629012
 MonoBehaviour:

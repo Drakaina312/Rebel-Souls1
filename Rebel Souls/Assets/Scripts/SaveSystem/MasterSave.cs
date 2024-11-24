@@ -45,6 +45,7 @@ public class MasterSave
             IsDataLoadComnplete = true;
         }
     }
+
 }
 
 [Serializable]

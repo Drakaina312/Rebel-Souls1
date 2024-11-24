@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 [CreateAssetMenu(fileName = "HistoryData", menuName = "Data/HistoryData")]
-public class HistoryData: ScriptableObject
+public class ActsChoosingData : ScriptableObject
 
 {
     public List<ActsInfo> ActsInfo;
@@ -11,12 +11,13 @@ public class HistoryData: ScriptableObject
     //public Sprite Discription;
     public int NumberScene;
 
-        
+
 }
 [Serializable]
 public struct ActsInfo
 {
     public Sprite ActsBG;
     public string ActsName;
-    public UIActData ActsData;
+    public ChaptersChoosingData ChaptersToLoadData;
+    public ActStatistics ActStatistics;
 }

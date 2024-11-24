@@ -8,14 +8,12 @@ using Zenject;
 public class HistoryChouser : MonoBehaviour
 {
     
-    [SerializeField] private HistoryData _dataToLoad;
+    [SerializeField] private ActsChoosingData _actToChoose;
     [SerializeField] private PanelHandler _panelHandler;
     [SerializeField] private TextMeshProUGUI _historyDisc;
     [SerializeField] private Image _historyBackground;
     [SerializeField] private Button _startHistory;
     private InGameDataBase _dataBase;
-    [SerializeField] private HistoryPattern _historyPattern;
-    [SerializeField] private DataActs _dataActs;
     private MasterSave _masterSave;
     [SerializeField] private ActsChanger _actsChanger;
     [Inject]
@@ -30,14 +28,12 @@ public class HistoryChouser : MonoBehaviour
     { 
         
         _panelHandler.OpenPanel();
-        _actsChanger.ChangePanel(_dataToLoad.ActsInfo);
+        _actsChanger.ChangePanel(_actToChoose.ActsInfo);
         //_historyDisc.text = _dataToLoad.HistoryDisc;
-        _historyBackground.sprite = _dataToLoad.Background;
-        _dataBase.HistoryPattern = _historyPattern;
+        _historyBackground.sprite = _actToChoose.Background;
         _startHistory.onClick.RemoveAllListeners();
-        _startHistory.onClick.AddListener(()=> OpenNewScene(_dataToLoad.NumberScene));
+        _startHistory.onClick.AddListener(()=> OpenNewScene(_actToChoose.NumberScene));
         //_masterSave.CurrentProfile.AddStatistic(_dataActs.MassiveStatistics);
-        _masterSave.CurrentProfile.SaveBooks(_dataActs.StatisticBook);
         _masterSave.SaveAllData();
 
     }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class InGameDataBase
 {
-    public HistoryPattern HistoryPattern;
+    public DialogSequence DIalogSequenceStart;
+    public ActStatistics ActStatistics;
 
 }
