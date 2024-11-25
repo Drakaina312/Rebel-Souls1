@@ -37,8 +37,8 @@ public class HistoryChouser : MonoBehaviour
         _startHistory.onClick.RemoveAllListeners();
         _startHistory.onClick.AddListener(()=> OpenNewScene(_dataToLoad.NumberScene));
         //_masterSave.CurrentProfile.AddStatistic(_dataActs.MassiveStatistics);
-        _masterSave.CurrentProfile.SaveBooks(_dataActs.StatisticBook);
-        _masterSave.SaveAllData();
+        //_masterSave.CurrentProfile.SaveBooks(_dataActs.StatisticBook);
+        //_masterSave.SaveAllData();
 
     }
 

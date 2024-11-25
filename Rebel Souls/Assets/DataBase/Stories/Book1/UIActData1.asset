@@ -13,5 +13,17 @@ MonoBehaviour:
   m_Name: UIActData1
   m_EditorClassIdentifier: 
   ChaptersButtonsName:
-  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 1. \u041A\u043E\u0448\u043A\u0438"
+  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 1"
+    FirstDialigues: {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
+  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 2"
+    FirstDialigues: {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
+  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 3"
+    FirstDialigues: {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
+  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 4"
+    FirstDialigues: {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
+  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 5"
+    FirstDialigues: {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
+  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 6"
+    FirstDialigues: {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
+  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 7"
     FirstDialigues: {fileID: 11400000, guid: c85e15097a76def4f9a59a56e9cc939d, type: 2}
