@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      button_gradient2_round_theme2_42_0: 8526597956231952757
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
