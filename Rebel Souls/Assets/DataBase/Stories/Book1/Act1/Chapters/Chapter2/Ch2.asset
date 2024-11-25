@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Ch2
   m_EditorClassIdentifier: 
   ChapterSortingCondition:
-    BookName: Levon
-    ActName: Levon
-    ChapterName: Ks
+    BookName: O.V.
+    ActName: "1 \u0441\u0435\u0437\u043E\u043D"
+    ChapterName: "2 \u0433\u043B\u0430\u0432\u0430"
   StoryHierarhy:
   - LineKey: 
     HeroType: 0
     ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 7199705072138568028, guid: c25916e57b0044743abb78869f6cd09f, type: 3}
-    Notation: dfgdfgdgg
-    Text: ggggggggggggggggggggg
+    Notation: "\u043F\u0443\u043F\u043A\u0430"
+    Text: "\u043B\u0443\u043F\u043A\u0430"

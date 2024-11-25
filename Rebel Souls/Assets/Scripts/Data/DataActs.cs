@@ -7,5 +7,5 @@ using UnityEngine;
 public class DataActs : ScriptableObject
 {
     public StatsBook StatisticBook;
-    public List<HistoryPattern> MassiveChapters;
+  
 }
