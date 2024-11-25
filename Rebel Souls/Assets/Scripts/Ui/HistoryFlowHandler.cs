@@ -14,7 +14,8 @@ public class HistoryFlowHandler : MonoBehaviour
     [SerializeField] private float _tipingSpeed;
     private WaitForSeconds _sleepTime;
     private InGameDataBase _gameData;
-    [HideInInspector]public bool CanWeGoNext;
+    private MasterSave _masterSave;
+    [HideInInspector] public bool CanWeGoNext;
     private bool _isTipeTextComplete;
     private int _index;
     private Coroutine _tipeText;
@@ -27,9 +28,10 @@ public class HistoryFlowHandler : MonoBehaviour
     private bool _isWeHaveButtons;
 
     [Inject]
-    private void Construct(InGameDataBase gameData, InputSystem_Actions input)
+    private void Construct(InGameDataBase gameData, InputSystem_Actions input, MasterSave masterSave)
     {
         _gameData = gameData;
+        _masterSave = masterSave;
         _sleepTime = new WaitForSeconds(_tipingSpeed);
         input.Player.Attack.started += SwipeStory;
     }
@@ -38,14 +40,16 @@ public class HistoryFlowHandler : MonoBehaviour
     {
 
         _historyFlow = StartCoroutine(ControlingHistoryFlowCoroutine());
+        _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_gameData.ActStatistics, _gameData.DIalogSequenceStart.ChapterSortingCondition);
+        _masterSave.SaveAllData();
     }
 
-    public void ChangeFlowHistory(HistoryPattern historyPattern)
-    { 
-        _gameData.HistoryPattern = historyPattern;
+    public void ChangeFlowHistory(DialogSequence historyPattern)
+    {
+        _gameData.DIalogSequenceStart = historyPattern;
         StopCoroutine(_historyFlow);
         _historyFlow = StartCoroutine(ControlingHistoryFlowCoroutine());
-        
+
     }
 
     private void SwipeStory(InputAction.CallbackContext context)
@@ -55,18 +59,18 @@ public class HistoryFlowHandler : MonoBehaviour
             CanWeGoNext = true;
             _notationHandler.DeActivaidNotation();
         }
-        else 
-        { 
-            StartCoroutine(TipeFullText()); 
+        else
+        {
+            StartCoroutine(TipeFullText());
         }
-        
+
 
     }
 
     private IEnumerator TipeFullText()
     {
         StopCoroutine(_tipeText);
-        _textArea.text = _gameData.HistoryPattern.StoryHierarhy[_index].Text;
+        _textArea.text = _gameData.DIalogSequenceStart.StoryHierarhy[_index].Text;
         _isTipeTextComplete = true;
         Debug.Log("конец печати");
         yield return new WaitForSeconds(0.01f);
@@ -82,7 +86,7 @@ public class HistoryFlowHandler : MonoBehaviour
             _textArea.text += fullText[i];
             _textResizer.UpdateSize();
             yield return _sleepTime;
-            
+
         }
 
         _isTipeTextComplete = true;
@@ -91,10 +95,10 @@ public class HistoryFlowHandler : MonoBehaviour
     private IEnumerator ControlingHistoryFlowCoroutine()
     {
         _index = 0;
-        foreach (var storyLine in _gameData.HistoryPattern.StoryHierarhy)
+        foreach (var storyLine in _gameData.DIalogSequenceStart.StoryHierarhy)
         {
             CanWeGoNext = false;
-            if (storyLine.HeroType == HeroType.HeroLeft) 
+            if (storyLine.HeroType == HeroType.HeroLeft)
             {
                 _heroLeft.gameObject.SetActive(true);
                 _heroLeft.sprite = storyLine.HeroSprite;
@@ -116,12 +120,12 @@ public class HistoryFlowHandler : MonoBehaviour
             {
                 _buttonsHandler.DeActivatedButtons();
             }
-            if (storyLine.Notation.Length > 0) 
+            if (storyLine.Notation.Length > 0)
             {
                 StartCoroutine(_notationHandler.ActivaidNotation(storyLine.Notation));
             }
 
-            
+
             _tipeText = StartCoroutine(TypeText(storyLine.Text));
             _backGround.sprite = storyLine.Background;
             yield return new WaitWhile(() => CanWeGoNext == false);
