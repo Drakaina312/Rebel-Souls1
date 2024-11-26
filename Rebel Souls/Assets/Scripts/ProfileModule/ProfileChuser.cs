@@ -19,6 +19,11 @@ public class ProfileChuser : MonoBehaviour
     {
         ProfileButton profileButton = _profileButtonHendler.ProfileButtonsList.FirstOrDefault(button => button.IsBlocked != true && button.IsEmpty == true);
 
+        if (profileName == "")
+        { 
+            Debug.Log(" Имя пустое");
+            return; 
+        }
         if (profileButton != null)
         {
             profileButton.ProfileName.text = profileName;

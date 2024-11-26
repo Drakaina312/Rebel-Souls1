@@ -25,6 +25,8 @@ public class ActsChanger : MonoBehaviour
         int i = 0;
         foreach (ActsInfo act in actsInfo)
         {
+            Debug.Log(act.ActsName);
+            Debug.Log(ActInfo[i].ActsButton);
             ActInfo[i].ActsBG.sprite = act.ActsBG;
             ActInfo[i].ActsDisc.text = act.ActsName;
             ActInfo[i].ActsButton.onClick.AddListener(() => StartAct(act));
@@ -34,6 +36,7 @@ public class ActsChanger : MonoBehaviour
 
     private void StartAct(ActsInfo act)
     {
+        Debug.Log(" Открытие глав ");
         ChaptersPanel.gameObject.SetActive(true);
         _inGameDataBase.ActStatistics = act.ActStatistics;
 

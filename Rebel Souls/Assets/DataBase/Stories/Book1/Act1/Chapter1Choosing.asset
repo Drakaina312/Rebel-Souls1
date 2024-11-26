@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Chapter1Choosing
   m_EditorClassIdentifier: 
   ChaptersButtonsName:
-  - ChaptersName: jfjdk
+  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 1"
     FirstDialigues: {fileID: 11400000, guid: 9e04981ce813f2d4e8889d5e80191d9a, type: 2}
     PreviousChapterForLoadStats: {fileID: 0}
     SceneNumber: 0
-  - ChaptersName: Ch2
+  - ChaptersName: "\u0413\u043B\u0430\u0432\u0430 2"
     FirstDialigues: {fileID: 11400000, guid: fcee63501c2e1c9448b5d005e5ae4676, type: 2}
     PreviousChapterForLoadStats: {fileID: 11400000, guid: 9e04981ce813f2d4e8889d5e80191d9a, type: 2}
     SceneNumber: 0
