@@ -40,13 +40,13 @@ MonoBehaviour:
       - StatName: "\u0414\u0438\u043A\u0442\u0430\u0442\u0443\u0440\u0430"
         Statpoint: 1
     HeroSprite: {fileID: 0}
-    Background: {fileID: 21300000, guid: 7d1a89cdbebf742c18821dc41cd1b633, type: 3}
+    Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     Notation: 
     Text: "\u041F\u0440\u0438\u0432\u0435\u0442!"
   - LineKey: 
     HeroType: 0
     ButtonSetting: []
     HeroSprite: {fileID: 0}
-    Background: {fileID: 21300000, guid: 7d1a89cdbebf742c18821dc41cd1b633, type: 3}
+    Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     Notation: "\u041C\u043E\u043B\u043E\u0434\u0435\u0446"
     Text: "\u041A\u0430\u043A\u0443\u0441\u044F"
