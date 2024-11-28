@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActStats:
   - StatisticName: "\u0441\u0438\u043B\u0430"
-    StatisticCount: 0
+    StatisticCount: 5
   - StatisticName: "\u043B\u043E\u0432\u043A\u043E\u0441\u0442\u044C "
-    StatisticCount: 0
+    StatisticCount: 5

@@ -17,6 +17,7 @@ public class ActsChoosingData : ScriptableObject
 public struct ActsInfo
 {
     public Sprite ActsBG;
+    public string BookName;
     public string ActsName;
     public ChaptersChoosingData ChaptersToLoadData;
     public ActStatistics ActStatistics;

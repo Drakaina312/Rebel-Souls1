@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Ch1
   m_EditorClassIdentifier: 
   ChapterSortingCondition:
-    BookName: O.V.
-    ActName: "1 \u0441\u0435\u0437\u043E\u043D"
+    BookName: O.V
     ChapterName: "1 \u0433\u043B\u0430\u0432\u0430"
   StoryHierarhy:
   - LineKey: 

@@ -34,6 +34,6 @@ public struct ButtonSetting
 public struct ChapterSortingConditions
 {
     public string BookName;
-    public string ActName;
+    //public string ActName;
     public string ChapterName;
 }

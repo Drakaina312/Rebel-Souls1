@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Linq;
+using System.Collections.Generic;
 
 [Serializable]
 public class Profile
@@ -21,7 +22,7 @@ public class Profile
     {
         return BooksStat.FirstOrDefault(predict =>
         predict.ChapterSortingConditions.BookName == chapterSortingConditions.BookName &&
-        predict.ChapterSortingConditions.ActName == chapterSortingConditions.ActName &&
+        //predict.ChapterSortingConditions.ActName == chapterSortingConditions.ActName &&
         predict.ChapterSortingConditions.ChapterName == chapterSortingConditions.ChapterName);
     }
     public void SaveStatsForFirstLaunch(ActStatistics actStatistics, ChapterSortingConditions chapterSortingCondition, DialogSequence previousChapter = null)
@@ -41,65 +42,50 @@ public class Profile
         if (chapterStats != null)
         {
             Debug.Log("Глава существует");
+
+            foreach (var item in BooksStat)
+                item.IsLastSave = false;
+            chapterStats.IsLastSave = true;
+
             //chapterStats.AddNewStatistic(actStatistics.ActStats.ToArray());
         }
         else
         {
+            List<StatsBook> newChapterStatistic = new List<StatsBook>();
 
-            StatsBook[] newChapterStatistics = new StatsBook[BooksStat.Length + 1];
+            foreach (StatsBook oldStat in BooksStat)
+            {
+                oldStat.IsLastSave = false;
+                newChapterStatistic.Add(oldStat);
+            }
+
             if (previousChapter == null)
             {
-                newChapterStatistics[newChapterStatistics.Length - 1] = new StatsBook()
-                {
-                    ChapterSortingConditions = chapterSortingCondition,
-                    Statistics = actStatistics.ActStats.ToArray()
-                };
+                newChapterStatistic.Add(
+                    new StatsBook()
+                    {
+                        ChapterSortingConditions = chapterSortingCondition,
+                        Statistics = actStatistics.ActStats.ToArray()
+                    });
             }
             else
             {
                 StatisticInfo[] previousChapterStats = FindChapterStatsFromSave(previousChapter.ChapterSortingCondition).Statistics;
-                StatisticInfo[] newStats = new StatisticInfo[previousChapterStats.Length];
-                int i = 0;
-                foreach (var prevousStat in previousChapterStats)
+                StatisticInfo[] newStatistics = new StatisticInfo[previousChapterStats.Length];
+                for (int i = 0; i < previousChapterStats.Length; i++)
                 {
-                    newStats[i] = new StatisticInfo()
+                    newStatistics[i].StatisticCount = previousChapterStats[i].StatisticCount;
+                    newStatistics[i].StatisticName = previousChapterStats[i].StatisticName;
+                }
+                newChapterStatistic.Add(
+                    new StatsBook()
                     {
-                        StatisticCount = prevousStat.StatisticCount,
-                        StatisticName = prevousStat.StatisticName,
-                       
-                    };
-                    Debug.Log(newStats[i].StatisticName);
-                    Debug.Log(newStats[i].StatisticCount);
-
-                    i++;
-                }
-
-                newChapterStatistics[newChapterStatistics.Length - 1] = new StatsBook()
-                {
-                    ChapterSortingConditions = chapterSortingCondition,
-                    Statistics = newStats
-                };
-
-                Debug.Log(newChapterStatistics[newChapterStatistics.Length - 1].Statistics[0].StatisticName);
-                Debug.Log(newChapterStatistics[newChapterStatistics.Length - 1].Statistics[0].StatisticCount);
-
-
+                        ChapterSortingConditions = chapterSortingCondition,
+                        Statistics = newStatistics
+                    });
             }
-            for (int i = 0; i < BooksStat.Length; i++)
-            {
-                newChapterStatistics[i] = BooksStat[i];
-            }
-            BooksStat = newChapterStatistics;
 
-            foreach (var item in BooksStat)
-            {
-                foreach (var ss in item.Statistics)
-                {
-                    Debug.Log(item.ChapterSortingConditions.ChapterName);
-                    Debug.Log(ss.StatisticName);
-                    Debug.Log(ss.StatisticCount);
-                }
-            }
+            BooksStat = newChapterStatistic.ToArray();
         }
 
     }
