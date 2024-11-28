@@ -26,9 +26,19 @@ public struct ButtonSetting
 {
     public string StoryKey;
     public string ButtonsName;
+    public Sprite HelpSprite;
     public DialogSequence HistoryPattern;
+    public bool IsStatAdder;
+    public List<StatKit> StatKit;
+    
 
 }
+[Serializable]
+public struct StatKit 
+    {
+    public string StatName;
+    public int Statpoint;
+    }
 
 [Serializable]
 public struct ChapterSortingConditions

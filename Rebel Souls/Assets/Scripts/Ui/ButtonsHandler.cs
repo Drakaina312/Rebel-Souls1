@@ -1,28 +1,42 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class ButtonsHandler : MonoBehaviour
 {
     [SerializeField] private VerticalLayoutGroup _layoutGroup;
     [SerializeField] private List<ButtonsSettings> _buttons;
-    
+    private MasterSave _masterSave;
+    private InGameDataBase _inGameDataBase;
+
+    [Inject]
+    public void Construct(MasterSave masterSave, InGameDataBase inGameDataBase)
+    {
+        _masterSave = masterSave;
+        _inGameDataBase = inGameDataBase;
+
+
+    }
+
 
     public void DeActivatedButtons()
     {
         foreach (var button in _buttons)
 
-        { 
+        {
             button.Button.onClick.RemoveAllListeners();
             button.gameObject.SetActive(false);
+            button.HelpImage.gameObject.SetActive(false);
         }
     }
 
     internal void ActivedButtons(List<ButtonSetting> buttonSetting, HistoryFlowHandler historyFlowHandler)
     {
-        switch (buttonSetting.Count) 
+        switch (buttonSetting.Count)
         {
             case 2:
                 _layoutGroup.padding.top = 300;
@@ -54,13 +68,45 @@ public class ButtonsHandler : MonoBehaviour
         {
             _buttons[index].gameObject.SetActive(true);
             _buttons[index].ButtonName.text = button.ButtonsName;
+            //Если включены подсказки, то выполняем строку 71, иначе мы должны выключить хелпимэйдж.
+            _buttons[index].HelpImage.gameObject.SetActive(true);
+            if (button.HelpSprite != null)
+                _buttons[index].HelpImage.sprite = button.HelpSprite;
             _buttons[index].Button.onClick.AddListener(() =>
             {
-                historyFlowHandler.ChangeFlowHistory(button.HistoryPattern);
-                historyFlowHandler.CanWeGoNext = true;
+                if (button.IsStatAdder == false)
+                {
+                    historyFlowHandler.ChangeFlowHistory(button.HistoryPattern);
+                    historyFlowHandler.CanWeGoNext = true;
+                }
+                else
+                {
+                    if (button.HistoryPattern != null)
+                    {
+                        historyFlowHandler.ChangeFlowHistory(button.HistoryPattern);
+                    }
+                    StatsBook statisticToWork = _masterSave.CurrentProfile.FindChapterStatsFromSave(_inGameDataBase.DIalogSequenceStart.ChapterSortingCondition);
+                    foreach (var item in button.StatKit)
+                    {
+                        ChangeStat(item, statisticToWork.Statistics, historyFlowHandler);
+                    }
+
+                }
             });
-            
+
             index++;
         }
+
     }
+    private void ChangeStat(StatKit statKit, StatisticInfo[] statisticInfos, HistoryFlowHandler historyFlowHandler)
+    {
+        StatisticInfo statToChange = statisticInfos.FirstOrDefault(stat => stat.StatisticName == statKit.StatName);
+        if (statToChange != null)
+        {
+            statToChange.StatisticCount += statKit.Statpoint;
+        }
+        _masterSave.SaveAllData();
+        historyFlowHandler.CanWeGoNext = true;
+    }
+
 }
