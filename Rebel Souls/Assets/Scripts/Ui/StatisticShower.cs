@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 public class StatisticShower : MonoBehaviour
@@ -13,6 +14,8 @@ public class StatisticShower : MonoBehaviour
     private List<TextMeshProUGUI> _statsCount;
     private MasterSave _masterSave;
     private InGameDataBase _inGameDataBase;
+    [SerializeField]
+    private List<Image> _statsImage;
 
     [Inject]
     private void Construct(MasterSave masterSave, InGameDataBase inGameDataBase)
@@ -31,10 +34,14 @@ public class StatisticShower : MonoBehaviour
         int index = 0;
         for (int i = 0; i < statsBook.Statistics.Length; i++)
         {
+            if (statsBook.Statistics[i].IsRelationship)
+                continue;
+            Debug.Log(_inGameDataBase.ActStatistics);
             _statsName[i].transform.parent.gameObject.SetActive(true);
             _statsCount[i].transform.parent.gameObject.SetActive(true);
             _statsName[i].text = statsBook.Statistics[i].StatisticName;
             _statsCount[i].text = statsBook.Statistics[i].StatisticCount.ToString();
+            _statsImage[i].sprite = _inGameDataBase.ActStatistics.ActStats[i].StatisticSprite;
             Debug.Log(index + " Âêë");
             index++;
         }

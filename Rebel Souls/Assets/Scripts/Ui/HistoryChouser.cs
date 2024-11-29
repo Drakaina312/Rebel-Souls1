@@ -15,6 +15,7 @@ public class HistoryChouser : MonoBehaviour
     [SerializeField] private Button _startHistory;
     [SerializeField] private string _bookName;
     [SerializeField] private ActsChanger _actsChanger;
+    [SerializeField] private ActStatistics _actsStatistics;
 
 
     private InGameDataBase _dataBase;
@@ -37,6 +38,7 @@ public class HistoryChouser : MonoBehaviour
         _dataBase.BookName = _bookName;
         //_historyDisc.text = _dataToLoad.HistoryDisc;
         _historyBackground.sprite = _actToChoose.Background;
+        _dataBase.ActStatistics = _actsStatistics;
         //_startHistory.onClick.RemoveAllListeners();
         //_startHistory.onClick.AddListener(() => OpenNewScene(_actToChoose.NumberScene));
         //_masterSave.CurrentProfile.AddStatistic(_dataActs.MassiveStatistics);

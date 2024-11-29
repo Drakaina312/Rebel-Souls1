@@ -9,7 +9,7 @@ public class DialogSequence : ScriptableObject
     public ChapterSortingConditions ChapterSortingCondition;
     public List<StoryHierarhy> StoryHierarhy;
     public string PathToFile;
-    public int DialogIndex;
+    //public int DialogIndex;
 }
 
 [Serializable]

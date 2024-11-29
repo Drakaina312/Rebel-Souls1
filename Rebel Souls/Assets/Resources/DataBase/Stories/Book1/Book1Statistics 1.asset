@@ -16,12 +16,16 @@ MonoBehaviour:
   - StatisticName: "\u0410\u043D\u0430\u0440\u0445\u0438\u044F"
     StatisticCount: 1
     IsRelationship: 0
+    StatisticSprite: {fileID: 21300000, guid: 08ee960f79710494fab8bf3c20c0eda0, type: 3}
   - StatisticName: "\u0414\u0438\u043A\u0442\u0430\u0442\u0443\u0440\u0430"
     StatisticCount: 5
     IsRelationship: 0
+    StatisticSprite: {fileID: 21300000, guid: c2dc44a779df04428bad657ce7a6e35e, type: 3}
   - StatisticName: "\u0420\u0435\u0432\u043E\u043B\u044E\u0446\u0438\u044F"
     StatisticCount: 2
     IsRelationship: 0
+    StatisticSprite: {fileID: 21300000, guid: fffc7108ec6ed4d6c95ff4721d05032c, type: 3}
   - StatisticName: "\u041A\u0443\u0440\u0442"
     StatisticCount: 10
     IsRelationship: 1
+    StatisticSprite: {fileID: 21300000, guid: f10dbd4f930ac4bf9815b0497caad2ab, type: 3}

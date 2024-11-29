@@ -18,7 +18,13 @@ MonoBehaviour:
   StoryHierarhy:
   - LineKey: 
     HeroType: 0
-    ButtonSetting: []
+    ButtonSetting:
+    - StoryKey: 
+      ButtonsName: 
+      HelpSprite: {fileID: 0}
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 7199705072138568028, guid: c25916e57b0044743abb78869f6cd09f, type: 3}
     Notation: "\u043F\u0443\u043F\u043A\u0430"
