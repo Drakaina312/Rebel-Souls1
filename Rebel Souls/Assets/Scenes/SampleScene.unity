@@ -6257,6 +6257,7 @@ MonoBehaviour:
     IsBlocked: 0
     IsEmpty: 0
     BooksStat: []
+    LastSaveChapterPath: 
   _profileChooseCanvas: {fileID: 1863011041}
 --- !u!114 &113475055
 MonoBehaviour:
@@ -7551,6 +7552,7 @@ MonoBehaviour:
     IsBlocked: 0
     IsEmpty: 0
     BooksStat: []
+    LastSaveChapterPath: 
   _profileChooseCanvas: {fileID: 1863011041}
 --- !u!114 &199043743
 MonoBehaviour:
@@ -7707,6 +7709,7 @@ MonoBehaviour:
     IsBlocked: 0
     IsEmpty: 0
     BooksStat: []
+    LastSaveChapterPath: 
   _profileChooseCanvas: {fileID: 1863011041}
 --- !u!114 &200935745
 MonoBehaviour:
@@ -14006,6 +14009,7 @@ MonoBehaviour:
     IsBlocked: 0
     IsEmpty: 0
     BooksStat: []
+    LastSaveChapterPath: 
   _profileChooseCanvas: {fileID: 1863011041}
 --- !u!114 &1077919876
 MonoBehaviour:
@@ -14075,6 +14079,7 @@ GameObject:
   - component: {fileID: 1081385796}
   - component: {fileID: 1081385795}
   - component: {fileID: 1081385797}
+  - component: {fileID: 1081385798}
   m_Layer: 0
   m_Name: StartStory
   m_TagString: Untagged
@@ -14092,7 +14097,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1340497324}
   m_Father: {fileID: 1788633415}
@@ -14183,7 +14188,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1081385795}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1081385798}
+        m_TargetAssemblyTypeName: GameContinuer, Assembly-CSharp
+        m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1081385798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081385793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf60bd3be76e3c42bdccbb4406db554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1083487238
 GameObject:
   m_ObjectHideFlags: 0
@@ -15403,6 +15432,7 @@ MonoBehaviour:
     IsBlocked: 0
     IsEmpty: 0
     BooksStat: []
+    LastSaveChapterPath: 
   _profileChooseCanvas: {fileID: 1863011041}
 --- !u!114 &1217522707
 MonoBehaviour:
@@ -20201,6 +20231,7 @@ MonoBehaviour:
     IsBlocked: 0
     IsEmpty: 0
     BooksStat: []
+    LastSaveChapterPath: 
   _profileChooseCanvas: {fileID: 1863011041}
 --- !u!114 &1712524232
 MonoBehaviour:
@@ -21317,7 +21348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7352.476, y: -0.00024414062}
+  m_AnchoredPosition: {x: 2231.2483, y: -0.00024414062}
   m_SizeDelta: {x: 4376.9795, y: -0.00048828}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797849308

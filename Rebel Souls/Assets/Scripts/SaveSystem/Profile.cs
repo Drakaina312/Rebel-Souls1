@@ -11,6 +11,9 @@ public class Profile
     public bool IsBlocked;
     public bool IsEmpty = true;
     public StatsBook[] BooksStat;
+    public string LastSaveChapterPath;
+    public int DialogIndex;
+
     public Profile(string profileName, bool isBlocked)
     {
         ProfileName = profileName;

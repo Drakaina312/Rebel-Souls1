@@ -37,8 +37,8 @@ public class HistoryChouser : MonoBehaviour
         _dataBase.BookName = _bookName;
         //_historyDisc.text = _dataToLoad.HistoryDisc;
         _historyBackground.sprite = _actToChoose.Background;
-        _startHistory.onClick.RemoveAllListeners();
-        _startHistory.onClick.AddListener(() => OpenNewScene(_actToChoose.NumberScene));
+        //_startHistory.onClick.RemoveAllListeners();
+        //_startHistory.onClick.AddListener(() => OpenNewScene(_actToChoose.NumberScene));
         //_masterSave.CurrentProfile.AddStatistic(_dataActs.MassiveStatistics);
         _masterSave.SaveAllData();
 

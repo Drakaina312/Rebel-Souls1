@@ -47,6 +47,8 @@ public class HistoryFlowHandler : MonoBehaviour
     public void ChangeFlowHistory(DialogSequence historyPattern)
     {
         _gameData.DIalogSequenceStart = historyPattern;
+        _masterSave.CurrentProfile.DialogIndex = 0;
+        _masterSave.CurrentProfile.LastSaveChapterPath = historyPattern.PathToFile;
         StopCoroutine(_historyFlow);
         _historyFlow = StartCoroutine(ControlingHistoryFlowCoroutine());
 
@@ -92,49 +94,62 @@ public class HistoryFlowHandler : MonoBehaviour
         _isTipeTextComplete = true;
     }
 
+    private void OnDestroy()
+    {
+        _masterSave.SaveAllData();
+    }
+
     private IEnumerator ControlingHistoryFlowCoroutine()
     {
         _index = 0;
-        foreach (var storyLine in _gameData.DIalogSequenceStart.StoryHierarhy)
+        if (_gameData.DialogIndex != 0)
+        {
+            _index = _gameData.DialogIndex;
+        }
+            Debug.Log("Загрузка индекса " + _index);
+        for (int i = _index; i < _gameData.DIalogSequenceStart.StoryHierarhy.Count; i++)
         {
             CanWeGoNext = false;
-            if (storyLine.HeroType == HeroType.HeroLeft)
+            if (_gameData.DIalogSequenceStart.StoryHierarhy[_index].HeroType == HeroType.HeroLeft)
             {
                 _heroLeft.gameObject.SetActive(true);
-                _heroLeft.sprite = storyLine.HeroSprite;
+                _heroLeft.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_index].HeroSprite;
             }
 
-            if (storyLine.HeroType == HeroType.HeroRight)
+            if (_gameData.DIalogSequenceStart.StoryHierarhy[_index].HeroType == HeroType.HeroRight)
             {
                 _heroRight.gameObject.SetActive(true);
-                _heroRight.sprite = storyLine.HeroSprite;
+                _heroRight.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_index].HeroSprite;
             }
-            if (storyLine.ButtonSetting.Count > 0)
+            if (_gameData.DIalogSequenceStart.StoryHierarhy[_index].ButtonSetting.Count > 0)
             {
-                _buttonsHandler.ActivedButtons(storyLine.ButtonSetting, this);
+                _buttonsHandler.ActivedButtons(_gameData.DIalogSequenceStart.StoryHierarhy[_index].ButtonSetting, this);
                 CanWeGoNext = false;
 
             }
 
-            else if (storyLine.ButtonSetting.Count == 0)
+            else if (_gameData.DIalogSequenceStart.StoryHierarhy[_index].ButtonSetting.Count == 0)
             {
                 _buttonsHandler.DeActivatedButtons();
             }
-            if (storyLine.Notation.Length > 0)
+            if (_gameData.DIalogSequenceStart.StoryHierarhy[_index].Notation.Length > 0)
             {
-                StartCoroutine(_notationHandler.ActivaidNotation(storyLine.Notation));
+                StartCoroutine(_notationHandler.ActivaidNotation(_gameData.DIalogSequenceStart.StoryHierarhy[_index].Notation));
             }
 
 
-            _tipeText = StartCoroutine(TypeText(storyLine.Text));
-            _backGround.sprite = storyLine.Background;
+            _tipeText = StartCoroutine(TypeText(_gameData.DIalogSequenceStart.StoryHierarhy[_index].Text));
+            Debug.Log(_gameData.DIalogSequenceStart.StoryHierarhy[_index].Text);
+            _backGround.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_index].Background;
             yield return new WaitWhile(() => CanWeGoNext == false);
             _heroLeft.gameObject.SetActive(false);
             _heroRight.gameObject.SetActive(false);
             _index++;
+            if (_gameData.DIalogSequenceStart.StoryHierarhy.Count > _index)
+                _masterSave.CurrentProfile.DialogIndex = _index;
+            else
+                _masterSave.CurrentProfile.DialogIndex = 0;
         }
-
-
     }
 }
 

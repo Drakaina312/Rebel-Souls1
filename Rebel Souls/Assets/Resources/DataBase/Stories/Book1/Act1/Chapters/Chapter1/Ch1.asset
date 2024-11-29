@@ -50,3 +50,26 @@ MonoBehaviour:
     Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     Notation: "\u041C\u043E\u043B\u043E\u0434\u0435\u0446"
     Text: "\u041A\u0430\u043A\u0443\u0441\u044F"
+  - LineKey: 
+    HeroType: 0
+    ButtonSetting: []
+    HeroSprite: {fileID: 0}
+    Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
+    Notation: ttt
+    Text: Test1
+  - LineKey: 
+    HeroType: 0
+    ButtonSetting: []
+    HeroSprite: {fileID: 0}
+    Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
+    Notation: 
+    Text: Test2
+  - LineKey: 
+    HeroType: 0
+    ButtonSetting: []
+    HeroSprite: {fileID: 0}
+    Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
+    Notation: 
+    Text: Test3
+  PathToFile: DataBase/Stories/Book1/Act1/Chapters/Chapter1/Ch1
+  DialogIndex: 0

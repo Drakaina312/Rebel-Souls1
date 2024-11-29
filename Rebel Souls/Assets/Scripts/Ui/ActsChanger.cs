@@ -65,6 +65,7 @@ public class ActsChanger : MonoBehaviour
     private void AddActionOnChapterClick(DialogSequence dialogSequence)
     {
         _inGameDataBase.DIalogSequenceStart = dialogSequence;
+        _masterSave.CurrentProfile.LastSaveChapterPath = dialogSequence.PathToFile;
         _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_inGameDataBase.ActStatistics, dialogSequence.ChapterSortingCondition);
 
         SceneManager.LoadScene(1);
@@ -72,6 +73,7 @@ public class ActsChanger : MonoBehaviour
     private void AddActionOnChapterClick(DialogSequence dialogSequence, DialogSequence previousChapter)
     {
         _inGameDataBase.DIalogSequenceStart = dialogSequence;
+        _masterSave.CurrentProfile.LastSaveChapterPath = dialogSequence.PathToFile;
         _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_inGameDataBase.ActStatistics, dialogSequence.ChapterSortingCondition, previousChapter);
 
         SceneManager.LoadScene(1);

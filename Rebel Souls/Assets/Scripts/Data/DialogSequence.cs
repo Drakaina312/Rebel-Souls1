@@ -8,6 +8,8 @@ public class DialogSequence : ScriptableObject
 {
     public ChapterSortingConditions ChapterSortingCondition;
     public List<StoryHierarhy> StoryHierarhy;
+    public string PathToFile;
+    public int DialogIndex;
 }
 
 [Serializable]
@@ -30,15 +32,15 @@ public struct ButtonSetting
     public DialogSequence HistoryPattern;
     public bool IsStatAdder;
     public List<StatKit> StatKit;
-    
+
 
 }
 [Serializable]
-public struct StatKit 
-    {
+public struct StatKit
+{
     public string StatName;
     public int Statpoint;
-    }
+}
 
 [Serializable]
 public struct ChapterSortingConditions
