@@ -7,4 +7,6 @@ using UnityEngine;
 public class ActStatistics : ScriptableObject
 {
     public List<StatisticInfo> ActStats;
+
+    public List<LoverInfo> ActLovers;
 }

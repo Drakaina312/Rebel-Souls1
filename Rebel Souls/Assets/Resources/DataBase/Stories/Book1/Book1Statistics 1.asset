@@ -29,3 +29,5 @@ MonoBehaviour:
     StatisticCount: 10
     IsRelationship: 1
     StatisticSprite: {fileID: 21300000, guid: f10dbd4f930ac4bf9815b0497caad2ab, type: 3}
+  ActLovers:
+  - {fileID: 11400000, guid: 5633f97183da1de409c3a1a687e2affd, type: 2}
