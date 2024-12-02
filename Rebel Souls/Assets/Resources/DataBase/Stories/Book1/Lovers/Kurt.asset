@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kurt
   m_EditorClassIdentifier: 
   LoverName: "\u041A\u0443\u0440\u0442"
-  LoverViewSprite: {fileID: -1287387310403523716, guid: ae9f679cebf131949a466ef7927d923c, type: 3}
+  LoverViewSprite: {fileID: -5661550920002325707, guid: a2025bfe963268340955772e0661d966, type: 3}
   LoverProfile: {fileID: -2869568011951764890, guid: d6bcb80ce00254048b9aa0bdb60cae4f, type: 3}
   RelationShipsInfo:
   - MinValue: -5
