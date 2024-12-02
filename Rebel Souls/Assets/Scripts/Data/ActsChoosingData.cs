@@ -21,4 +21,5 @@ public struct ActsInfo
     public string ActsName;
     public ChaptersChoosingData ChaptersToLoadData;
     public ActStatistics ActStatistics;
+    public Sprite BGChapter;
 }

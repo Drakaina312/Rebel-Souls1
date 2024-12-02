@@ -6749,6 +6749,7 @@ MonoBehaviour:
     ActsDisc: {fileID: 393090911}
     ActsButton: {fileID: 1794778945}
   ChaptersPanel: {fileID: 32323432}
+  BGShapters: {fileID: 1446009019}
 --- !u!1 &148570985
 GameObject:
   m_ObjectHideFlags: 0
@@ -8052,7 +8053,7 @@ GameObject:
   - component: {fileID: 223859315}
   - component: {fileID: 223859314}
   m_Layer: 0
-  m_Name: Image
+  m_Name: StatusImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9272,7 +9273,7 @@ GameObject:
   - component: {fileID: 396616303}
   - component: {fileID: 396616302}
   m_Layer: 0
-  m_Name: Image
+  m_Name: LoverProfile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16665,6 +16666,7 @@ MonoBehaviour:
   - Image: {fileID: 165768999}
     Button: {fileID: 165769001}
   _loverInfoholder: {fileID: 1146612406}
+  _bGLovers: {fileID: 1144721686}
 --- !u!1 &1146612402
 GameObject:
   m_ObjectHideFlags: 0
@@ -16757,6 +16759,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _descriptionComponent: {fileID: 1860826535}
   _image: {fileID: 1036316692}
+  _loverProfile: {fileID: 396616302}
+  _statusRelationShip: {fileID: 1608415499}
 --- !u!1 &1155300052
 GameObject:
   m_ObjectHideFlags: 0
@@ -17012,6 +17016,7 @@ MonoBehaviour:
   - {fileID: 1865615127}
   - {fileID: 1767308989}
   - {fileID: 96798845}
+  _bGGStatistic: {fileID: 1165586429}
 --- !u!1 &1188792438
 GameObject:
   m_ObjectHideFlags: 0
@@ -21955,7 +21960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0414\u0440\u0443\u0436\u0431\u0430"
+  m_text: "\u041D\u0435\u0439\u0442\u0440\u0430\u043B\u0438\u0442\u0435\u0442 \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22046,7 +22051,7 @@ GameObject:
   - component: {fileID: 1621527043}
   - component: {fileID: 1621527042}
   m_Layer: 0
-  m_Name: Image
+  m_Name: DiscImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22732,7 +22737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1038.6345, y: -0.00024414062}
+  m_AnchoredPosition: {x: 1045.4635, y: -0.00024414062}
   m_SizeDelta: {x: 2075.574, y: 0.00048828}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678172188
@@ -24642,7 +24647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 36099.676, y: -0.00024414062}
+  m_AnchoredPosition: {x: 41492.61, y: -0.00024414062}
   m_SizeDelta: {x: 4376.9795, y: -0.00048828}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797849308

@@ -16,6 +16,7 @@ public class StatisticShower : MonoBehaviour
     private InGameDataBase _inGameDataBase;
     [SerializeField]
     private List<Image> _statsImage;
+    [SerializeField] private Image _bGGStatistic;
 
     [Inject]
     private void Construct(MasterSave masterSave, InGameDataBase inGameDataBase)
@@ -25,6 +26,7 @@ public class StatisticShower : MonoBehaviour
     }
     public void ShowStats()
     {
+        _bGGStatistic.sprite = _inGameDataBase.ActStatistics.BGStatistic;
         StatsBook statsBook = _masterSave.CurrentProfile.BooksStat
             .FirstOrDefault(predict => predict.IsLastSave == true && predict.ChapterSortingConditions.BookName == _inGameDataBase.BookName);
 

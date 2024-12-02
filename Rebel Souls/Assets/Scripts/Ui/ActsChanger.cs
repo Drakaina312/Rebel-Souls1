@@ -12,6 +12,7 @@ public class ActsChanger : MonoBehaviour
     public ChaptersPanelInfo ChaptersPanel;
     private InGameDataBase _inGameDataBase;
     private MasterSave _masterSave;
+    public Image BGShapters;
 
     [Inject]
     public void Construct(InGameDataBase inGameDataBase, MasterSave masterSave)
@@ -36,6 +37,7 @@ public class ActsChanger : MonoBehaviour
 
     private void StartAct(ActsInfo act)
     {
+        BGShapters.sprite = act.BGChapter;
         Debug.Log(" Открытие глав ");
         ChaptersPanel.gameObject.SetActive(true);
         _inGameDataBase.ActStatistics = act.ActStatistics;

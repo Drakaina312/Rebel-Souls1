@@ -6,4 +6,5 @@ public class InGameDataBase
     public ActStatistics ActStatistics;
     public string BookName;
     public int DialogIndex;
+  
 }

@@ -9,4 +9,8 @@ public class ActStatistics : ScriptableObject
     public List<StatisticInfo> ActStats;
 
     public List<LoverInfo> ActLovers;
+
+    public Sprite BGLovers;
+
+    public Sprite BGStatistic;
 }
