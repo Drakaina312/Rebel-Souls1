@@ -29,6 +29,17 @@ MonoBehaviour:
         Statpoint: 1
       - StatName: "\u0414\u0438\u043A\u0442\u0430\u0442\u0443\u0440\u0430"
         Statpoint: -1
+      IsFalseChoice: 1
+      FalseChoice:
+      - LineKey: 
+        HeroType: 0
+        ButtonSetting: []
+        HeroSprite: {fileID: 7199705072138568028, guid: c25916e57b0044743abb78869f6cd09f, type: 3}
+        Background: {fileID: -7070431899882351391, guid: 2a4d7b85dfb38cc44aa648f438235595, type: 3}
+        Notation: "\u041C\u043E\u043B\u043E\u0434\u0435\u0446!"
+        Text: "\u041B\u0443\u043F\u043A\u0430!"
+        IsFalseChoiseFinish: 1
+        IndexToStartFlow: 1
     - StoryKey: 
       ButtonsName: "\u041D\u0435\u0442"
       HelpSprite: {fileID: 21300000, guid: 34a018c159c22413aaa0d6ffbb52ebaf, type: 3}
@@ -39,17 +50,23 @@ MonoBehaviour:
         Statpoint: -1
       - StatName: "\u0414\u0438\u043A\u0442\u0430\u0442\u0443\u0440\u0430"
         Statpoint: 1
+      IsFalseChoice: 0
+      FalseChoice: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     Notation: 
     Text: "\u041F\u0440\u0438\u0432\u0435\u0442!"
+    IsFalseChoiseFinish: 0
+    IndexToStartFlow: 0
   - LineKey: 
     HeroType: 0
     ButtonSetting: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
-    Notation: "\u041C\u043E\u043B\u043E\u0434\u0435\u0446"
+    Notation: "\u0423\u0440\u0430!"
     Text: "\u041A\u0430\u043A\u0443\u0441\u044F"
+    IsFalseChoiseFinish: 0
+    IndexToStartFlow: 0
   - LineKey: 
     HeroType: 0
     ButtonSetting: []
@@ -57,6 +74,8 @@ MonoBehaviour:
     Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     Notation: ttt
     Text: Test1
+    IsFalseChoiseFinish: 0
+    IndexToStartFlow: 0
   - LineKey: 
     HeroType: 0
     ButtonSetting: []
@@ -64,6 +83,8 @@ MonoBehaviour:
     Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     Notation: 
     Text: Test2
+    IsFalseChoiseFinish: 0
+    IndexToStartFlow: 0
   - LineKey: 
     HeroType: 0
     ButtonSetting: []
@@ -71,5 +92,6 @@ MonoBehaviour:
     Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     Notation: 
     Text: Test3
+    IsFalseChoiseFinish: 0
+    IndexToStartFlow: 0
   PathToFile: DataBase/Stories/Book1/Act1/Chapters/Chapter1/Ch1
-  DialogIndex: 0

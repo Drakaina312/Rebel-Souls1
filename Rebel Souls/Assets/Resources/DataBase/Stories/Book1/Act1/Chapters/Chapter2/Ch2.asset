@@ -25,6 +25,23 @@ MonoBehaviour:
       HistoryPattern: {fileID: 0}
       IsStatAdder: 0
       StatKit: []
+      IsFalseChoice: 1
+      FalseChoice:
+      - LineKey: 
+        HeroType: 0
+        ButtonSetting: []
+        HeroSprite: {fileID: 0}
+        Background: {fileID: 0}
+        Notation: 
+        Text: 
+    - StoryKey: 
+      ButtonsName: 
+      HelpSprite: {fileID: 0}
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoice: []
     HeroSprite: {fileID: 0}
     Background: {fileID: 7199705072138568028, guid: c25916e57b0044743abb78869f6cd09f, type: 3}
     Notation: "\u043F\u0443\u043F\u043A\u0430"

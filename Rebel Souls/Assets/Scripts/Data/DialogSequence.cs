@@ -22,6 +22,8 @@ public struct StoryHierarhy
     public Sprite Background;
     [TextArea(1, 3)] public string Notation;
     [TextArea(1, 10)] public string Text;
+    public bool IsFalseChoiseFinish;
+    public int IndexToStartFlow;
 }
 [Serializable]
 public struct ButtonSetting
@@ -32,6 +34,9 @@ public struct ButtonSetting
     public DialogSequence HistoryPattern;
     public bool IsStatAdder;
     public List<StatKit> StatKit;
+    public bool IsFalseChoice;
+    public List<StoryHierarhy> FalseChoice;
+    
 
 
 }

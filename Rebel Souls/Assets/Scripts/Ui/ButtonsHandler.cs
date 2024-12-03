@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ public class ButtonsHandler : MonoBehaviour
         }
     }
 
-    internal void ActivedButtons(List<ButtonSetting> buttonSetting, HistoryFlowHandler historyFlowHandler)
+    public void ActivedButtons(List<ButtonSetting> buttonSetting, HistoryFlowHandler historyFlowHandler)
     {
         switch (buttonSetting.Count)
         {
@@ -74,24 +75,131 @@ public class ButtonsHandler : MonoBehaviour
                 _buttons[index].HelpImage.sprite = button.HelpSprite;
             _buttons[index].Button.onClick.AddListener(() =>
             {
-                if (button.IsStatAdder == false)
+                if (button.IsFalseChoice)
                 {
-                    historyFlowHandler.ChangeFlowHistory(button.HistoryPattern);
-                    historyFlowHandler.CanWeGoNext = true;
+                    Debug.Log("Is False Choise");
+                    historyFlowHandler.StopCoroutine(historyFlowHandler.HistoryFlow);
+                    if (button.IsStatAdder == true)
+                    {
+                        StatsBook statisticToWork = _masterSave.CurrentProfile.FindChapterStatsFromSave(_inGameDataBase.DIalogSequenceStart.ChapterSortingCondition);
+                        foreach (var item in button.StatKit)
+                        {
+                            ChangeStat(item, statisticToWork.Statistics, historyFlowHandler);
+                        }
+                        Debug.Log("brfore await");
+                        historyFlowHandler.CanWeGoNext = false;
+                        historyFlowHandler.FalseChoiseAsync(button.FalseChoice).Forget();
+                        Debug.Log("after await");
+                    }
+                    else
+                    {
+                        historyFlowHandler.CanWeGoNext = false;
+                        historyFlowHandler.FalseChoiseAsync(button.FalseChoice).Forget();
+                    }
                 }
                 else
                 {
-                    if (button.HistoryPattern != null)
+                    Debug.Log("Go NExt Slide");
+                    if (button.IsStatAdder == false)
                     {
                         historyFlowHandler.ChangeFlowHistory(button.HistoryPattern);
+                        historyFlowHandler.CanWeGoNext = true;
                     }
-                    StatsBook statisticToWork = _masterSave.CurrentProfile.FindChapterStatsFromSave(_inGameDataBase.DIalogSequenceStart.ChapterSortingCondition);
-                    foreach (var item in button.StatKit)
+                    else
                     {
-                        ChangeStat(item, statisticToWork.Statistics, historyFlowHandler);
-                    }
+                        if (button.HistoryPattern != null)
+                        {
+                            historyFlowHandler.ChangeFlowHistory(button.HistoryPattern);
+                        }
+                        StatsBook statisticToWork = _masterSave.CurrentProfile.FindChapterStatsFromSave(_inGameDataBase.DIalogSequenceStart.ChapterSortingCondition);
+                        foreach (var item in button.StatKit)
+                        {
+                            ChangeStat(item, statisticToWork.Statistics, historyFlowHandler);
+                        }
 
+                    }
                 }
+
+            });
+
+            index++;
+        }
+
+    }
+    public async UniTask ActivedButtonsAsync(List<ButtonSetting> buttonSetting, HistoryFlowHandler historyFlowHandler)
+    {
+        switch (buttonSetting.Count)
+        {
+            case 2:
+                _layoutGroup.padding.top = 300;
+                _layoutGroup.padding.bottom = 300;
+                _layoutGroup.spacing = 100;
+                break;
+
+            case 3:
+                _layoutGroup.padding.top = 150;
+                _layoutGroup.padding.bottom = 150;
+                _layoutGroup.spacing = 100;
+                break;
+            case 4:
+                _layoutGroup.padding.top = 50;
+                _layoutGroup.padding.bottom = 50;
+                _layoutGroup.spacing = 75;
+                break;
+            case 5:
+                _layoutGroup.padding.top = 0;
+                _layoutGroup.padding.bottom = 0;
+                _layoutGroup.spacing = 50;
+                break;
+
+            default: break;
+        }
+        int index = 0;
+        Debug.Log(buttonSetting.Count);
+        foreach (var button in buttonSetting)
+        {
+            _buttons[index].gameObject.SetActive(true);
+            _buttons[index].ButtonName.text = button.ButtonsName;
+            //Если включены подсказки, то выполняем строку 71, иначе мы должны выключить хелпимэйдж.
+            _buttons[index].HelpImage.gameObject.SetActive(true);
+            if (button.HelpSprite != null)
+                _buttons[index].HelpImage.sprite = button.HelpSprite;
+            _buttons[index].Button.onClick.AddListener(async () =>
+            {
+                if (button.IsFalseChoice)
+                {
+                    if (button.IsStatAdder == true)
+                    {
+                        StatsBook statisticToWork = _masterSave.CurrentProfile.FindChapterStatsFromSave(_inGameDataBase.DIalogSequenceStart.ChapterSortingCondition);
+                        foreach (var item in button.StatKit)
+                        {
+                            ChangeStat(item, statisticToWork.Statistics, historyFlowHandler);
+                        }
+                        await historyFlowHandler.FalseChoiseAsync(button.FalseChoice);
+                    }
+                }
+                else
+                {
+                    if (button.IsStatAdder == false)
+                    {
+                        historyFlowHandler.ChangeFlowHistory(button.HistoryPattern);
+                        historyFlowHandler.CanWeGoNext = true;
+                    }
+                    else
+                    {
+                        if (button.HistoryPattern != null)
+                        {
+                            historyFlowHandler.ChangeFlowHistory(button.HistoryPattern);
+                        }
+                        StatsBook statisticToWork = _masterSave.CurrentProfile.FindChapterStatsFromSave(_inGameDataBase.DIalogSequenceStart.ChapterSortingCondition);
+                        foreach (var item in button.StatKit)
+                        {
+                            ChangeStat(item, statisticToWork.Statistics, historyFlowHandler);
+                        }
+
+                    }
+                }
+
             });
 
             index++;
