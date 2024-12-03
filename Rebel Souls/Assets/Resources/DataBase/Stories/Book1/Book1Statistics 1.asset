@@ -13,24 +13,40 @@ MonoBehaviour:
   m_Name: Book1Statistics 1
   m_EditorClassIdentifier: 
   ActStats:
-  - StatisticName: "\u0410\u043D\u0430\u0440\u0445\u0438\u044F"
-    StatisticCount: 2
+  - StatisticName: "\u0421\u0430\u043D\u0433\u0432\u0438\u043D\u0438\u043A"
+    StatisticCount: 0
     IsRelationship: 0
-    StatisticSprite: {fileID: 21300000, guid: 08ee960f79710494fab8bf3c20c0eda0, type: 3}
-  - StatisticName: "\u0414\u0438\u043A\u0442\u0430\u0442\u0443\u0440\u0430"
-    StatisticCount: 4
+    StatisticSprite: {fileID: 2851698916342810265, guid: 11b728a8569eb2e4495ea89a4d6389d6, type: 3}
+  - StatisticName: "\u0425\u043E\u043B\u0435\u0440\u0438\u043A"
+    StatisticCount: 0
     IsRelationship: 0
-    StatisticSprite: {fileID: 21300000, guid: c2dc44a779df04428bad657ce7a6e35e, type: 3}
-  - StatisticName: "\u0420\u0435\u0432\u043E\u043B\u044E\u0446\u0438\u044F"
-    StatisticCount: 2
+    StatisticSprite: {fileID: -3419761631973174172, guid: 2d68f54e63de04a4bbf555e70c03ac9f, type: 3}
+  - StatisticName: "\u0424\u043B\u0435\u0433\u043C\u0430\u0442\u0438\u043A"
+    StatisticCount: 0
     IsRelationship: 0
-    StatisticSprite: {fileID: 21300000, guid: fffc7108ec6ed4d6c95ff4721d05032c, type: 3}
-  - StatisticName: "\u041A\u0443\u0440\u0442"
-    StatisticCount: -1
+    StatisticSprite: {fileID: -850937526113023370, guid: afb757aa601520141a25e08e6f79073c, type: 3}
+  - StatisticName: "\u041C\u0435\u043B\u0430\u043D\u0445\u043E\u043B\u0438\u043A"
+    StatisticCount: 0
+    IsRelationship: 0
+    StatisticSprite: {fileID: -6480982972919146180, guid: d81cb2f9385cdfe428942a19b6d0c1c1, type: 3}
+  - StatisticName: "\u0417\u0430 \u0441\u0438\u0441\u0442\u0435\u043C\u0443"
+    StatisticCount: 0
+    IsRelationship: 0
+    StatisticSprite: {fileID: 7570739569938414890, guid: 98976361a99a26d46b4d9b6cac731849, type: 3}
+  - StatisticName: "\u041F\u0440\u043E\u0442\u0438\u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u044B"
+    StatisticCount: 0
+    IsRelationship: 0
+    StatisticSprite: {fileID: -6533676369333020898, guid: 28d234093a4d21e4eb4d551300055caa, type: 3}
+  - StatisticName: "\u0410\u0432\u0442\u043E\u0440\u0438\u0442\u0435\u0442"
+    StatisticCount: 0
+    IsRelationship: 0
+    StatisticSprite: {fileID: 8370070712509212132, guid: 242c57e58b719094a81d69de1362792a, type: 3}
+  - StatisticName: "\u042F\u043A\u0430\u043C\u043E\u0437"
+    StatisticCount: 0
     IsRelationship: 1
     StatisticSprite: {fileID: 21300000, guid: f10dbd4f930ac4bf9815b0497caad2ab, type: 3}
-  - StatisticName: "\u042F\u043A\u0430\u043C\u043E\u0437"
-    StatisticCount: 12
+  - StatisticName: "\u041A\u0443\u0440\u0442"
+    StatisticCount: 0
     IsRelationship: 1
     StatisticSprite: {fileID: 21300000, guid: f10dbd4f930ac4bf9815b0497caad2ab, type: 3}
   ActLovers:
