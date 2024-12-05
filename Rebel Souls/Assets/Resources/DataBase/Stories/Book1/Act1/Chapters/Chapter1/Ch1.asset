@@ -16,80 +16,154 @@ MonoBehaviour:
     BookName: O.V
     ChapterName: "1 \u0433\u043B\u0430\u0432\u0430"
   StoryHierarhy:
-  - LineKey: 
+  - Background: {fileID: 1174810564343479936, guid: 354be73521c66fc4f96a45ae56b7f811, type: 3}
     HeroType: 0
+    HeroSprite: {fileID: 21300000, guid: a0763070a38e2464db1bf122c3bdcd3f, type: 3}
+    IsHaveButtons: 1
     ButtonSetting:
-    - StoryKey: 
-      ButtonsName: "\u0414\u0430"
+    - ButtonsName: "\u0414\u0430"
+      IsHaveHelpSprite: 0
       HelpSprite: {fileID: 21300000, guid: 37fcc48615bd740a68ea6dead3d9ab11, type: 3}
+      IsLineSplitter: 0
       HistoryPattern: {fileID: 0}
-      IsStatAdder: 1
+      IsStatAdder: 0
       StatKit:
       - StatName: "\u0410\u043D\u0430\u0440\u0445\u0438\u044F"
         Statpoint: 1
       - StatName: "\u0414\u0438\u043A\u0442\u0430\u0442\u0443\u0440\u0430"
         Statpoint: -1
       IsFalseChoice: 1
-      FalseChoice:
-      - LineKey: 
+      FalseChoiceLines:
+      - _background: {fileID: 21300000, guid: e9a25d1c047e84759a65a8267124decb, type: 3}
         HeroType: 0
-        ButtonSetting: []
-        HeroSprite: {fileID: 7199705072138568028, guid: c25916e57b0044743abb78869f6cd09f, type: 3}
-        Background: {fileID: -7070431899882351391, guid: 2a4d7b85dfb38cc44aa648f438235595, type: 3}
-        Notation: "\u041C\u043E\u043B\u043E\u0434\u0435\u0446!"
-        Text: "\u041B\u0443\u043F\u043A\u0430!"
-        IsFalseChoiseFinish: 1
-        IndexToStartFlow: 1
-    - StoryKey: 
-      ButtonsName: "\u041D\u0435\u0442"
+        HeroSprite: {fileID: 0}
+        _isHaveButtons: 0
+        _falseChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        _text: FF
+      - _background: {fileID: 21300000, guid: 2bb9d223ebe78423fa46d3645211e351, type: 3}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        _isHaveButtons: 0
+        _falseChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        _text: GG
+      IsCircleChoise: 0
+      CircleChoiceLines: []
+    - ButtonsName: "\u041D\u0435\u0442"
+      IsHaveHelpSprite: 0
       HelpSprite: {fileID: 21300000, guid: 34a018c159c22413aaa0d6ffbb52ebaf, type: 3}
+      IsLineSplitter: 0
       HistoryPattern: {fileID: 0}
-      IsStatAdder: 1
+      IsStatAdder: 0
       StatKit:
       - StatName: "\u0410\u043D\u0430\u0440\u0445\u0438\u044F"
         Statpoint: -1
       - StatName: "\u0414\u0438\u043A\u0442\u0430\u0442\u0443\u0440\u0430"
         Statpoint: 1
       IsFalseChoice: 0
-      FalseChoice: []
-    HeroSprite: {fileID: 0}
-    Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
+      FalseChoiceLines:
+      - _background: {fileID: 0}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        _isHaveButtons: 0
+        _falseChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        _text: 
+      IsCircleChoise: 0
+      CircleChoiceLines:
+      - _background: {fileID: 0}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        _isHaveButtons: 0
+        _falseChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        _text: 
+    IsHaveNotation: 0
     Notation: 
-    Text: "\u041F\u0440\u0438\u0432\u0435\u0442!"
+    Text: "\u0427\u0442\u043E \u0434\u0435\u043B\u0430\u0442\u044C? \u041B\u043E\u0436\u043D\u044B\u0439
+      \u0432\u044B\u0431\u043E\u0440 "
     IsFalseChoiseFinish: 0
     IndexToStartFlow: 0
-  - LineKey: 
+  - Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     HeroType: 0
-    ButtonSetting: []
     HeroSprite: {fileID: 0}
-    Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
+    IsHaveButtons: 1
+    ButtonSetting:
+    - ButtonsName: "\u0412\u044B\u0431\u043E\u04401"
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 1
+      CircleChoiceLines:
+      - _background: {fileID: 7199705072138568028, guid: c25916e57b0044743abb78869f6cd09f, type: 3}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        _isHaveButtons: 0
+        _falseChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        _text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 1"
+    - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 2"
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 1
+      CircleChoiceLines:
+      - _background: {fileID: 21300000, guid: 624b2a9ee1e1143bc96c2c57f60ba839, type: 3}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        _isHaveButtons: 0
+        _falseChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        _text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 2"
+    IsHaveNotation: 0
     Notation: "\u0423\u0440\u0430!"
-    Text: "\u041A\u0430\u043A\u0443\u0441\u044F"
+    Text: "\u0427\u0442\u043E \u0434\u0435\u043B\u0430\u0442\u044C? \u0426\u0438\u043A\u043B\u0438\u0447\u043D\u044B\u0439
+      \u0432\u044B\u0431\u043E\u0440 "
     IsFalseChoiseFinish: 0
     IndexToStartFlow: 0
-  - LineKey: 
+  - Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     HeroType: 0
-    ButtonSetting: []
     HeroSprite: {fileID: 0}
-    Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
     Notation: ttt
     Text: Test1
     IsFalseChoiseFinish: 0
     IndexToStartFlow: 0
-  - LineKey: 
+  - Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     HeroType: 0
-    ButtonSetting: []
     HeroSprite: {fileID: 0}
-    Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
     Notation: 
     Text: Test2
     IsFalseChoiseFinish: 0
     IndexToStartFlow: 0
-  - LineKey: 
+  - Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     HeroType: 0
-    ButtonSetting: []
     HeroSprite: {fileID: 0}
-    Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
     Notation: 
     Text: Test3
     IsFalseChoiseFinish: 0

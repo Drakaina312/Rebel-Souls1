@@ -1,7 +1,4 @@
-using Cysharp.Threading.Tasks;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,25 +7,31 @@ using Zenject;
 
 public class HistoryFlowHandler : MonoBehaviour
 {
+    [HideInInspector] public bool CanWeGoNext;
+    [HideInInspector] public bool CanWeGoNextFalseChoise;
+    [HideInInspector] public bool IsFunneChoiseActive;
+
+
+    [SerializeField] private NotationHandler _notationHandler;
+    [SerializeField] private TextResizer _textResizer;
+    [SerializeField] private ButtonsHandler _buttonsHandler;
+    [SerializeField] private FunnelHandler _funnelHandler;
+
+
     [SerializeField] private TextMeshProUGUI _textArea;
     [SerializeField] private Image _backGround;
+    [SerializeField] private Image _heroLeft;
+    [SerializeField] private Image _heroRight;
     [SerializeField] private float _tipingSpeed;
+
+
     private WaitForSeconds _sleepTime;
     private InGameDataBase _gameData;
     private MasterSave _masterSave;
-    [HideInInspector] public bool CanWeGoNext;
-    [HideInInspector] public bool CanWeGoNextFalseChoise;
-
     private bool _isTipeTextComplete;
-    private int _index;
+    private int _dialogIndex;
     private Coroutine _tipeText;
-    public Coroutine HistoryFlow;
-    [SerializeField] private NotationHandler _notationHandler;
-    [SerializeField] private Image _heroLeft;
-    [SerializeField] private Image _heroRight;
-    [SerializeField] private ButtonsHandler _buttonsHandler;
-    [SerializeField] private TextResizer _textResizer;
-    private bool _isWeHaveButtons;
+    internal bool IsMainFlowActive;
 
     [Inject]
     private void Construct(InGameDataBase gameData, InputSystem_Actions input, MasterSave masterSave)
@@ -41,10 +44,9 @@ public class HistoryFlowHandler : MonoBehaviour
 
     private void Start()
     {
-
-        HistoryFlow = StartCoroutine(ControlingHistoryFlowCoroutine());
         _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_gameData.ActStatistics, _gameData.DIalogSequenceStart.ChapterSortingCondition);
         _masterSave.SaveAllData();
+        ShowDialoge(_dialogIndex);
     }
 
     public void ChangeFlowHistory(DialogSequence historyPattern)
@@ -52,98 +54,51 @@ public class HistoryFlowHandler : MonoBehaviour
         _gameData.DIalogSequenceStart = historyPattern;
         _masterSave.CurrentProfile.DialogIndex = 0;
         _masterSave.CurrentProfile.LastSaveChapterPath = historyPattern.PathToFile;
-        StopCoroutine(HistoryFlow);
-        HistoryFlow = StartCoroutine(ControlingHistoryFlowCoroutine());
 
-    }
-
-    public async UniTask FalseChoiseAsync(List<StoryHierarhy> storyHierarhies)
-    {
-        _index = 0;
-        Debug.Log("False Chaoise Async");
-        for (int i = _index; i < storyHierarhies.Count; i++)
-        {
-            CanWeGoNext = false;
-            Debug.Log(_index);
-            if (storyHierarhies[_index].HeroType == HeroType.HeroLeft)
-            {
-                _heroLeft.gameObject.SetActive(true);
-                _heroLeft.sprite = storyHierarhies[_index].HeroSprite;
-            }
-
-            if (storyHierarhies[_index].HeroType == HeroType.HeroRight)
-            {
-                _heroRight.gameObject.SetActive(true);
-                _heroRight.sprite = storyHierarhies[_index].HeroSprite;
-            }
-
-            if (storyHierarhies[_index].ButtonSetting.Count > 0)
-            {
-                await _buttonsHandler.ActivedButtonsAsync(storyHierarhies[_index].ButtonSetting, this);
-                CanWeGoNextFalseChoise = false;
-            }
-            else if (storyHierarhies[_index].ButtonSetting.Count == 0)
-            {
-                _buttonsHandler.DeActivatedButtons();
-            }
-
-            if (storyHierarhies[_index].Notation.Length > 0)
-            {
-                StartCoroutine(_notationHandler.ActivaidNotation(storyHierarhies[_index].Notation));
-            }
-
-
-            _tipeText = StartCoroutine(TypeText(storyHierarhies[_index].Text));
-            Debug.Log(_tipeText);
-            _backGround.sprite = storyHierarhies[_index].Background;
-
-
-            await UniTask.WaitWhile(() => CanWeGoNextFalseChoise == false);
-
-            _heroLeft.gameObject.SetActive(false);
-            _heroRight.gameObject.SetActive(false);
-            if (storyHierarhies[_index].IsFalseChoiseFinish)
-            {
-                _gameData.DialogIndex = storyHierarhies[_index].IndexToStartFlow;
-                HistoryFlow = StartCoroutine(ControlingHistoryFlowCoroutine());
-                //CanWeGoNext = true;
-            }
-            _index++;
-            //if (storyHierarhies.Count > _index)
-            //    _masterSave.CurrentProfile.DialogIndex = _index;
-            //else
-            //    _masterSave.CurrentProfile.DialogIndex = 0;
-
-            // Сохранение и загрузка воронки
-        }
+        ShowDialoge(0);
     }
 
     private void SwipeStory(InputAction.CallbackContext context)
     {
+
+        if (IsFunneChoiseActive)
+        {
+            _funnelHandler.SwipeDialog();
+            return;
+        }
+
+        if (!IsMainFlowActive)
+            return;
+
+        MoveToNextDialog();
+    }
+
+    public void MoveToNextDialog()
+    {
         if (_isTipeTextComplete)
         {
-            if (CanWeGoNextFalseChoise)
-                CanWeGoNext = true;
-            CanWeGoNextFalseChoise = true;
+            _dialogIndex += 1;
+            ShowDialoge(_dialogIndex);
+
             _notationHandler.DeActivaidNotation();
         }
         else
         {
             StartCoroutine(TipeFullText());
         }
-
-
     }
 
     private IEnumerator TipeFullText()
     {
-        StopCoroutine(_tipeText);
-        _textArea.text = _gameData.DIalogSequenceStart.StoryHierarhy[_index].Text;
-        _isTipeTextComplete = true;
-        Debug.Log("конец печати");
-        yield return new WaitForSeconds(0.01f);
+        if (!_isTipeTextComplete)
+        {
+            StopCoroutine(_tipeText);
+            _textArea.text = _gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Text;
+            _isTipeTextComplete = true;
+            yield return new WaitForSeconds(0.01f);
 
-        _textResizer.UpdateSize();
+            _textResizer.UpdateSize();
+        }
     }
     private IEnumerator TypeText(string fullText)
     {
@@ -154,68 +109,55 @@ public class HistoryFlowHandler : MonoBehaviour
             _textArea.text += fullText[i];
             _textResizer.UpdateSize();
             yield return _sleepTime;
-
         }
 
         _isTipeTextComplete = true;
     }
 
+    private void ShowDialoge(int indexToShow)
+    {
+        Debug.Log("Index = " + indexToShow);
+        _backGround.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].Background;
+
+        ShowHeroyOnScene(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow]);
+
+        _buttonsHandler.ActivedButtons(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow], this);
+
+
+        if (_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].IsHaveNotation)
+            StartCoroutine(_notationHandler.ActivaidNotation(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].Notation));
+
+        _tipeText = StartCoroutine(TypeText(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].Text));
+
+
+        if (_gameData.DIalogSequenceStart.StoryHierarhy.Count > indexToShow)
+            _masterSave.CurrentProfile.DialogIndex = indexToShow;
+        else
+            _masterSave.CurrentProfile.DialogIndex = 0;
+
+        _dialogIndex = indexToShow;
+    }
+
+    private void ShowHeroyOnScene(StoryHierarhy storyHierarhy)
+    {
+        _heroLeft.gameObject.SetActive(false);
+        _heroRight.gameObject.SetActive(false);
+
+        switch (storyHierarhy.HeroType)
+        {
+            case HeroType.HeroLeft:
+                _heroLeft.gameObject.SetActive(true);
+                _heroLeft.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].HeroSprite;
+                break;
+            case HeroType.HeroRight:
+                _heroRight.gameObject.SetActive(true);
+                _heroRight.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].HeroSprite;
+                break;
+        }
+    }
     private void OnDestroy()
     {
         _masterSave.SaveAllData();
-    }
-
-    private IEnumerator ControlingHistoryFlowCoroutine()
-    {
-        _index = 0;
-        if (_gameData.DialogIndex != 0)
-        {
-            _index = _gameData.DialogIndex;
-        }
-        Debug.Log("Загрузка индекса " + _index);
-        for (int i = _index; i < _gameData.DIalogSequenceStart.StoryHierarhy.Count; i++)
-        {
-            CanWeGoNext = false;
-            if (_gameData.DIalogSequenceStart.StoryHierarhy[_index].HeroType == HeroType.HeroLeft)
-            {
-                _heroLeft.gameObject.SetActive(true);
-                _heroLeft.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_index].HeroSprite;
-            }
-
-            if (_gameData.DIalogSequenceStart.StoryHierarhy[_index].HeroType == HeroType.HeroRight)
-            {
-                _heroRight.gameObject.SetActive(true);
-                _heroRight.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_index].HeroSprite;
-            }
-            if (_gameData.DIalogSequenceStart.StoryHierarhy[_index].ButtonSetting.Count > 0)
-            {
-                _buttonsHandler.ActivedButtons(_gameData.DIalogSequenceStart.StoryHierarhy[_index].ButtonSetting, this);
-                CanWeGoNext = false;
-
-            }
-
-            else if (_gameData.DIalogSequenceStart.StoryHierarhy[_index].ButtonSetting.Count == 0)
-            {
-                _buttonsHandler.DeActivatedButtons();
-            }
-            if (_gameData.DIalogSequenceStart.StoryHierarhy[_index].Notation.Length > 0)
-            {
-                StartCoroutine(_notationHandler.ActivaidNotation(_gameData.DIalogSequenceStart.StoryHierarhy[_index].Notation));
-            }
-
-
-            _tipeText = StartCoroutine(TypeText(_gameData.DIalogSequenceStart.StoryHierarhy[_index].Text));
-            Debug.Log(_gameData.DIalogSequenceStart.StoryHierarhy[_index].Text);
-            _backGround.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_index].Background;
-            yield return new WaitWhile(() => CanWeGoNext == false);
-            _heroLeft.gameObject.SetActive(false);
-            _heroRight.gameObject.SetActive(false);
-            _index++;
-            if (_gameData.DIalogSequenceStart.StoryHierarhy.Count > _index)
-                _masterSave.CurrentProfile.DialogIndex = _index;
-            else
-                _masterSave.CurrentProfile.DialogIndex = 0;
-        }
     }
 }
 

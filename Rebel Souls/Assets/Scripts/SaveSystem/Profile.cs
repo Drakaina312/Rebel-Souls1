@@ -13,6 +13,7 @@ public class Profile
     public StatsBook[] BooksStat;
     public string LastSaveChapterPath;
     public int DialogIndex;
+    internal bool IsHelpOn;
 
     public Profile(string profileName, bool isBlocked)
     {
