@@ -40,13 +40,16 @@ public class ButtonsHandler : MonoBehaviour
 
             return;
         }
+        _historyFlowHandler.IsMainFlowActive = false;
 
-        ResizeButtonsArea(storyHierarhy.ButtonSetting.Count);
+        ResizeButtonsArea(storyHierarhy.ButtonSetting.FindAll(x => x.WasChoised == false).Count());
 
         int index = 0;
         foreach (var buttonData in storyHierarhy.ButtonSetting)
         {
-            TurnOnButton(index, buttonData.HelpSprite, buttonData.ButtonsName);
+            TurnOnButton(index, buttonData.HelpSprite, buttonData.ButtonsName, buttonData.WasChoised);
+
+            Debug.Log("Была включена = " + buttonData.WasChoised);
             _buttons[index].Button.onClick.RemoveAllListeners();
 
             _buttons[index].Button.onClick.AddListener(() => ButtonOnClickProccesor(buttonData));
@@ -54,7 +57,7 @@ public class ButtonsHandler : MonoBehaviour
             index++;
         }
     }
-    public void ActivedButtonsForFalseChoise(List<FalseChoiseButtons> falseChoiseButtons, bool ishaveButtons)
+    public void ActivedButtonsForFunnelChoise(List<FunnelChoiseButtons> funnelChoiseButtons, bool ishaveButtons)
     {
         if (!ishaveButtons)
         {
@@ -69,54 +72,30 @@ public class ButtonsHandler : MonoBehaviour
 
         _funnelHandler.CanSwitchToNextDialog = false;
 
-        ResizeButtonsArea(falseChoiseButtons.Count);
+        ResizeButtonsArea(funnelChoiseButtons.FindAll(x => x.WasChoosed == false).Count());
         int index = 0;
-        foreach (var buttonData in falseChoiseButtons)
+        foreach (var buttonData in funnelChoiseButtons)
         {
-            TurnOnButton(index, buttonData.HelpSprite, buttonData.ButtonsName);
+            TurnOnButton(index, buttonData.HelpSprite, buttonData.ButtonsName, buttonData.WasChoosed);
             _buttons[index].Button.onClick.RemoveAllListeners();
 
-            _buttons[index].Button.onClick.AddListener(() => ButtonOnFalseChoiseClickProccesor(buttonData));
+            _buttons[index].Button.onClick.AddListener(() => FunnelChoiseClickProccesor(buttonData));
             index++;
         }
     }
-    public void ActivedButtonsForCircleChoise(List<FalseChoiseButtons> falseChoiseButtons, bool ishaveButtons)
-    {
-        if (!ishaveButtons)
-        {
-            foreach (var button in _buttons)
-            {
-                button.Button.onClick.RemoveAllListeners();
-                button.gameObject.SetActive(false);
-                button.HelpImage.gameObject.SetActive(false);
-            }
-            return;
-        }
 
-        _funnelHandler.CanSwitchToNextDialog = false;
-
-        var notChoosedBtn = falseChoiseButtons.FindAll(x => x.WasChoosed == false);
-
-        ResizeButtonsArea(notChoosedBtn.Count);
-        int index = 0;
-        foreach (var buttonData in notChoosedBtn)
-        {
-            TurnOnButton(index, buttonData.HelpSprite, buttonData.ButtonsName);
-            _buttons[index].Button.onClick.RemoveAllListeners();
-
-            _buttons[index].Button.onClick.AddListener(() =>
-            {
-                ButtonOnFalseChoiseClickProccesor(buttonData);
-            });
-            index++;
-        }
-    }
-    private void ButtonOnFalseChoiseClickProccesor(FalseChoiseButtons buttonData)
+    private void FunnelChoiseClickProccesor(FunnelChoiseButtons buttonData)
     {
         AddStatIfCan(buttonData.StatKit, buttonData.IsStatAdder);
         _funnelHandler.CanSwitchToNextDialog = true;
-        buttonData.WasChoosed = true;
-        _funnelHandler.SwipeDialog();
+
+        if (buttonData.IsChoiseAdder)
+        {
+            _funnelHandler.ActivateFunnelChoiseLine(buttonData.AnotherFindLine);
+            _funnelHandler.IsRightChoiseFinded = buttonData.IsRightChoise;
+            return;
+        }
+        _funnelHandler.SwipeDialogWhenClicked();
     }
 
     private void ResizeButtonsArea(int buttonCount)
@@ -151,32 +130,39 @@ public class ButtonsHandler : MonoBehaviour
 
     private void ButtonOnClickProccesor(ButtonSetting buttonData)
     {
+        ActivateFunnelChoiseIfCan(buttonData);
         AddStatIfCan(buttonData.StatKit, buttonData.IsStatAdder);
 
         ChangeStoryLineIfCan(buttonData, buttonData.IsLineSplitter);
-        ActivateFalseChoiseIfCan(buttonData, buttonData.IsFalseChoice);
-        ActivateCircleChoiseIfCan(buttonData.CircleChoiceLines, buttonData.IsCircleChoise);
     }
 
-    private void ActivateCircleChoiseIfCan(List<CircleChoiseLine> circleChoiceLines, bool isCircleChoise)
-    {
-        if (!isCircleChoise)
-            return;
-
-        _historyFlowHandler.IsMainFlowActive = false;
-        _historyFlowHandler.IsFunneChoiseActive = true;
-        _funnelHandler.ActivateFunnelChoiseLine(circleChoiceLines.Cast<IFunnelStruct>().ToList());
-    }
 
     #region OnClickActions
-    private void ActivateFalseChoiseIfCan(ButtonSetting buttonData, bool isFalseChoice)
+    private void ActivateFunnelChoiseIfCan(ButtonSetting buttonData)
     {
-        if (!isFalseChoice)
+        if (!buttonData.IsFalseChoice && !buttonData.IsCircleChoise && !buttonData.IsFindChoise)
             return;
 
+        if (buttonData.IsCircleChoise)
+            buttonData.WasChoised = true;
+
         _historyFlowHandler.IsMainFlowActive = false;
-        _historyFlowHandler.IsFunneChoiseActive = true;
-        _funnelHandler.ActivateFunnelChoiseLine(buttonData.FalseChoiceLines.Cast<IFunnelStruct>().ToList());
+        _historyFlowHandler.IsFunnelChoiseActive = true;
+        if (buttonData.IsCircleChoise)
+        {
+            _funnelHandler.IsCircleFunnel = true;
+            _funnelHandler.ActivateFunnelChoiseLine(buttonData.CircleChoiceLines.Cast<FunnelChoiseLine>().ToList());
+        }
+        else if (buttonData.IsFalseChoice)
+        {
+            _funnelHandler.ActivateFunnelChoiseLine(buttonData.FalseChoiceLines.Cast<FunnelChoiseLine>().ToList());
+
+        }
+        else if (buttonData.IsFindChoise)
+        {
+            _funnelHandler.IsFindChoise = true;
+            _funnelHandler.ActivateFunnelChoiseLine(buttonData.FindChoiseLines);
+        }
     }
 
     private void ChangeStoryLineIfCan(ButtonSetting buttonData, bool isLineSplitter)
@@ -206,10 +192,14 @@ public class ButtonsHandler : MonoBehaviour
             statToChange.StatisticCount += item.Statpoint;
             _masterSave.SaveAllData();
         }
+        _historyFlowHandler.IsMainFlowActive = true;
     }
 
-    private void TurnOnButton(int index, Sprite helpSprite, string buttonName)
+    private void TurnOnButton(int index, Sprite helpSprite, string buttonName, bool wasChoised)
     {
+        if (wasChoised)
+            return;
+
         _buttons[index].gameObject.SetActive(true);
         _buttons[index].ButtonName.text = buttonName;
 

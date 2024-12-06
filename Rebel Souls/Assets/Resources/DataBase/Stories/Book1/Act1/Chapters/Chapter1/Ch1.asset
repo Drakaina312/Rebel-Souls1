@@ -34,24 +34,35 @@ MonoBehaviour:
         Statpoint: -1
       IsFalseChoice: 1
       FalseChoiceLines:
-      - _background: {fileID: 21300000, guid: e9a25d1c047e84759a65a8267124decb, type: 3}
+      - Background: {fileID: 7199705072138568028, guid: c25916e57b0044743abb78869f6cd09f, type: 3}
         HeroType: 0
         HeroSprite: {fileID: 0}
-        _isHaveButtons: 0
-        _falseChoiseButtons: []
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
         IsHaveNotation: 0
         Notation: 
-        _text: FF
-      - _background: {fileID: 21300000, guid: 2bb9d223ebe78423fa46d3645211e351, type: 3}
+        Text: ff
+      - Background: {fileID: 21300000, guid: 7d1a89cdbebf742c18821dc41cd1b633, type: 3}
         HeroType: 0
         HeroSprite: {fileID: 0}
-        _isHaveButtons: 0
-        _falseChoiseButtons: []
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
         IsHaveNotation: 0
         Notation: 
-        _text: GG
+        Text: gg
       IsCircleChoise: 0
       CircleChoiceLines: []
+      IsFindChoise: 0
+      FindChoiseLines:
+        Background: {fileID: 0}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        Text: 
+      WasChoised: 0
     - ButtonsName: "\u041D\u0435\u0442"
       IsHaveHelpSprite: 0
       HelpSprite: {fileID: 21300000, guid: 34a018c159c22413aaa0d6ffbb52ebaf, type: 3}
@@ -65,24 +76,35 @@ MonoBehaviour:
         Statpoint: 1
       IsFalseChoice: 0
       FalseChoiceLines:
-      - _background: {fileID: 0}
+      - Background: {fileID: 0}
         HeroType: 0
         HeroSprite: {fileID: 0}
-        _isHaveButtons: 0
-        _falseChoiseButtons: []
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
         IsHaveNotation: 0
         Notation: 
-        _text: 
+        Text: 
       IsCircleChoise: 0
       CircleChoiceLines:
-      - _background: {fileID: 0}
+      - Background: {fileID: 0}
         HeroType: 0
         HeroSprite: {fileID: 0}
-        _isHaveButtons: 0
-        _falseChoiseButtons: []
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
         IsHaveNotation: 0
         Notation: 
-        _text: 
+        Text: 
+      IsFindChoise: 0
+      FindChoiseLines:
+        Background: {fileID: 0}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        Text: 
+      WasChoised: 0
     IsHaveNotation: 0
     Notation: 
     Text: "\u0427\u0442\u043E \u0434\u0435\u043B\u0430\u0442\u044C? \u041B\u043E\u0436\u043D\u044B\u0439
@@ -105,14 +127,25 @@ MonoBehaviour:
       FalseChoiceLines: []
       IsCircleChoise: 1
       CircleChoiceLines:
-      - _background: {fileID: 7199705072138568028, guid: c25916e57b0044743abb78869f6cd09f, type: 3}
+      - Background: {fileID: 21300000, guid: 8b2c881dab32b443c88e43bc260e5d0c, type: 3}
         HeroType: 0
         HeroSprite: {fileID: 0}
-        _isHaveButtons: 0
-        _falseChoiseButtons: []
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
         IsHaveNotation: 0
         Notation: 
-        _text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 1"
+        Text: "\u0426\u0438\u043A\u043B1"
+      IsFindChoise: 0
+      FindChoiseLines:
+        Background: {fileID: 0}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        Text: 
+      WasChoised: 0
     - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 2"
       IsHaveHelpSprite: 0
       HelpSprite: {fileID: 0}
@@ -124,14 +157,55 @@ MonoBehaviour:
       FalseChoiceLines: []
       IsCircleChoise: 1
       CircleChoiceLines:
-      - _background: {fileID: 21300000, guid: 624b2a9ee1e1143bc96c2c57f60ba839, type: 3}
+      - Background: {fileID: 21300000, guid: 104450c41bef44ffb963e57a6736e532, type: 3}
         HeroType: 0
         HeroSprite: {fileID: 0}
-        _isHaveButtons: 0
-        _falseChoiseButtons: []
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
         IsHaveNotation: 0
         Notation: 
-        _text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 2"
+        Text: "\u0426\u0438\u043A\u043B2"
+      IsFindChoise: 0
+      FindChoiseLines:
+        Background: {fileID: 0}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        Text: 
+      WasChoised: 0
+    - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 3"
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 1
+      CircleChoiceLines:
+      - Background: {fileID: 21300000, guid: a0763070a38e2464db1bf122c3bdcd3f, type: 3}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        Text: "\u0426\u0438\u043A\u043B3"
+      IsFindChoise: 0
+      FindChoiseLines:
+        Background: {fileID: 0}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        IsHaveButtons: 0
+        FunnelChoiseButtons: []
+        IsHaveNotation: 0
+        Notation: 
+        Text: 
+      WasChoised: 0
     IsHaveNotation: 0
     Notation: "\u0423\u0440\u0430!"
     Text: "\u0427\u0442\u043E \u0434\u0435\u043B\u0430\u0442\u044C? \u0426\u0438\u043A\u043B\u0438\u0447\u043D\u044B\u0439
@@ -141,11 +215,126 @@ MonoBehaviour:
   - Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
     HeroType: 0
     HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
+    IsHaveButtons: 1
+    ButtonSetting:
+    - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 1"
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 0
+      CircleChoiceLines: []
+      IsFindChoise: 1
+      FindChoiseLines:
+        Background: {fileID: 21300000, guid: 8280e64bc010b40d7a05d734ec277273, type: 3}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        IsHaveButtons: 1
+        FunnelChoiseButtons:
+        - ButtonsName: "\u0412\u042B\u0431\u043E\u0440 1.1"
+          IsHaveHelpSprite: 0
+          HelpSprite: {fileID: 0}
+          IsStatAdder: 0
+          StatKit: []
+          IsChoiseAdder: 1
+          AnotherFindLine:
+            Background: {fileID: 21300000, guid: 26d76f59f7b7b4edb9cb6d54c3d0350f, type: 3}
+            HeroType: 0
+            HeroSprite: {fileID: 0}
+            IsHaveButtons: 0
+            FunnelChoiseButtons: []
+            IsHaveNotation: 0
+            Notation: 
+            Text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 1"
+          IsRightChoise: 1
+          WasChoosed: 0
+        - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 1.2"
+          IsHaveHelpSprite: 0
+          HelpSprite: {fileID: 0}
+          IsStatAdder: 0
+          StatKit: []
+          IsChoiseAdder: 1
+          AnotherFindLine:
+            Background: {fileID: 21300000, guid: 6db59cf5e71c24988a95e7819d46cadb, type: 3}
+            HeroType: 0
+            HeroSprite: {fileID: 0}
+            IsHaveButtons: 0
+            FunnelChoiseButtons: []
+            IsHaveNotation: 0
+            Notation: 
+            Text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 2"
+          IsRightChoise: 0
+          WasChoosed: 0
+        IsHaveNotation: 0
+        Notation: 
+        Text: "\u041E\u043A\u043E\u0448\u043A\u043E \u0432\u044B\u0431\u043E\u0440
+          1"
+      WasChoised: 0
+    - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 2"
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 0
+      CircleChoiceLines: []
+      IsFindChoise: 1
+      FindChoiseLines:
+        Background: {fileID: 21300000, guid: c99faf599a3e8485f99d32292bc757bb, type: 3}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        IsHaveButtons: 1
+        FunnelChoiseButtons:
+        - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 2.1"
+          IsHaveHelpSprite: 0
+          HelpSprite: {fileID: 0}
+          IsStatAdder: 0
+          StatKit: []
+          IsChoiseAdder: 1
+          AnotherFindLine:
+            Background: {fileID: 21300000, guid: ae97763c6dba0472fa16bf0dad2507ed, type: 3}
+            HeroType: 0
+            HeroSprite: {fileID: 0}
+            IsHaveButtons: 0
+            FunnelChoiseButtons: []
+            IsHaveNotation: 0
+            Notation: 
+            Text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 3"
+          IsRightChoise: 0
+          WasChoosed: 0
+        - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 2.2"
+          IsHaveHelpSprite: 0
+          HelpSprite: {fileID: 0}
+          IsStatAdder: 0
+          StatKit: []
+          IsChoiseAdder: 1
+          AnotherFindLine:
+            Background: {fileID: 21300000, guid: e3ea02811987d4555bd5212b198a51cd, type: 3}
+            HeroType: 0
+            HeroSprite: {fileID: 0}
+            IsHaveButtons: 0
+            FunnelChoiseButtons: []
+            IsHaveNotation: 0
+            Notation: 
+            Text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 4"
+          IsRightChoise: 0
+          WasChoosed: 0
+        IsHaveNotation: 0
+        Notation: 
+        Text: "\u041E\u043A\u043E\u0448\u043A\u043E \u0432\u044B\u0431\u043E\u0440
+          2"
+      WasChoised: 0
     IsHaveNotation: 0
     Notation: ttt
-    Text: Test1
+    Text: "\u0427\u0442\u043E \u0434\u0435\u043B\u0430\u0442\u044C? \u041F\u043E\u0438\u0441\u043A
+      \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0433\u043E \u043E\u0442\u0432\u0435\u0442\u0430"
     IsFalseChoiseFinish: 0
     IndexToStartFlow: 0
   - Background: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}

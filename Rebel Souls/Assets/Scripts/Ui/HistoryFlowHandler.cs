@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -9,7 +10,8 @@ public class HistoryFlowHandler : MonoBehaviour
 {
     [HideInInspector] public bool CanWeGoNext;
     [HideInInspector] public bool CanWeGoNextFalseChoise;
-    [HideInInspector] public bool IsFunneChoiseActive;
+    [HideInInspector] public bool IsFunnelChoiseActive;
+    public bool IsMainFlowActive;
 
 
     [SerializeField] private NotationHandler _notationHandler;
@@ -31,7 +33,6 @@ public class HistoryFlowHandler : MonoBehaviour
     private bool _isTipeTextComplete;
     private int _dialogIndex;
     private Coroutine _tipeText;
-    internal bool IsMainFlowActive;
 
     [Inject]
     private void Construct(InGameDataBase gameData, InputSystem_Actions input, MasterSave masterSave)
@@ -54,22 +55,22 @@ public class HistoryFlowHandler : MonoBehaviour
         _gameData.DIalogSequenceStart = historyPattern;
         _masterSave.CurrentProfile.DialogIndex = 0;
         _masterSave.CurrentProfile.LastSaveChapterPath = historyPattern.PathToFile;
-
+        IsMainFlowActive = true;
         ShowDialoge(0);
     }
 
     private void SwipeStory(InputAction.CallbackContext context)
     {
 
-        if (IsFunneChoiseActive)
+        if (IsFunnelChoiseActive)
         {
-            _funnelHandler.SwipeDialog();
+            _funnelHandler.SwipeDialogWhenClicked();
             return;
         }
 
         if (!IsMainFlowActive)
             return;
-
+        Debug.Log("Запуск из основного потока");
         MoveToNextDialog();
     }
 
@@ -77,6 +78,7 @@ public class HistoryFlowHandler : MonoBehaviour
     {
         if (_isTipeTextComplete)
         {
+
             _dialogIndex += 1;
             ShowDialoge(_dialogIndex);
 
@@ -121,8 +123,12 @@ public class HistoryFlowHandler : MonoBehaviour
 
         ShowHeroyOnScene(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow]);
 
-        _buttonsHandler.ActivedButtons(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow], this);
+        for (int i = 0; i < _gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].ButtonSetting.Count; i++)
+            _gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].ButtonSetting[i].WasChoised = false;
 
+
+
+        _buttonsHandler.ActivedButtons(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow], this);
 
         if (_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].IsHaveNotation)
             StartCoroutine(_notationHandler.ActivaidNotation(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].Notation));
@@ -158,6 +164,38 @@ public class HistoryFlowHandler : MonoBehaviour
     private void OnDestroy()
     {
         _masterSave.SaveAllData();
+    }
+
+    public void RepeatDialog()
+    {
+        IsMainFlowActive = false;
+        Debug.Log("Повтор выборов");
+
+        if (_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].ButtonSetting.FindAll(x => x.WasChoised == false).Count == 0)
+        {
+            Debug.Log("Все кнопки были выбраны");
+            Debug.Log(_dialogIndex);
+            IsMainFlowActive = true;
+            _funnelHandler.IsCircleFunnel = false;
+            IsFunnelChoiseActive = false;
+            _isTipeTextComplete = true;
+            MoveToNextDialog();
+            return;
+        }
+
+        Debug.Log($"Включение под индексом  {_dialogIndex}");
+        _backGround.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Background;
+
+        ShowHeroyOnScene(_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex]);
+
+        _buttonsHandler.ActivedButtons(_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex], this);
+
+
+        if (_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].IsHaveNotation)
+            StartCoroutine(_notationHandler.ActivaidNotation(_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Notation));
+
+        _tipeText = StartCoroutine(TypeText(_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Text));
+        Debug.Log($"Статус основного потока {IsMainFlowActive}");
     }
 }
 
