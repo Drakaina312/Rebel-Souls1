@@ -1129,6 +1129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanSwitchToNextDialog: 1
+  IsFindChoise: 0
+  IsRightChoiseFinded: 0
   _textArea: {fileID: 406904104}
   _backGround: {fileID: 344941919}
   _heroLeft: {fileID: 2021109676}
@@ -1684,7 +1686,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanWeGoNext: 0
   CanWeGoNextFalseChoise: 0
-  IsFunneChoiseActive: 1
+  IsFunnelChoiseActive: 0
+  IsMainFlowActive: 0
   _notationHandler: {fileID: 375468777}
   _textResizer: {fileID: 1131655776}
   _buttonsHandler: {fileID: 850243289}
@@ -1921,7 +1924,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &1295369979
 MonoBehaviour:
   m_ObjectHideFlags: 0
