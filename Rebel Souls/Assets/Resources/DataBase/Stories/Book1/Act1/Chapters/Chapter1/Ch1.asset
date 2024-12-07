@@ -145,7 +145,7 @@ MonoBehaviour:
         IsHaveNotation: 0
         Notation: 
         Text: 
-      WasChoised: 1
+      WasChoised: 0
     - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 2"
       IsHaveHelpSprite: 0
       HelpSprite: {fileID: 0}
@@ -175,7 +175,7 @@ MonoBehaviour:
         IsHaveNotation: 0
         Notation: 
         Text: 
-      WasChoised: 1
+      WasChoised: 0
     - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 3"
       IsHaveHelpSprite: 0
       HelpSprite: {fileID: 0}

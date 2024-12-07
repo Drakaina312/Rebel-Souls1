@@ -11,7 +11,7 @@ public class HistoryFlowHandler : MonoBehaviour
     [HideInInspector] public bool CanWeGoNext;
     [HideInInspector] public bool CanWeGoNextFalseChoise;
     [HideInInspector] public bool IsFunnelChoiseActive;
-    public bool IsMainFlowActive;
+    [HideInInspector] public bool IsMainFlowActive;
 
 
     [SerializeField] private NotationHandler _notationHandler;
@@ -47,6 +47,7 @@ public class HistoryFlowHandler : MonoBehaviour
     {
         _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_gameData.ActStatistics, _gameData.DIalogSequenceStart.ChapterSortingCondition);
         _masterSave.SaveAllData();
+        IsMainFlowActive = true;
         ShowDialoge(_dialogIndex);
     }
 
@@ -61,7 +62,7 @@ public class HistoryFlowHandler : MonoBehaviour
 
     private void SwipeStory(InputAction.CallbackContext context)
     {
-
+        Debug.Log($"Swipe   1 = {IsFunnelChoiseActive} 2 = {IsMainFlowActive}");
         if (IsFunnelChoiseActive)
         {
             _funnelHandler.SwipeDialogWhenClicked();
@@ -78,7 +79,6 @@ public class HistoryFlowHandler : MonoBehaviour
     {
         if (_isTipeTextComplete)
         {
-
             _dialogIndex += 1;
             ShowDialoge(_dialogIndex);
 
