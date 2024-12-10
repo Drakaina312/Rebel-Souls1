@@ -41,17 +41,11 @@ MonoBehaviour:
     StatisticCount: 0
     IsRelationship: 0
     StatisticSprite: {fileID: 8370070712509212132, guid: 242c57e58b719094a81d69de1362792a, type: 3}
-  - StatisticName: "\u042F\u043A\u0430\u043C\u043E\u0437"
-    StatisticCount: 0
-    IsRelationship: 1
-    StatisticSprite: {fileID: 21300000, guid: f10dbd4f930ac4bf9815b0497caad2ab, type: 3}
-  - StatisticName: "\u041A\u0443\u0440\u0442"
+  - StatisticName: "\u041F\u0440\u0438\u043C\u0438\u0441"
     StatisticCount: 0
     IsRelationship: 1
     StatisticSprite: {fileID: 21300000, guid: f10dbd4f930ac4bf9815b0497caad2ab, type: 3}
   ActLovers:
   - {fileID: 11400000, guid: 5633f97183da1de409c3a1a687e2affd, type: 2}
-  - {fileID: 11400000, guid: 135e83e2bd4c1bc44bf76972942cc409, type: 2}
-  - {fileID: 0}
   BGLovers: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}
   BGStatistic: {fileID: 5193147746300317589, guid: ddac9faf8825e204b9ee4c398f57944c, type: 3}

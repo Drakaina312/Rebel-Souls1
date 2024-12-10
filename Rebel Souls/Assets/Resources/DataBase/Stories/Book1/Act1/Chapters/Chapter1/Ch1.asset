@@ -508,8 +508,47 @@ MonoBehaviour:
   - Background: {fileID: 465740068129482415, guid: fb8a93b2f84f2254791569ff3c2a6c5f, type: 3}
     HeroType: 0
     HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
+    IsHaveButtons: 1
+    ButtonSetting:
+    - ButtonsName: 
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 0
+      CircleChoiceLines: []
+      IsFindChoise: 1
+      FindChoiseLines:
+        Background: {fileID: 0}
+        HeroType: 0
+        HeroSprite: {fileID: 0}
+        IsHaveButtons: 1
+        FunnelChoiseButtons:
+        - ButtonsName: 
+          IsHaveHelpSprite: 0
+          HelpSprite: {fileID: 0}
+          IsStatAdder: 0
+          StatKit: []
+          IsChoiseAdder: 0
+          AnotherFindLine:
+            Background: {fileID: 0}
+            HeroType: 0
+            HeroSprite: {fileID: 0}
+            IsHaveButtons: 0
+            FunnelChoiseButtons: []
+            IsHaveNotation: 0
+            Notation: 
+            Text: 
+          IsRightChoise: 0
+          WasChoosed: 0
+        IsHaveNotation: 0
+        Notation: 
+        Text: 
+      WasChoised: 0
     IsHaveNotation: 0
     Notation: 
     Text: "\u0415\u0441\u043B\u0438 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
@@ -658,6 +697,18 @@ MonoBehaviour:
     Notation: 
     Text: "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C
       \u0441 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430\u043C\u0438?\r\n"
+    IsFalseChoiseFinish: 0
+    IndexToStartFlow: 0
+  - Background: {fileID: 465740068129482415, guid: fb8a93b2f84f2254791569ff3c2a6c5f, type: 3}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: "\u0413\u043B\u0430\u0432\u0430 \u043F\u0435\u0440\u0432\u0430\u044F: \"\u041A\u043E\u0448\u043A\u0430
+      \u0441\u0430\u043C\u0430 \u0432\u044B\u0431\u0438\u0440\u0430\u0435\u0442 \u0441\u0435\u0431\u0435
+      \u0445\u043E\u0437\u044F\u0438\u043D\u0430\u201D.\r"
     IsFalseChoiseFinish: 0
     IndexToStartFlow: 0
   - Background: {fileID: 465740068129482415, guid: fb8a93b2f84f2254791569ff3c2a6c5f, type: 3}
