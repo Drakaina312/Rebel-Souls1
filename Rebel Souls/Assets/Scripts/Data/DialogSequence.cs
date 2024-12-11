@@ -89,7 +89,7 @@ public class ButtonSetting
     public bool IsFindChoise;
 
     [ShowIf(nameof(IsFindChoise))]
-    public FindChoiseLine FindChoiseLines;
+    public List<FindChoiseLine> FindChoiseLines;
 
     [HideInInspector]
     public bool WasChoised;

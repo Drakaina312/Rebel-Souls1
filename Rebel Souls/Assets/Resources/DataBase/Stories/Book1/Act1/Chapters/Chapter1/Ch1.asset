@@ -20,91 +20,7 @@ MonoBehaviour:
     HeroType: 2
     HeroSprite: {fileID: -1540426309290004842, guid: c80236594b012f440807c91231f00077, type: 3}
     IsHaveButtons: 0
-    ButtonSetting:
-    - ButtonsName: "\u0414\u0430"
-      IsHaveHelpSprite: 0
-      HelpSprite: {fileID: 21300000, guid: 37fcc48615bd740a68ea6dead3d9ab11, type: 3}
-      IsLineSplitter: 0
-      HistoryPattern: {fileID: 0}
-      IsStatAdder: 0
-      StatKit:
-      - StatName: "\u0410\u043D\u0430\u0440\u0445\u0438\u044F"
-        Statpoint: 1
-      - StatName: "\u0414\u0438\u043A\u0442\u0430\u0442\u0443\u0440\u0430"
-        Statpoint: -1
-      IsFalseChoice: 0
-      FalseChoiceLines:
-      - Background: {fileID: 7199705072138568028, guid: c25916e57b0044743abb78869f6cd09f, type: 3}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: ff
-      - Background: {fileID: 21300000, guid: 7d1a89cdbebf742c18821dc41cd1b633, type: 3}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: gg
-      IsCircleChoise: 0
-      CircleChoiceLines: []
-      IsFindChoise: 0
-      FindChoiseLines:
-        Background: {fileID: 0}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: 
-      WasChoised: 0
-    - ButtonsName: "\u041D\u0435\u0442"
-      IsHaveHelpSprite: 0
-      HelpSprite: {fileID: 21300000, guid: 34a018c159c22413aaa0d6ffbb52ebaf, type: 3}
-      IsLineSplitter: 0
-      HistoryPattern: {fileID: 0}
-      IsStatAdder: 0
-      StatKit:
-      - StatName: "\u0410\u043D\u0430\u0440\u0445\u0438\u044F"
-        Statpoint: -1
-      - StatName: "\u0414\u0438\u043A\u0442\u0430\u0442\u0443\u0440\u0430"
-        Statpoint: 1
-      IsFalseChoice: 0
-      FalseChoiceLines:
-      - Background: {fileID: 0}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: 
-      IsCircleChoise: 0
-      CircleChoiceLines:
-      - Background: {fileID: 0}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: 
-      IsFindChoise: 0
-      FindChoiseLines:
-        Background: {fileID: 0}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: 
-      WasChoised: 0
+    ButtonSetting: []
     IsHaveNotation: 0
     Notation: 
     Text: "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439, \u0434\u043E\u0440\u043E\u0433\u043E\u0439
@@ -135,16 +51,9 @@ MonoBehaviour:
         IsHaveNotation: 0
         Notation: 
         Text: "\u0426\u0438\u043A\u043B1"
+        IsRighChoise: 0
       IsFindChoise: 0
-      FindChoiseLines:
-        Background: {fileID: 0}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: 
+      FindChoiseLines: []
       WasChoised: 0
     - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 2"
       IsHaveHelpSprite: 0
@@ -165,16 +74,9 @@ MonoBehaviour:
         IsHaveNotation: 0
         Notation: 
         Text: "\u0426\u0438\u043A\u043B2"
+        IsRighChoise: 0
       IsFindChoise: 0
-      FindChoiseLines:
-        Background: {fileID: 0}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: 
+      FindChoiseLines: []
       WasChoised: 0
     - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 3"
       IsHaveHelpSprite: 0
@@ -195,16 +97,9 @@ MonoBehaviour:
         IsHaveNotation: 0
         Notation: 
         Text: "\u0426\u0438\u043A\u043B3"
+        IsRighChoise: 0
       IsFindChoise: 0
-      FindChoiseLines:
-        Background: {fileID: 0}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: 
+      FindChoiseLines: []
       WasChoised: 0
     IsHaveNotation: 0
     Notation: "\u0423\u0440\u0430!"
@@ -229,50 +124,7 @@ MonoBehaviour:
       IsCircleChoise: 0
       CircleChoiceLines: []
       IsFindChoise: 1
-      FindChoiseLines:
-        Background: {fileID: 21300000, guid: 8280e64bc010b40d7a05d734ec277273, type: 3}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 1
-        FunnelChoiseButtons:
-        - ButtonsName: "\u0412\u042B\u0431\u043E\u0440 1.1"
-          IsHaveHelpSprite: 0
-          HelpSprite: {fileID: 0}
-          IsStatAdder: 0
-          StatKit: []
-          IsChoiseAdder: 1
-          AnotherFindLine:
-            Background: {fileID: 21300000, guid: 26d76f59f7b7b4edb9cb6d54c3d0350f, type: 3}
-            HeroType: 0
-            HeroSprite: {fileID: 0}
-            IsHaveButtons: 0
-            FunnelChoiseButtons: []
-            IsHaveNotation: 0
-            Notation: 
-            Text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 1"
-          IsRightChoise: 1
-          WasChoosed: 0
-        - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 1.2"
-          IsHaveHelpSprite: 0
-          HelpSprite: {fileID: 0}
-          IsStatAdder: 0
-          StatKit: []
-          IsChoiseAdder: 1
-          AnotherFindLine:
-            Background: {fileID: 21300000, guid: 6db59cf5e71c24988a95e7819d46cadb, type: 3}
-            HeroType: 0
-            HeroSprite: {fileID: 0}
-            IsHaveButtons: 0
-            FunnelChoiseButtons: []
-            IsHaveNotation: 0
-            Notation: 
-            Text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 2"
-          IsRightChoise: 0
-          WasChoosed: 0
-        IsHaveNotation: 0
-        Notation: 
-        Text: "\u041E\u043A\u043E\u0448\u043A\u043E \u0432\u044B\u0431\u043E\u0440
-          1"
+      FindChoiseLines: []
       WasChoised: 0
     - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 2"
       IsHaveHelpSprite: 0
@@ -286,50 +138,7 @@ MonoBehaviour:
       IsCircleChoise: 0
       CircleChoiceLines: []
       IsFindChoise: 1
-      FindChoiseLines:
-        Background: {fileID: 21300000, guid: c99faf599a3e8485f99d32292bc757bb, type: 3}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 1
-        FunnelChoiseButtons:
-        - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 2.1"
-          IsHaveHelpSprite: 0
-          HelpSprite: {fileID: 0}
-          IsStatAdder: 0
-          StatKit: []
-          IsChoiseAdder: 1
-          AnotherFindLine:
-            Background: {fileID: 21300000, guid: ae97763c6dba0472fa16bf0dad2507ed, type: 3}
-            HeroType: 0
-            HeroSprite: {fileID: 0}
-            IsHaveButtons: 0
-            FunnelChoiseButtons: []
-            IsHaveNotation: 0
-            Notation: 
-            Text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 3"
-          IsRightChoise: 0
-          WasChoosed: 0
-        - ButtonsName: "\u0412\u044B\u0431\u043E\u0440 2.2"
-          IsHaveHelpSprite: 0
-          HelpSprite: {fileID: 0}
-          IsStatAdder: 0
-          StatKit: []
-          IsChoiseAdder: 1
-          AnotherFindLine:
-            Background: {fileID: 21300000, guid: e3ea02811987d4555bd5212b198a51cd, type: 3}
-            HeroType: 0
-            HeroSprite: {fileID: 0}
-            IsHaveButtons: 0
-            FunnelChoiseButtons: []
-            IsHaveNotation: 0
-            Notation: 
-            Text: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 4"
-          IsRightChoise: 0
-          WasChoosed: 0
-        IsHaveNotation: 0
-        Notation: 
-        Text: "\u041E\u043A\u043E\u0448\u043A\u043E \u0432\u044B\u0431\u043E\u0440
-          2"
+      FindChoiseLines: []
       WasChoised: 0
     IsHaveNotation: 0
     Notation: ttt
@@ -522,32 +331,7 @@ MonoBehaviour:
       IsCircleChoise: 0
       CircleChoiceLines: []
       IsFindChoise: 1
-      FindChoiseLines:
-        Background: {fileID: 0}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 1
-        FunnelChoiseButtons:
-        - ButtonsName: 
-          IsHaveHelpSprite: 0
-          HelpSprite: {fileID: 0}
-          IsStatAdder: 0
-          StatKit: []
-          IsChoiseAdder: 0
-          AnotherFindLine:
-            Background: {fileID: 0}
-            HeroType: 0
-            HeroSprite: {fileID: 0}
-            IsHaveButtons: 0
-            FunnelChoiseButtons: []
-            IsHaveNotation: 0
-            Notation: 
-            Text: 
-          IsRightChoise: 0
-          WasChoosed: 0
-        IsHaveNotation: 0
-        Notation: 
-        Text: 
+      FindChoiseLines: []
       WasChoised: 0
     IsHaveNotation: 0
     Notation: 
@@ -661,15 +445,7 @@ MonoBehaviour:
       IsCircleChoise: 0
       CircleChoiceLines: []
       IsFindChoise: 0
-      FindChoiseLines:
-        Background: {fileID: 0}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: 
+      FindChoiseLines: []
       WasChoised: 0
     - ButtonsName: "\u041D\u0435\u0442"
       IsHaveHelpSprite: 0
@@ -683,15 +459,7 @@ MonoBehaviour:
       IsCircleChoise: 0
       CircleChoiceLines: []
       IsFindChoise: 0
-      FindChoiseLines:
-        Background: {fileID: 0}
-        HeroType: 0
-        HeroSprite: {fileID: 0}
-        IsHaveButtons: 0
-        FunnelChoiseButtons: []
-        IsHaveNotation: 0
-        Notation: 
-        Text: 
+      FindChoiseLines: []
       WasChoised: 0
     IsHaveNotation: 0
     Notation: 

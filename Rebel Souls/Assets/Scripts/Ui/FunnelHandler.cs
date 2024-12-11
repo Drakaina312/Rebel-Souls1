@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,6 +47,14 @@ public class FunnelHandler : MonoBehaviour
         {
             if (!IsRightChoiseFinded)
             {
+                if (_dialogIndex < _funnelChoiseLine.Count - 1)
+                {
+                    _dialogIndex += 1;
+                    ShowFunnelChoiseDialog(_funnelChoiseLine[_dialogIndex].Text, _funnelChoiseLine[_dialogIndex].FunnelChoiseButtons,
+                        _funnelChoiseLine[_dialogIndex].Background, false, true);
+                    return;
+                }
+
                 IsFindChoise = false;
                 _historyFlowHandler.IsMainFlowActive = true;
                 _historyFlowHandler.IsFunnelChoiseActive = false;
@@ -60,6 +69,7 @@ public class FunnelHandler : MonoBehaviour
                 _historyFlowHandler.IsFunnelChoiseActive = false;
                 CanSwitchToNextDialog = false;
                 _historyFlowHandler.MoveToNextDialog();
+
                 return;
             }
         }
@@ -99,13 +109,17 @@ public class FunnelHandler : MonoBehaviour
         }
     }
 
-    public void ActivateFunnelChoiseLine(List<FunnelChoiseLine> falseChoiseLine)
+    public void ActivateFunnelChoiseLine(List<FunnelChoiseLine> falseChoiseLine, bool isFindChoise = false)
     {
         _funnelChoiseLine = falseChoiseLine;
         CanSwitchToNextDialog = true;
         _dialogIndex = 0;
-        ShowFunnelChoiseDialog(falseChoiseLine[_dialogIndex].Text, falseChoiseLine[_dialogIndex].FunnelChoiseButtons,
-            falseChoiseLine[_dialogIndex].Background);
+        if (!isFindChoise)
+            ShowFunnelChoiseDialog(falseChoiseLine[_dialogIndex].Text, falseChoiseLine[_dialogIndex].FunnelChoiseButtons,
+                falseChoiseLine[_dialogIndex].Background);
+        else
+            ShowFunnelChoiseDialog(falseChoiseLine[_dialogIndex].Text, falseChoiseLine[_dialogIndex].FunnelChoiseButtons,
+                falseChoiseLine[_dialogIndex].Background, false, true);
     }
     public void ActivateFunnelChoiseLine(FunnelChoiseLine funnelChoise)
     {
@@ -114,20 +128,43 @@ public class FunnelHandler : MonoBehaviour
         CanSwitchToNextDialog = true;
         _dialogIndex = 0;
         ShowFunnelChoiseDialog(funnelChoise.Text, funnelChoise.FunnelChoiseButtons,
-            funnelChoise.Background, false, true);
+            funnelChoise.Background, false, true, true);
     }
 
     private void ShowFunnelChoiseDialog(string textToShow, List<FunnelChoiseButtons> falseChoiseButtons, Sprite backGround,
-        bool isCircleChoise = false, bool isFindChjoise = false)
+        bool isCircleChoise = false, bool isFindChjoise = false, bool isHaveSingleLine = false)
     {
+
+
         _historyFlowHandler.StopAllCoroutines();
         StopAllCoroutines();
         _tipeText = StartCoroutine(TypeText(textToShow));
         _backGround.sprite = backGround;
+
         if (!isFindChjoise)
+        {
             _buttonsHandler.ActivedButtonsForFunnelChoise(falseChoiseButtons, _funnelChoiseLine[_dialogIndex].IsHaveButtons);
+            _historyFlowHandler.ShowHeroyOnScene(_funnelChoiseLine[_dialogIndex]);
+        }
         else
-            _buttonsHandler.ActivedButtonsForFunnelChoise(falseChoiseButtons, _findChoiseLine.IsHaveButtons);
+        {
+            if (!isHaveSingleLine)
+            {
+                _buttonsHandler.ActivedButtonsForFunnelChoise(falseChoiseButtons, _funnelChoiseLine[_dialogIndex].IsHaveButtons);
+                _historyFlowHandler.ShowHeroyOnScene(_funnelChoiseLine[_dialogIndex]);
+                if (IsFindChoise && _funnelChoiseLine[_dialogIndex].IsRighChoise)
+                {
+                    IsRightChoiseFinded = true;
+                }
+            }
+            else
+            {
+                _buttonsHandler.ActivedButtonsForFunnelChoise(falseChoiseButtons, _findChoiseLine.IsHaveButtons);
+                _historyFlowHandler.ShowHeroyOnScene(_findChoiseLine);
+            }
+
+
+        }
 
     }
 

@@ -30,4 +30,6 @@ public abstract class FunnelChoiseLine
 
     [FoldoutGroup("SplitFalseChoise/Settings", false)]
     [TextArea(1, 10), SerializeField] public string Text;
+
+    public bool IsRighChoise;
 }

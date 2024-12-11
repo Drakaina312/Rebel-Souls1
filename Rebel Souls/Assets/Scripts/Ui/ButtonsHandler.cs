@@ -45,6 +45,7 @@ public class ButtonsHandler : MonoBehaviour
         ResizeButtonsArea(storyHierarhy.ButtonSetting.FindAll(x => x.WasChoised == false).Count());
 
         int index = 0;
+        Debug.Log("Ammount of btn  story" + storyHierarhy.ButtonSetting.Count);
         foreach (var buttonData in storyHierarhy.ButtonSetting)
         {
             TurnOnButton(index, buttonData.HelpSprite, buttonData.ButtonsName, buttonData.WasChoised);
@@ -59,6 +60,12 @@ public class ButtonsHandler : MonoBehaviour
     }
     public void ActivedButtonsForFunnelChoise(List<FunnelChoiseButtons> funnelChoiseButtons, bool ishaveButtons)
     {
+        foreach (var button in _buttons)
+        {
+            button.Button.onClick.RemoveAllListeners();
+            button.gameObject.SetActive(false);
+            button.HelpImage.gameObject.SetActive(false);
+        }
         if (!ishaveButtons)
         {
             foreach (var button in _buttons)
@@ -148,6 +155,7 @@ public class ButtonsHandler : MonoBehaviour
 
         _historyFlowHandler.IsMainFlowActive = false;
         _historyFlowHandler.IsFunnelChoiseActive = true;
+        Debug.Log("Activation Funnel");
         if (buttonData.IsCircleChoise)
         {
             _funnelHandler.IsCircleFunnel = true;
@@ -161,7 +169,7 @@ public class ButtonsHandler : MonoBehaviour
         else if (buttonData.IsFindChoise)
         {
             _funnelHandler.IsFindChoise = true;
-            _funnelHandler.ActivateFunnelChoiseLine(buttonData.FindChoiseLines);
+            _funnelHandler.ActivateFunnelChoiseLine(buttonData.FindChoiseLines.Cast<FunnelChoiseLine>().ToList());
         }
     }
 

@@ -161,6 +161,23 @@ public class HistoryFlowHandler : MonoBehaviour
                 break;
         }
     }
+    public void ShowHeroyOnScene(FunnelChoiseLine storyHierarhy)
+    {
+        _heroLeft.gameObject.SetActive(false);
+        _heroRight.gameObject.SetActive(false);
+
+        switch (storyHierarhy.HeroType)
+        {
+            case HeroType.HeroLeft:
+                _heroLeft.gameObject.SetActive(true);
+                _heroLeft.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].HeroSprite;
+                break;
+            case HeroType.HeroRight:
+                _heroRight.gameObject.SetActive(true);
+                _heroRight.sprite = _gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].HeroSprite;
+                break;
+        }
+    }
     private void OnDestroy()
     {
         _masterSave.SaveAllData();
