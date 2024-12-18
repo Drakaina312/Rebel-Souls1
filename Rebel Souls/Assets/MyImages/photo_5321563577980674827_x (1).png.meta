@@ -46,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 600, z: 0, w: 1065}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -142,13 +142,13 @@ TextureImporter:
       name: photo_5321563577980674827_x (1)_0
       rect:
         serializedVersion: 2
-        x: 35
+        x: 37
         y: 0
         width: 2732
         height: 2008
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 995, z: 0, w: 1013}
       customData: 
       outline: []
       physicsShape: []
@@ -164,8 +164,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: e80d8906a3456d24dbe5f829bc795374
+    internalID: -1319976730
     vertices: []
     indices: 
     edges: []

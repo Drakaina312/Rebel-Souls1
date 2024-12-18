@@ -95,21 +95,23 @@ public class HistoryFlowHandler : MonoBehaviour
         if (!_isTipeTextComplete)
         {
             StopCoroutine(_tipeText);
+            _textResizer.UpdateSize(_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Text);
             _textArea.text = _gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Text;
             _isTipeTextComplete = true;
             yield return new WaitForSeconds(0.01f);
 
-            _textResizer.UpdateSize();
+           
         }
     }
     private IEnumerator TypeText(string fullText)
     {
         _isTipeTextComplete = false;
         _textArea.text = "";
+        _textResizer.UpdateSize(fullText);
         for (int i = 0; i < fullText.Length; i++)
         {
             _textArea.text += fullText[i];
-            _textResizer.UpdateSize();
+           
             yield return _sleepTime;
         }
 

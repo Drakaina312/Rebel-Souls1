@@ -11,9 +11,10 @@ public class NotationHandler : MonoBehaviour
     public IEnumerator ActivaidNotation(string TextToNotate) 
     {
         transform.DOScale(1, 0.5f);
+        _notationResizer.UpdateSize(TextToNotate);
         NotationText.text = TextToNotate;
         yield return new WaitForSeconds(0.01f);
-        _notationResizer.UpdateSize();
+        
         
     }
 
