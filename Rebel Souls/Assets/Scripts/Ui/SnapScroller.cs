@@ -1,78 +1,68 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 public class SnapScroller : MonoBehaviour
 {
     [SerializeField] private ScrollRect _scrollRect;
-    [SerializeField] private float _snapSpeed = 10;
-    [SerializeField] private bool _isSnaping;
-    private Vector2 _snapPosition;
+
+    [SerializeField] private float _center;
+    [SerializeField] private float _distance;
+
+    private Tween _tween;
+    private float _childIndex;
+    private float _range = 10000;
+    private bool _isPanelOpened;
+
+    //private void Start()
+    //{
+    //    Debug.Log("Center = " + _scrollRect.content.GetChild(0).transform.position);
+    //}
 
     private void Update()
     {
-        if (_isSnaping)
-            return;
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonDown(0) && gameObject.transform.parent.localScale.x > 0)
+            _tween.Kill();
+        if (Input.GetMouseButtonUp(0) && gameObject.transform.parent.localScale.x > 0)
         {
-            StartCoroutine(SnapToNearestItem());
+            SnapToNearestItem();
         }
-        if (Input.touchCount > 0)
-        {
-            if (Input.GetTouch(0).phase == TouchPhase.Ended)
+    }
 
+    public void ResetScrollValue()
+    {
+        Debug.Log("reset");
+        _scrollRect.DOHorizontalNormalizedPos(0, 0.3f).SetDelay(0.2f).OnComplete(() => _isPanelOpened = true);
+    }
+    public void ClosePanel()
+    {
+        _isPanelOpened = false;
+    }
+
+    private void SnapToNearestItem()
+    {
+        if (!_isPanelOpened)
+            return;
+
+        for (int i = 0; i < _scrollRect.content.childCount; i++)
+        {
+            RectTransform child = _scrollRect.content.GetChild(i).GetComponent<RectTransform>();
+            if (Mathf.Abs(_center - child.position.x) < _range)
             {
-                StartCoroutine(SnapToNearestItem());
+                _childIndex = i;
+                _range = Mathf.Abs(_center - child.position.x);
             }
         }
+        _range = 100000;
 
+        Debug.Log("Number Child = " + _childIndex);
+        Debug.Log("ChildCount = " + _scrollRect.content.childCount);
 
-    }
+        float percent = _childIndex * _distance;
+        Debug.Log("Percent = " + percent);
 
-    private IEnumerator SnapToNearestItem() 
-    {
-        _isSnaping = true;
-        float targetPosition = 0;
-        if (_snapPosition.x >= 0 && _snapPosition.x < 0.40f) 
-        {
-            targetPosition = 0;
+        _tween = _scrollRect.DOHorizontalNormalizedPos(percent, 1f);
 
-        }
-        //float contentPosition = _scrollRect.content.anchoredPosition.x -_scrollRect.content.;
-        Debug.Log(targetPosition);
-        Debug.Log(" привязка начата ");
-       
-        //float itemWidth = _scrollRect.content.rect.width;
-        //int itemCount = _scrollRect.content.childCount;
-
-
-        //float nearestItemIndex = Mathf.RoundToInt(contentPosition / itemWidth);
-        //nearestItemIndex = Mathf.Clamp(nearestItemIndex, 0, itemCount - 1);
-
-
-
-
-
-        //while (Mathf.Abs(contentPosition - targetPosition) > 0.01f) 
-        //{
-        //    contentPosition = Mathf.Lerp(contentPosition,targetPosition, Time.deltaTime * _snapSpeed);
-        //    _scrollRect.content.anchoredPosition = new Vector2(contentPosition, _scrollRect.content.anchoredPosition.y);
-        //    yield return null;
-        //}
-
-
-        //_scrollRect.content.anchoredPosition = new Vector2(targetPosition, _scrollRect.content.anchoredPosition.y);
-        _scrollRect.content.DOLocalMoveX(targetPosition, 1);
-        _isSnaping = false;
-        yield return null;
-       
-    }
-
-    public void GetCurrentItemSnapPosition(Vector2 snapPosition) 
-    {
-        _snapPosition = snapPosition;
-      
     }
 }

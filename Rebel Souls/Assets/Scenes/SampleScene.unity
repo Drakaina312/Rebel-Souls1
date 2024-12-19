@@ -302,6 +302,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelToOpen: {fileID: 20677357}
+  _onOpen:
+    m_PersistentCalls:
+      m_Calls: []
+  _onClose:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &20677359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6857,10 +6863,10 @@ RectTransform:
   - {fileID: 1797849307}
   m_Father: {fileID: 906615253}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.041, y: 0.18116602}
-  m_AnchorMax: {x: 0.92800003, y: 0.81026125}
-  m_AnchoredPosition: {x: -9.5, y: 2}
-  m_SizeDelta: {x: -18.99939, y: -4.5474243}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -39, y: -15.5}
+  m_SizeDelta: {x: 1684.0006, y: 2608.4526}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124444848
 MonoBehaviour:
@@ -6915,7 +6921,7 @@ MonoBehaviour:
   m_Content: {fileID: 1797849307}
   m_Horizontal: 1
   m_Vertical: 0
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -6929,19 +6935,7 @@ MonoBehaviour:
   m_VerticalScrollbarSpacing: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 124444853}
-        m_TargetAssemblyTypeName: SnapScroller, Assembly-CSharp
-        m_MethodName: ReadValueTest
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &124444851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6993,8 +6987,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scrollRect: {fileID: 124444850}
-  _snapSpeed: 10
-  _isSnaping: 0
+  _center: 640
+  _distance: 0.47
 --- !u!1 &148570985
 GameObject:
   m_ObjectHideFlags: 0
@@ -26052,6 +26046,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelToOpen: {fileID: 906615253}
+  _onOpen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 124444853}
+        m_TargetAssemblyTypeName: SnapScroller, Assembly-CSharp
+        m_MethodName: ResetScrollValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onClose:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 124444853}
+        m_TargetAssemblyTypeName: SnapScroller, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &911052171
 GameObject:
   m_ObjectHideFlags: 0
@@ -32987,6 +33011,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelToOpen: {fileID: 1113905369}
+  _onOpen:
+    m_PersistentCalls:
+      m_Calls: []
+  _onClose:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1135667686
 GameObject:
   m_ObjectHideFlags: 0
@@ -39648,7 +39678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36866668, y: 0.0086640995}
   m_AnchorMax: {x: 0.63283336, y: 0.113124855}
-  m_AnchoredPosition: {x: 2.996338, y: -8.053711}
+  m_AnchoredPosition: {x: 2.996338, y: -8.053833}
   m_SizeDelta: {x: -8.467773, y: -13.902588}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1611092924
@@ -46780,6 +46810,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelToOpen: {fileID: 1759419276}
+  _onOpen:
+    m_PersistentCalls:
+      m_Calls: []
+  _onClose:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1763113467
 GameObject:
   m_ObjectHideFlags: 0
@@ -47519,10 +47555,10 @@ RectTransform:
   - {fileID: 1053406474}
   m_Father: {fileID: 124444847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -589764.25, y: 0}
-  m_SizeDelta: {x: 3652.7642, y: -0.0005}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -5717.799, y: 0}
+  m_SizeDelta: {x: 5336.764, y: 2607.9995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797849308
 MonoBehaviour:
@@ -54434,6 +54470,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelToOpen: {fileID: 2032350335}
+  _onOpen:
+    m_PersistentCalls:
+      m_Calls: []
+  _onClose:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2060848352
 GameObject:
   m_ObjectHideFlags: 0
