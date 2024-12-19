@@ -18,9 +18,12 @@ public class HistoryFlowHandler : MonoBehaviour
     [SerializeField] private TextResizer _textResizer;
     [SerializeField] private ButtonsHandler _buttonsHandler;
     [SerializeField] private FunnelHandler _funnelHandler;
+    [SerializeField] private AudioSource _audioSourceForVoices;
+    [SerializeField] private AudioSource _audioSourceForEffects;
 
 
-    [SerializeField] private TextMeshProUGUI _textArea;
+
+   [SerializeField] private TextMeshProUGUI _textArea;
     [SerializeField] private Image _backGround;
     [SerializeField] private Image _heroLeft;
     [SerializeField] private Image _heroRight;
@@ -107,6 +110,7 @@ public class HistoryFlowHandler : MonoBehaviour
     {
         _isTipeTextComplete = false;
         _textArea.text = "";
+        Debug.Log(fullText);    
         _textResizer.UpdateSize(fullText);
         for (int i = 0; i < fullText.Length; i++)
         {
@@ -131,6 +135,27 @@ public class HistoryFlowHandler : MonoBehaviour
 
 
         _buttonsHandler.ActivedButtons(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow], this);
+
+
+        if (_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].VoiceClip != null)
+        {
+            _audioSourceForVoices.clip = _gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].VoiceClip;
+            _audioSourceForVoices.Play();
+        }
+        else 
+        { 
+         _audioSourceForVoices.Stop();
+        }
+
+        if (_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].AudioEffectsClip != null)
+        {
+            _audioSourceForEffects.clip = _gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].AudioEffectsClip;
+            _audioSourceForEffects.Play();
+        }
+        else
+        {
+            _audioSourceForEffects.Stop();
+        }
 
         if (_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].IsHaveNotation)
             StartCoroutine(_notationHandler.ActivaidNotation(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].Notation));

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      OV2-round-corners (1)_0: -7065477597037658636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

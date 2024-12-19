@@ -40,14 +40,41 @@ public struct StoryHierarhy
     [FoldoutGroup("Split/Settings", false)]
     public string Notation;
 
+    [OnValueChanged(nameof(ChangeTextLength))]
     [FoldoutGroup("Split/Settings", false)]
     [TextArea(1, 10)] public string Text;
+
+
+    [FoldoutGroup("Split/Settings", false)]
+    public string TextSize;
+
+    [FoldoutGroup("Split/Settings",  false)]
+    public bool IsHaveVoice;
+
+    [FoldoutGroup("Split/Settings", false)]
+    [ShowIf(nameof(IsHaveVoice))]
+    public AudioClip VoiceClip;
+
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsHaveAudioEffects;
+
+    [FoldoutGroup("Split/Settings", false)]
+    [ShowIf(nameof(IsHaveAudioEffects))]
+    public AudioClip AudioEffectsClip;
 
     [FoldoutGroup("Split/Settings", false)]
     public bool IsFalseChoiseFinish;
 
     [FoldoutGroup("Split/Settings", false)]
     public int IndexToStartFlow;
+
+
+ 
+    private void ChangeTextLength() 
+    {
+        Debug.Log("jksdfhgkjgh");
+     TextSize = Text.Length.ToString();
+    }
 }
 [Serializable]
 public class ButtonSetting
