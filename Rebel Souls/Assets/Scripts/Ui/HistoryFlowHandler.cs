@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using TMPro;
@@ -36,6 +37,7 @@ public class HistoryFlowHandler : MonoBehaviour
     private bool _isTipeTextComplete;
     private int _dialogIndex;
     private Coroutine _tipeText;
+    public bool IsInputActive { get; private set; } = true;
 
     [Inject]
     private void Construct(InGameDataBase gameData, InputSystem_Actions input, MasterSave masterSave)
@@ -66,6 +68,7 @@ public class HistoryFlowHandler : MonoBehaviour
     private void SwipeStory(InputAction.CallbackContext context)
     {
         Debug.Log($"Swipe   1 = {IsFunnelChoiseActive} 2 = {IsMainFlowActive}");
+
         if (IsFunnelChoiseActive)
         {
             _funnelHandler.SwipeDialogWhenClicked();
@@ -101,9 +104,7 @@ public class HistoryFlowHandler : MonoBehaviour
             _textResizer.UpdateSize(_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Text);
             _textArea.text = _gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Text;
             _isTipeTextComplete = true;
-            yield return new WaitForSeconds(0.01f);
-
-           
+            yield return new WaitForSeconds(0.01f); 
         }
     }
     private IEnumerator TypeText(string fullText)
@@ -240,6 +241,13 @@ public class HistoryFlowHandler : MonoBehaviour
 
         _tipeText = StartCoroutine(TypeText(_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Text));
         Debug.Log($"Статус основного потока {IsMainFlowActive}");
+    }
+
+    public async UniTaskVoid ActivateInputDelay()
+    {
+        IsInputActive = false;
+        await UniTask.Delay(TimeSpan.FromSeconds(2));
+        IsInputActive = true;
     }
 }
 

@@ -44,10 +44,11 @@ public class ButtonsHandler : MonoBehaviour
                 button.gameObject.SetActive(false);
                 button.HelpImage.gameObject.SetActive(false);
             }
-
             return;
         }
+
         _historyFlowHandler.IsMainFlowActive = false;
+        _historyFlowHandler.ActivateInputDelay().Forget();
 
         ResizeButtonsArea(storyHierarhy.ButtonSetting.FindAll(x => x.WasChoised == false).Count());
 
@@ -82,6 +83,7 @@ public class ButtonsHandler : MonoBehaviour
         }
 
         _funnelHandler.CanSwitchToNextDialog = false;
+        _historyFlowHandler.ActivateInputDelay().Forget();
 
         ResizeButtonsArea(funnelChoiseButtons.FindAll(x => x.WasChoosed == false).Count());
         int index = 0;
@@ -97,6 +99,9 @@ public class ButtonsHandler : MonoBehaviour
 
     private void FunnelChoiseClickProccesor(FunnelChoiseButtons buttonData)
     {
+        if (!_historyFlowHandler.IsInputActive)
+            return;
+
         AddStatIfCan(buttonData.StatKit, buttonData.IsStatAdder);
         _funnelHandler.CanSwitchToNextDialog = true;
 
@@ -141,6 +146,9 @@ public class ButtonsHandler : MonoBehaviour
 
     private void ButtonOnClickProccesor(ButtonSetting buttonData)
     {
+        if (!_historyFlowHandler.IsInputActive)
+            return;
+
         ActivateFunnelChoiseIfCan(buttonData);
         AddStatIfCan(buttonData.StatKit, buttonData.IsStatAdder);
 

@@ -20,7 +20,35 @@ MonoBehaviour:
     HeroType: 0
     HeroSprite: {fileID: 0}
     IsHaveButtons: 0
-    ButtonSetting: []
+    ButtonSetting:
+    - ButtonsName: 1
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 1
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 0
+      CircleChoiceLines: []
+      IsFindChoise: 0
+      FindChoiseLines: []
+      WasChoised: 0
+    - ButtonsName: 2
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 1
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 0
+      CircleChoiceLines: []
+      IsFindChoise: 0
+      FindChoiseLines: []
+      WasChoised: 0
     IsHaveNotation: 0
     Notation: 
     Text: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0434\u043E\u0440\u043E\u0433\u043E\u0439
@@ -36,7 +64,35 @@ MonoBehaviour:
     HeroType: 0
     HeroSprite: {fileID: 0}
     IsHaveButtons: 0
-    ButtonSetting: []
+    ButtonSetting:
+    - ButtonsName: 2
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 1
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 0
+      CircleChoiceLines: []
+      IsFindChoise: 0
+      FindChoiseLines: []
+      WasChoised: 0
+    - ButtonsName: 3
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 1
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 0
+      CircleChoiceLines: []
+      IsFindChoise: 0
+      FindChoiseLines: []
+      WasChoised: 0
     IsHaveNotation: 0
     Notation: 
     Text: "\u042D\u0442\u043E \u0441\u043D\u043E\u0432\u0430 \u044F, \u0421\u043E\u043B\u043D\u0435\u0447\u043D\u044B\u0439
@@ -52,7 +108,35 @@ MonoBehaviour:
     HeroType: 0
     HeroSprite: {fileID: 0}
     IsHaveButtons: 0
-    ButtonSetting: []
+    ButtonSetting:
+    - ButtonsName: 4
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 0
+      CircleChoiceLines: []
+      IsFindChoise: 0
+      FindChoiseLines: []
+      WasChoised: 0
+    - ButtonsName: 5
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsLineSplitter: 0
+      HistoryPattern: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsFalseChoice: 0
+      FalseChoiceLines: []
+      IsCircleChoise: 0
+      CircleChoiceLines: []
+      IsFindChoise: 0
+      FindChoiseLines: []
+      WasChoised: 0
     IsHaveNotation: 0
     Notation: 
     Text: "\u0418\u0441\u0442\u043E\u0440\u0438\u044F, \u043A\u043E\u0442\u043E\u0440\u0430\u044F
