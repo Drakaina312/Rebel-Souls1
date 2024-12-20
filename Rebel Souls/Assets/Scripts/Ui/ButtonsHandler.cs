@@ -29,6 +29,13 @@ public class ButtonsHandler : MonoBehaviour
     {
         _historyFlowHandler = historyFlowHandler;
 
+        foreach (var button in _buttons)
+        {
+            button.Button.onClick.RemoveAllListeners();
+            button.gameObject.SetActive(false);
+            button.HelpImage.gameObject.SetActive(false);
+        }
+
         if (!storyHierarhy.IsHaveButtons)
         {
             foreach (var button in _buttons)
@@ -45,12 +52,9 @@ public class ButtonsHandler : MonoBehaviour
         ResizeButtonsArea(storyHierarhy.ButtonSetting.FindAll(x => x.WasChoised == false).Count());
 
         int index = 0;
-        Debug.Log("Ammount of btn  story" + storyHierarhy.ButtonSetting.Count);
         foreach (var buttonData in storyHierarhy.ButtonSetting)
         {
             TurnOnButton(index, buttonData.HelpSprite, buttonData.ButtonsName, buttonData.WasChoised);
-
-            Debug.Log("Была включена = " + buttonData.WasChoised);
             _buttons[index].Button.onClick.RemoveAllListeners();
 
             _buttons[index].Button.onClick.AddListener(() => ButtonOnClickProccesor(buttonData));

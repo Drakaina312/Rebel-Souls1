@@ -114,6 +114,7 @@ public class FunnelHandler : MonoBehaviour
         _funnelChoiseLine = falseChoiseLine;
         CanSwitchToNextDialog = true;
         _dialogIndex = 0;
+
         if (!isFindChoise)
             ShowFunnelChoiseDialog(falseChoiseLine[_dialogIndex].Text, falseChoiseLine[_dialogIndex].FunnelChoiseButtons,
                 falseChoiseLine[_dialogIndex].Background);
@@ -140,6 +141,7 @@ public class FunnelHandler : MonoBehaviour
         StopAllCoroutines();
         _tipeText = StartCoroutine(TypeText(textToShow));
         _backGround.sprite = backGround;
+        _notationHandler.ActivaidNotation(_funnelChoiseLine[_dialogIndex].Notation);
 
         if (!isFindChjoise)
         {
@@ -152,6 +154,7 @@ public class FunnelHandler : MonoBehaviour
             {
                 _buttonsHandler.ActivedButtonsForFunnelChoise(falseChoiseButtons, _funnelChoiseLine[_dialogIndex].IsHaveButtons);
                 _historyFlowHandler.ShowHeroyOnScene(_funnelChoiseLine[_dialogIndex]);
+
                 if (IsFindChoise && _funnelChoiseLine[_dialogIndex].IsRighChoise)
                 {
                     IsRightChoiseFinded = true;

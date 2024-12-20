@@ -158,7 +158,7 @@ public class HistoryFlowHandler : MonoBehaviour
         }
 
         if (_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].IsHaveNotation)
-            StartCoroutine(_notationHandler.ActivaidNotation(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].Notation));
+            _notationHandler.ActivaidNotation(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].Notation);
 
         _tipeText = StartCoroutine(TypeText(_gameData.DIalogSequenceStart.StoryHierarhy[indexToShow].Text));
 
@@ -236,7 +236,7 @@ public class HistoryFlowHandler : MonoBehaviour
 
 
         if (_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].IsHaveNotation)
-            StartCoroutine(_notationHandler.ActivaidNotation(_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Notation));
+            _notationHandler.ActivaidNotation(_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Notation);
 
         _tipeText = StartCoroutine(TypeText(_gameData.DIalogSequenceStart.StoryHierarhy[_dialogIndex].Text));
         Debug.Log($"Статус основного потока {IsMainFlowActive}");

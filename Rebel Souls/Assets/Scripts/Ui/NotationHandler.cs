@@ -8,14 +8,20 @@ public class NotationHandler : MonoBehaviour
 {
     public TextMeshProUGUI NotationText;
     [SerializeField] private TextResizer _notationResizer;
-    public IEnumerator ActivaidNotation(string TextToNotate) 
+    public void ActivaidNotation(string TextToNotate)
     {
+        Debug.Log("activatin notation");
+        StartCoroutine(Notation(TextToNotate));
+
+    }
+
+    private IEnumerator Notation(string TextToNotate)
+    {
+
         transform.DOScale(1, 0.5f);
         _notationResizer.UpdateSize(TextToNotate);
         NotationText.text = TextToNotate;
         yield return new WaitForSeconds(0.01f);
-        
-        
     }
 
     public void DeActivaidNotation()
