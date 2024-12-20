@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7ec47f17a4d3a44a65d1c63a72b8e3, type: 3}
   m_Name: Roy
   m_EditorClassIdentifier: 
-  LoverName: "\u0420\u043E\u0439"
+  LoverName: "\u0410\u043B\u0435\u043A\u0441"
   LoverViewSprite: {fileID: -1088376419717159814, guid: 235f72de73a96024bab71a67b650fae6, type: 3}
   LoverProfile: {fileID: -2869568011951764890, guid: d6bcb80ce00254048b9aa0bdb60cae4f, type: 3}
   RelationShipsInfo:
