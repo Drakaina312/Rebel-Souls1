@@ -1,0 +1,325 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3ff72cf61955a44b592cdcf82f5858, type: 3}
+  m_Name: "\u0413\u043B\u0430\u0432\u04301"
+  m_EditorClassIdentifier: 
+  SlideData:
+  - SlideIndex: "\u0421\u0442\u0430\u0440\u0442"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting:
+    - ButtonsName: "\u0414\u0430"
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsCircleChoise: 0
+      WasChoised: 0
+    - ButtonsName: "\u041D\u0435\u0442"
+      IsHaveHelpSprite: 0
+      HelpSprite: {fileID: 0}
+      IsStatAdder: 0
+      StatKit: []
+      IsCircleChoise: 0
+      WasChoised: 0
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 0
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 1
+    NextSlideToOpen: "\u0421\u043A\u0440\u044B\u0442\u0430\u044F\u0421\u0446\u0435\u043D\u0430\u0410\u043B\u0435\u043A\u0441"
+    ChekingConditions:
+    - IsSC: 1
+      StatName1:
+      - "\u0413\u0440\u0430\u0446\u0438\u044F"
+      Cnd: 0
+      StatValue: 5
+      StatName2: "\u0412\u043B\u0430\u0441\u0442\u044C"
+      SlideToOpen: "\u04102"
+  - SlideIndex: "\u0421\u043A\u0440\u044B\u0442\u0430\u044F\u0421\u0446\u0435\u043D\u0430\u0410\u043B\u0435\u043A\u0441"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 0
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u04103"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 0
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u04124"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u04125"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u04126"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u04127"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 0
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u04128"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04351"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04353"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04354"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u041D\u0435\u0433\u0430\u0442\u0438\u04321"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u041D\u0435\u0433\u0430\u0442\u0438\u04322"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u041F\u043E\u0441\u0438\u0442\u0438\u04321"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u041F\u043E\u0441\u0438\u0442\u0438\u04322"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []
+  - SlideIndex: "\u041F\u043E\u0441\u0438\u0442\u0438\u04323"
+    Background: {fileID: 0}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    IsHaveButtons: 0
+    ButtonSetting: []
+    IsHaveNotation: 0
+    Notation: 
+    Text: 
+    TextSize: 
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    NextSlideToOpen: 
+    ChekingConditions: []

@@ -30,6 +30,7 @@ public struct StoryHierarhy
 
     [FoldoutGroup("Split/Settings", false)]
     public bool IsHaveButtons;
+
     [FoldoutGroup("Split/Settings", false)]
     [ShowIf(nameof(IsHaveButtons))]
     public List<ButtonSetting> ButtonSetting;
