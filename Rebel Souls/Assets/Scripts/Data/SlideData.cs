@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class SlideData 
 {
-    public string SlideIndex;
+    //public string SlideIndex;
 
     [VerticalGroup("Split"),FoldoutGroup("Split/Settings", false)]
     [PreviewField(75, ObjectFieldAlignment.Center)]

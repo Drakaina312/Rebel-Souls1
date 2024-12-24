@@ -64,17 +64,17 @@ public class ActsChanger : MonoBehaviour
         }
     }
 
-    private void AddActionOnChapterClick(DialogSequence dialogSequence)
+    private void AddActionOnChapterClick(StoryLine dialogSequence)
     {
-        _inGameDataBase.DIalogSequenceStart = dialogSequence;
+        _inGameDataBase.StoryLine = dialogSequence;
         _masterSave.CurrentProfile.LastSaveChapterPath = dialogSequence.PathToFile;
         _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_inGameDataBase.ActStatistics, dialogSequence.ChapterSortingCondition);
 
         SceneManager.LoadScene(1);
     }
-    private void AddActionOnChapterClick(DialogSequence dialogSequence, DialogSequence previousChapter)
+    private void AddActionOnChapterClick(StoryLine dialogSequence, StoryLine previousChapter)
     {
-        _inGameDataBase.DIalogSequenceStart = dialogSequence;
+        _inGameDataBase.StoryLine = dialogSequence;
         _masterSave.CurrentProfile.LastSaveChapterPath = dialogSequence.PathToFile;
         _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_inGameDataBase.ActStatistics, dialogSequence.ChapterSortingCondition, previousChapter);
 

@@ -12,314 +12,686 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3ff72cf61955a44b592cdcf82f5858, type: 3}
   m_Name: "\u0413\u043B\u0430\u0432\u04301"
   m_EditorClassIdentifier: 
-  SlideData:
-  - SlideIndex: "\u0421\u0442\u0430\u0440\u0442"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting:
-    - ButtonsName: "\u0414\u0430"
-      IsHaveHelpSprite: 0
-      HelpSprite: {fileID: 0}
-      IsStatAdder: 0
-      StatKit: []
-      IsCircleChoise: 0
-      WasChoised: 0
-    - ButtonsName: "\u041D\u0435\u0442"
-      IsHaveHelpSprite: 0
-      HelpSprite: {fileID: 0}
-      IsStatAdder: 0
-      StatKit: []
-      IsCircleChoise: 0
-      WasChoised: 0
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 0
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 1
-    NextSlideToOpen: "\u0421\u043A\u0440\u044B\u0442\u0430\u044F\u0421\u0446\u0435\u043D\u0430\u0410\u043B\u0435\u043A\u0441"
-    ChekingConditions:
-    - IsSC: 1
-      StatName1:
-      - "\u0413\u0440\u0430\u0446\u0438\u044F"
-      Cnd: 0
-      StatValue: 5
-      StatName2: "\u0412\u043B\u0430\u0441\u0442\u044C"
-      SlideToOpen: "\u04102"
-  - SlideIndex: "\u0421\u043A\u0440\u044B\u0442\u0430\u044F\u0421\u0446\u0435\u043D\u0430\u0410\u043B\u0435\u043A\u0441"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 0
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u04103"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 0
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u04124"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u04125"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u04126"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u04127"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 0
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u04128"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04351"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04353"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04354"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u041D\u0435\u0433\u0430\u0442\u0438\u04321"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u041D\u0435\u0433\u0430\u0442\u0438\u04322"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u041F\u043E\u0441\u0438\u0442\u0438\u04321"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u041F\u043E\u0441\u0438\u0442\u0438\u04322"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
-  - SlideIndex: "\u041F\u043E\u0441\u0438\u0442\u0438\u04323"
-    Background: {fileID: 0}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    IsHaveButtons: 0
-    ButtonSetting: []
-    IsHaveNotation: 0
-    Notation: 
-    Text: 
-    TextSize: 
-    IsHaveVoice: 0
-    VoiceClip: {fileID: 0}
-    IsHaveAudioEffects: 0
-    AudioEffectsClip: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 0
-    NextSlideToOpen: 
-    ChekingConditions: []
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: 99781842b353b4400ba99cce85ef0e91, type: 3}
+    - {fileID: 21300000, guid: cb9c1245fc80342a0b18abbce243749d, type: 3}
+    - {fileID: 21300000, guid: 8812d89a56d0d4acabfd9ce96ec03fd4, type: 3}
+    - {fileID: 21300000, guid: 34a018c159c22413aaa0d6ffbb52ebaf, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: SlideData
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[SlideData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u0421\u0442\u0430\u0440\u04421"
+    - Name: $v
+      Entry: 7
+      Data: 2|SlideData, Assembly-CSharp
+    - Name: Background
+      Entry: 10
+      Data: 0
+    - Name: HeroType
+      Entry: 3
+      Data: 0
+    - Name: HeroSprite
+      Entry: 6
+      Data: 
+    - Name: IsHaveButtons
+      Entry: 5
+      Data: false
+    - Name: ButtonSetting
+      Entry: 6
+      Data: 
+    - Name: IsHaveNotation
+      Entry: 5
+      Data: false
+    - Name: Notation
+      Entry: 6
+      Data: 
+    - Name: Text
+      Entry: 1
+      Data: "\u0421\u0442\u0430\u0440\u0442"
+    - Name: TextSize
+      Entry: 1
+      Data: 5
+    - Name: IsHaveVoice
+      Entry: 5
+      Data: false
+    - Name: VoiceClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAudioEffects
+      Entry: 5
+      Data: false
+    - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: "IsHaveChecking\u0421ondition"
+      Entry: 5
+      Data: false
+    - Name: NextSlideToOpen
+      Entry: 1
+      Data: "\u0421\u0442\u0430\u0440\u04422"
+    - Name: ChekingConditions
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u0421\u0442\u0430\u0440\u04422"
+    - Name: $v
+      Entry: 7
+      Data: 3|SlideData, Assembly-CSharp
+    - Name: Background
+      Entry: 10
+      Data: 0
+    - Name: HeroType
+      Entry: 3
+      Data: 0
+    - Name: HeroSprite
+      Entry: 6
+      Data: 
+    - Name: IsHaveButtons
+      Entry: 5
+      Data: false
+    - Name: ButtonSetting
+      Entry: 6
+      Data: 
+    - Name: IsHaveNotation
+      Entry: 5
+      Data: false
+    - Name: Notation
+      Entry: 6
+      Data: 
+    - Name: Text
+      Entry: 1
+      Data: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435"
+    - Name: TextSize
+      Entry: 1
+      Data: 11
+    - Name: IsHaveVoice
+      Entry: 5
+      Data: false
+    - Name: VoiceClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAudioEffects
+      Entry: 5
+      Data: false
+    - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: "IsHaveChecking\u0421ondition"
+      Entry: 5
+      Data: false
+    - Name: NextSlideToOpen
+      Entry: 1
+      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04351"
+    - Name: ChekingConditions
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04351"
+    - Name: $v
+      Entry: 7
+      Data: 4|SlideData, Assembly-CSharp
+    - Name: Background
+      Entry: 10
+      Data: 0
+    - Name: HeroType
+      Entry: 3
+      Data: 0
+    - Name: HeroSprite
+      Entry: 6
+      Data: 
+    - Name: IsHaveButtons
+      Entry: 5
+      Data: false
+    - Name: ButtonSetting
+      Entry: 6
+      Data: 
+    - Name: IsHaveNotation
+      Entry: 5
+      Data: false
+    - Name: Notation
+      Entry: 6
+      Data: 
+    - Name: Text
+      Entry: 1
+      Data: "\u0414\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0435\u0435 \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435"
+    - Name: TextSize
+      Entry: 1
+      Data: 22
+    - Name: IsHaveVoice
+      Entry: 5
+      Data: false
+    - Name: VoiceClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAudioEffects
+      Entry: 5
+      Data: false
+    - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: "IsHaveChecking\u0421ondition"
+      Entry: 5
+      Data: false
+    - Name: NextSlideToOpen
+      Entry: 1
+      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
+    - Name: ChekingConditions
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
+    - Name: $v
+      Entry: 7
+      Data: 5|SlideData, Assembly-CSharp
+    - Name: Background
+      Entry: 10
+      Data: 0
+    - Name: HeroType
+      Entry: 3
+      Data: 0
+    - Name: HeroSprite
+      Entry: 6
+      Data: 
+    - Name: IsHaveButtons
+      Entry: 5
+      Data: true
+    - Name: ButtonSetting
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 7|SlideButtonsData, Assembly-CSharp
+    - Name: ButtonsName
+      Entry: 1
+      Data: "\u0434\u0430"
+    - Name: IsHaveHelpSprite
+      Entry: 5
+      Data: false
+    - Name: HelpSprite
+      Entry: 6
+      Data: 
+    - Name: IsStatAdder
+      Entry: 5
+      Data: false
+    - Name: StatKit
+      Entry: 6
+      Data: 
+    - Name: IsCircleChoise
+      Entry: 5
+      Data: true
+    - Name: WasChoised
+      Entry: 5
+      Data: true
+    - Name: NextSlideKey
+      Entry: 1
+      Data: "\u041A\u043D\u043E\u043F\u043A\u04382"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|SlideButtonsData, Assembly-CSharp
+    - Name: ButtonsName
+      Entry: 1
+      Data: "\u041D\u0435\u0442"
+    - Name: IsHaveHelpSprite
+      Entry: 5
+      Data: false
+    - Name: HelpSprite
+      Entry: 6
+      Data: 
+    - Name: IsStatAdder
+      Entry: 5
+      Data: false
+    - Name: StatKit
+      Entry: 6
+      Data: 
+    - Name: IsCircleChoise
+      Entry: 5
+      Data: true
+    - Name: WasChoised
+      Entry: 5
+      Data: true
+    - Name: NextSlideKey
+      Entry: 1
+      Data: "\u041A\u043D\u043E\u043F\u043A\u04381"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: IsHaveNotation
+      Entry: 5
+      Data: false
+    - Name: Notation
+      Entry: 6
+      Data: 
+    - Name: Text
+      Entry: 1
+      Data: "\u041A\u043D\u043E\u043F\u043A\u0438"
+    - Name: TextSize
+      Entry: 1
+      Data: 6
+    - Name: IsHaveVoice
+      Entry: 5
+      Data: false
+    - Name: VoiceClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAudioEffects
+      Entry: 5
+      Data: false
+    - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: "IsHaveChecking\u0421ondition"
+      Entry: 5
+      Data: false
+    - Name: NextSlideToOpen
+      Entry: 1
+      Data: "\u041A\u043E\u043D\u0435\u0446"
+    - Name: ChekingConditions
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u041A\u043D\u043E\u043F\u043A\u04382"
+    - Name: $v
+      Entry: 7
+      Data: 9|SlideData, Assembly-CSharp
+    - Name: Background
+      Entry: 10
+      Data: 1
+    - Name: HeroType
+      Entry: 3
+      Data: 0
+    - Name: HeroSprite
+      Entry: 6
+      Data: 
+    - Name: IsHaveButtons
+      Entry: 5
+      Data: false
+    - Name: ButtonSetting
+      Entry: 6
+      Data: 
+    - Name: IsHaveNotation
+      Entry: 5
+      Data: false
+    - Name: Notation
+      Entry: 6
+      Data: 
+    - Name: Text
+      Entry: 1
+      Data: "\u041A\u043E\u043D\u0435\u0446 \u043A\u043D\u043E\u043F\u043A\u0438
+        2"
+    - Name: TextSize
+      Entry: 1
+      Data: 14
+    - Name: IsHaveVoice
+      Entry: 5
+      Data: false
+    - Name: VoiceClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAudioEffects
+      Entry: 5
+      Data: false
+    - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: "IsHaveChecking\u0421ondition"
+      Entry: 5
+      Data: false
+    - Name: NextSlideToOpen
+      Entry: 1
+      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
+    - Name: ChekingConditions
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u041A\u043E\u043D\u0435\u0446"
+    - Name: $v
+      Entry: 7
+      Data: 10|SlideData, Assembly-CSharp
+    - Name: Background
+      Entry: 10
+      Data: 2
+    - Name: HeroType
+      Entry: 3
+      Data: 0
+    - Name: HeroSprite
+      Entry: 6
+      Data: 
+    - Name: IsHaveButtons
+      Entry: 5
+      Data: true
+    - Name: ButtonSetting
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 12|SlideButtonsData, Assembly-CSharp
+    - Name: ButtonsName
+      Entry: 1
+      Data: 1
+    - Name: IsHaveHelpSprite
+      Entry: 5
+      Data: false
+    - Name: HelpSprite
+      Entry: 6
+      Data: 
+    - Name: IsStatAdder
+      Entry: 5
+      Data: false
+    - Name: StatKit
+      Entry: 6
+      Data: 
+    - Name: IsCircleChoise
+      Entry: 5
+      Data: false
+    - Name: WasChoised
+      Entry: 5
+      Data: false
+    - Name: NextSlideKey
+      Entry: 1
+      Data: "\u0424\u0438\u043D\u0438\u04482"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|SlideButtonsData, Assembly-CSharp
+    - Name: ButtonsName
+      Entry: 1
+      Data: 2
+    - Name: IsHaveHelpSprite
+      Entry: 5
+      Data: false
+    - Name: HelpSprite
+      Entry: 6
+      Data: 
+    - Name: IsStatAdder
+      Entry: 5
+      Data: false
+    - Name: StatKit
+      Entry: 6
+      Data: 
+    - Name: IsCircleChoise
+      Entry: 5
+      Data: false
+    - Name: WasChoised
+      Entry: 5
+      Data: false
+    - Name: NextSlideKey
+      Entry: 1
+      Data: "\u0424\u0438\u043D\u0438\u04482"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: IsHaveNotation
+      Entry: 5
+      Data: false
+    - Name: Notation
+      Entry: 6
+      Data: 
+    - Name: Text
+      Entry: 1
+      Data: "\u0424\u0438\u043D\u0438\u0448"
+    - Name: TextSize
+      Entry: 1
+      Data: 5
+    - Name: IsHaveVoice
+      Entry: 5
+      Data: false
+    - Name: VoiceClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAudioEffects
+      Entry: 5
+      Data: false
+    - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: "IsHaveChecking\u0421ondition"
+      Entry: 5
+      Data: false
+    - Name: NextSlideToOpen
+      Entry: 6
+      Data: 
+    - Name: ChekingConditions
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u041A\u043D\u043E\u043F\u043A\u04381"
+    - Name: $v
+      Entry: 7
+      Data: 14|SlideData, Assembly-CSharp
+    - Name: Background
+      Entry: 10
+      Data: 1
+    - Name: HeroType
+      Entry: 3
+      Data: 0
+    - Name: HeroSprite
+      Entry: 6
+      Data: 
+    - Name: IsHaveButtons
+      Entry: 5
+      Data: false
+    - Name: ButtonSetting
+      Entry: 6
+      Data: 
+    - Name: IsHaveNotation
+      Entry: 5
+      Data: false
+    - Name: Notation
+      Entry: 6
+      Data: 
+    - Name: Text
+      Entry: 1
+      Data: "\u041A\u043E\u043D\u0435\u0446 \u043A\u043D\u043E\u043F\u043A\u0438
+        1"
+    - Name: TextSize
+      Entry: 1
+      Data: 14
+    - Name: IsHaveVoice
+      Entry: 5
+      Data: false
+    - Name: VoiceClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAudioEffects
+      Entry: 5
+      Data: false
+    - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: "IsHaveChecking\u0421ondition"
+      Entry: 5
+      Data: false
+    - Name: NextSlideToOpen
+      Entry: 1
+      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
+    - Name: ChekingConditions
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u0424\u0438\u043D\u0438\u04482"
+    - Name: $v
+      Entry: 7
+      Data: 15|SlideData, Assembly-CSharp
+    - Name: Background
+      Entry: 10
+      Data: 3
+    - Name: HeroType
+      Entry: 3
+      Data: 0
+    - Name: HeroSprite
+      Entry: 6
+      Data: 
+    - Name: IsHaveButtons
+      Entry: 5
+      Data: false
+    - Name: ButtonSetting
+      Entry: 6
+      Data: 
+    - Name: IsHaveNotation
+      Entry: 5
+      Data: false
+    - Name: Notation
+      Entry: 6
+      Data: 
+    - Name: Text
+      Entry: 1
+      Data: 111111111111111
+    - Name: TextSize
+      Entry: 1
+      Data: 15
+    - Name: IsHaveVoice
+      Entry: 5
+      Data: false
+    - Name: VoiceClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAudioEffects
+      Entry: 5
+      Data: false
+    - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: "IsHaveChecking\u0421ondition"
+      Entry: 5
+      Data: false
+    - Name: NextSlideToOpen
+      Entry: 6
+      Data: 
+    - Name: ChekingConditions
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  ChapterSortingCondition:
+    BookName: 
+    ChapterName: 
+  PathToFile: 

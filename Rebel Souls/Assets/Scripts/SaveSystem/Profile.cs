@@ -29,7 +29,7 @@ public class Profile
         //predict.ChapterSortingConditions.ActName == chapterSortingConditions.ActName &&
         predict.ChapterSortingConditions.ChapterName == chapterSortingConditions.ChapterName);
     }
-    public void SaveStatsForFirstLaunch(ActStatistics actStatistics, ChapterSortingConditions chapterSortingCondition, DialogSequence previousChapter = null)
+    public void SaveStatsForFirstLaunch(ActStatistics actStatistics, ChapterSortingConditions chapterSortingCondition, StoryLine previousChapter = null)
     {
         if (BooksStat == null)
         {

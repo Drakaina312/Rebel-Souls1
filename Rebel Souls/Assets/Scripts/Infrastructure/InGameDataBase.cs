@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InGameDataBase
 {
-    public DialogSequence DIalogSequenceStart;
+    public StoryLine StoryLine;
     public ActStatistics ActStatistics;
     public string BookName;
     public int DialogIndex;

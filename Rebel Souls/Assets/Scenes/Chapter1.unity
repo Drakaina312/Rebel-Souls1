@@ -1425,62 +1425,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &694488318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 694488319}
-  - component: {fileID: 694488320}
-  m_Layer: 0
-  m_Name: FunnelHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &694488319
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694488318}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -244.06487, y: 569.3998, z: -15.270121}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &694488320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694488318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8935efef3f8de34dbaa2d7e77782d1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanSwitchToNextDialog: 1
-  IsFindChoise: 0
-  IsRightChoiseFinded: 0
-  _textArea: {fileID: 406904104}
-  _backGround: {fileID: 344941919}
-  _heroLeft: {fileID: 2021109676}
-  _heroRight: {fileID: 383697408}
-  _tipingSpeed: 0.03
-  _notationHandler: {fileID: 375468777}
-  _textResizer: {fileID: 1131655776}
-  _buttonsHandler: {fileID: 850243289}
-  _historyFlowHandler: {fileID: 1065648534}
 --- !u!1 &808998221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,7 +1634,6 @@ MonoBehaviour:
   - {fileID: 575034219}
   - {fileID: 1203138115}
   - {fileID: 10686197}
-  _funnelHandler: {fileID: 694488320}
 --- !u!114 &850243290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,7 +1699,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065648532}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84094d466b5569749a1661cd216f5940, type: 3}
   m_Name: 
@@ -1768,7 +1711,6 @@ MonoBehaviour:
   _notationHandler: {fileID: 375468777}
   _textResizer: {fileID: 1131655776}
   _buttonsHandler: {fileID: 850243289}
-  _funnelHandler: {fileID: 694488320}
   _audioSourceForVoices: {fileID: 1299532434}
   _audioSourceForEffects: {fileID: 611187868}
   _textArea: {fileID: 406904104}
@@ -3062,6 +3004,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059114398}
   m_CullTransparentMesh: 1
+--- !u!1 &2115721523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2115721524}
+  - component: {fileID: 2115721525}
+  m_Layer: 0
+  m_Name: SlideHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2115721524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115721523}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 152.09972, y: 1315.6262, z: 5.8349686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2115721525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115721523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea8db0d68c0c4004eaa8e6b529a0be52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMainFlowActive: 0
+  _notationHandler: {fileID: 375468777}
+  _textResizer: {fileID: 1131655776}
+  _buttonsHandler: {fileID: 850243289}
+  _audioSourceForVoices: {fileID: 1299532434}
+  _audioSourceForEffects: {fileID: 611187868}
+  _textArea: {fileID: 406904104}
+  _backGround: {fileID: 344941919}
+  _heroLeft: {fileID: 2021109676}
+  _heroRight: {fileID: 383697408}
+  _tipingSpeed: 0.001
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3069,6 +3066,6 @@ SceneRoots:
   - {fileID: 1299532432}
   - {fileID: 2039492915}
   - {fileID: 338781044}
-  - {fileID: 1065648533}
-  - {fileID: 694488319}
   - {fileID: 611187867}
+  - {fileID: 1065648533}
+  - {fileID: 2115721524}

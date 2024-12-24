@@ -13,8 +13,8 @@ public class ChaptersChoosingData : ScriptableObject
 public struct ChaptersInfo
 {
     public string ChaptersName;
-    public DialogSequence FirstDialigues;
-    public DialogSequence PreviousChapterForLoadStats;
+    public StoryLine FirstDialigues;
+    public StoryLine PreviousChapterForLoadStats;
     public int SceneNumber;
 }
 
