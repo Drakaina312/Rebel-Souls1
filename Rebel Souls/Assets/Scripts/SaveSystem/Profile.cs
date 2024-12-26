@@ -37,7 +37,7 @@ public class Profile
             BooksStat[0] = new StatsBook()
             {
                 Statistics = actStatistics.ActStats.ToArray(),
-                ChapterSortingConditions = chapterSortingCondition
+                ChapterSortingConditions = chapterSortingCondition,      
             };
 
         }
@@ -46,6 +46,7 @@ public class Profile
         if (chapterStats != null)
         {
             Debug.Log("Глава существует");
+
 
             foreach (var item in BooksStat)
                 item.IsLastSave = false;
@@ -88,7 +89,6 @@ public class Profile
                         Statistics = newStatistics
                     });
             }
-
             BooksStat = newChapterStatistic.ToArray();
         }
 

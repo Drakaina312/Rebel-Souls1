@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class SlideData 
+public class SlideData
 {
     //public string SlideIndex;
 
-    [VerticalGroup("Split"),FoldoutGroup("Split/Settings", false)]
+    [VerticalGroup("Split"), FoldoutGroup("Split/Settings", false)]
     [PreviewField(75, ObjectFieldAlignment.Center)]
     [FoldoutGroup("Split/Settings", false)]
     public Sprite Background;
@@ -43,7 +43,7 @@ public class SlideData
     [FoldoutGroup("Split/Settings", false)]
     public string TextSize;
 
-    private void ChangeTextLength() =>  TextSize = Text.Length.ToString();
+    private void ChangeTextLength() => TextSize = Text.Length.ToString();
 
     [FoldoutGroup("Split/Settings", false)]
     public bool IsHaveVoice;
@@ -62,14 +62,16 @@ public class SlideData
     [FoldoutGroup("Split/Settings", false)]
     public bool IsHaveChecking—ondition;
 
-    [FoldoutGroup("Split/Settings", false)]
-    [HideIf(nameof(IsHaveChecking—ondition))]
-    public string NextSlideToOpen;
 
     [FoldoutGroup("Split/Settings", false)]
     [ShowIf(nameof(IsHaveChecking—ondition))]
     [TableList]
     public List<ChekingConditions> ChekingConditions;
+
+    [FoldoutGroup("Split/Settings", false)]
+    [HideIf(nameof(IsHaveChecking—ondition))]
+    public string NextSlideToOpen;
+
 }
 
 
@@ -87,12 +89,31 @@ public struct ChekingConditions
 public struct ChekingMultiConditions
 {
     public string StatName;
-    public bool IsSC;
+
+    [HideIf(nameof(SlideCheck))]
+    public bool Var1;
+
+    [HideIf(nameof(Var1))]
+    public bool SlideCheck;
+
+    [HideIf(nameof(SlideCheck))]
     public ChekingEnums Cnd;
-    [HideIf(nameof(IsSC))]
+
+    [HideIf(nameof(BothConditionsUnActive))]
     public int StatValue;
-    [ShowIf(nameof(IsSC))]
+
+    [ShowIf(nameof(Var1))]
     public string StatName2;
+
+    private bool BothConditionsUnActive()
+    {
+        if (Var1 || SlideCheck)
+            return true;
+        else if (Var1 && SlideCheck)
+            return true;
+        else return false;
+    }
+
 }
 
 

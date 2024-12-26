@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -38,6 +39,7 @@ public class SlideHandler : MonoBehaviour
     private Coroutine _tipeText;
     private StoryLine _storyLine;
     internal bool IsCirleChoise;
+    private StatsBook _currentSaveStats;
 
     [Inject]
     private void Construct(InGameDataBase gameData, InputSystem_Actions input, MasterSave masterSave)
@@ -54,6 +56,9 @@ public class SlideHandler : MonoBehaviour
     private void Start()
     {
         _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_gameData.ActStatistics, _gameData.StoryLine.ChapterSortingCondition);
+        ///Èçìåíèòü åÑËÈ ÍÀ×ÀÒÜ ÇÀÍÎÂÎ ÒÎ ÑÒÈÐÀÅÌ ÏÐÎÉÄÅÍÍÛÅ ÑËÀÉÄÛ ÈÍÀ×Å ÏÐÎÄÎËÆÀÅÌ ÄÎÁÀÂËßÒÜ
+        _currentSaveStats = _masterSave.CurrentProfile.FindChapterStatsFromSave(_gameData.StoryLine.ChapterSortingCondition);
+        _currentSaveStats.SavedIndexes = null;
         _masterSave.SaveAllData();
         _storyLine = _gameData.StoryLine;
         IsMainFlowActive = true;
@@ -71,16 +76,18 @@ public class SlideHandler : MonoBehaviour
             else if (_storyLine.SlideData[_slideIndex].IsHaveCheckingÑondition)
             {
                 bool isConditionGood = false;
-                StatsBook savedStats = _masterSave.CurrentProfile.FindChapterStatsFromSave(_storyLine.ChapterSortingCondition);
-
-
 
                 foreach (var allStats in _storyLine.SlideData[_slideIndex].ChekingConditions)
                 {
-                    if (CheckCondition(allStats, savedStats, ref isConditionGood))
+                    if (CheckCondition(allStats, _currentSaveStats, ref isConditionGood))
                     {
+                        Debug.Log("For Openning Using = " + allStats.SlideToOpen);
                         _slideIndex = allStats.SlideToOpen;
                         break;
+                    }
+                    else
+                    {
+                        Debug.Log("Else");
                     }
                 }
             }
@@ -90,76 +97,109 @@ public class SlideHandler : MonoBehaviour
             StartCoroutine(TipeFullText(_slideIndex));
     }
 
+
+    private bool CheckSlidePassing(ChekingMultiConditions chekingConditions, StatsBook statsBook)
+    {
+        if (chekingConditions.SlideCheck)
+        {
+            if (!_currentSaveStats.IsSlideIndexExistInSave(chekingConditions.StatName))
+                return false;
+        }
+
+        return true;
+    }
+
     private bool CheckCondition(ChekingConditions allStats, StatsBook savedStats, ref bool isConditionGood)
     {
         foreach (var statToChek in allStats.Stat)
         {
-            switch (statToChek.Cnd)
+
+            if (statToChek.SlideCheck)
             {
-                case ChekingEnums.More:
-                    if (savedStats.FindStat(statToChek.StatName).StatisticCount > statToChek.StatValue)
-                    {
-                        isConditionGood = true;
-                    }
-                    else
-                    {
-                        isConditionGood = false;
-                        return false;
-                    }
-                    break;
-                case ChekingEnums.Less:
-                    if (savedStats.FindStat(statToChek.StatName).StatisticCount < statToChek.StatValue)
-                    {
-                        isConditionGood = true;
-                    }
-                    else
-                    {
-                        isConditionGood = false;
-                        return false;
-                    }
-                    break;
-                case ChekingEnums.Equal:
-                    if (savedStats.FindStat(statToChek.StatName).StatisticCount == statToChek.StatValue)
-                    {
-                        isConditionGood = true;
-                    }
-                    else
-                    {
-                        isConditionGood = false;
-                        return false;
-                    }
-                    break;
-                case ChekingEnums.MoreOrEqual:
-                    if (savedStats.FindStat(statToChek.StatName).StatisticCount >= statToChek.StatValue)
-                    {
-                        isConditionGood = true;
-                    }
-                    else
-                    {
-                        isConditionGood = false;
-                        return false;
-                    }
-                    break;
-                case ChekingEnums.LessOrEqual:
-                    if (savedStats.FindStat(statToChek.StatName).StatisticCount <= statToChek.StatValue)
-                    {
-                        isConditionGood = true;
-                    }
-                    else
-                    {
-                        isConditionGood = false;
-                        return false;
-                    }
-                    break;
+                Debug.Log("Ïðîâåðêà ñëàéäà");
+                if (!CheckSlidePassing(statToChek, savedStats))
+                    return false;
+                else
+                    isConditionGood = true;
             }
+            else
+                switch (statToChek.Cnd)
+                {
+                    case ChekingEnums.More:
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount > statToChek.StatValue)
+                        {
+                            isConditionGood = true;
+                        }
+                        else
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        break;
+                    case ChekingEnums.Less:
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount < statToChek.StatValue)
+                        {
+                            isConditionGood = true;
+                        }
+                        else
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        break;
+                    case ChekingEnums.Equal:
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount == statToChek.StatValue)
+                        {
+                            isConditionGood = true;
+                        }
+                        else
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        break;
+                    case ChekingEnums.MoreOrEqual:
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount >= statToChek.StatValue)
+                        {
+                            isConditionGood = true;
+                        }
+                        else
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        break;
+                    case ChekingEnums.LessOrEqual:
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount <= statToChek.StatValue)
+                        {
+                            isConditionGood = true;
+                        }
+                        else
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        break;
+                }
         }
         return isConditionGood;
     }
 
     public void ShowSlide(string slideIndex)
     {
-        Debug.Log("Ñëóäóþùèé êëþ÷ = " + slideIndex);
         _backGround.sprite = _storyLine.SlideData[slideIndex].Background;
+
+        List<string> openedSlides = _currentSaveStats.SavedIndexes?.ToList();
+        if (openedSlides == null)
+        {
+            openedSlides = new List<string>() { slideIndex };
+            _currentSaveStats.SavedIndexes = openedSlides.ToArray();
+        }
+        else
+        {
+            openedSlides.Add(slideIndex);
+            _currentSaveStats.SavedIndexes = openedSlides.ToArray();
+        }
 
         ShowHeroyOnScene(_storyLine.SlideData[slideIndex]);
 

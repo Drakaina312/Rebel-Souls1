@@ -41,7 +41,6 @@ public class MasterSave
         {
             string jsonString = File.ReadAllText(_savePuff);
             SaveData = JsonUtility.FromJson<SaveData>(jsonString);
-            Debug.Log(SaveData.Test + " загрузка данных ");
             IsDataLoadComnplete = true;
         }
     }
