@@ -66,11 +66,94 @@ public class SlideHandler : MonoBehaviour
         if (_isTipeTextComplete)
         {
             _notationHandler.DeActivaidNotation();
-            _slideIndex = FindNextSlideToShow(_slideIndex);
+            if (!_storyLine.SlideData[_slideIndex].IsHaveCheckingÑondition)
+                _slideIndex = FindNextSlideToShow(_slideIndex);
+            else if (_storyLine.SlideData[_slideIndex].IsHaveCheckingÑondition)
+            {
+                bool isConditionGood = false;
+                StatsBook savedStats = _masterSave.CurrentProfile.FindChapterStatsFromSave(_storyLine.ChapterSortingCondition);
+
+
+
+                foreach (var allStats in _storyLine.SlideData[_slideIndex].ChekingConditions)
+                {
+                    if (CheckCondition(allStats, savedStats, ref isConditionGood))
+                    {
+                        _slideIndex = allStats.SlideToOpen;
+                        break;
+                    }
+                }
+            }
             ShowSlide(_slideIndex);
         }
         else
             StartCoroutine(TipeFullText(_slideIndex));
+    }
+
+    private bool CheckCondition(ChekingConditions allStats, StatsBook savedStats, ref bool isConditionGood)
+    {
+        foreach (var statToChek in allStats.Stat)
+        {
+            switch (statToChek.Cnd)
+            {
+                case ChekingEnums.More:
+                    if (savedStats.FindStat(statToChek.StatName).StatisticCount > statToChek.StatValue)
+                    {
+                        isConditionGood = true;
+                    }
+                    else
+                    {
+                        isConditionGood = false;
+                        return false;
+                    }
+                    break;
+                case ChekingEnums.Less:
+                    if (savedStats.FindStat(statToChek.StatName).StatisticCount < statToChek.StatValue)
+                    {
+                        isConditionGood = true;
+                    }
+                    else
+                    {
+                        isConditionGood = false;
+                        return false;
+                    }
+                    break;
+                case ChekingEnums.Equal:
+                    if (savedStats.FindStat(statToChek.StatName).StatisticCount == statToChek.StatValue)
+                    {
+                        isConditionGood = true;
+                    }
+                    else
+                    {
+                        isConditionGood = false;
+                        return false;
+                    }
+                    break;
+                case ChekingEnums.MoreOrEqual:
+                    if (savedStats.FindStat(statToChek.StatName).StatisticCount >= statToChek.StatValue)
+                    {
+                        isConditionGood = true;
+                    }
+                    else
+                    {
+                        isConditionGood = false;
+                        return false;
+                    }
+                    break;
+                case ChekingEnums.LessOrEqual:
+                    if (savedStats.FindStat(statToChek.StatName).StatisticCount <= statToChek.StatValue)
+                    {
+                        isConditionGood = true;
+                    }
+                    else
+                    {
+                        isConditionGood = false;
+                        return false;
+                    }
+                    break;
+            }
+        }
+        return isConditionGood;
     }
 
     public void ShowSlide(string slideIndex)
