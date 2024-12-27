@@ -17,7 +17,9 @@ public class GameContinuer : MonoBehaviour
     public void ContinueGame()
     {
         _inGameDataBase.StoryLine = Resources.Load<StoryLine>(_masterSave.CurrentProfile.LastSaveChapterPath);
-        _inGameDataBase.DialogIndex = _masterSave.CurrentProfile.DialogIndex;
+        _inGameDataBase.SlideIndex = _masterSave.CurrentProfile.LastSaveSlideIndex;
+        _inGameDataBase.IsContiniueStory = true;
+        _inGameDataBase.IsRestartChapter = false;
         SceneManager.LoadScene(1);
     }
 }

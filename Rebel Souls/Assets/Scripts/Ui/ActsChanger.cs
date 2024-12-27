@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -68,6 +69,9 @@ public class ActsChanger : MonoBehaviour
     {
         _inGameDataBase.StoryLine = dialogSequence;
         _masterSave.CurrentProfile.LastSaveChapterPath = dialogSequence.PathToFile;
+        _masterSave.CurrentProfile.LastSaveSlideIndex = dialogSequence.SlideData.First().Key;
+        _inGameDataBase.IsContiniueStory = false;
+        _inGameDataBase.IsRestartChapter = true;
         _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_inGameDataBase.ActStatistics, dialogSequence.ChapterSortingCondition);
 
         SceneManager.LoadScene(1);
@@ -76,8 +80,10 @@ public class ActsChanger : MonoBehaviour
     {
         _inGameDataBase.StoryLine = dialogSequence;
         _masterSave.CurrentProfile.LastSaveChapterPath = dialogSequence.PathToFile;
-        _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_inGameDataBase.ActStatistics, dialogSequence.ChapterSortingCondition, previousChapter);
-
+        _masterSave.CurrentProfile.LastSaveSlideIndex = dialogSequence.SlideData.First().Key;
+        _inGameDataBase.IsContiniueStory = false;
+        _inGameDataBase.IsRestartChapter = true;
+        _masterSave.CurrentProfile.LoadPreviousChapterStats(dialogSequence.ChapterSortingCondition, previousChapter);
         SceneManager.LoadScene(1);
     }
 }

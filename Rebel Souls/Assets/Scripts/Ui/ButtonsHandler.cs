@@ -121,10 +121,15 @@ public class ButtonsHandler : MonoBehaviour
 
             if (statToChange == null)
             {
-                Debug.LogErrorFormat($"UnEble to finf stat {item.StatName}");
+                Debug.LogErrorFormat($"UnEble to find stat {item.StatName}");
                 continue;
             }
 
+
+            foreach (StatsBook oldStat in _masterSave.CurrentProfile.BooksStat)
+                oldStat.IsLastSave = false;
+
+            statisticToWork.IsLastSave = true;
             statToChange.StatisticCount += item.Statpoint;
             _masterSave.SaveAllData();
         }

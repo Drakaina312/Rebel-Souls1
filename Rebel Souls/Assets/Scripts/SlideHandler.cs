@@ -55,14 +55,27 @@ public class SlideHandler : MonoBehaviour
 
     private void Start()
     {
+
+        Debug.Log(_masterSave);
+        Debug.Log(_gameData.ActStatistics);
+        Debug.Log(_gameData.StoryLine.ChapterSortingCondition);
+
+
         _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_gameData.ActStatistics, _gameData.StoryLine.ChapterSortingCondition);
         ///Èçìåíèòü åÑËÈ ÍÀ×ÀÒÜ ÇÀÍÎÂÎ ÒÎ ÑÒÈĞÀÅÌ ÏĞÎÉÄÅÍÍÛÅ ÑËÀÉÄÛ ÈÍÀ×Å ÏĞÎÄÎËÆÀÅÌ ÄÎÁÀÂËßÒÜ
         _currentSaveStats = _masterSave.CurrentProfile.FindChapterStatsFromSave(_gameData.StoryLine.ChapterSortingCondition);
-        _currentSaveStats.SavedIndexes = null;
-        _masterSave.SaveAllData();
         _storyLine = _gameData.StoryLine;
+        if (_gameData.IsContiniueStory)
+        {
+            _slideIndex = _currentSaveStats.SavedIndexes.Last();
+        }
+        if (_gameData.IsRestartChapter)
+        {
+            _slideIndex = _storyLine.SlideData.FirstOrDefault().Key;
+            _currentSaveStats.SavedIndexes = null;
+        }
+        _masterSave.SaveAllData();
         IsMainFlowActive = true;
-        _slideIndex = _storyLine.SlideData.FirstOrDefault().Key;
         ShowSlide(_slideIndex);
     }
 

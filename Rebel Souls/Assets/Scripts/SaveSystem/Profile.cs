@@ -12,8 +12,8 @@ public class Profile
     public bool IsEmpty = true;
     public StatsBook[] BooksStat;
     public string LastSaveChapterPath;
-    public int DialogIndex;
-    internal bool IsHelpOn;
+    public string LastSaveSlideIndex;
+    public bool IsHelpOn;
 
     public Profile(string profileName, bool isBlocked)
     {
@@ -29,7 +29,53 @@ public class Profile
         //predict.ChapterSortingConditions.ActName == chapterSortingConditions.ActName &&
         predict.ChapterSortingConditions.ChapterName == chapterSortingConditions.ChapterName);
     }
-    public void SaveStatsForFirstLaunch(ActStatistics actStatistics, ChapterSortingConditions chapterSortingCondition, StoryLine previousChapter = null)
+    public void SaveNewStatOrChangeStatForCurrentChapter(ChapterSortingConditions chapterSortingCondition, string statName, int newSatValue)
+    {
+        StatsBook chapterStats = FindChapterStatsFromSave(chapterSortingCondition);
+        if (chapterStats != null)
+        {
+            Debug.Log("Глава существует");
+            foreach (var item in BooksStat)
+                item.IsLastSave = false;
+            chapterStats.IsLastSave = true;
+
+            var stat = chapterStats.FindStat(statName);
+            stat.StatisticCount = newSatValue;
+        }
+        else
+        {
+            Debug.Log("Глава для для изменения сохранений не найдена");
+        }
+    }
+
+    public void LoadPreviousChapterStats(ChapterSortingConditions chapterSortingCondition, StoryLine previousChapter)
+    {
+        if (previousChapter == null)
+            return;
+
+        StatsBook chapterStats = FindChapterStatsFromSave(chapterSortingCondition);
+        StatsBook lastStats = FindChapterStatsFromSave(previousChapter.ChapterSortingCondition);
+        if (chapterStats != null && lastStats != null)
+        {
+            Debug.Log("Глава существует");
+            foreach (var item in BooksStat)
+                item.IsLastSave = false;
+
+            chapterStats.IsLastSave = true;
+            int i = 0;
+            foreach (var item in chapterStats.Statistics)
+            {
+                lastStats.Statistics[i] = item;
+            }
+        }
+        else
+        {
+            Debug.Log("Глава для для изменения сохранений не найдена");
+        }
+    }
+
+
+    public void SaveStatsForFirstLaunch(ActStatistics actStatistics, ChapterSortingConditions chapterSortingCondition)
     {
         if (BooksStat == null)
         {
@@ -37,60 +83,58 @@ public class Profile
             BooksStat[0] = new StatsBook()
             {
                 Statistics = actStatistics.ActStats.ToArray(),
-                ChapterSortingConditions = chapterSortingCondition,      
+                ChapterSortingConditions = chapterSortingCondition,
             };
-
         }
 
-        StatsBook chapterStats = FindChapterStatsFromSave(chapterSortingCondition);
-        if (chapterStats != null)
-        {
-            Debug.Log("Глава существует");
+        //StatsBook chapterStats = FindChapterStatsFromSave(chapterSortingCondition);
+        //if (chapterStats != null)
+        //{
+        //    Debug.Log("Глава существует");
 
 
-            foreach (var item in BooksStat)
-                item.IsLastSave = false;
-            chapterStats.IsLastSave = true;
+        //    foreach (var item in BooksStat)
+        //        item.IsLastSave = false;
+        //    chapterStats.IsLastSave = true;
 
-            //chapterStats.AddNewStatistic(actStatistics.ActStats.ToArray());
-        }
-        else
-        {
-            List<StatsBook> newChapterStatistic = new List<StatsBook>();
+        //    //chapterStats.AddNewStatistic(actStatistics.ActStats.ToArray());
+        //}
+        //else
+        //{
+        //    List<StatsBook> newChapterStatistic = new List<StatsBook>();
 
-            foreach (StatsBook oldStat in BooksStat)
-            {
-                oldStat.IsLastSave = false;
-                newChapterStatistic.Add(oldStat);
-            }
+        //    foreach (StatsBook oldStat in BooksStat)
+        //    {
+        //        oldStat.IsLastSave = false;
+        //        newChapterStatistic.Add(oldStat);
+        //    }
 
-            if (previousChapter == null)
-            {
-                newChapterStatistic.Add(
-                    new StatsBook()
-                    {
-                        ChapterSortingConditions = chapterSortingCondition,
-                        Statistics = actStatistics.ActStats.ToArray()
-                    });
-            }
-            else
-            {
-                StatisticInfo[] previousChapterStats = FindChapterStatsFromSave(previousChapter.ChapterSortingCondition).Statistics;
-                StatisticInfo[] newStatistics = new StatisticInfo[previousChapterStats.Length];
-                for (int i = 0; i < previousChapterStats.Length; i++)
-                {
-                    newStatistics[i].StatisticCount = previousChapterStats[i].StatisticCount;
-                    newStatistics[i].StatisticName = previousChapterStats[i].StatisticName;
-                }
-                newChapterStatistic.Add(
-                    new StatsBook()
-                    {
-                        ChapterSortingConditions = chapterSortingCondition,
-                        Statistics = newStatistics
-                    });
-            }
-            BooksStat = newChapterStatistic.ToArray();
-        }
-
+        //    if (previousChapter == null)
+        //    {
+        //        newChapterStatistic.Add(
+        //            new StatsBook()
+        //            {
+        //                ChapterSortingConditions = chapterSortingCondition,
+        //                Statistics = actStatistics.ActStats.ToArray()
+        //            });
+        //    }
+        //    else
+        //    {
+        //        StatisticInfo[] previousChapterStats = FindChapterStatsFromSave(previousChapter.ChapterSortingCondition).Statistics;
+        //        StatisticInfo[] newStatistics = new StatisticInfo[previousChapterStats.Length];
+        //        for (int i = 0; i < previousChapterStats.Length; i++)
+        //        {
+        //            newStatistics[i].StatisticCount = previousChapterStats[i].StatisticCount;
+        //            newStatistics[i].StatisticName = previousChapterStats[i].StatisticName;
+        //        }
+        //        newChapterStatistic.Add(
+        //            new StatsBook()
+        //            {
+        //                ChapterSortingConditions = chapterSortingCondition,
+        //                Statistics = newStatistics
+        //            });
+        //    }
+        //    BooksStat = newChapterStatistic.ToArray();
+        //}
     }
 }
