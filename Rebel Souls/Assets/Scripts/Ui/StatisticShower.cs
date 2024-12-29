@@ -30,9 +30,11 @@ public class StatisticShower : MonoBehaviour
         StatsBook statsBook = _masterSave.CurrentProfile.BooksStat
             .FirstOrDefault(predict => predict.IsLastSave == true && predict.ChapterSortingConditions.BookName == _inGameDataBase.BookName);
 
-        if(statsBook == null)
+        if (statsBook == null)
+        {
+            Debug.Log(" нет статы ");
             return;
-
+        }
         int index = 0;
         for (int i = 0; i < statsBook.Statistics.Length; i++)
         {

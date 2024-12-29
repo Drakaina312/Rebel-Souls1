@@ -38,7 +38,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 8
+      Data: 10
     - Name: 
       Entry: 7
       Data: 
@@ -385,7 +385,7 @@ MonoBehaviour:
       Data: 0
     - Name: HeroType
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: HeroSprite
       Entry: 6
       Data: 
@@ -934,9 +934,319 @@ MonoBehaviour:
       Data: 
     - Name: "IsHaveChecking\u0421ondition"
       Entry: 5
-      Data: false
+      Data: true
     - Name: ChekingConditions
+      Entry: 7
+      Data: 23|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: NextSlideToOpen
       Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u0421\u0442\u0430\u0440\u04423"
+    - Name: $v
+      Entry: 7
+      Data: 24|SlideData, Assembly-CSharp
+    - Name: Background
+      Entry: 10
+      Data: 0
+    - Name: HeroType
+      Entry: 3
+      Data: 0
+    - Name: HeroSprite
+      Entry: 6
+      Data: 
+    - Name: IsHaveButtons
+      Entry: 5
+      Data: false
+    - Name: ButtonSetting
+      Entry: 6
+      Data: 
+    - Name: IsHaveNotation
+      Entry: 5
+      Data: false
+    - Name: Notation
+      Entry: 6
+      Data: 
+    - Name: Text
+      Entry: 1
+      Data: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435"
+    - Name: TextSize
+      Entry: 1
+      Data: 11
+    - Name: IsHaveVoice
+      Entry: 5
+      Data: false
+    - Name: VoiceClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAudioEffects
+      Entry: 5
+      Data: false
+    - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: "IsHaveChecking\u0421ondition"
+      Entry: 5
+      Data: true
+    - Name: ChekingConditions
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: ChekingConditions, Assembly-CSharp
+    - Name: Stat
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: ChekingMultiConditions, Assembly-CSharp
+    - Name: StatName
+      Entry: 1
+      Data: "\u0421\u0442\u0430\u0440\u04421"
+    - Name: Var1
+      Entry: 5
+      Data: false
+    - Name: SlideCheck
+      Entry: 5
+      Data: true
+    - Name: Cnd
+      Entry: 3
+      Data: 0
+    - Name: StatValue
+      Entry: 3
+      Data: 0
+    - Name: StatName2
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SlideToOpen
+      Entry: 1
+      Data: "\u041A\u043E\u043D\u0435\u0446"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: NextSlideToOpen
+      Entry: 1
+      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04351"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u0421\u0442\u0430\u0440\u04424"
+    - Name: $v
+      Entry: 7
+      Data: 27|SlideData, Assembly-CSharp
+    - Name: Background
+      Entry: 6
+      Data: 
+    - Name: HeroType
+      Entry: 3
+      Data: 0
+    - Name: HeroSprite
+      Entry: 6
+      Data: 
+    - Name: IsHaveButtons
+      Entry: 5
+      Data: false
+    - Name: ButtonSetting
+      Entry: 7
+      Data: 28|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 29|SlideButtonsData, Assembly-CSharp
+    - Name: ButtonsName
+      Entry: 6
+      Data: 
+    - Name: IsHaveHelpSprite
+      Entry: 5
+      Data: false
+    - Name: HelpSprite
+      Entry: 6
+      Data: 
+    - Name: IsStatAdder
+      Entry: 5
+      Data: false
+    - Name: StatKit
+      Entry: 6
+      Data: 
+    - Name: IsCircleChoise
+      Entry: 5
+      Data: false
+    - Name: WasChoised
+      Entry: 5
+      Data: false
+    - Name: NextSlideKey
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: IsHaveNotation
+      Entry: 5
+      Data: false
+    - Name: Notation
+      Entry: 6
+      Data: 
+    - Name: Text
+      Entry: 6
+      Data: 
+    - Name: TextSize
+      Entry: 6
+      Data: 
+    - Name: IsHaveVoice
+      Entry: 5
+      Data: false
+    - Name: VoiceClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAudioEffects
+      Entry: 5
+      Data: false
+    - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: "IsHaveChecking\u0421ondition"
+      Entry: 5
+      Data: true
+    - Name: ChekingConditions
+      Entry: 7
+      Data: 30|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: ChekingConditions, Assembly-CSharp
+    - Name: Stat
+      Entry: 7
+      Data: 31|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: ChekingMultiConditions, Assembly-CSharp
+    - Name: StatName
+      Entry: 6
+      Data: 
+    - Name: Var1
+      Entry: 5
+      Data: false
+    - Name: SlideCheck
+      Entry: 5
+      Data: true
+    - Name: Cnd
+      Entry: 3
+      Data: 0
+    - Name: StatValue
+      Entry: 3
+      Data: 0
+    - Name: StatName2
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SlideToOpen
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: ChekingConditions, Assembly-CSharp
+    - Name: Stat
+      Entry: 7
+      Data: 32|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SlideToOpen
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: NextSlideToOpen
       Entry: 6
