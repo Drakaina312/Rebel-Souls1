@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector.Demos.RPGEditor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +8,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using UnityEngine.Windows;
 using Zenject;
 
 public class SlideHandler : MonoBehaviour
@@ -115,10 +115,15 @@ public class SlideHandler : MonoBehaviour
     {
         if (chekingConditions.SlideCheck)
         {
-            if (!_currentSaveStats.IsSlideIndexExistInSave(chekingConditions.StatName))
-                return false;
+            foreach (var chapterSaves in _masterSave.CurrentProfile.BooksStat.Where(x => x.ChapterSortingConditions.BookName == statsBook.ChapterSortingConditions.BookName))
+            {
+                if (chapterSaves.IsSlideIndexExistInSave(chekingConditions.StatName))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
-
         return true;
     }
 
@@ -129,13 +134,13 @@ public class SlideHandler : MonoBehaviour
 
             if (statToChek.SlideCheck)
             {
-                Debug.Log("ѕроверка слайда");
                 if (!CheckSlidePassing(statToChek, savedStats))
                     return false;
                 else
                     isConditionGood = true;
             }
-            else
+            else if (statToChek.Var1 == false && statToChek.SlideCheck == false && statToChek.IsBigStat == false && statToChek.IsBigFavorite == false)
+            {
                 switch (statToChek.Cnd)
                 {
                     case ChekingEnums.More:
@@ -194,7 +199,107 @@ public class SlideHandler : MonoBehaviour
                         }
                         break;
                 }
+            }
+            else if (statToChek.Var1)
+            {
+                switch (statToChek.Cnd)
+                {
+                    case ChekingEnums.More:
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount > savedStats.FindStat(statToChek.StatName2).StatisticCount)
+                        {
+                            isConditionGood = true;
+                        }
+                        else
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        break;
+                    case ChekingEnums.Less:
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount < savedStats.FindStat(statToChek.StatName2).StatisticCount)
+                        {
+                            isConditionGood = true;
+                        }
+                        else
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        break;
+                    case ChekingEnums.Equal:
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount == savedStats.FindStat(statToChek.StatName2).StatisticCount)
+                        {
+                            isConditionGood = true;
+                        }
+                        else
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        break;
+                    case ChekingEnums.MoreOrEqual:
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount >= savedStats.FindStat(statToChek.StatName2).StatisticCount)
+                        {
+                            isConditionGood = true;
+                        }
+                        else
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        break;
+                    case ChekingEnums.LessOrEqual:
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount <= savedStats.FindStat(statToChek.StatName2).StatisticCount)
+                        {
+                            isConditionGood = true;
+                        }
+                        else
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        break;
+                }
+            }
+            else if (statToChek.IsBigStat)
+            {
+
+                var statToCompare = savedStats.FindStat(statToChek.StatName);
+                var statToCompareCount = statToCompare.StatisticCount;
+
+                foreach (var item in savedStats.Statistics)
+                {
+                    if (item.StatisticName == statToCompare.StatisticName)
+                        continue;
+
+                    if (!item.IsRelationship)
+                        if (statToCompareCount <= item.StatisticCount)
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        else
+                            isConditionGood = true;
+                }
+            }
+            else if (statToChek.IsBigFavorite)
+            {
+                var statToCompare = savedStats.FindStat(statToChek.StatName).StatisticCount;
+                foreach (var item in savedStats.Statistics)
+                {
+                    if (item.IsRelationship)
+                        if (statToCompare <= item.StatisticCount)
+                        {
+                            isConditionGood = false;
+                            return false;
+                        }
+                        else
+                            isConditionGood = true;
+                }
+            }
+
         }
+        Debug.Log("ф»ЌјЋ№Ќјя проверка = " + isConditionGood);
         return isConditionGood;
     }
 

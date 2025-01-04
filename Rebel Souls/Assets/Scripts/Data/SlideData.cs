@@ -25,6 +25,15 @@ public class SlideData
 
     [FoldoutGroup("Split/Settings", false)]
     [ShowIf(nameof(IsHaveButtons))]
+    public bool IsHaveTimer;
+
+    [FoldoutGroup("Split/Settings", false)]
+    [ShowIf(nameof(IsHaveTimer))]
+    [Range(0, 100)]
+    public float TimerSeconds;
+
+    [FoldoutGroup("Split/Settings", false)]
+    [ShowIf(nameof(IsHaveButtons))]
     public List<SlideButtonsData> ButtonSetting;
 
     [FoldoutGroup("Split/Settings", false)]
@@ -68,6 +77,10 @@ public class SlideData
     [TableList]
     public List<ChekingConditions> ChekingConditions;
 
+
+
+
+
     [FoldoutGroup("Split/Settings", false)]
     [HideIf(nameof(IsHaveChecking—ondition))]
     public string NextSlideToOpen;
@@ -105,11 +118,18 @@ public struct ChekingMultiConditions
     [ShowIf(nameof(Var1))]
     public string StatName2;
 
+
+    public bool IsBigStat;
+    public bool IsBigFavorite;
+
+
+
+
     private bool BothConditionsUnActive()
     {
-        if (Var1 || SlideCheck)
+        if (Var1 || SlideCheck || IsBigStat)
             return true;
-        else if (Var1 && SlideCheck)
+        else if (Var1 && SlideCheck && IsBigStat)
             return true;
         else return false;
     }

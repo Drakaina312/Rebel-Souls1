@@ -11,6 +11,8 @@ public class ButtonsHandler : MonoBehaviour
 {
     [SerializeField] private VerticalLayoutGroup _layoutGroup;
     [SerializeField] private List<ButtonsSettings> _buttons;
+    [SerializeField] private Timer _timer;
+
     private MasterSave _masterSave;
     private InGameDataBase _inGameDataBase;
     private SlideHandler _slideHandler;
@@ -59,11 +61,21 @@ public class ButtonsHandler : MonoBehaviour
             TurnOnButton(index, buttonData.HelpSprite, buttonData.ButtonsName, buttonData.WasChoised);
             _buttons[index].Button.onClick.RemoveAllListeners();
 
-            _buttons[index].Button.onClick.AddListener(() => ButtonOnClickProccesor(buttonData));
-
-
+            _buttons[index].Button.onClick.AddListener(() =>
+            {
+                if (slideData.IsHaveTimer)
+                    _timer.StopTimer();
+                ButtonOnClickProccesor(buttonData);
+            });
             index++;
         }
+
+        if (slideData.IsHaveTimer)
+        {
+            _timer.ActivateTimer(slideData.TimerSeconds);
+            _timer.OnTimerComplete += () => ButtonOnClickProccesor(slideData.ButtonSetting.First());
+        }
+
         return true;
     }
     private void ButtonOnClickProccesor(SlideButtonsData buttonData)
