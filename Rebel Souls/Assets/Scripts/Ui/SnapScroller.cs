@@ -56,9 +56,6 @@ public class SnapScroller : MonoBehaviour
         }
         _range = 100000;
 
-        Debug.Log("Number Child = " + _childIndex);
-        Debug.Log("ChildCount = " + _scrollRect.content.childCount);
-
         float percent = _childIndex * _distance;
         Debug.Log("Percent = " + percent);
 

@@ -14,6 +14,7 @@ public class Profile
     public string LastSaveChapterPath;
     public string LastSaveSlideIndex;
     public bool IsHelpOn;
+    public DifficultyType DifficultyType = DifficultyType.Easy;
 
     public Profile(string profileName, bool isBlocked)
     {
@@ -84,6 +85,7 @@ public class Profile
             {
                 Statistics = actStatistics.ActStats.ToArray(),
                 ChapterSortingConditions = chapterSortingCondition,
+                IsLastSave = true
             };
         }
 

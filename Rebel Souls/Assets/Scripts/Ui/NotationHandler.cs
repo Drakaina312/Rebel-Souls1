@@ -10,9 +10,7 @@ public class NotationHandler : MonoBehaviour
     [SerializeField] private TextResizer _notationResizer;
     public void ActivaidNotation(string TextToNotate)
     {
-        Debug.Log("activatin notation");
         StartCoroutine(Notation(TextToNotate));
-
     }
 
     private IEnumerator Notation(string TextToNotate)

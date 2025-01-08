@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using Sirenix.OdinInspector.Demos.RPGEditor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -315,7 +314,8 @@ public class SlideHandler : MonoBehaviour
         }
         else
         {
-            openedSlides.Add(slideIndex);
+            if (!openedSlides.Contains(slideIndex))
+                openedSlides.Add(slideIndex);
             _currentSaveStats.SavedIndexes = openedSlides.ToArray();
         }
 
@@ -351,7 +351,21 @@ public class SlideHandler : MonoBehaviour
         }
 
         if (_storyLine.SlideData[slideIndex].IsHaveNotation)
-            _notationHandler.ActivaidNotation(_storyLine.SlideData[slideIndex].Notation);
+        {
+            if (_storyLine.SlideData[slideIndex].IsTipNotation)
+                if (_masterSave.CurrentProfile.DifficultyType == DifficultyType.Easy || _masterSave.CurrentProfile.DifficultyType == DifficultyType.Medium)
+                    _notationHandler.ActivaidNotation(_storyLine.SlideData[slideIndex].Notation);
+        }
+
+        if (!_storyLine.SlideData[slideIndex].IsHaveText)
+        {
+            _textArea.transform.parent.gameObject.SetActive(false);
+            return;
+        }
+        else
+        {
+            _textArea.transform.parent.gameObject.SetActive(true);
+        }
 
         _tipeText = StartCoroutine(TypeText(_storyLine.SlideData[slideIndex].Text));
     }

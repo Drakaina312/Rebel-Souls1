@@ -125,24 +125,11 @@ public class ButtonsHandler : MonoBehaviour
     {
         if (!isStatAdder)
             return;
-
-        StatsBook statisticToWork = _masterSave.CurrentProfile.FindChapterStatsFromSave(_inGameDataBase.StoryLine.ChapterSortingCondition);
+     
         foreach (var item in statKit)
         {
-            StatisticInfo statToChange = statisticToWork.Statistics.FirstOrDefault(stat => stat.StatisticName == item.StatName);
-
-            if (statToChange == null)
-            {
-                Debug.LogErrorFormat($"UnEble to find stat {item.StatName}");
-                continue;
-            }
-
-
-            foreach (StatsBook oldStat in _masterSave.CurrentProfile.BooksStat)
-                oldStat.IsLastSave = false;
-
-            statisticToWork.IsLastSave = true;
-            statToChange.StatisticCount += item.Statpoint;
+            _masterSave.CurrentProfile.SaveNewStatOrChangeStatForCurrentChapter(_inGameDataBase.StoryLine.ChapterSortingCondition,
+                item.StatName, item.Statpoint);
             _masterSave.SaveAllData();
         }
     }
@@ -155,7 +142,7 @@ public class ButtonsHandler : MonoBehaviour
         _buttons[index].gameObject.SetActive(true);
         _buttons[index].ButtonName.text = buttonName;
 
-        if (helpSprite != null && _masterSave.CurrentProfile.IsHelpOn)
+        if (helpSprite != null && _masterSave.CurrentProfile.DifficultyType == DifficultyType.Easy)
         {
             _buttons[index].HelpImage.gameObject.SetActive(true);
             _buttons[index].HelpImage.sprite = helpSprite;

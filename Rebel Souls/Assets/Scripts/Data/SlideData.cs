@@ -43,12 +43,19 @@ public class SlideData
     [FoldoutGroup("Split/Settings", false)]
     public string Notation;
 
+    [ShowIf(nameof(IsHaveNotation))]
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsTipNotation;
+
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsHaveText = true;
 
     [OnValueChanged(nameof(ChangeTextLength))]
+    [ShowIf(nameof(IsHaveText))]
     [FoldoutGroup("Split/Settings", false)]
     [TextArea(1, 10)] public string Text;
 
-
+    [ShowIf(nameof(IsHaveText))]
     [FoldoutGroup("Split/Settings", false)]
     public string TextSize;
 
