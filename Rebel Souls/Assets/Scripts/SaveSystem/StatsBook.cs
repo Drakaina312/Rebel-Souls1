@@ -20,7 +20,6 @@ public class StatsBook
 
     public bool IsSlideIndexExistInSave(string indexName)
     {
-        UnityEngine.Debug.Log(indexName + " F ye rf");
         foreach (string index in SavedIndexes)
         UnityEngine.Debug.Log("Вот =" + index);
 

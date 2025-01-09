@@ -56,16 +56,13 @@ public class StatisticShower : MonoBehaviour
                 _statsCount[currentINdex].text = statsBook.Statistics[currentINdex].StatisticCount.ToString();
             };
             _statsImage[i].sprite = _inGameDataBase.ActStatistics.ActStats[i].StatisticSprite;
-            Debug.Log(index + " Вкл");
             index++;
-            Debug.Log("Index = " + i);
 
         }
         for (int i = index; i < _statsName.Count; i++)
         {
             _statsName[i].transform.parent.gameObject.SetActive(false);
             _statsCount[i].transform.parent.gameObject.SetActive(false);
-            Debug.Log(i + "Выкл");
         }
     }
 
@@ -73,7 +70,7 @@ public class StatisticShower : MonoBehaviour
     {
         StatsBook statsBook = _masterSave.CurrentProfile.BooksStat
             .FirstOrDefault(predict => predict.IsLastSave == true && predict.ChapterSortingConditions.BookName == _inGameDataBase.BookName);
-        
+
         List<StatisticInfo> stats = new List<StatisticInfo>();
         foreach (var item in statsBook.Statistics)
         {
@@ -85,6 +82,9 @@ public class StatisticShower : MonoBehaviour
 
     public void OpenStatisticPanel()
     {
+        if (_masterSave.CurrentProfile.DifficultyType == DifficultyType.Hard)
+            return;
+
         transform.DOScale(1, 0.1f);
         ShowStats();
 

@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Mono.Cecil;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -328,27 +329,7 @@ public class SlideHandler : MonoBehaviour
         if (_buttonsHandler.ActivateButtons(_storyLine.SlideData[slideIndex], this) == false)
             return;
 
-
-
-        if (_storyLine.SlideData[slideIndex].VoiceClip != null)
-        {
-            _audioSourceForVoices.clip = _storyLine.SlideData[slideIndex].VoiceClip;
-            _audioSourceForVoices.Play();
-        }
-        else
-        {
-            _audioSourceForVoices.Stop();
-        }
-
-        if (_storyLine.SlideData[slideIndex].AudioEffectsClip != null)
-        {
-            _audioSourceForEffects.clip = _storyLine.SlideData[slideIndex].AudioEffectsClip;
-            _audioSourceForEffects.Play();
-        }
-        else
-        {
-            _audioSourceForEffects.Stop();
-        }
+        ActivateAudioEffects(slideIndex);
 
         if (_storyLine.SlideData[slideIndex].IsHaveNotation)
         {
@@ -368,6 +349,29 @@ public class SlideHandler : MonoBehaviour
         }
 
         _tipeText = StartCoroutine(TypeText(_storyLine.SlideData[slideIndex].Text));
+    }
+
+    private void ActivateAudioEffects(string slideIndex)
+    {
+        if (_storyLine.SlideData[slideIndex].VoiceClip != null)
+        {
+            _audioSourceForVoices.clip = _storyLine.SlideData[slideIndex].VoiceClip;
+            _audioSourceForVoices.Play();
+        }
+        else
+        {
+            _audioSourceForVoices.Stop();
+        }
+
+        if (_storyLine.SlideData[slideIndex].AudioEffectsClip != null)
+        {
+            _audioSourceForEffects.clip = _storyLine.SlideData[slideIndex].AudioEffectsClip;
+            _audioSourceForEffects.Play();
+        }
+        else
+        {
+            _audioSourceForEffects.Stop();
+        }
     }
 
     private string FindNextSlideToShow(string currentSlideIndex)
@@ -398,11 +402,39 @@ public class SlideHandler : MonoBehaviour
         {
             case HeroType.HeroLeft:
                 _heroLeft.gameObject.SetActive(true);
-                _heroLeft.sprite = slideData.HeroSprite;
+                if (!slideData.IsFavorite)
+                    _heroLeft.sprite = slideData.HeroSprite;
+                else
+                {
+                    if (slideData.IsImportantScin)
+                        _heroLeft.sprite = slideData.HeroSprite;
+                    else
+                    {
+                        var loadedSprite = Resources.Load<Sprite>(_currentSaveStats.FindStat(slideData.FavoriteName).PathToFavoriteScin);
+                        if (loadedSprite != null)
+                            _heroLeft.sprite = loadedSprite;
+                        else
+                            _heroLeft.sprite = slideData.HeroSprite;
+                    }
+                }
                 break;
             case HeroType.HeroRight:
                 _heroRight.gameObject.SetActive(true);
-                _heroRight.sprite = slideData.HeroSprite;
+                if (!slideData.IsFavorite)
+                    _heroRight.sprite = slideData.HeroSprite;
+                else
+                {
+                    if (slideData.IsImportantScin)
+                        _heroRight.sprite = slideData.HeroSprite;
+                    else
+                    {
+                        var loadedSprite = Resources.Load<Sprite>(_currentSaveStats.FindStat(slideData.FavoriteName).PathToFavoriteScin);
+                        if (loadedSprite != null)
+                            _heroRight.sprite = loadedSprite;
+                        else
+                            _heroRight.sprite = slideData.HeroSprite;
+                    }
+                }
                 break;
         }
     }
@@ -411,7 +443,6 @@ public class SlideHandler : MonoBehaviour
     {
         _isTipeTextComplete = false;
         _textArea.text = "";
-        Debug.Log(fullText);
         _textResizer.UpdateSize(fullText);
         for (int i = 0; i < fullText.Length; i++)
         {

@@ -13,6 +13,7 @@ public class SlideData
     [FoldoutGroup("Split/Settings", false)]
     public Sprite Background;
 
+    [Title("HeroSprite")]
     [FoldoutGroup("Split/Settings", false)]
     public HeroType HeroType;
 
@@ -20,6 +21,19 @@ public class SlideData
     [FoldoutGroup("Split/Settings", false)]
     public Sprite HeroSprite;
 
+    [HideIf("HeroType", HeroType.NoHero)]
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsFavorite;
+
+    [ShowIf(nameof(IsFavorite))]
+    [FoldoutGroup("Split/Settings", false)]
+    public string FavoriteName;
+
+    [ShowIf(nameof(IsFavorite))]
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsImportantScin;
+
+    [Title("Buttons")]
     [FoldoutGroup("Split/Settings", false)]
     public bool IsHaveButtons;
 
@@ -32,10 +46,12 @@ public class SlideData
     [Range(0, 100)]
     public float TimerSeconds;
 
+ 
     [FoldoutGroup("Split/Settings", false)]
     [ShowIf(nameof(IsHaveButtons))]
     public List<SlideButtonsData> ButtonSetting;
 
+    [Title("Text and Notation")]
     [FoldoutGroup("Split/Settings", false)]
     public bool IsHaveNotation;
 
@@ -61,8 +77,10 @@ public class SlideData
 
     private void ChangeTextLength() => TextSize = Text.Length.ToString();
 
+    [Title("Audio")]
     [FoldoutGroup("Split/Settings", false)]
     public bool IsHaveVoice;
+
 
     [FoldoutGroup("Split/Settings", false)]
     [ShowIf(nameof(IsHaveVoice))]
@@ -75,6 +93,8 @@ public class SlideData
     [ShowIf(nameof(IsHaveAudioEffects))]
     public AudioClip AudioEffectsClip;
 
+
+    [Title("Conditions")]
     [FoldoutGroup("Split/Settings", false)]
     public bool IsHaveChecking—ondition;
 

@@ -24875,18 +24875,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1144721685}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1144721689}
         m_TargetAssemblyTypeName: LoversChooser, Assembly-CSharp
         m_MethodName: ShowLovers
@@ -48484,7 +48472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -345017.8, y: 0}
+  m_AnchoredPosition: {x: -362567.8, y: 0}
   m_SizeDelta: {x: 5336.764, y: 2607.9995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797849308

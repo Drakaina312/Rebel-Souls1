@@ -25,6 +25,11 @@ public class LoversChooser : MonoBehaviour
 
     public void ShowLovers()
     {
+        if (_masterSave.CurrentProfile.DifficultyType == DifficultyType.Hard)
+        {
+            return;
+        }
+        gameObject.SetActive(true);
         _bGLovers.sprite = _inGameDataBase.ActStatistics.BGLovers;
         int index = 0;
         foreach (var item in _inGameDataBase.ActStatistics.ActLovers)
@@ -50,6 +55,8 @@ public class LoversChooser : MonoBehaviour
 
     private void ShowLoverInfo(Sprite loverViewSprite, Sprite loverProfile, int statisticCount, List<RelationShipData> relationShipDatas)
     {
+
+
         _loverInfoholder.transform.DOScale(1, 0.5f);
         _loverInfoholder.ChangeLoverPanel(loverViewSprite, loverProfile, statisticCount, relationShipDatas);
 
