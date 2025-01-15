@@ -63,11 +63,13 @@ public class Profile
                 item.IsLastSave = false;
 
             chapterStats.IsLastSave = true;
-            int i = 0;
-            foreach (var item in chapterStats.Statistics)
-            {
-                lastStats.Statistics[i] = item;
-            }
+            chapterStats.SavedStats = lastStats.SavedStats;
+            //int i = 0;
+            //foreach (var item in chapterStats.Statistics)
+            //{
+            //    lastStats.Statistics[i] = item;
+            //}
+
         }
         else
         {
@@ -83,9 +85,11 @@ public class Profile
             BooksStat = new StatsBook[1];
             BooksStat[0] = new StatsBook()
             {
-                Statistics = actStatistics.ActStats.ToArray(),
+                //Statistics = actStatistics.ActStats.ToArray(),
                 ChapterSortingConditions = chapterSortingCondition,
-                IsLastSave = true
+                IsLastSave = true,
+                SavedStats = actStatistics.Stats,
+
             };
         }
 

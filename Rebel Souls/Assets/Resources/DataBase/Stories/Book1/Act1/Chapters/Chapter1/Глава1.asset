@@ -184,14 +184,14 @@ MonoBehaviour:
       Data: 
     - Name: "IsHaveChecking\u0421ondition"
       Entry: 5
-      Data: false
+      Data: true
     - Name: ChekingConditions
       Entry: 7
       Data: 6|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: ChekingConditions, Assembly-CSharp
@@ -201,13 +201,13 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: ChekingMultiConditions, Assembly-CSharp
     - Name: StatName
       Entry: 1
-      Data: "\u0421\u0430\u043D\u0433\u0432\u0438\u043D\u0438\u043A"
+      Data: "\u041F\u0440\u043E\u0442\u0438\u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u044B"
     - Name: Var1
       Entry: 5
       Data: false
@@ -233,36 +233,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 7
-      Data: ChekingMultiConditions, Assembly-CSharp
-    - Name: StatName
-      Entry: 1
-      Data: "\u0417\u0430 \u0441\u0438\u0441\u0442\u0435\u043C\u0443"
-    - Name: Var1
-      Entry: 5
-      Data: false
-    - Name: SlideCheck
-      Entry: 5
-      Data: false
-    - Name: Cnd
-      Entry: 3
-      Data: 0
-    - Name: StatValue
-      Entry: 3
-      Data: 0
-    - Name: StatName2
-      Entry: 6
-      Data: 
-    - Name: IsBigStat
-      Entry: 5
-      Data: true
-    - Name: IsBigFavorite
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -271,88 +241,6 @@ MonoBehaviour:
     - Name: SlideToOpen
       Entry: 1
       Data: "\u0424\u0438\u043D\u0438\u04482"
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: ChekingConditions, Assembly-CSharp
-    - Name: Stat
-      Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: ChekingMultiConditions, Assembly-CSharp
-    - Name: StatName
-      Entry: 1
-      Data: "\u0421\u0430\u043D\u0433\u0432\u0438\u043D\u0438\u043A"
-    - Name: Var1
-      Entry: 5
-      Data: false
-    - Name: SlideCheck
-      Entry: 5
-      Data: true
-    - Name: Cnd
-      Entry: 3
-      Data: 0
-    - Name: StatValue
-      Entry: 3
-      Data: 0
-    - Name: StatName2
-      Entry: 6
-      Data: 
-    - Name: IsBigStat
-      Entry: 5
-      Data: true
-    - Name: IsBigFavorite
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: ChekingMultiConditions, Assembly-CSharp
-    - Name: StatName
-      Entry: 1
-      Data: "\u041F\u0440\u043E\u0442\u0438\u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u044B"
-    - Name: Var1
-      Entry: 5
-      Data: false
-    - Name: SlideCheck
-      Entry: 5
-      Data: false
-    - Name: Cnd
-      Entry: 3
-      Data: 0
-    - Name: StatValue
-      Entry: 3
-      Data: 0
-    - Name: StatName2
-      Entry: 6
-      Data: 
-    - Name: IsBigStat
-      Entry: 5
-      Data: true
-    - Name: IsBigFavorite
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: SlideToOpen
-      Entry: 1
-      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
     - Name: 
       Entry: 8
       Data: 
@@ -379,7 +267,7 @@ MonoBehaviour:
       Data: "\u0421\u0442\u0430\u0440\u04422"
     - Name: $v
       Entry: 7
-      Data: 9|SlideData, Assembly-CSharp
+      Data: 8|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
       Data: 0
@@ -409,14 +297,14 @@ MonoBehaviour:
       Data: 7
     - Name: ButtonSetting
       Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
+      Data: 9|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 11|SlideButtonsData, Assembly-CSharp
+      Data: 10|SlideButtonsData, Assembly-CSharp
     - Name: ButtonsName
       Entry: 1
       Data: "\u041F\u0440\u0438\u0432\u0435\u0442!"
@@ -431,7 +319,7 @@ MonoBehaviour:
       Data: true
     - Name: StatKit
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[StatKit, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[StatKit, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
@@ -440,7 +328,7 @@ MonoBehaviour:
       Data: StatKit, Assembly-CSharp
     - Name: StatName
       Entry: 1
-      Data: "\u0421\u0430\u043D\u0433\u0432\u0438\u043D\u0438\u043A"
+      Data: "\u041F\u0440\u043E\u0442\u0438\u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u044B"
     - Name: Statpoint
       Entry: 3
       Data: 1
@@ -467,7 +355,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 13|SlideButtonsData, Assembly-CSharp
+      Data: 12|SlideButtonsData, Assembly-CSharp
     - Name: ButtonsName
       Entry: 1
       Data: "\u041F\u043E\u043A\u0430!"
@@ -482,7 +370,7 @@ MonoBehaviour:
       Data: true
     - Name: StatKit
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[StatKit, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[StatKit, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
@@ -557,7 +445,7 @@ MonoBehaviour:
       Data: false
     - Name: ChekingConditions
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
+      Data: 14|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -567,7 +455,7 @@ MonoBehaviour:
       Data: ChekingConditions, Assembly-CSharp
     - Name: Stat
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
+      Data: 15|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -637,7 +525,7 @@ MonoBehaviour:
       Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04351"
     - Name: $v
       Entry: 7
-      Data: 17|SlideData, Assembly-CSharp
+      Data: 16|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
       Data: 5
@@ -703,7 +591,7 @@ MonoBehaviour:
       Data: false
     - Name: ChekingConditions
       Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
+      Data: 17|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -713,7 +601,7 @@ MonoBehaviour:
       Data: ChekingConditions, Assembly-CSharp
     - Name: Stat
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
+      Data: 18|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -783,7 +671,7 @@ MonoBehaviour:
       Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
     - Name: $v
       Entry: 7
-      Data: 20|SlideData, Assembly-CSharp
+      Data: 19|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
       Data: 5
@@ -813,14 +701,14 @@ MonoBehaviour:
       Data: 0
     - Name: ButtonSetting
       Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
+      Data: 20|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 22|SlideButtonsData, Assembly-CSharp
+      Data: 21|SlideButtonsData, Assembly-CSharp
     - Name: ButtonsName
       Entry: 1
       Data: "\u041D\u0435\u0442"
@@ -850,7 +738,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 23|SlideButtonsData, Assembly-CSharp
+      Data: 22|SlideButtonsData, Assembly-CSharp
     - Name: ButtonsName
       Entry: 1
       Data: "\u0414\u0430"
@@ -937,7 +825,7 @@ MonoBehaviour:
       Data: "\u041A\u043D\u043E\u043F\u043A\u04382"
     - Name: $v
       Entry: 7
-      Data: 24|SlideData, Assembly-CSharp
+      Data: 23|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
       Data: 2
@@ -1022,7 +910,7 @@ MonoBehaviour:
       Data: "\u041A\u043E\u043D\u0435\u0446"
     - Name: $v
       Entry: 7
-      Data: 25|SlideData, Assembly-CSharp
+      Data: 24|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
       Data: 6
@@ -1052,14 +940,14 @@ MonoBehaviour:
       Data: 0
     - Name: ButtonSetting
       Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
+      Data: 25|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 27|SlideButtonsData, Assembly-CSharp
+      Data: 26|SlideButtonsData, Assembly-CSharp
     - Name: ButtonsName
       Entry: 1
       Data: 1
@@ -1089,7 +977,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 28|SlideButtonsData, Assembly-CSharp
+      Data: 27|SlideButtonsData, Assembly-CSharp
     - Name: ButtonsName
       Entry: 1
       Data: 2
@@ -1176,7 +1064,7 @@ MonoBehaviour:
       Data: "\u041A\u043D\u043E\u043F\u043A\u04381"
     - Name: $v
       Entry: 7
-      Data: 29|SlideData, Assembly-CSharp
+      Data: 28|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
       Data: 2
@@ -1261,7 +1149,7 @@ MonoBehaviour:
       Data: "\u0424\u0438\u043D\u0438\u04482"
     - Name: $v
       Entry: 7
-      Data: 30|SlideData, Assembly-CSharp
+      Data: 29|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
       Data: 0
@@ -1303,7 +1191,7 @@ MonoBehaviour:
       Data: false
     - Name: IsHaveText
       Entry: 5
-      Data: false
+      Data: true
     - Name: Text
       Entry: 1
       Data: 111111111111111
@@ -1327,7 +1215,7 @@ MonoBehaviour:
       Data: true
     - Name: ChekingConditions
       Entry: 7
-      Data: 31|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
+      Data: 30|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1355,7 +1243,7 @@ MonoBehaviour:
       Data: "\u0421\u0442\u0430\u0440\u04423"
     - Name: $v
       Entry: 7
-      Data: 32|SlideData, Assembly-CSharp
+      Data: 31|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
       Data: 0
@@ -1421,7 +1309,7 @@ MonoBehaviour:
       Data: false
     - Name: ChekingConditions
       Entry: 7
-      Data: 33|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
+      Data: 32|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1431,7 +1319,7 @@ MonoBehaviour:
       Data: ChekingConditions, Assembly-CSharp
     - Name: Stat
       Entry: 7
-      Data: 34|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
+      Data: 33|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1501,7 +1389,7 @@ MonoBehaviour:
       Data: "\u0421\u0442\u0430\u0440\u04424"
     - Name: $v
       Entry: 7
-      Data: 35|SlideData, Assembly-CSharp
+      Data: 34|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
       Data: 0
@@ -1531,14 +1419,14 @@ MonoBehaviour:
       Data: 0
     - Name: ButtonSetting
       Entry: 7
-      Data: 36|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
+      Data: 35|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 37|SlideButtonsData, Assembly-CSharp
+      Data: 36|SlideButtonsData, Assembly-CSharp
     - Name: ButtonsName
       Entry: 6
       Data: 
@@ -1607,7 +1495,7 @@ MonoBehaviour:
       Data: false
     - Name: ChekingConditions
       Entry: 7
-      Data: 38|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
+      Data: 37|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1617,7 +1505,7 @@ MonoBehaviour:
       Data: ChekingConditions, Assembly-CSharp
     - Name: Stat
       Entry: 7
-      Data: 39|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
+      Data: 38|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1669,7 +1557,7 @@ MonoBehaviour:
       Data: ChekingConditions, Assembly-CSharp
     - Name: Stat
       Entry: 7
-      Data: 40|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
+      Data: 39|System.Collections.Generic.List`1[[ChekingMultiConditions, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12

@@ -40,7 +40,7 @@ public class LoversChooser : MonoBehaviour
 
             StatsBook statsBook = _masterSave.CurrentProfile.BooksStat.FirstOrDefault(prediction => prediction.IsLastSave && prediction.ChapterSortingConditions.BookName == _inGameDataBase.BookName);
             Debug.Log(statsBook);
-            StatisticInfo loverStatistic = statsBook.Statistics.FirstOrDefault(prediction => prediction.IsRelationship == true && prediction.StatisticName == item.LoverName);
+            StatisticInfo loverStatistic = statsBook.FindStat(item.LoverName);
             Debug.Log(loverStatistic.StatisticName);
             _loversComponnetns[index].Button.onClick.AddListener(() => ShowLoverInfo(item.LoverViewSprite, item.LoverProfile, loverStatistic.StatisticCount, item.RelationShipsInfo));
 

@@ -4,5 +4,6 @@ public enum HeroType
 {
     NoHero,
     HeroLeft,
-    HeroRight
+    HeroRight,
+    HeroCenter
 }

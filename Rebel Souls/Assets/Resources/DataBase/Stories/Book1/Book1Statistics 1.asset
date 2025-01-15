@@ -12,47 +12,203 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e529664f5f3b5c5439f118538a962fd6, type: 3}
   m_Name: Book1Statistics 1
   m_EditorClassIdentifier: 
-  ActStats:
-  - StatisticName: "\u0421\u0430\u043D\u0433\u0432\u0438\u043D\u0438\u043A"
-    StatisticCount: 0
-    IsRelationship: 0
-    StatisticSprite: {fileID: 2851698916342810265, guid: 11b728a8569eb2e4495ea89a4d6389d6, type: 3}
-  - StatisticName: "\u0425\u043E\u043B\u0435\u0440\u0438\u043A"
-    StatisticCount: 0
-    IsRelationship: 0
-    StatisticSprite: {fileID: -3419761631973174172, guid: 2d68f54e63de04a4bbf555e70c03ac9f, type: 3}
-  - StatisticName: "\u0424\u043B\u0435\u0433\u043C\u0430\u0442\u0438\u043A"
-    StatisticCount: 0
-    IsRelationship: 0
-    StatisticSprite: {fileID: -850937526113023370, guid: afb757aa601520141a25e08e6f79073c, type: 3}
-  - StatisticName: "\u041C\u0435\u043B\u0430\u043D\u0445\u043E\u043B\u0438\u043A"
-    StatisticCount: 0
-    IsRelationship: 0
-    StatisticSprite: {fileID: -6480982972919146180, guid: d81cb2f9385cdfe428942a19b6d0c1c1, type: 3}
-  - StatisticName: "\u0417\u0430 \u0441\u0438\u0441\u0442\u0435\u043C\u0443"
-    StatisticCount: 0
-    IsRelationship: 0
-    StatisticSprite: {fileID: 7570739569938414890, guid: 98976361a99a26d46b4d9b6cac731849, type: 3}
-  - StatisticName: "\u041F\u0440\u043E\u0442\u0438\u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u044B"
-    StatisticCount: 0
-    IsRelationship: 0
-    StatisticSprite: {fileID: -6533676369333020898, guid: 28d234093a4d21e4eb4d551300055caa, type: 3}
-  - StatisticName: "\u041F\u0440\u0438\u043C\u0438\u0441"
-    StatisticCount: 0
-    IsRelationship: 1
-    StatisticSprite: {fileID: 21300000, guid: f10dbd4f930ac4bf9815b0497caad2ab, type: 3}
-  - StatisticName: "\u0421\u043C\u0435\u0440\u0447"
-    StatisticCount: 0
-    IsRelationship: 1
-    StatisticSprite: {fileID: 21300000, guid: cf81776b45c604bd481121e68037bab4, type: 3}
-  - StatisticName: "\u0411\u0435\u0440\u0442\u0440\u0430\u043D"
-    StatisticCount: 0
-    IsRelationship: 1
-    StatisticSprite: {fileID: 21300000, guid: 356206d8a84d649a59845c955ce1772b, type: 3}
-  - StatisticName: "\u0420\u043E\u0439"
-    StatisticCount: 0
-    IsRelationship: 1
-    StatisticSprite: {fileID: 21300000, guid: 438dbb705e00643a6a43d2dc0d8b2dd9, type: 3}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Stats
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[StatisticInfo[],
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u0425\u0430\u0440\u0430\u043A\u0442\u0435\u0440"
+    - Name: $v
+      Entry: 7
+      Data: 2|StatisticInfo[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 3|StatisticInfo, Assembly-CSharp
+    - Name: StatisticName
+      Entry: 1
+      Data: "\u0412\u0435\u0441\u0435\u043B\u044C\u0447\u0430\u043A"
+    - Name: StatisticCount
+      Entry: 3
+      Data: 0
+    - Name: IsRelationship
+      Entry: 5
+      Data: false
+    - Name: PathToFavoriteScin
+      Entry: 6
+      Data: 
+    - Name: StatisticSprite
+      Entry: 1
+      Data: MyImages/BG/MainMenu/photo_5353024651510540476_y
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|StatisticInfo, Assembly-CSharp
+    - Name: StatisticName
+      Entry: 1
+      Data: "\u0421\u0430\u043D\u0433\u0432\u0438\u043D\u0438\u043A"
+    - Name: StatisticCount
+      Entry: 3
+      Data: 0
+    - Name: IsRelationship
+      Entry: 5
+      Data: false
+    - Name: PathToFavoriteScin
+      Entry: 6
+      Data: 
+    - Name: StatisticSprite
+      Entry: 1
+      Data: MyImages/BG/MainMenu/12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u041F\u0443\u0442\u044C"
+    - Name: $v
+      Entry: 7
+      Data: 5|StatisticInfo[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 6|StatisticInfo, Assembly-CSharp
+    - Name: StatisticName
+      Entry: 1
+      Data: "\u041F\u0440\u043E\u0442\u0438\u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u044B"
+    - Name: StatisticCount
+      Entry: 3
+      Data: 0
+    - Name: IsRelationship
+      Entry: 5
+      Data: false
+    - Name: PathToFavoriteScin
+      Entry: 6
+      Data: 
+    - Name: StatisticSprite
+      Entry: 1
+      Data: MyImages/BG/MainMenu/12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|StatisticInfo, Assembly-CSharp
+    - Name: StatisticName
+      Entry: 1
+      Data: "\u0417\u0430 \u0441\u0438\u0441\u0442\u0435\u043C\u0443"
+    - Name: StatisticCount
+      Entry: 3
+      Data: 0
+    - Name: IsRelationship
+      Entry: 5
+      Data: false
+    - Name: PathToFavoriteScin
+      Entry: 6
+      Data: 
+    - Name: StatisticSprite
+      Entry: 1
+      Data: MyImages/BG/MainMenu/photo_5353024651510540476_y
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u0424\u0430\u0432\u043E\u0440\u0438\u0442\u044B"
+    - Name: $v
+      Entry: 7
+      Data: 8|StatisticInfo[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 9|StatisticInfo, Assembly-CSharp
+    - Name: StatisticName
+      Entry: 1
+      Data: "\u041F\u0440\u0438\u043C\u0438\u0441"
+    - Name: StatisticCount
+      Entry: 3
+      Data: 0
+    - Name: IsRelationship
+      Entry: 5
+      Data: false
+    - Name: PathToFavoriteScin
+      Entry: 6
+      Data: 
+    - Name: StatisticSprite
+      Entry: 1
+      Data: MyImages/BG/MainMenu/12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   ActLovers:
   - {fileID: 11400000, guid: 5633f97183da1de409c3a1a687e2affd, type: 2}
   BGLovers: {fileID: -8635233584502960418, guid: c03e5515699c39540b08b680be7af546, type: 3}

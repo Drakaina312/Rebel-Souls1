@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using Newtonsoft.Json;
 
 public class MasterSave
    
@@ -32,7 +33,7 @@ public class MasterSave
 
     public void SaveAllData()
     {
-        string JsonString = JsonUtility.ToJson(SaveData);
+        string JsonString = JsonConvert.SerializeObject(SaveData);
         File.WriteAllText(_savePuff, JsonString);
     }
     public void LoadAllData()
@@ -40,7 +41,7 @@ public class MasterSave
         if (File.Exists(_savePuff))
         {
             string jsonString = File.ReadAllText(_savePuff);
-            SaveData = JsonUtility.FromJson<SaveData>(jsonString);
+            SaveData = JsonConvert.DeserializeObject<SaveData>(jsonString);
             IsDataLoadComnplete = true;
         }
     }

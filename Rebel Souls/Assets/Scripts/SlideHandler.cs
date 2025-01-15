@@ -263,11 +263,10 @@ public class SlideHandler : MonoBehaviour
             }
             else if (statToChek.IsBigStat)
             {
-
-                var statToCompare = savedStats.FindStat(statToChek.StatName);
+                var statToCompare = savedStats.FindStat(statToChek.StatName, out string statChapter);
                 var statToCompareCount = statToCompare.StatisticCount;
 
-                foreach (var item in savedStats.Statistics)
+                foreach (var item in savedStats.SavedStats[statChapter])
                 {
                     if (item.StatisticName == statToCompare.StatisticName)
                         continue;
@@ -284,8 +283,8 @@ public class SlideHandler : MonoBehaviour
             }
             else if (statToChek.IsBigFavorite)
             {
-                var statToCompare = savedStats.FindStat(statToChek.StatName).StatisticCount;
-                foreach (var item in savedStats.Statistics)
+                var statToCompare = savedStats.FindStat(statToChek.StatName, out string statChapter).StatisticCount;
+                foreach (var item in savedStats.SavedStats[statChapter])
                 {
                     if (item.IsRelationship)
                         if (statToCompare <= item.StatisticCount)
@@ -336,6 +335,9 @@ public class SlideHandler : MonoBehaviour
             if (_storyLine.SlideData[slideIndex].IsTipNotation)
                 if (_masterSave.CurrentProfile.DifficultyType == DifficultyType.Easy || _masterSave.CurrentProfile.DifficultyType == DifficultyType.Medium)
                     _notationHandler.ActivaidNotation(_storyLine.SlideData[slideIndex].Notation);
+                else
+                    _notationHandler.ActivaidNotation(_storyLine.SlideData[slideIndex].Notation);
+
         }
 
         if (!_storyLine.SlideData[slideIndex].IsHaveText)
