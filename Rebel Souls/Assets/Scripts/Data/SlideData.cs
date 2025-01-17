@@ -25,9 +25,13 @@ public class SlideData
     [FoldoutGroup("Split/Settings", false)]
     public bool IsFavorite;
 
-    [ShowIf(nameof(IsFavorite))]
+    //[ShowIf(nameof(IsFavorite))]
     [FoldoutGroup("Split/Settings", false)]
     public string FavoriteName;
+
+   
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsThinking;
 
     [ShowIf(nameof(IsFavorite))]
     [FoldoutGroup("Split/Settings", false)]

@@ -12,28 +12,29 @@ public class Timer : MonoBehaviour
     public void ActivateTimer(float timerValue)
     {
         Debug.Log("Таймер активирован");
-        _timerImage.gameObject.SetActive(true);
+        _timerImage.transform.parent.gameObject.SetActive(true);
         StartCoroutine(TimerCoroutine(timerValue));
     }
 
     public void StopTimer()
     {
-        _timerImage.gameObject.SetActive(false);
+        _timerImage.transform.parent.gameObject.SetActive(false);
         StopAllCoroutines();
     }
 
     private IEnumerator TimerCoroutine(float timerValue)
     {
+        Debug.Log(timerValue + " время таймера ");
         float startTime = 0;
         yield return new WaitForSeconds(2);
         while (startTime < timerValue)
         {
             startTime += Time.deltaTime;
             Debug.Log(startTime);
-            _timerImage.fillAmount = (timerValue - startTime) / timerValue;
+            _timerImage.fillAmount = (timerValue - (timerValue - startTime)) / timerValue;
             yield return null;
         }
-        _timerImage.gameObject.SetActive(false);
+        _timerImage.transform.parent.gameObject.SetActive(false);
         OnTimerComplete?.Invoke();
     }
 }

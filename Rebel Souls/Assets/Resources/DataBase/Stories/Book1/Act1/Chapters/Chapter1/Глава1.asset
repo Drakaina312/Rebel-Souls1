@@ -17,11 +17,12 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: -8635233584502960418, guid: c03e5515699c39540b08b680be7af546, type: 3}
+    - {fileID: 21300000, guid: e3ea02811987d4555bd5212b198a51cd, type: 3}
     - {fileID: 21300000, guid: 6ce68d5638b2f4a4fa4acad1e346fc93, type: 3}
     - {fileID: 21300000, guid: cb9c1245fc80342a0b18abbce243749d, type: 3}
+    - {fileID: 21300000, guid: 99781842b353b4400ba99cce85ef0e91, type: 3}
     - {fileID: -2925129767050536237, guid: eb6dda3766c7cb24685d2d74463ed3cf, type: 3}
     - {fileID: 7181383872442803600, guid: a1d57f346367ffb4e91bc618e5abe231, type: 3}
-    - {fileID: 21300000, guid: 99781842b353b4400ba99cce85ef0e91, type: 3}
     - {fileID: 21300000, guid: 8812d89a56d0d4acabfd9ce96ec03fd4, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -56,16 +57,19 @@ MonoBehaviour:
       Data: 0
     - Name: HeroType
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: HeroSprite
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: IsFavorite
       Entry: 5
       Data: false
     - Name: FavoriteName
       Entry: 1
-      Data: "\u041F\u0440\u0438\u043C\u0438\u0441"
+      Data: "\u041D\u0435\u0437\u043D\u0430\u043A\u043E\u043C\u0435\u0446"
+    - Name: IsThinking
+      Entry: 5
+      Data: true
     - Name: IsImportantScin
       Entry: 5
       Data: false
@@ -74,10 +78,10 @@ MonoBehaviour:
       Data: false
     - Name: IsHaveTimer
       Entry: 5
-      Data: false
+      Data: true
     - Name: TimerSeconds
       Entry: 4
-      Data: 10
+      Data: 0
     - Name: ButtonSetting
       Entry: 7
       Data: 3|System.Collections.Generic.List`1[[SlideButtonsData, Assembly-CSharp]],
@@ -96,7 +100,7 @@ MonoBehaviour:
       Data: true
     - Name: HelpSprite
       Entry: 10
-      Data: 1
+      Data: 2
     - Name: IsStatAdder
       Entry: 5
       Data: false
@@ -126,7 +130,7 @@ MonoBehaviour:
       Data: true
     - Name: HelpSprite
       Entry: 10
-      Data: 2
+      Data: 3
     - Name: IsStatAdder
       Entry: 5
       Data: false
@@ -202,7 +206,7 @@ MonoBehaviour:
       Data: 
     - Name: "IsHaveChecking\u0421ondition"
       Entry: 5
-      Data: true
+      Data: false
     - Name: ChekingConditions
       Entry: 7
       Data: 6|System.Collections.Generic.List`1[[ChekingConditions, Assembly-CSharp]],
@@ -291,25 +295,28 @@ MonoBehaviour:
       Data: 0
     - Name: HeroType
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: HeroSprite
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 4
     - Name: IsFavorite
       Entry: 5
       Data: false
     - Name: FavoriteName
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: "\u041A\u0443\u043A\u0443\u0445\u0430"
+    - Name: IsThinking
+      Entry: 5
+      Data: false
     - Name: IsImportantScin
       Entry: 5
       Data: false
     - Name: IsHaveButtons
       Entry: 5
-      Data: true
+      Data: false
     - Name: IsHaveTimer
       Entry: 5
-      Data: true
+      Data: false
     - Name: TimerSeconds
       Entry: 4
       Data: 7
@@ -331,7 +338,7 @@ MonoBehaviour:
       Data: true
     - Name: HelpSprite
       Entry: 10
-      Data: 3
+      Data: 5
     - Name: IsStatAdder
       Entry: 5
       Data: true
@@ -382,7 +389,7 @@ MonoBehaviour:
       Data: true
     - Name: HelpSprite
       Entry: 10
-      Data: 4
+      Data: 6
     - Name: IsStatAdder
       Entry: 5
       Data: true
@@ -442,10 +449,10 @@ MonoBehaviour:
       Data: true
     - Name: Text
       Entry: 1
-      Data: "\u042F \u043E\u0442\u0432\u0435\u0442\u0438\u043B\u0430:"
+      Data: "\u041F\u0440\u0438\u0432\u0435\u0442!"
     - Name: TextSize
       Entry: 1
-      Data: 11
+      Data: 7
     - Name: IsHaveVoice
       Entry: 5
       Data: false
@@ -546,7 +553,7 @@ MonoBehaviour:
       Data: 
     - Name: NextSlideToOpen
       Entry: 1
-      Data: 
+      Data: "\u0421\u0442\u0430\u0440\u04423"
     - Name: 
       Entry: 8
       Data: 
@@ -564,10 +571,10 @@ MonoBehaviour:
       Data: 16|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
-      Data: 5
+      Data: 4
     - Name: HeroType
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: HeroSprite
       Entry: 6
       Data: 
@@ -577,6 +584,9 @@ MonoBehaviour:
     - Name: FavoriteName
       Entry: 6
       Data: 
+    - Name: IsThinking
+      Entry: 5
+      Data: false
     - Name: IsImportantScin
       Entry: 5
       Data: false
@@ -728,7 +738,7 @@ MonoBehaviour:
       Data: 19|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
-      Data: 5
+      Data: 4
     - Name: HeroType
       Entry: 3
       Data: 0
@@ -741,6 +751,9 @@ MonoBehaviour:
     - Name: FavoriteName
       Entry: 6
       Data: 
+    - Name: IsThinking
+      Entry: 5
+      Data: false
     - Name: IsImportantScin
       Entry: 5
       Data: false
@@ -900,7 +913,7 @@ MonoBehaviour:
       Data: 23|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
-      Data: 2
+      Data: 3
     - Name: HeroType
       Entry: 3
       Data: 0
@@ -913,6 +926,9 @@ MonoBehaviour:
     - Name: FavoriteName
       Entry: 6
       Data: 
+    - Name: IsThinking
+      Entry: 5
+      Data: false
     - Name: IsImportantScin
       Entry: 5
       Data: false
@@ -1003,7 +1019,7 @@ MonoBehaviour:
       Data: 24|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
-      Data: 6
+      Data: 7
     - Name: HeroType
       Entry: 3
       Data: 0
@@ -1016,6 +1032,9 @@ MonoBehaviour:
     - Name: FavoriteName
       Entry: 6
       Data: 
+    - Name: IsThinking
+      Entry: 5
+      Data: false
     - Name: IsImportantScin
       Entry: 5
       Data: false
@@ -1175,7 +1194,7 @@ MonoBehaviour:
       Data: 28|SlideData, Assembly-CSharp
     - Name: Background
       Entry: 10
-      Data: 2
+      Data: 3
     - Name: HeroType
       Entry: 3
       Data: 0
@@ -1188,6 +1207,9 @@ MonoBehaviour:
     - Name: FavoriteName
       Entry: 6
       Data: 
+    - Name: IsThinking
+      Entry: 5
+      Data: false
     - Name: IsImportantScin
       Entry: 5
       Data: false
@@ -1291,6 +1313,9 @@ MonoBehaviour:
     - Name: FavoriteName
       Entry: 6
       Data: 
+    - Name: IsThinking
+      Entry: 5
+      Data: false
     - Name: IsImportantScin
       Entry: 5
       Data: false
@@ -1403,6 +1428,9 @@ MonoBehaviour:
     - Name: FavoriteName
       Entry: 6
       Data: 
+    - Name: IsThinking
+      Entry: 5
+      Data: false
     - Name: IsImportantScin
       Entry: 5
       Data: false
@@ -1567,6 +1595,9 @@ MonoBehaviour:
     - Name: FavoriteName
       Entry: 6
       Data: 
+    - Name: IsThinking
+      Entry: 5
+      Data: false
     - Name: IsImportantScin
       Entry: 5
       Data: false

@@ -31,6 +31,14 @@ public class SlideHandler : MonoBehaviour
     [SerializeField] private Image _heroLeft;
     [SerializeField] private Image _heroRight;
     [SerializeField] private float _tipingSpeed;
+    [SerializeField] private Sprite _heroLeftThinking;
+    [SerializeField] private Sprite _heroLeftTalking;
+    [SerializeField] private Sprite _heroRightThinking;
+    [SerializeField] private Sprite _heroRightTalking;
+    [SerializeField] private Sprite _defolt;
+    [SerializeField] private Image _textImage;
+    [SerializeField] private TextMeshProUGUI _NameHeroLeft;
+    [SerializeField] private TextMeshProUGUI _NameHeroRight;
 
 
     private WaitForSeconds _sleepTime;
@@ -325,7 +333,7 @@ public class SlideHandler : MonoBehaviour
 
         ShowHeroyOnScene(_storyLine.SlideData[slideIndex]);
 
-        ShowAchievement(_storyLine.SlideData[slideIndex]);
+        //ShowAchievement(_storyLine.SlideData[slideIndex]);
 
         if (_storyLine.SlideData[slideIndex].IsHaveButtons && !IsCirleChoise)
             for (int i = 0; i < _storyLine.SlideData[slideIndex].ButtonSetting.Count; i++)
@@ -339,10 +347,12 @@ public class SlideHandler : MonoBehaviour
         if (_storyLine.SlideData[slideIndex].IsHaveNotation)
         {
             if (_storyLine.SlideData[slideIndex].IsTipNotation)
+            {
                 if (_masterSave.CurrentProfile.DifficultyType == DifficultyType.Easy || _masterSave.CurrentProfile.DifficultyType == DifficultyType.Medium)
                     _notationHandler.ActivaidNotation(_storyLine.SlideData[slideIndex].Notation);
-                else
-                    _notationHandler.ActivaidNotation(_storyLine.SlideData[slideIndex].Notation);
+            }
+            else
+                _notationHandler.ActivaidNotation(_storyLine.SlideData[slideIndex].Notation);
 
         }
 
@@ -422,9 +432,22 @@ public class SlideHandler : MonoBehaviour
         _heroLeft.gameObject.SetActive(false);
         _heroRight.gameObject.SetActive(false);
 
+        
+            
+    
+      
         switch (slideData.HeroType)
         {
             case HeroType.HeroLeft:
+                _NameHeroRight.gameObject.SetActive(false);
+                _NameHeroLeft.gameObject.SetActive(true);
+                _NameHeroLeft.text = slideData.FavoriteName;
+                if (slideData.IsThinking)
+                {
+                    _textImage.sprite = _heroLeftThinking;
+                }
+                else _textImage.sprite = _heroLeftTalking;
+
                 _heroLeft.gameObject.SetActive(true);
                 if (!slideData.IsFavorite)
                     _heroLeft.sprite = slideData.HeroSprite;
@@ -443,6 +466,15 @@ public class SlideHandler : MonoBehaviour
                 }
                 break;
             case HeroType.HeroRight:
+                _NameHeroLeft.gameObject.SetActive(false);
+                _NameHeroRight.gameObject.SetActive(true);
+                _NameHeroRight.text = slideData.FavoriteName;
+
+                if (slideData.IsThinking)
+                {
+                    _textImage.sprite = _heroRightThinking;
+                }
+                else _textImage.sprite = _heroRightTalking;
                 _heroRight.gameObject.SetActive(true);
                 if (!slideData.IsFavorite)
                     _heroRight.sprite = slideData.HeroSprite;
@@ -459,6 +491,12 @@ public class SlideHandler : MonoBehaviour
                             _heroRight.sprite = slideData.HeroSprite;
                     }
                 }
+                break;
+
+                case HeroType.NoHero:
+                _NameHeroRight.gameObject.SetActive(false);
+                _NameHeroLeft.gameObject.SetActive(false);
+                _textImage.sprite = _defolt;
                 break;
         }
     }
