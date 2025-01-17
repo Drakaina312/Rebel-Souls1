@@ -19,4 +19,9 @@ public class StatisticInfo
     public void ChangeValue(int value) => OnValueChange?.Invoke(value);
     public void RemoveAllListners() => OnValueChange = null;
     public void SaveFavoriteScin(string path) => PathToFavoriteScin = path;
+
+    public void AddNewScinForFavoriteScin(string spritePathToGive)
+    {
+        // добавить в массив шмоток новые шмотки
+    }
 }

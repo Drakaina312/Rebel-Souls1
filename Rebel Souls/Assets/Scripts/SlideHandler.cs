@@ -22,6 +22,9 @@ public class SlideHandler : MonoBehaviour
     [SerializeField] private AudioSource _audioSourceForVoices;
     [SerializeField] private AudioSource _audioSourceForEffects;
 
+    [SerializeField] private TextMeshProUGUI _achievemnetText;
+    [SerializeField] private Image _achievemnetImage;
+
 
     [SerializeField] private TextMeshProUGUI _textArea;
     [SerializeField] private Image _backGround;
@@ -40,6 +43,7 @@ public class SlideHandler : MonoBehaviour
     private StoryLine _storyLine;
     internal bool IsCirleChoise;
     private StatsBook _currentSaveStats;
+
 
     [Inject]
     private void Construct(InGameDataBase gameData, InputSystem_Actions input, MasterSave masterSave)
@@ -321,6 +325,8 @@ public class SlideHandler : MonoBehaviour
 
         ShowHeroyOnScene(_storyLine.SlideData[slideIndex]);
 
+        ShowAchievement(_storyLine.SlideData[slideIndex]);
+
         if (_storyLine.SlideData[slideIndex].IsHaveButtons && !IsCirleChoise)
             for (int i = 0; i < _storyLine.SlideData[slideIndex].ButtonSetting.Count; i++)
                 _storyLine.SlideData[slideIndex].ButtonSetting[i].WasChoised = false;
@@ -351,6 +357,22 @@ public class SlideHandler : MonoBehaviour
         }
 
         _tipeText = StartCoroutine(TypeText(_storyLine.SlideData[slideIndex].Text));
+    }
+
+    private void ShowAchievement(SlideData slideData)
+    {
+        //Включить панель ачивки с анимацией или без
+        _achievemnetText.text = slideData.AchievementText;
+        _achievemnetImage.sprite = slideData.AchievemntSprite;
+
+        if (slideData.IsAchievemntGiveGift)
+        {
+            var favoriteToGivePrisent = _currentSaveStats.FindStat(slideData.FavoriteNameForPrisent);
+            favoriteToGivePrisent.AddNewScinForFavoriteScin(slideData.SpritePathToGive);
+        }
+
+        //Сколько ждать 
+        // Выключить ачивку
     }
 
     private void ActivateAudioEffects(string slideIndex)

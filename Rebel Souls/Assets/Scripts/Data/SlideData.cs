@@ -93,6 +93,29 @@ public class SlideData
     [ShowIf(nameof(IsHaveAudioEffects))]
     public AudioClip AudioEffectsClip;
 
+    [Title("Achievement")]
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsHaveAchievement;
+
+    [ShowIf(nameof(IsHaveAchievement))]
+    [FoldoutGroup("Split/Settings", false)]
+    public string AchievementText;
+
+    [ShowIf(nameof(IsHaveAchievement))]
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsAchievemntGiveGift;
+
+    [ShowIf(nameof(IsAchievemntGiveGift))]
+    [FoldoutGroup("Split/Settings", false)]
+    public string FavoriteNameForPrisent;
+
+    [ShowIf(nameof(IsAchievemntGiveGift))]
+    [FoldoutGroup("Split/Settings", false)]
+    public string SpritePathToGive;
+
+    [ShowIf(nameof(IsHaveAchievement))]
+    [FoldoutGroup("Split/Settings", false)]
+    public Sprite AchievemntSprite;
 
     [Title("Conditions")]
     [FoldoutGroup("Split/Settings", false)]

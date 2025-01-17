@@ -182,6 +182,24 @@ MonoBehaviour:
     - Name: AudioEffectsClip
       Entry: 6
       Data: 
+    - Name: IsHaveAchievement
+      Entry: 5
+      Data: false
+    - Name: AchievementText
+      Entry: 6
+      Data: 
+    - Name: IsAchievemntGiveGift
+      Entry: 5
+      Data: false
+    - Name: FavoriteNameForPrisent
+      Entry: 6
+      Data: 
+    - Name: SpritePathToGive
+      Entry: 6
+      Data: 
+    - Name: AchievemntSprite
+      Entry: 6
+      Data: 
     - Name: "IsHaveChecking\u0421ondition"
       Entry: 5
       Data: true
@@ -440,6 +458,24 @@ MonoBehaviour:
     - Name: AudioEffectsClip
       Entry: 6
       Data: 
+    - Name: IsHaveAchievement
+      Entry: 5
+      Data: false
+    - Name: AchievementText
+      Entry: 6
+      Data: 
+    - Name: IsAchievemntGiveGift
+      Entry: 5
+      Data: false
+    - Name: FavoriteNameForPrisent
+      Entry: 6
+      Data: 
+    - Name: SpritePathToGive
+      Entry: 6
+      Data: 
+    - Name: AchievemntSprite
+      Entry: 6
+      Data: 
     - Name: "IsHaveChecking\u0421ondition"
       Entry: 5
       Data: false
@@ -584,6 +620,24 @@ MonoBehaviour:
       Entry: 5
       Data: false
     - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAchievement
+      Entry: 5
+      Data: false
+    - Name: AchievementText
+      Entry: 6
+      Data: 
+    - Name: IsAchievemntGiveGift
+      Entry: 5
+      Data: false
+    - Name: FavoriteNameForPrisent
+      Entry: 6
+      Data: 
+    - Name: SpritePathToGive
+      Entry: 6
+      Data: 
+    - Name: AchievemntSprite
       Entry: 6
       Data: 
     - Name: "IsHaveChecking\u0421ondition"
@@ -802,6 +856,24 @@ MonoBehaviour:
     - Name: AudioEffectsClip
       Entry: 6
       Data: 
+    - Name: IsHaveAchievement
+      Entry: 5
+      Data: false
+    - Name: AchievementText
+      Entry: 6
+      Data: 
+    - Name: IsAchievemntGiveGift
+      Entry: 5
+      Data: false
+    - Name: FavoriteNameForPrisent
+      Entry: 6
+      Data: 
+    - Name: SpritePathToGive
+      Entry: 6
+      Data: 
+    - Name: AchievemntSprite
+      Entry: 6
+      Data: 
     - Name: "IsHaveChecking\u0421ondition"
       Entry: 5
       Data: false
@@ -885,6 +957,24 @@ MonoBehaviour:
       Entry: 5
       Data: false
     - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAchievement
+      Entry: 5
+      Data: false
+    - Name: AchievementText
+      Entry: 6
+      Data: 
+    - Name: IsAchievemntGiveGift
+      Entry: 5
+      Data: false
+    - Name: FavoriteNameForPrisent
+      Entry: 6
+      Data: 
+    - Name: SpritePathToGive
+      Entry: 6
+      Data: 
+    - Name: AchievemntSprite
       Entry: 6
       Data: 
     - Name: "IsHaveChecking\u0421ondition"
@@ -1041,6 +1131,24 @@ MonoBehaviour:
     - Name: AudioEffectsClip
       Entry: 6
       Data: 
+    - Name: IsHaveAchievement
+      Entry: 5
+      Data: false
+    - Name: AchievementText
+      Entry: 6
+      Data: 
+    - Name: IsAchievemntGiveGift
+      Entry: 5
+      Data: false
+    - Name: FavoriteNameForPrisent
+      Entry: 6
+      Data: 
+    - Name: SpritePathToGive
+      Entry: 6
+      Data: 
+    - Name: AchievemntSprite
+      Entry: 6
+      Data: 
     - Name: "IsHaveChecking\u0421ondition"
       Entry: 5
       Data: false
@@ -1126,6 +1234,24 @@ MonoBehaviour:
     - Name: AudioEffectsClip
       Entry: 6
       Data: 
+    - Name: IsHaveAchievement
+      Entry: 5
+      Data: false
+    - Name: AchievementText
+      Entry: 6
+      Data: 
+    - Name: IsAchievemntGiveGift
+      Entry: 5
+      Data: false
+    - Name: FavoriteNameForPrisent
+      Entry: 6
+      Data: 
+    - Name: SpritePathToGive
+      Entry: 6
+      Data: 
+    - Name: AchievemntSprite
+      Entry: 6
+      Data: 
     - Name: "IsHaveChecking\u0421ondition"
       Entry: 5
       Data: false
@@ -1208,6 +1334,24 @@ MonoBehaviour:
       Entry: 5
       Data: false
     - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAchievement
+      Entry: 5
+      Data: false
+    - Name: AchievementText
+      Entry: 6
+      Data: 
+    - Name: IsAchievemntGiveGift
+      Entry: 5
+      Data: false
+    - Name: FavoriteNameForPrisent
+      Entry: 6
+      Data: 
+    - Name: SpritePathToGive
+      Entry: 6
+      Data: 
+    - Name: AchievemntSprite
       Entry: 6
       Data: 
     - Name: "IsHaveChecking\u0421ondition"
@@ -1302,6 +1446,24 @@ MonoBehaviour:
       Entry: 5
       Data: false
     - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAchievement
+      Entry: 5
+      Data: false
+    - Name: AchievementText
+      Entry: 6
+      Data: 
+    - Name: IsAchievemntGiveGift
+      Entry: 5
+      Data: false
+    - Name: FavoriteNameForPrisent
+      Entry: 6
+      Data: 
+    - Name: SpritePathToGive
+      Entry: 6
+      Data: 
+    - Name: AchievemntSprite
       Entry: 6
       Data: 
     - Name: "IsHaveChecking\u0421ondition"
@@ -1488,6 +1650,24 @@ MonoBehaviour:
       Entry: 5
       Data: false
     - Name: AudioEffectsClip
+      Entry: 6
+      Data: 
+    - Name: IsHaveAchievement
+      Entry: 5
+      Data: false
+    - Name: AchievementText
+      Entry: 6
+      Data: 
+    - Name: IsAchievemntGiveGift
+      Entry: 5
+      Data: false
+    - Name: FavoriteNameForPrisent
+      Entry: 6
+      Data: 
+    - Name: SpritePathToGive
+      Entry: 6
+      Data: 
+    - Name: AchievemntSprite
       Entry: 6
       Data: 
     - Name: "IsHaveChecking\u0421ondition"
