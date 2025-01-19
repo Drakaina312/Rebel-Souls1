@@ -9,6 +9,7 @@ public class StatsBook
     public bool IsLastSave;
     public string[] SavedIndexes;
     public Dictionary<string, StatisticInfo[]> SavedStats;
+    public string MainHeroName;
 
 
     public StatisticInfo FindStat(string statName, out string statChapter)
@@ -21,7 +22,7 @@ public class StatsBook
                 if (stats.StatisticName == statName)
                 {
                     stat = stats;
-                    statChapter =  item.Key;
+                    statChapter = item.Key;
                     return stat;
                 }
 

@@ -39,6 +39,8 @@ public class SlideHandler : MonoBehaviour
     [SerializeField] private Image _textImage;
     [SerializeField] private TextMeshProUGUI _NameHeroLeft;
     [SerializeField] private TextMeshProUGUI _NameHeroRight;
+    [SerializeField] private TMP_InputField _textField;
+
 
 
     private WaitForSeconds _sleepTime;
@@ -318,6 +320,12 @@ public class SlideHandler : MonoBehaviour
     {
         _backGround.sprite = _storyLine.SlideData[slideIndex].Background;
 
+        if (_storyLine.SlideData[slideIndex].isTextWritingSlide)
+        {
+            IsMainFlowActive = false;
+            _textField.gameObject.SetActive(true);
+        }
+
         List<string> openedSlides = _currentSaveStats.SavedIndexes?.ToList();
         if (openedSlides == null)
         {
@@ -367,6 +375,17 @@ public class SlideHandler : MonoBehaviour
         }
 
         _tipeText = StartCoroutine(TypeText(_storyLine.SlideData[slideIndex].Text));
+    }
+
+    public void GetWritedText(string text)
+    {
+        if (_storyLine.SlideData[_slideIndex].isTextWritingSlide)
+            _currentSaveStats.MainHeroName = text;
+
+        _textField.gameObject.SetActive(false);
+        IsMainFlowActive = true;
+
+        _masterSave.SaveAllData();
     }
 
     private void ShowAchievement(SlideData slideData)
@@ -432,16 +451,16 @@ public class SlideHandler : MonoBehaviour
         _heroLeft.gameObject.SetActive(false);
         _heroRight.gameObject.SetActive(false);
 
-        
-            
-    
-      
+
+
+
+
         switch (slideData.HeroType)
         {
             case HeroType.HeroLeft:
                 _NameHeroRight.gameObject.SetActive(false);
                 _NameHeroLeft.gameObject.SetActive(true);
-                _NameHeroLeft.text = slideData.FavoriteName;
+                _NameHeroLeft.text = slideData.InterpritationName;
                 if (slideData.IsThinking)
                 {
                     _textImage.sprite = _heroLeftThinking;
@@ -468,7 +487,7 @@ public class SlideHandler : MonoBehaviour
             case HeroType.HeroRight:
                 _NameHeroLeft.gameObject.SetActive(false);
                 _NameHeroRight.gameObject.SetActive(true);
-                _NameHeroRight.text = slideData.FavoriteName;
+                _NameHeroRight.text = slideData.InterpritationName;
 
                 if (slideData.IsThinking)
                 {
@@ -493,7 +512,7 @@ public class SlideHandler : MonoBehaviour
                 }
                 break;
 
-                case HeroType.NoHero:
+            case HeroType.NoHero:
                 _NameHeroRight.gameObject.SetActive(false);
                 _NameHeroLeft.gameObject.SetActive(false);
                 _textImage.sprite = _defolt;
@@ -508,7 +527,13 @@ public class SlideHandler : MonoBehaviour
         _textResizer.UpdateSize(fullText);
         for (int i = 0; i < fullText.Length; i++)
         {
-            _textArea.text += fullText[i];
+            if (fullText[i] == '%')
+            {
+                _textArea.text += $" {_currentSaveStats.MainHeroName} ";
+            }
+            else
+                _textArea.text += fullText[i];
+
 
             yield return _sleepTime;
         }

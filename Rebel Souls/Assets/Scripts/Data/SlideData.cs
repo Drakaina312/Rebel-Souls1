@@ -23,13 +23,21 @@ public class SlideData
 
     [HideIf("HeroType", HeroType.NoHero)]
     [FoldoutGroup("Split/Settings", false)]
+    public string InterpritationName;
+
+    [HideIf("HeroType", HeroType.NoHero)]
+    [FoldoutGroup("Split/Settings", false)]
     public bool IsFavorite;
 
-    //[ShowIf(nameof(IsFavorite))]
+    [HideIf("HeroType", HeroType.NoHero)]
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsMainHero;
+
+    [ShowIf(nameof(IsFavorite))]
     [FoldoutGroup("Split/Settings", false)]
     public string FavoriteName;
 
-   
+    [HideIf("HeroType", HeroType.NoHero)]
     [FoldoutGroup("Split/Settings", false)]
     public bool IsThinking;
 
@@ -130,6 +138,11 @@ public class SlideData
     [ShowIf(nameof(IsHaveChecking—ondition))]
     [TableList]
     public List<ChekingConditions> ChekingConditions;
+
+
+    [Title("Other")]
+    [FoldoutGroup("Split/Settings", false)]
+    public bool isTextWritingSlide;
 
 
 
