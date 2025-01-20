@@ -468,6 +468,10 @@ public class SlideHandler : MonoBehaviour
                 else _textImage.sprite = _heroLeftTalking;
 
                 _heroLeft.gameObject.SetActive(true);
+
+                if(slideData.IsMainHero)
+                    _heroLeft.sprite = Resources.Load<Sprite>(_currentSaveStats.MainHeroSpritePath);
+
                 if (!slideData.IsFavorite)
                     _heroLeft.sprite = slideData.HeroSprite;
                 else
@@ -495,6 +499,10 @@ public class SlideHandler : MonoBehaviour
                 }
                 else _textImage.sprite = _heroRightTalking;
                 _heroRight.gameObject.SetActive(true);
+
+                if (slideData.IsMainHero)
+                    _heroRight.sprite = Resources.Load<Sprite>(_currentSaveStats.MainHeroSpritePath);
+
                 if (!slideData.IsFavorite)
                     _heroRight.sprite = slideData.HeroSprite;
                 else

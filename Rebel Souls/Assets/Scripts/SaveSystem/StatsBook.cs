@@ -10,6 +10,7 @@ public class StatsBook
     public string[] SavedIndexes;
     public Dictionary<string, StatisticInfo[]> SavedStats;
     public string MainHeroName;
+    public string MainHeroSpritePath;
 
 
     public StatisticInfo FindStat(string statName, out string statChapter)
