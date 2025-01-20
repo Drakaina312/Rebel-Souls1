@@ -594,7 +594,7 @@ MonoBehaviour:
       Data: 4
     - Name: HeroType
       Entry: 3
-      Data: 1
+      Data: 3
     - Name: HeroSprite
       Entry: 6
       Data: 
@@ -746,7 +746,7 @@ MonoBehaviour:
       Data: 
     - Name: isTextWritingSlide
       Entry: 5
-      Data: false
+      Data: true
     - Name: NextSlideToOpen
       Entry: 1
       Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
