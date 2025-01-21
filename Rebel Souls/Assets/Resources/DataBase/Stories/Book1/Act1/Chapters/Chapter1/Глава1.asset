@@ -311,7 +311,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: "\u0421\u0442\u0430\u0440\u04422"
+      Data: 114
     - Name: $v
       Entry: 7
       Data: 8|SlideData, Assembly-CSharp
@@ -603,7 +603,7 @@ MonoBehaviour:
       Data: false
     - Name: NextSlideToOpen
       Entry: 1
-      Data: "\u0421\u0442\u0430\u0440\u04423"
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -615,7 +615,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04351"
+      Data: "\u0421\u0442\u0430\u0440\u044211"
     - Name: $v
       Entry: 7
       Data: 16|SlideData, Assembly-CSharp
@@ -794,7 +794,7 @@ MonoBehaviour:
       Data: false
     - Name: NextSlideToOpen
       Entry: 1
-      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
+      Data: 11
     - Name: 
       Entry: 8
       Data: 
@@ -806,7 +806,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
+      Data: 11
     - Name: $v
       Entry: 7
       Data: 19|SlideData, Assembly-CSharp
@@ -993,7 +993,7 @@ MonoBehaviour:
       Data: false
     - Name: NextSlideToOpen
       Entry: 1
-      Data: "\u041A\u043E\u043D\u0435\u0446"
+      Data: 114
     - Name: 
       Entry: 8
       Data: 
@@ -1005,7 +1005,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: "\u041A\u043D\u043E\u043F\u043A\u04382"
+      Data: 21
     - Name: $v
       Entry: 7
       Data: 23|SlideData, Assembly-CSharp
@@ -1334,7 +1334,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: "\u041A\u043D\u043E\u043F\u043A\u04381"
+      Data: 2
     - Name: $v
       Entry: 7
       Data: 28|SlideData, Assembly-CSharp
@@ -1452,7 +1452,7 @@ MonoBehaviour:
       Data: false
     - Name: NextSlideToOpen
       Entry: 1
-      Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
+      Data: 21
     - Name: 
       Entry: 8
       Data: 
@@ -1603,7 +1603,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: "\u0421\u0442\u0430\u0440\u04423"
+      Data: "\u0421\u0442\u0430\u0440\u04422"
     - Name: $v
       Entry: 7
       Data: 31|SlideData, Assembly-CSharp
@@ -1782,7 +1782,7 @@ MonoBehaviour:
       Data: false
     - Name: NextSlideToOpen
       Entry: 1
-      Data: "\u0424\u0438\u043D\u0438\u04482"
+      Data: "\u0421\u0442\u0430\u0440\u044211"
     - Name: 
       Entry: 8
       Data: 
