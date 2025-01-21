@@ -65,15 +65,18 @@ public class SlideData
 
     [Title("Text and Notation")]
     [FoldoutGroup("Split/Settings", false)]
-    public bool IsHaveNotation;
+    public bool IsHaveSystemNotation;
 
-    [ShowIf(nameof(IsHaveNotation)), TextArea(1, 3)]
+    [ShowIf(nameof(IsHaveSystemNotation)), TextArea(1, 3)]
     [FoldoutGroup("Split/Settings", false)]
-    public string Notation;
+    public string SystemNotation;
 
-    [ShowIf(nameof(IsHaveNotation))]
     [FoldoutGroup("Split/Settings", false)]
-    public bool IsTipNotation;
+    public bool IsHaveAuthorNotation;
+
+    [ShowIf(nameof(IsHaveAuthorNotation)), TextArea(1, 3)]
+    [FoldoutGroup("Split/Settings", false)]
+    public string AuthorNotation;
 
     [FoldoutGroup("Split/Settings", false)]
     public bool IsHaveText = true;
@@ -142,11 +145,19 @@ public class SlideData
 
     [Title("Other")]
     [FoldoutGroup("Split/Settings", false)]
-    public bool isTextWritingSlide;
+    public bool IsTextWritingSlide;
 
+    [ShowIf(nameof(IsTextWritingSlide))]
+    public bool MainHeroTextBox;
 
+    [ShowIf(nameof(IsTextWritingSlide))]
+    public bool GameTextBox;
 
+    [ShowIf(nameof(IsTextWritingSlide))]
+    public bool HorrorTextBox;
 
+    [ShowIf(nameof(IsTextWritingSlide))]
+    public bool FunTextBox;
 
     [FoldoutGroup("Split/Settings", false)]
     [HideIf(nameof(IsHaveChecking—ondition))]

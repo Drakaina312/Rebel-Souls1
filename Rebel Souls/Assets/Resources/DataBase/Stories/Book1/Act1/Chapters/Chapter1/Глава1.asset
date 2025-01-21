@@ -161,16 +161,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: IsHaveNotation
-      Entry: 5
-      Data: false
-    - Name: Notation
-      Entry: 1
-      Data: "\u0434\u043B\u044C \u0432\u043E\u043A\u0435\u043D98\u0446\u044B\u0442\u0435
-        5\u043E\u044C\u043A"
-    - Name: IsTipNotation
+    - Name: IsHaveSystemNotation
       Entry: 5
       Data: true
+    - Name: SystemNotation
+      Entry: 1
+      Data: "\u0421\u0438\u0441\u0442\u0435\u043C\u043D\u043E\u0435 \u0443\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u0435"
+    - Name: IsHaveAuthorNotation
+      Entry: 5
+      Data: true
+    - Name: AuthorNotation
+      Entry: 1
+      Data: "\u0423\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u0435 \u043E\u0442
+        \u0410\u0432\u0442\u043E\u0440\u0430"
     - Name: IsHaveText
       Entry: 5
       Data: true
@@ -279,9 +282,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: isTextWritingSlide
+    - Name: IsTextWritingSlide
       Entry: 5
-      Data: true
+      Data: false
+    - Name: MainHeroTextBox
+      Entry: 5
+      Data: false
+    - Name: GameTextBox
+      Entry: 5
+      Data: false
+    - Name: HorrorTextBox
+      Entry: 5
+      Data: false
+    - Name: FunTextBox
+      Entry: 5
+      Data: false
     - Name: NextSlideToOpen
       Entry: 1
       Data: "\u0421\u0442\u0430\u0440\u04422"
@@ -451,15 +466,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: IsHaveNotation
+    - Name: IsHaveSystemNotation
       Entry: 5
       Data: false
-    - Name: Notation
+    - Name: SystemNotation
       Entry: 6
       Data: 
-    - Name: IsTipNotation
+    - Name: IsHaveAuthorNotation
       Entry: 5
       Data: false
+    - Name: AuthorNotation
+      Entry: 6
+      Data: 
     - Name: IsHaveText
       Entry: 5
       Data: true
@@ -568,7 +586,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: isTextWritingSlide
+    - Name: IsTextWritingSlide
+      Entry: 5
+      Data: false
+    - Name: MainHeroTextBox
+      Entry: 5
+      Data: false
+    - Name: GameTextBox
+      Entry: 5
+      Data: false
+    - Name: HorrorTextBox
+      Entry: 5
+      Data: false
+    - Name: FunTextBox
       Entry: 5
       Data: false
     - Name: NextSlideToOpen
@@ -628,15 +658,18 @@ MonoBehaviour:
     - Name: ButtonSetting
       Entry: 6
       Data: 
-    - Name: IsHaveNotation
+    - Name: IsHaveSystemNotation
       Entry: 5
       Data: false
-    - Name: Notation
+    - Name: SystemNotation
       Entry: 6
       Data: 
-    - Name: IsTipNotation
+    - Name: IsHaveAuthorNotation
       Entry: 5
       Data: false
+    - Name: AuthorNotation
+      Entry: 6
+      Data: 
     - Name: IsHaveText
       Entry: 5
       Data: false
@@ -744,9 +777,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: isTextWritingSlide
+    - Name: IsTextWritingSlide
       Entry: 5
-      Data: true
+      Data: false
+    - Name: MainHeroTextBox
+      Entry: 5
+      Data: false
+    - Name: GameTextBox
+      Entry: 5
+      Data: false
+    - Name: HorrorTextBox
+      Entry: 5
+      Data: false
+    - Name: FunTextBox
+      Entry: 5
+      Data: false
     - Name: NextSlideToOpen
       Entry: 1
       Data: "\u0412\u043E\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u04352"
@@ -874,15 +919,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: IsHaveNotation
+    - Name: IsHaveSystemNotation
       Entry: 5
       Data: false
-    - Name: Notation
+    - Name: SystemNotation
       Entry: 6
       Data: 
-    - Name: IsTipNotation
+    - Name: IsHaveAuthorNotation
       Entry: 5
       Data: false
+    - Name: AuthorNotation
+      Entry: 6
+      Data: 
     - Name: IsHaveText
       Entry: 5
       Data: false
@@ -928,7 +976,19 @@ MonoBehaviour:
     - Name: ChekingConditions
       Entry: 6
       Data: 
-    - Name: isTextWritingSlide
+    - Name: IsTextWritingSlide
+      Entry: 5
+      Data: false
+    - Name: MainHeroTextBox
+      Entry: 5
+      Data: false
+    - Name: GameTextBox
+      Entry: 5
+      Data: false
+    - Name: HorrorTextBox
+      Entry: 5
+      Data: false
+    - Name: FunTextBox
       Entry: 5
       Data: false
     - Name: NextSlideToOpen
@@ -988,15 +1048,18 @@ MonoBehaviour:
     - Name: ButtonSetting
       Entry: 6
       Data: 
-    - Name: IsHaveNotation
+    - Name: IsHaveSystemNotation
       Entry: 5
       Data: false
-    - Name: Notation
+    - Name: SystemNotation
       Entry: 6
       Data: 
-    - Name: IsTipNotation
+    - Name: IsHaveAuthorNotation
       Entry: 5
       Data: false
+    - Name: AuthorNotation
+      Entry: 6
+      Data: 
     - Name: IsHaveText
       Entry: 5
       Data: false
@@ -1043,7 +1106,19 @@ MonoBehaviour:
     - Name: ChekingConditions
       Entry: 6
       Data: 
-    - Name: isTextWritingSlide
+    - Name: IsTextWritingSlide
+      Entry: 5
+      Data: false
+    - Name: MainHeroTextBox
+      Entry: 5
+      Data: false
+    - Name: GameTextBox
+      Entry: 5
+      Data: false
+    - Name: HorrorTextBox
+      Entry: 5
+      Data: false
+    - Name: FunTextBox
       Entry: 5
       Data: false
     - Name: NextSlideToOpen
@@ -1173,15 +1248,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: IsHaveNotation
+    - Name: IsHaveSystemNotation
       Entry: 5
       Data: false
-    - Name: Notation
+    - Name: SystemNotation
       Entry: 6
       Data: 
-    - Name: IsTipNotation
+    - Name: IsHaveAuthorNotation
       Entry: 5
       Data: false
+    - Name: AuthorNotation
+      Entry: 6
+      Data: 
     - Name: IsHaveText
       Entry: 5
       Data: false
@@ -1227,7 +1305,19 @@ MonoBehaviour:
     - Name: ChekingConditions
       Entry: 6
       Data: 
-    - Name: isTextWritingSlide
+    - Name: IsTextWritingSlide
+      Entry: 5
+      Data: false
+    - Name: MainHeroTextBox
+      Entry: 5
+      Data: false
+    - Name: GameTextBox
+      Entry: 5
+      Data: false
+    - Name: HorrorTextBox
+      Entry: 5
+      Data: false
+    - Name: FunTextBox
       Entry: 5
       Data: false
     - Name: NextSlideToOpen
@@ -1287,15 +1377,18 @@ MonoBehaviour:
     - Name: ButtonSetting
       Entry: 6
       Data: 
-    - Name: IsHaveNotation
+    - Name: IsHaveSystemNotation
       Entry: 5
       Data: false
-    - Name: Notation
+    - Name: SystemNotation
       Entry: 6
       Data: 
-    - Name: IsTipNotation
+    - Name: IsHaveAuthorNotation
       Entry: 5
       Data: false
+    - Name: AuthorNotation
+      Entry: 6
+      Data: 
     - Name: IsHaveText
       Entry: 5
       Data: false
@@ -1342,7 +1435,19 @@ MonoBehaviour:
     - Name: ChekingConditions
       Entry: 6
       Data: 
-    - Name: isTextWritingSlide
+    - Name: IsTextWritingSlide
+      Entry: 5
+      Data: false
+    - Name: MainHeroTextBox
+      Entry: 5
+      Data: false
+    - Name: GameTextBox
+      Entry: 5
+      Data: false
+    - Name: HorrorTextBox
+      Entry: 5
+      Data: false
+    - Name: FunTextBox
       Entry: 5
       Data: false
     - Name: NextSlideToOpen
@@ -1402,15 +1507,18 @@ MonoBehaviour:
     - Name: ButtonSetting
       Entry: 6
       Data: 
-    - Name: IsHaveNotation
+    - Name: IsHaveSystemNotation
       Entry: 5
       Data: false
-    - Name: Notation
+    - Name: SystemNotation
       Entry: 6
       Data: 
-    - Name: IsTipNotation
+    - Name: IsHaveAuthorNotation
       Entry: 5
       Data: false
+    - Name: AuthorNotation
+      Entry: 6
+      Data: 
     - Name: IsHaveText
       Entry: 5
       Data: true
@@ -1466,7 +1574,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: isTextWritingSlide
+    - Name: IsTextWritingSlide
+      Entry: 5
+      Data: false
+    - Name: MainHeroTextBox
+      Entry: 5
+      Data: false
+    - Name: GameTextBox
+      Entry: 5
+      Data: false
+    - Name: HorrorTextBox
+      Entry: 5
+      Data: false
+    - Name: FunTextBox
       Entry: 5
       Data: false
     - Name: NextSlideToOpen
@@ -1526,15 +1646,18 @@ MonoBehaviour:
     - Name: ButtonSetting
       Entry: 6
       Data: 
-    - Name: IsHaveNotation
-      Entry: 5
-      Data: true
-    - Name: Notation
-      Entry: 1
-      Data: "\u0412\u044B \u0434\u043E\u0431\u0440\u0430\u044F \u043A\u043E\u0448\u043A\u0430!"
-    - Name: IsTipNotation
+    - Name: IsHaveSystemNotation
       Entry: 5
       Data: false
+    - Name: SystemNotation
+      Entry: 6
+      Data: 
+    - Name: IsHaveAuthorNotation
+      Entry: 5
+      Data: false
+    - Name: AuthorNotation
+      Entry: 6
+      Data: 
     - Name: IsHaveText
       Entry: 5
       Data: true
@@ -1642,7 +1765,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: isTextWritingSlide
+    - Name: IsTextWritingSlide
+      Entry: 5
+      Data: false
+    - Name: MainHeroTextBox
+      Entry: 5
+      Data: false
+    - Name: GameTextBox
+      Entry: 5
+      Data: false
+    - Name: HorrorTextBox
+      Entry: 5
+      Data: false
+    - Name: FunTextBox
       Entry: 5
       Data: false
     - Name: NextSlideToOpen
@@ -1742,15 +1877,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: IsHaveNotation
-      Entry: 5
-      Data: true
-    - Name: Notation
-      Entry: 1
-      Data: "\u0412\u044B \u043A\u043E\u0448\u043A\u0430-\u0411\u0443\u043A\u0430!"
-    - Name: IsTipNotation
+    - Name: IsHaveSystemNotation
       Entry: 5
       Data: false
+    - Name: SystemNotation
+      Entry: 6
+      Data: 
+    - Name: IsHaveAuthorNotation
+      Entry: 5
+      Data: false
+    - Name: AuthorNotation
+      Entry: 6
+      Data: 
     - Name: IsHaveText
       Entry: 5
       Data: true
@@ -1880,7 +2018,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: isTextWritingSlide
+    - Name: IsTextWritingSlide
+      Entry: 5
+      Data: false
+    - Name: MainHeroTextBox
+      Entry: 5
+      Data: false
+    - Name: GameTextBox
+      Entry: 5
+      Data: false
+    - Name: HorrorTextBox
+      Entry: 5
+      Data: false
+    - Name: FunTextBox
       Entry: 5
       Data: false
     - Name: NextSlideToOpen

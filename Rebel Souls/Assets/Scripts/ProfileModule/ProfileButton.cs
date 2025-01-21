@@ -27,7 +27,6 @@ public class ProfileButton : MonoBehaviour
         
         }
 
-
-    
+        _masterSave.OnProfileChoosed?.Invoke();
     }
 }

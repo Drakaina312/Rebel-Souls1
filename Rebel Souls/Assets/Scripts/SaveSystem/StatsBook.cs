@@ -11,7 +11,9 @@ public class StatsBook
     public Dictionary<string, StatisticInfo[]> SavedStats;
     public string MainHeroName;
     public string MainHeroSpritePath;
-
+    public string FunTextBox;
+    public string HorrorTextBox;
+    public string GameTextBox;
 
     public StatisticInfo FindStat(string statName, out string statChapter)
     {

@@ -97,7 +97,6 @@ public class SlideHandler : MonoBehaviour
     {
         if (_isTipeTextComplete)
         {
-            _notationHandler.DeActivaidNotation();
             if (!_storyLine.SlideData[_slideIndex].IsHaveChecking—ondition)
                 _slideIndex = FindNextSlideToShow(_slideIndex);
             else if (_storyLine.SlideData[_slideIndex].IsHaveChecking—ondition)
@@ -320,24 +319,13 @@ public class SlideHandler : MonoBehaviour
     {
         _backGround.sprite = _storyLine.SlideData[slideIndex].Background;
 
-        if (_storyLine.SlideData[slideIndex].isTextWritingSlide)
+        if (_storyLine.SlideData[slideIndex].IsTextWritingSlide)
         {
             IsMainFlowActive = false;
             _textField.gameObject.SetActive(true);
         }
 
-        List<string> openedSlides = _currentSaveStats.SavedIndexes?.ToList();
-        if (openedSlides == null)
-        {
-            openedSlides = new List<string>() { slideIndex };
-            _currentSaveStats.SavedIndexes = openedSlides.ToArray();
-        }
-        else
-        {
-            if (!openedSlides.Contains(slideIndex))
-                openedSlides.Add(slideIndex);
-            _currentSaveStats.SavedIndexes = openedSlides.ToArray();
-        }
+        SavePassedSlideToProfile(slideIndex);
 
         ShowHeroyOnScene(_storyLine.SlideData[slideIndex]);
 
@@ -352,18 +340,29 @@ public class SlideHandler : MonoBehaviour
 
         ActivateAudioEffects(slideIndex);
 
-        if (_storyLine.SlideData[slideIndex].IsHaveNotation)
+        ActivateNotation(slideIndex);
+
+        TypeTextIfCan(slideIndex);
+    }
+
+    private void SavePassedSlideToProfile(string slideIndex)
+    {
+        List<string> openedSlides = _currentSaveStats.SavedIndexes?.ToList();
+        if (openedSlides == null)
         {
-            if (_storyLine.SlideData[slideIndex].IsTipNotation)
-            {
-                if (_masterSave.CurrentProfile.DifficultyType == DifficultyType.Easy || _masterSave.CurrentProfile.DifficultyType == DifficultyType.Medium)
-                    _notationHandler.ActivaidNotation(_storyLine.SlideData[slideIndex].Notation);
-            }
-            else
-                _notationHandler.ActivaidNotation(_storyLine.SlideData[slideIndex].Notation);
-
+            openedSlides = new List<string>() { slideIndex };
+            _currentSaveStats.SavedIndexes = openedSlides.ToArray();
         }
+        else
+        {
+            if (!openedSlides.Contains(slideIndex))
+                openedSlides.Add(slideIndex);
+            _currentSaveStats.SavedIndexes = openedSlides.ToArray();
+        }
+    }
 
+    private void TypeTextIfCan(string slideIndex)
+    {
         if (!_storyLine.SlideData[slideIndex].IsHaveText)
         {
             _textArea.transform.parent.gameObject.SetActive(false);
@@ -377,10 +376,25 @@ public class SlideHandler : MonoBehaviour
         _tipeText = StartCoroutine(TypeText(_storyLine.SlideData[slideIndex].Text));
     }
 
+    private void ActivateNotation(string slideIndex)
+    {
+        _notationHandler.ActivaidNotation(_masterSave.CurrentProfile.DifficultyType, _storyLine.SlideData[slideIndex].IsHaveSystemNotation, _storyLine.SlideData[slideIndex].IsHaveAuthorNotation,
+            _storyLine.SlideData[slideIndex].SystemNotation, _storyLine.SlideData[slideIndex].AuthorNotation);
+    }
+
     public void GetWritedText(string text)
     {
-        if (_storyLine.SlideData[_slideIndex].isTextWritingSlide)
+        if (_storyLine.SlideData[_slideIndex].IsTextWritingSlide && _storyLine.SlideData[_slideIndex].MainHeroTextBox)
             _currentSaveStats.MainHeroName = text;
+
+        if (_storyLine.SlideData[_slideIndex].IsTextWritingSlide && _storyLine.SlideData[_slideIndex].FunTextBox)
+            _currentSaveStats.FunTextBox = text;
+
+        if (_storyLine.SlideData[_slideIndex].IsTextWritingSlide && _storyLine.SlideData[_slideIndex].HorrorTextBox)
+            _currentSaveStats.HorrorTextBox = text;
+
+        if (_storyLine.SlideData[_slideIndex].IsTextWritingSlide && _storyLine.SlideData[_slideIndex].GameTextBox)
+            _currentSaveStats.GameTextBox = text;
 
         _textField.gameObject.SetActive(false);
         IsMainFlowActive = true;
@@ -469,7 +483,7 @@ public class SlideHandler : MonoBehaviour
 
                 _heroLeft.gameObject.SetActive(true);
 
-                if(slideData.IsMainHero)
+                if (slideData.IsMainHero)
                     _heroLeft.sprite = Resources.Load<Sprite>(_currentSaveStats.MainHeroSpritePath);
 
                 if (!slideData.IsFavorite)

@@ -11,7 +11,10 @@ public class MasterSave
     public Profile CurrentProfile;
     public bool IsDataLoadComnplete;
 
-    public SaveData SaveData { get; private set; } = new SaveData();    
+    public SaveData SaveData { get; private set; } = new SaveData();
+
+    public Action OnProfileChoosed;
+
     public void ChooseCurrentProfile(Profile profile)
     {  
             CurrentProfile = profile;
@@ -45,7 +48,6 @@ public class MasterSave
             IsDataLoadComnplete = true;
         }
     }
-
 }
 
 [Serializable]

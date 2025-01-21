@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using System.Linq;
-using System.Collections.Generic;
 
 [Serializable]
 public class Profile
@@ -15,6 +14,10 @@ public class Profile
     public string LastSaveSlideIndex;
     public bool IsHelpOn;
     public DifficultyType DifficultyType = DifficultyType.Easy;
+    public int Money;
+
+
+    public event Action<int> OnMoneyChange;
 
     public Profile(string profileName, bool isBlocked)
     {
@@ -64,6 +67,8 @@ public class Profile
 
             chapterStats.IsLastSave = true;
             chapterStats.SavedStats = lastStats.SavedStats;
+            chapterStats.MainHeroName = lastStats.MainHeroName;
+            chapterStats.MainHeroSpritePath = lastStats.MainHeroSpritePath;
             //int i = 0;
             //foreach (var item in chapterStats.Statistics)
             //{
@@ -142,5 +147,14 @@ public class Profile
         //    }
         //    BooksStat = newChapterStatistic.ToArray();
         //}
+    }
+
+    public void AddMoney(int winningPrise)
+    {
+        if (winningPrise < 0)
+            throw new System.Exception("Число меньше 0");
+
+        Money += winningPrise;
+        OnMoneyChange?.Invoke(Money);
     }
 }
