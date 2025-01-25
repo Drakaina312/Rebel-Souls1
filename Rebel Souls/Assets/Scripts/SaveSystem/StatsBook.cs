@@ -7,8 +7,10 @@ public class StatsBook
 {
     public ChapterSortingConditions ChapterSortingConditions;
     public bool IsLastSave;
-    public string[] SavedIndexes;
+    public int[] SavedIndexes;
     public Dictionary<string, StatisticInfo[]> SavedStats;
+
+
     public string MainHeroName;
     public string MainHeroSpritePath;
     public string FunTextBox;
@@ -55,13 +57,13 @@ public class StatsBook
         throw new Exception($"Unable to find stat {statName} in save file");
     }
 
-    public bool IsSlideIndexExistInSave(string indexName)
+    public bool IsSlideIndexExistInSave(int slideIndexToCheck)
     {
-        foreach (string index in SavedIndexes)
+        foreach (int index in SavedIndexes)
             UnityEngine.Debug.Log("Вот =" + index);
 
 
-        if (SavedIndexes.FirstOrDefault(x => x == indexName) != null)
+        if (SavedIndexes.Contains(slideIndexToCheck))
         {
             return true;
         }

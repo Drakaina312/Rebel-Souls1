@@ -16,7 +16,7 @@ public class StatisticInfo
 
     public event Action<int> OnValueChange;
 
-    public void ChangeValue(int value) => OnValueChange?.Invoke(value);
+    public void InvokeValueChange(int value) => OnValueChange?.Invoke(value);
     public void RemoveAllListners() => OnValueChange = null;
     public void SaveFavoriteScin(string path) => PathToFavoriteScin = path;
 

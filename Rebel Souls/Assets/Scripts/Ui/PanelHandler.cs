@@ -1,4 +1,4 @@
-using UnityEngine;  
+using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 
@@ -10,13 +10,15 @@ public class PanelHandler : MonoBehaviour
 
     public void OpenPanel()
     {
-        _panelToOpen.DOScale(1, 0.3f);
+        if (_panelToOpen != null)
+            _panelToOpen.DOScale(1, 0.3f);
         _onOpen?.Invoke();
     }
 
     public void ClosePanel()
     {
-        _panelToOpen.DOScale(0, 0.3f);
+        if (_panelToOpen != null)
+            _panelToOpen.DOScale(0, 0.3f);
         _onClose?.Invoke();
     }
 

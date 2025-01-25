@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using Mono.Cecil;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
@@ -48,8 +48,9 @@ public class SlideHandler : MonoBehaviour
     private InputSystem_Actions _input;
     private MasterSave _masterSave;
     private bool _isTipeTextComplete;
-    private string _slideIndex;
+    private int _slideIndex;
     private Coroutine _tipeText;
+    private Coroutine _mainFlowCoroutine;
     private StoryLine _storyLine;
     internal bool IsCirleChoise;
     private StatsBook _currentSaveStats;
@@ -63,9 +64,18 @@ public class SlideHandler : MonoBehaviour
         _storyLine = gameData.StoryLine;
         _masterSave = masterSave;
         _sleepTime = new WaitForSeconds(_tipingSpeed);
-        input.Player.Attack.started += SwipeStory;
+        input.Player.Attack.started += DetectPlayerClick;
     }
 
+    private void DetectPlayerClick(InputAction.CallbackContext context)
+    {
+        StartCoroutine(SwipeStory());
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     private void Start()
     {
@@ -85,7 +95,7 @@ public class SlideHandler : MonoBehaviour
         }
         if (_gameData.IsRestartChapter)
         {
-            _slideIndex = _storyLine.SlideData.FirstOrDefault().Key;
+            _slideIndex = _storyLine.SlideDataList.FirstOrDefault().SlideIndex;
             _currentSaveStats.SavedIndexes = null;
         }
         _masterSave.SaveAllData();
@@ -93,17 +103,25 @@ public class SlideHandler : MonoBehaviour
         ShowSlide(_slideIndex);
     }
 
+    public void BlockMainFlow() => IsMainFlowActive = false;
+    public void ActivateMainFlow()
+    {
+        IsMainFlowActive = true;
+        Debug.Log("Main Flow Active");
+    }
+
+
     public void CalculateSlideWork()
     {
         if (_isTipeTextComplete)
         {
-            if (!_storyLine.SlideData[_slideIndex].IsHaveCheckingÑondition)
+            if (!_storyLine.SlideDataList[_slideIndex].IsHaveCheckingÑondition)
                 _slideIndex = FindNextSlideToShow(_slideIndex);
-            else if (_storyLine.SlideData[_slideIndex].IsHaveCheckingÑondition)
+            else if (_storyLine.SlideDataList[_slideIndex].IsHaveCheckingÑondition)
             {
                 bool isConditionGood = false;
 
-                foreach (var allStats in _storyLine.SlideData[_slideIndex].ChekingConditions)
+                foreach (var allStats in _storyLine.SlideDataList[_slideIndex].ChekingConditions)
                 {
                     if (CheckCondition(allStats, _currentSaveStats, ref isConditionGood))
                     {
@@ -126,11 +144,11 @@ public class SlideHandler : MonoBehaviour
 
     private bool CheckSlidePassing(ChekingMultiConditions chekingConditions, StatsBook statsBook)
     {
-        if (chekingConditions.SlideCheck)
+        if (chekingConditions.ConditionEnums == ConditionsEnums.CheckSlideIndexPassing)
         {
             foreach (var chapterSaves in _masterSave.CurrentProfile.BooksStat.Where(x => x.ChapterSortingConditions.BookName == statsBook.ChapterSortingConditions.BookName))
             {
-                if (chapterSaves.IsSlideIndexExistInSave(chekingConditions.StatName))
+                if (chapterSaves.IsSlideIndexExistInSave(chekingConditions.IndexToCheck))
                 {
                     return true;
                 }
@@ -145,19 +163,19 @@ public class SlideHandler : MonoBehaviour
         foreach (var statToChek in allStats.Stat)
         {
 
-            if (statToChek.SlideCheck)
+            if (statToChek.ConditionEnums == ConditionsEnums.CheckSlideIndexPassing)
             {
                 if (!CheckSlidePassing(statToChek, savedStats))
                     return false;
                 else
                     isConditionGood = true;
             }
-            else if (statToChek.Var1 == false && statToChek.SlideCheck == false && statToChek.IsBigStat == false && statToChek.IsBigFavorite == false)
+            else if (statToChek.ConditionEnums == ConditionsEnums.CheckStatWithValue)
             {
                 switch (statToChek.Cnd)
                 {
                     case ChekingEnums.More:
-                        if (savedStats.FindStat(statToChek.StatName).StatisticCount > statToChek.StatValue)
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount > statToChek.CheckingValue)
                         {
                             isConditionGood = true;
                         }
@@ -168,7 +186,7 @@ public class SlideHandler : MonoBehaviour
                         }
                         break;
                     case ChekingEnums.Less:
-                        if (savedStats.FindStat(statToChek.StatName).StatisticCount < statToChek.StatValue)
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount < statToChek.CheckingValue)
                         {
                             isConditionGood = true;
                         }
@@ -179,7 +197,7 @@ public class SlideHandler : MonoBehaviour
                         }
                         break;
                     case ChekingEnums.Equal:
-                        if (savedStats.FindStat(statToChek.StatName).StatisticCount == statToChek.StatValue)
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount == statToChek.CheckingValue)
                         {
                             isConditionGood = true;
                         }
@@ -190,7 +208,7 @@ public class SlideHandler : MonoBehaviour
                         }
                         break;
                     case ChekingEnums.MoreOrEqual:
-                        if (savedStats.FindStat(statToChek.StatName).StatisticCount >= statToChek.StatValue)
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount >= statToChek.CheckingValue)
                         {
                             isConditionGood = true;
                         }
@@ -201,7 +219,7 @@ public class SlideHandler : MonoBehaviour
                         }
                         break;
                     case ChekingEnums.LessOrEqual:
-                        if (savedStats.FindStat(statToChek.StatName).StatisticCount <= statToChek.StatValue)
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount <= statToChek.CheckingValue)
                         {
                             isConditionGood = true;
                         }
@@ -213,12 +231,12 @@ public class SlideHandler : MonoBehaviour
                         break;
                 }
             }
-            else if (statToChek.Var1)
+            else if (statToChek.ConditionEnums == ConditionsEnums.CheckStatWithAnotherStat)
             {
                 switch (statToChek.Cnd)
                 {
                     case ChekingEnums.More:
-                        if (savedStats.FindStat(statToChek.StatName).StatisticCount > savedStats.FindStat(statToChek.StatName2).StatisticCount)
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount > savedStats.FindStat(statToChek.ChekingStatName).StatisticCount)
                         {
                             isConditionGood = true;
                         }
@@ -229,7 +247,7 @@ public class SlideHandler : MonoBehaviour
                         }
                         break;
                     case ChekingEnums.Less:
-                        if (savedStats.FindStat(statToChek.StatName).StatisticCount < savedStats.FindStat(statToChek.StatName2).StatisticCount)
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount < savedStats.FindStat(statToChek.ChekingStatName).StatisticCount)
                         {
                             isConditionGood = true;
                         }
@@ -240,7 +258,7 @@ public class SlideHandler : MonoBehaviour
                         }
                         break;
                     case ChekingEnums.Equal:
-                        if (savedStats.FindStat(statToChek.StatName).StatisticCount == savedStats.FindStat(statToChek.StatName2).StatisticCount)
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount == savedStats.FindStat(statToChek.ChekingStatName).StatisticCount)
                         {
                             isConditionGood = true;
                         }
@@ -251,7 +269,7 @@ public class SlideHandler : MonoBehaviour
                         }
                         break;
                     case ChekingEnums.MoreOrEqual:
-                        if (savedStats.FindStat(statToChek.StatName).StatisticCount >= savedStats.FindStat(statToChek.StatName2).StatisticCount)
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount >= savedStats.FindStat(statToChek.ChekingStatName).StatisticCount)
                         {
                             isConditionGood = true;
                         }
@@ -262,7 +280,7 @@ public class SlideHandler : MonoBehaviour
                         }
                         break;
                     case ChekingEnums.LessOrEqual:
-                        if (savedStats.FindStat(statToChek.StatName).StatisticCount <= savedStats.FindStat(statToChek.StatName2).StatisticCount)
+                        if (savedStats.FindStat(statToChek.StatName).StatisticCount <= savedStats.FindStat(statToChek.ChekingStatName).StatisticCount)
                         {
                             isConditionGood = true;
                         }
@@ -274,7 +292,7 @@ public class SlideHandler : MonoBehaviour
                         break;
                 }
             }
-            else if (statToChek.IsBigStat)
+            else if (statToChek.ConditionEnums == ConditionsEnums.CheckMoreBigStat)
             {
                 var statToCompare = savedStats.FindStat(statToChek.StatName, out string statChapter);
                 var statToCompareCount = statToCompare.StatisticCount;
@@ -294,7 +312,7 @@ public class SlideHandler : MonoBehaviour
                             isConditionGood = true;
                 }
             }
-            else if (statToChek.IsBigFavorite)
+            else if (statToChek.ConditionEnums == ConditionsEnums.CheckMoreBigFavorite)
             {
                 var statToCompare = savedStats.FindStat(statToChek.StatName, out string statChapter).StatisticCount;
                 foreach (var item in savedStats.SavedStats[statChapter])
@@ -315,11 +333,11 @@ public class SlideHandler : MonoBehaviour
         return isConditionGood;
     }
 
-    public void ShowSlide(string slideIndex)
+    public void ShowSlide(int slideIndex)
     {
-        _backGround.sprite = _storyLine.SlideData[slideIndex].Background;
+        _backGround.sprite = _storyLine.SlideDataList[slideIndex].Background;
 
-        if (_storyLine.SlideData[slideIndex].IsTextWritingSlide)
+        if (_storyLine.SlideDataList[slideIndex].IsTextWritingSlide)
         {
             IsMainFlowActive = false;
             _textField.gameObject.SetActive(true);
@@ -327,15 +345,15 @@ public class SlideHandler : MonoBehaviour
 
         SavePassedSlideToProfile(slideIndex);
 
-        ShowHeroyOnScene(_storyLine.SlideData[slideIndex]);
+        ShowHeroyOnScene(_storyLine.SlideDataList[slideIndex]);
 
         //ShowAchievement(_storyLine.SlideData[slideIndex]);
 
-        if (_storyLine.SlideData[slideIndex].IsHaveButtons && !IsCirleChoise)
-            for (int i = 0; i < _storyLine.SlideData[slideIndex].ButtonSetting.Count; i++)
-                _storyLine.SlideData[slideIndex].ButtonSetting[i].WasChoised = false;
+        if (_storyLine.SlideDataList[slideIndex].IsHaveButtons && !IsCirleChoise)
+            for (int i = 0; i < _storyLine.SlideDataList[slideIndex].ButtonSetting.Count; i++)
+                _storyLine.SlideDataList[slideIndex].ButtonSetting[i].WasChoised = false;
 
-        if (_buttonsHandler.ActivateButtons(_storyLine.SlideData[slideIndex], this) == false)
+        if (_buttonsHandler.ActivateButtons(_storyLine.SlideDataList[slideIndex], this) == false)
             return;
 
         ActivateAudioEffects(slideIndex);
@@ -345,12 +363,12 @@ public class SlideHandler : MonoBehaviour
         TypeTextIfCan(slideIndex);
     }
 
-    private void SavePassedSlideToProfile(string slideIndex)
+    private void SavePassedSlideToProfile(int slideIndex)
     {
-        List<string> openedSlides = _currentSaveStats.SavedIndexes?.ToList();
+        List<int> openedSlides = _currentSaveStats.SavedIndexes?.ToList();
         if (openedSlides == null)
         {
-            openedSlides = new List<string>() { slideIndex };
+            openedSlides = new List<int>() { slideIndex };
             _currentSaveStats.SavedIndexes = openedSlides.ToArray();
         }
         else
@@ -361,9 +379,9 @@ public class SlideHandler : MonoBehaviour
         }
     }
 
-    private void TypeTextIfCan(string slideIndex)
+    private void TypeTextIfCan(int slideIndex)
     {
-        if (!_storyLine.SlideData[slideIndex].IsHaveText)
+        if (!_storyLine.SlideDataList[slideIndex].IsHaveText)
         {
             _textArea.transform.parent.gameObject.SetActive(false);
             return;
@@ -373,27 +391,27 @@ public class SlideHandler : MonoBehaviour
             _textArea.transform.parent.gameObject.SetActive(true);
         }
 
-        _tipeText = StartCoroutine(TypeText(_storyLine.SlideData[slideIndex].Text));
+        _tipeText = StartCoroutine(TypeText(_storyLine.SlideDataList[slideIndex].Text));
     }
 
-    private void ActivateNotation(string slideIndex)
+    private void ActivateNotation(int slideIndex)
     {
-        _notationHandler.ActivaidNotation(_masterSave.CurrentProfile.DifficultyType, _storyLine.SlideData[slideIndex].IsHaveSystemNotation, _storyLine.SlideData[slideIndex].IsHaveAuthorNotation,
-            _storyLine.SlideData[slideIndex].SystemNotation, _storyLine.SlideData[slideIndex].AuthorNotation);
+        _notationHandler.ActivaidNotation(_masterSave.CurrentProfile.DifficultyType, _storyLine.SlideDataList[slideIndex].IsHaveSystemNotation, _storyLine.SlideDataList[slideIndex].IsHaveAuthorNotation,
+            _storyLine.SlideDataList[slideIndex].SystemNotation, _storyLine.SlideDataList[slideIndex].AuthorNotation);
     }
 
     public void GetWritedText(string text)
     {
-        if (_storyLine.SlideData[_slideIndex].IsTextWritingSlide && _storyLine.SlideData[_slideIndex].MainHeroTextBox)
+        if (_storyLine.SlideDataList[_slideIndex].IsTextWritingSlide && _storyLine.SlideDataList[_slideIndex].MainHeroTextBox)
             _currentSaveStats.MainHeroName = text;
 
-        if (_storyLine.SlideData[_slideIndex].IsTextWritingSlide && _storyLine.SlideData[_slideIndex].FunTextBox)
+        if (_storyLine.SlideDataList[_slideIndex].IsTextWritingSlide && _storyLine.SlideDataList[_slideIndex].FunTextBox)
             _currentSaveStats.FunTextBox = text;
 
-        if (_storyLine.SlideData[_slideIndex].IsTextWritingSlide && _storyLine.SlideData[_slideIndex].HorrorTextBox)
+        if (_storyLine.SlideDataList[_slideIndex].IsTextWritingSlide && _storyLine.SlideDataList[_slideIndex].HorrorTextBox)
             _currentSaveStats.HorrorTextBox = text;
 
-        if (_storyLine.SlideData[_slideIndex].IsTextWritingSlide && _storyLine.SlideData[_slideIndex].GameTextBox)
+        if (_storyLine.SlideDataList[_slideIndex].IsTextWritingSlide && _storyLine.SlideDataList[_slideIndex].GameTextBox)
             _currentSaveStats.GameTextBox = text;
 
         _textField.gameObject.SetActive(false);
@@ -418,11 +436,11 @@ public class SlideHandler : MonoBehaviour
         // Âûêëþ÷èòü à÷èâêó
     }
 
-    private void ActivateAudioEffects(string slideIndex)
+    private void ActivateAudioEffects(int slideIndex)
     {
-        if (_storyLine.SlideData[slideIndex].VoiceClip != null)
+        if (_storyLine.SlideDataList[slideIndex].VoiceClip != null)
         {
-            _audioSourceForVoices.clip = _storyLine.SlideData[slideIndex].VoiceClip;
+            _audioSourceForVoices.clip = _storyLine.SlideDataList[slideIndex].VoiceClip;
             _audioSourceForVoices.Play();
         }
         else
@@ -430,9 +448,9 @@ public class SlideHandler : MonoBehaviour
             _audioSourceForVoices.Stop();
         }
 
-        if (_storyLine.SlideData[slideIndex].AudioEffectsClip != null)
+        if (_storyLine.SlideDataList[slideIndex].AudioEffectsClip != null)
         {
-            _audioSourceForEffects.clip = _storyLine.SlideData[slideIndex].AudioEffectsClip;
+            _audioSourceForEffects.clip = _storyLine.SlideDataList[slideIndex].AudioEffectsClip;
             _audioSourceForEffects.Play();
         }
         else
@@ -441,23 +459,23 @@ public class SlideHandler : MonoBehaviour
         }
     }
 
-    private string FindNextSlideToShow(string currentSlideIndex)
+    private int FindNextSlideToShow(int currentSlideIndex)
     {
-        if (!_storyLine.SlideData[currentSlideIndex].IsHaveCheckingÑondition)
-            return _storyLine.SlideData[currentSlideIndex].NextSlideToOpen;
+        if (!_storyLine.SlideDataList[currentSlideIndex].IsHaveCheckingÑondition)
+            return _storyLine.SlideDataList[currentSlideIndex].NextSlideToOpen;
         else
         {
             // Ïðîâåðêà óñëîâèÿ åñëè åñòü
-            return null;
+            throw new System.Exception("ÍÅ íàø¸ë íóæíûé ñëàéä äëÿ îòêðûòèÿ");
         }
     }
 
-    private void SwipeStory(InputAction.CallbackContext context)
+    private IEnumerator SwipeStory()
     {
-        if (!IsMainFlowActive)
-            return;
+        yield return new WaitForSeconds(0.2f);
 
-        CalculateSlideWork();
+        if (IsMainFlowActive)
+            CalculateSlideWork();
     }
 
     private void ShowHeroyOnScene(SlideData slideData)
@@ -563,13 +581,13 @@ public class SlideHandler : MonoBehaviour
         _isTipeTextComplete = true;
     }
 
-    private IEnumerator TipeFullText(string slideIndex)
+    private IEnumerator TipeFullText(int slideIndex)
     {
         if (!_isTipeTextComplete)
         {
             StopCoroutine(_tipeText);
-            _textResizer.UpdateSize(_storyLine.SlideData[slideIndex].Text);
-            _textArea.text = _storyLine.SlideData[slideIndex].Text;
+            _textResizer.UpdateSize(_storyLine.SlideDataList[slideIndex].Text);
+            _textArea.text = _storyLine.SlideDataList[slideIndex].Text;
             _isTipeTextComplete = true;
             yield return new WaitForSeconds(0.01f);
         }
@@ -585,7 +603,7 @@ public class SlideHandler : MonoBehaviour
     private void OnDestroy()
     {
         _masterSave.SaveAllData();
-        _input.Player.Attack.started -= SwipeStory;
+        _input.Player.Attack.started -= DetectPlayerClick;
     }
 
     public void ChangeStoryLineIfCan(SlideButtonsData buttonData)

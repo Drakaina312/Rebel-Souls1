@@ -23,6 +23,6 @@ public class SlideButtonsData
     [HideInInspector]
     public bool WasChoised;
 
-    public string NextSlideKey;
+    public int NextSlideKey;
 
 }

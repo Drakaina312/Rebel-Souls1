@@ -69,7 +69,7 @@ public class ActsChanger : MonoBehaviour
     {
         _inGameDataBase.StoryLine = dialogSequence;
         _masterSave.CurrentProfile.LastSaveChapterPath = dialogSequence.PathToFile;
-        _masterSave.CurrentProfile.LastSaveSlideIndex = dialogSequence.SlideData.First().Key;
+        _masterSave.CurrentProfile.LastSaveSlideIndex = dialogSequence.SlideDataList.First().SlideIndex;
         _inGameDataBase.IsContiniueStory = false;
         _inGameDataBase.IsRestartChapter = true;
         _masterSave.CurrentProfile.SaveStatsForFirstLaunch(_inGameDataBase.ActStatistics, dialogSequence.ChapterSortingCondition);
@@ -80,7 +80,7 @@ public class ActsChanger : MonoBehaviour
     {
         _inGameDataBase.StoryLine = dialogSequence;
         _masterSave.CurrentProfile.LastSaveChapterPath = dialogSequence.PathToFile;
-        _masterSave.CurrentProfile.LastSaveSlideIndex = dialogSequence.SlideData.First().Key;
+        _masterSave.CurrentProfile.LastSaveSlideIndex = dialogSequence.SlideDataList.First().SlideIndex;
         _inGameDataBase.IsContiniueStory = false;
         _inGameDataBase.IsRestartChapter = true;
         _masterSave.CurrentProfile.LoadPreviousChapterStats(dialogSequence.ChapterSortingCondition, previousChapter);

@@ -6,7 +6,8 @@ using UnityEngine;
 [Serializable]
 public class SlideData
 {
-    //public string SlideIndex;
+    public int SlideIndex;
+    public string SlideName;
 
     [VerticalGroup("Split"), FoldoutGroup("Split/Settings", false)]
     [PreviewField(75, ObjectFieldAlignment.Center)]
@@ -58,7 +59,7 @@ public class SlideData
     [Range(0, 100)]
     public float TimerSeconds;
 
- 
+
     [FoldoutGroup("Split/Settings", false)]
     [ShowIf(nameof(IsHaveButtons))]
     public List<SlideButtonsData> ButtonSetting;
@@ -161,7 +162,7 @@ public class SlideData
 
     [FoldoutGroup("Split/Settings", false)]
     [HideIf(nameof(IsHaveChecking—ondition))]
-    public string NextSlideToOpen;
+    public int NextSlideToOpen;
 
 }
 
@@ -170,48 +171,102 @@ public class SlideData
 public struct ChekingConditions
 {
 
-    [TableList]
+    //[TableList]
     public List<ChekingMultiConditions> Stat;
 
-    public string SlideToOpen;
+    public int SlideToOpen;
 }
 
 [Serializable]
 public struct ChekingMultiConditions
 {
+    public ConditionsEnums ConditionEnums;
+
+    [ShowIf(nameof(ConditionEnums), ConditionsEnums.CheckSlideIndexPassing)]
+    public int IndexToCheck;
+
+    [ShowIf(nameof(StatNameNeeding))]
     public string StatName;
 
-    [HideIf(nameof(SlideCheck))]
-    public bool Var1;
+    [ShowIf(nameof(FavoriteNameNeeding))]
+    public string FavoriteName;
 
-    [HideIf(nameof(Var1))]
-    public bool SlideCheck;
-
-    [HideIf(nameof(SlideCheck))]
+    [ShowIf(nameof(BothConditionsIsActive))]
     public ChekingEnums Cnd;
 
-    [HideIf(nameof(BothConditionsUnActive))]
-    public int StatValue;
+    [ShowIf(nameof(CheckStatWithValue))]
+    public int CheckingValue;
 
-    [ShowIf(nameof(Var1))]
-    public string StatName2;
+    [ShowIf(nameof(ConditionEnums), ConditionsEnums.CheckStatWithAnotherStat)]
+    public string ChekingStatName;
 
-
-    public bool IsBigStat;
-    public bool IsBigFavorite;
-
+    [ShowIf(nameof(ConditionEnums), ConditionsEnums.CheckFavoriteWithAnotherFavorite)]
+    public string ChekingFavoriteName;
 
 
+    //public string StatName;
 
-    private bool BothConditionsUnActive()
+    //[HideIf(nameof(SlideCheck))]
+    //public bool Var1;
+
+    //[HideIf(nameof(Var1))]
+    //public bool SlideCheck;
+
+
+    //[HideIf(nameof(BothConditionsUnActive))]
+    //public int StatValue;
+
+    //[ShowIf(nameof(Var1))]
+    //public string StatName2;
+
+
+    //public bool IsBigStat;
+    //public bool IsBigFavorite;
+
+
+    private bool CheckStatWithValue()
     {
-        if (Var1 || SlideCheck || IsBigStat)
-            return true;
-        else if (Var1 && SlideCheck && IsBigStat)
+        if (ConditionEnums == ConditionsEnums.CheckStatWithValue || ConditionEnums == ConditionsEnums.CheckFavoriteWithValue)
             return true;
         else return false;
     }
 
+    private bool FavoriteNameNeeding()
+    {
+        if (ConditionEnums == ConditionsEnums.CheckFavoriteWithValue || ConditionEnums == ConditionsEnums.CheckMoreBigFavorite || ConditionEnums == ConditionsEnums.CheckFavoriteWithAnotherFavorite)
+            return true;
+        else return false;
+    }
+
+    private bool StatNameNeeding()
+    {
+        if (ConditionEnums == ConditionsEnums.CheckStatWithValue || ConditionEnums == ConditionsEnums.CheckStatWithAnotherStat || ConditionEnums == ConditionsEnums.CheckMoreBigStat)
+            return true;
+        else return false;
+    }
+
+
+    private bool BothConditionsIsActive()
+    {
+        if (ConditionEnums == ConditionsEnums.CheckStatWithValue || ConditionEnums == ConditionsEnums.CheckFavoriteWithValue)
+            return true;
+        else if (ConditionEnums == ConditionsEnums.CheckFavoriteWithAnotherFavorite || ConditionEnums == ConditionsEnums.CheckStatWithAnotherStat)
+            return true;
+        else return false;
+    }
+
+}
+
+public enum ConditionsEnums
+{
+    Nothing,
+    CheckSlideIndexPassing,
+    CheckMoreBigStat,
+    CheckMoreBigFavorite,
+    CheckStatWithValue,
+    CheckFavoriteWithValue,
+    CheckStatWithAnotherStat,
+    CheckFavoriteWithAnotherFavorite,
 }
 
 

@@ -11,7 +11,7 @@ public class Profile
     public bool IsEmpty = true;
     public StatsBook[] BooksStat;
     public string LastSaveChapterPath;
-    public string LastSaveSlideIndex;
+    public int LastSaveSlideIndex;
     public bool IsHelpOn;
     public DifficultyType DifficultyType = DifficultyType.Easy;
     public int Money;
