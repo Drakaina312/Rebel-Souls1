@@ -65,7 +65,7 @@ public class StatisticShower : MonoBehaviour
                     stat.StatCount.text = item.StatisticCount.ToString();
                     stat.StatImage.sprite = Resources.Load<Sprite>(item.StatisticSprite);
                 }
-                return;
+                continue;
             }
 
 
