@@ -28,7 +28,7 @@ MonoBehaviour:
   SlideDataList:
   - SlideIndex: 0
     SlideName: "\u0421\u0442\u0430\u0440\u04421"
-    Background: {fileID: 21300000, guid: 0c4ddabd7d50049e7be24c97227ef361, type: 3}
+    Background: {fileID: 6671712109767435573, guid: a5be91b8934b93446951be595541a34d, type: 3}
     HeroType: 0
     HeroSprite: {fileID: 0}
     InterpritationName: 
@@ -46,8 +46,9 @@ MonoBehaviour:
     IsHaveAuthorNotation: 0
     AuthorNotation: 
     IsHaveText: 1
-    Text: "\u0421\u043B\u0430\u0439\u0434 \u21161"
-    TextSize: 8
+    Text: "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439, \u0434\u043E\u0440\u043E\u0433\u043E\u0439
+      \u0434\u0440\u0443\u0433."
+    TextSize: 25
     IsHaveVoice: 0
     VoiceClip: {fileID: 0}
     IsHaveAudioEffects: 0
@@ -58,7 +59,7 @@ MonoBehaviour:
     FavoriteNameForPrisent: 
     SpritePathToGive: 
     AchievemntSprite: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 1
+    "IsHaveChecking\u0421ondition": 0
     ChekingConditions:
     - Stat:
       - ConditionEnums: 4
@@ -78,7 +79,7 @@ MonoBehaviour:
     NextSlideToOpen: 1
   - SlideIndex: 1
     SlideName: "\u0421\u0442\u0430\u0440\u04422"
-    Background: {fileID: 21300000, guid: 0c4ddabd7d50049e7be24c97227ef361, type: 3}
+    Background: {fileID: 6671712109767435573, guid: a5be91b8934b93446951be595541a34d, type: 3}
     HeroType: 0
     HeroSprite: {fileID: 0}
     InterpritationName: 
@@ -96,8 +97,10 @@ MonoBehaviour:
     IsHaveAuthorNotation: 0
     AuthorNotation: 
     IsHaveText: 1
-    Text: "\u0421\u043B\u0430\u0439\u0434 \u21162"
-    TextSize: 8
+    Text: "\u041D\u0430\u0448\u0430 \u0438\u0441\u0442\u043E\u0440\u0438\u044F \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F
+      \u0437\u0434\u0435\u0441\u044C, \u0432 \u044D\u0442\u043E\u0442 \u0441\u0430\u043C\u044B\u0439
+      \u043C\u043E\u043C\u0435\u043D\u0442."
+    TextSize: 51
     IsHaveVoice: 0
     VoiceClip: {fileID: 0}
     IsHaveAudioEffects: 0
@@ -118,7 +121,7 @@ MonoBehaviour:
     NextSlideToOpen: 2
   - SlideIndex: 2
     SlideName: "\u0421\u0442\u0430\u0440\u04423"
-    Background: {fileID: 21300000, guid: 0c4ddabd7d50049e7be24c97227ef361, type: 3}
+    Background: {fileID: 4323241998942584210, guid: d618b6f1e7bfc4a43b7f954b123e39ac, type: 3}
     HeroType: 0
     HeroSprite: {fileID: 0}
     InterpritationName: 
@@ -136,8 +139,8 @@ MonoBehaviour:
     IsHaveAuthorNotation: 0
     AuthorNotation: 
     IsHaveText: 1
-    Text: "\u0412\u0435\u0441\u0435\u043B\u044C\u0447\u0430\u043A >3"
-    TextSize: 12
+    Text: "\u0421\u0442\u043E\u044F\u043B\u0430 \u043E\u0441\u0435\u043D\u044C. "
+    TextSize: 14
     IsHaveVoice: 0
     VoiceClip: {fileID: 0}
     IsHaveAudioEffects: 0
@@ -148,7 +151,7 @@ MonoBehaviour:
     FavoriteNameForPrisent: 
     SpritePathToGive: 
     AchievemntSprite: {fileID: 0}
-    "IsHaveChecking\u0421ondition": 1
+    "IsHaveChecking\u0421ondition": 0
     ChekingConditions:
     - Stat:
       - ConditionEnums: 2
@@ -165,13 +168,13 @@ MonoBehaviour:
     GameTextBox: 0
     HorrorTextBox: 0
     FunTextBox: 0
-    NextSlideToOpen: 2
+    NextSlideToOpen: 3
   - SlideIndex: 3
     SlideName: "\u0421\u0442\u0430\u0440\u04423"
-    Background: {fileID: 21300000, guid: 0c4ddabd7d50049e7be24c97227ef361, type: 3}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    InterpritationName: 
+    Background: {fileID: -2338819809776053143, guid: 9ce2bfd559051f34ca33c8d2d7428eae, type: 3}
+    HeroType: 2
+    HeroSprite: {fileID: -8636031367102156664, guid: a0d9a03afc75f8f47992b22a17bd060b, type: 3}
+    InterpritationName: "\u041D\u0435\u0437\u043D\u0430\u043A\u043E\u043C\u0435\u0446"
     IsFavorite: 0
     IsMainHero: 0
     FavoriteName: 
@@ -186,9 +189,8 @@ MonoBehaviour:
     IsHaveAuthorNotation: 0
     AuthorNotation: 
     IsHaveText: 1
-    Text: "\u0412\u0435\u0441\u0435\u043B\u044C\u0447\u0430\u043A \u0421\u0430\u043C\u044B\u0439
-      \u0431\u043E\u043B\u044C\u0448\u043E\u0439"
-    TextSize: 23
+    Text: "\u041D\u0443, \u043F\u0440\u0438\u0432\u0435\u0442."
+    TextSize: 11
     IsHaveVoice: 0
     VoiceClip: {fileID: 0}
     IsHaveAudioEffects: 0
@@ -206,4 +208,125 @@ MonoBehaviour:
     GameTextBox: 0
     HorrorTextBox: 0
     FunTextBox: 0
-    NextSlideToOpen: 2
+    NextSlideToOpen: 4
+  - SlideIndex: 4
+    SlideName: "\u0421\u0442\u0430\u0440\u04425"
+    Background: {fileID: -2338819809776053143, guid: 9ce2bfd559051f34ca33c8d2d7428eae, type: 3}
+    HeroType: 2
+    HeroSprite: {fileID: -597685423726553211, guid: a2e0c32e0730ea84a8ec942f81265c4a, type: 3}
+    InterpritationName: "\u041C\u0430\u0442\u0442\u0435\u043E"
+    IsFavorite: 0
+    IsMainHero: 0
+    FavoriteName: 
+    IsThinking: 0
+    IsImportantScin: 0
+    IsHaveButtons: 0
+    IsHaveTimer: 0
+    TimerSeconds: 0
+    ButtonSetting: []
+    IsHaveSystemNotation: 0
+    SystemNotation: 
+    IsHaveAuthorNotation: 1
+    AuthorNotation: "\u0421 \u0442\u043E\u0431\u043E\u0439 \u0437\u0434\u043E\u0440\u043E\u0432\u0430\u044E\u0442\u0441\u044F!"
+    IsHaveText: 1
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442!"
+    TextSize: 7
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    IsHaveAchievement: 0
+    AchievementText: 
+    IsAchievemntGiveGift: 0
+    FavoriteNameForPrisent: 
+    SpritePathToGive: 
+    AchievemntSprite: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    ChekingConditions: []
+    IsTextWritingSlide: 0
+    MainHeroTextBox: 0
+    GameTextBox: 0
+    HorrorTextBox: 0
+    FunTextBox: 0
+    NextSlideToOpen: 6
+  - SlideIndex: 5
+    SlideName: "\u041D\u0430\u0447\u0430\u043B\u043E"
+    Background: {fileID: 6671712109767435573, guid: a5be91b8934b93446951be595541a34d, type: 3}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    InterpritationName: 
+    IsFavorite: 0
+    IsMainHero: 0
+    FavoriteName: 
+    IsThinking: 0
+    IsImportantScin: 0
+    IsHaveButtons: 0
+    IsHaveTimer: 0
+    TimerSeconds: 0
+    ButtonSetting: []
+    IsHaveSystemNotation: 0
+    SystemNotation: 
+    IsHaveAuthorNotation: 0
+    AuthorNotation: 
+    IsHaveText: 1
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0434\u043E\u0440\u043E\u0433\u043E\u0439
+      \u0434\u0440\u0443\u0433."
+    TextSize: 21
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    IsHaveAchievement: 0
+    AchievementText: 
+    IsAchievemntGiveGift: 0
+    FavoriteNameForPrisent: 
+    SpritePathToGive: 
+    AchievemntSprite: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    ChekingConditions: []
+    IsTextWritingSlide: 0
+    MainHeroTextBox: 0
+    GameTextBox: 0
+    HorrorTextBox: 0
+    FunTextBox: 0
+    NextSlideToOpen: 1
+  - SlideIndex: 6
+    SlideName: "\u0421\u0442\u0430\u0440\u04426"
+    Background: {fileID: -2338819809776053143, guid: 9ce2bfd559051f34ca33c8d2d7428eae, type: 3}
+    HeroType: 0
+    HeroSprite: {fileID: 0}
+    InterpritationName: 
+    IsFavorite: 0
+    IsMainHero: 0
+    FavoriteName: 
+    IsThinking: 0
+    IsImportantScin: 0
+    IsHaveButtons: 0
+    IsHaveTimer: 0
+    TimerSeconds: 0
+    ButtonSetting: []
+    IsHaveSystemNotation: 0
+    SystemNotation: 
+    IsHaveAuthorNotation: 0
+    AuthorNotation: 
+    IsHaveText: 1
+    Text: "\u041A\u043E\u043D\u0435\u0446."
+    TextSize: 6
+    IsHaveVoice: 0
+    VoiceClip: {fileID: 0}
+    IsHaveAudioEffects: 0
+    AudioEffectsClip: {fileID: 0}
+    IsHaveAchievement: 0
+    AchievementText: 
+    IsAchievemntGiveGift: 0
+    FavoriteNameForPrisent: 
+    SpritePathToGive: 
+    AchievemntSprite: {fileID: 0}
+    "IsHaveChecking\u0421ondition": 0
+    ChekingConditions: []
+    IsTextWritingSlide: 0
+    MainHeroTextBox: 0
+    GameTextBox: 0
+    HorrorTextBox: 0
+    FunTextBox: 0
+    NextSlideToOpen: 0
