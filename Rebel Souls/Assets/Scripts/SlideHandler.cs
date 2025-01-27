@@ -384,14 +384,16 @@ public class SlideHandler : MonoBehaviour
         if (!_storyLine.SlideDataList[slideIndex].IsHaveText)
         {
             _textArea.transform.parent.gameObject.SetActive(false);
+            _isTipeTextComplete = true;
+
             return;
         }
         else
         {
             _textArea.transform.parent.gameObject.SetActive(true);
+            _tipeText = StartCoroutine(TypeText(_storyLine.SlideDataList[slideIndex].Text));
         }
 
-        _tipeText = StartCoroutine(TypeText(_storyLine.SlideDataList[slideIndex].Text));
     }
 
     private void ActivateNotation(int slideIndex)
@@ -583,14 +585,19 @@ public class SlideHandler : MonoBehaviour
 
     private IEnumerator TipeFullText(int slideIndex)
     {
-        if (!_isTipeTextComplete)
-        {
-            StopCoroutine(_tipeText);
-            _textResizer.UpdateSize(_storyLine.SlideDataList[slideIndex].Text);
-            _textArea.text = _storyLine.SlideDataList[slideIndex].Text;
-            _isTipeTextComplete = true;
-            yield return new WaitForSeconds(0.01f);
-        }
+
+        if (_storyLine.SlideDataList[slideIndex].IsHaveText)
+            if (!_isTipeTextComplete)
+            {
+                StopCoroutine(_tipeText);
+                _textResizer.UpdateSize(_storyLine.SlideDataList[slideIndex].Text);
+                _textArea.text = _storyLine.SlideDataList[slideIndex].Text;
+                _isTipeTextComplete = true;
+                yield return new WaitForSeconds(0.01f);
+            }
+            else
+                _isTipeTextComplete = true;
+
     }
     public async UniTaskVoid ActivateInputDelay()
     {
