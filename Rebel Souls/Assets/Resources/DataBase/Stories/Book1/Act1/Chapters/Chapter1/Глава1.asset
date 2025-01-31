@@ -29,14 +29,14 @@ MonoBehaviour:
   - SlideIndex: 0
     SlideName: "\u0421\u0442\u0430\u0440\u04421"
     Background: {fileID: 6671712109767435573, guid: a5be91b8934b93446951be595541a34d, type: 3}
-    HeroType: 0
+    HeroType: 1
     HeroSprite: {fileID: 0}
     InterpritationName: 
     IsFavorite: 0
     IsMainHero: 0
     FavoriteName: 
     IsThinking: 0
-    IsImportantScin: 0
+    IsImportantScin: 1
     IsHaveButtons: 0
     IsHaveTimer: 0
     TimerSeconds: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
     GameTextBox: 0
     HorrorTextBox: 0
     FunTextBox: 0
-    NextSlideToOpen: 1
+    NextSlideToOpen: 5
   - SlideIndex: 1
     SlideName: "\u0421\u0442\u0430\u0440\u04422"
     Background: {fileID: 6671712109767435573, guid: a5be91b8934b93446951be595541a34d, type: 3}
@@ -120,7 +120,7 @@ MonoBehaviour:
     FunTextBox: 0
     NextSlideToOpen: 2
   - SlideIndex: 2
-    SlideName: "\u0421\u0442\u0430\u0440\u04423"
+    SlideName: "\u0421\u0442\u0430\u0440\u04425"
     Background: {fileID: 4323241998942584210, guid: d618b6f1e7bfc4a43b7f954b123e39ac, type: 3}
     HeroType: 0
     HeroSprite: {fileID: 0}
@@ -168,7 +168,7 @@ MonoBehaviour:
     GameTextBox: 0
     HorrorTextBox: 0
     FunTextBox: 0
-    NextSlideToOpen: 3
+    NextSlideToOpen: 5
   - SlideIndex: 3
     SlideName: "\u0421\u0442\u0430\u0440\u04423"
     Background: {fileID: -2338819809776053143, guid: 9ce2bfd559051f34ca33c8d2d7428eae, type: 3}
@@ -248,9 +248,9 @@ MonoBehaviour:
     GameTextBox: 0
     HorrorTextBox: 0
     FunTextBox: 0
-    NextSlideToOpen: 6
+    NextSlideToOpen: 2
   - SlideIndex: 5
-    SlideName: "\u041D\u0430\u0447\u0430\u043B\u043E"
+    SlideName: "\u0421\u0442\u0430\u0440\u04423"
     Background: {fileID: 6671712109767435573, guid: a5be91b8934b93446951be595541a34d, type: 3}
     HeroType: 0
     HeroSprite: {fileID: 0}
@@ -289,7 +289,7 @@ MonoBehaviour:
     GameTextBox: 0
     HorrorTextBox: 0
     FunTextBox: 0
-    NextSlideToOpen: 1
+    NextSlideToOpen: 4
   - SlideIndex: 6
     SlideName: "\u0421\u0442\u0430\u0440\u04426"
     Background: {fileID: -2338819809776053143, guid: 9ce2bfd559051f34ca33c8d2d7428eae, type: 3}
