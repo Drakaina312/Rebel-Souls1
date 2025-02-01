@@ -30,8 +30,8 @@ MonoBehaviour:
     SlideName: "\u0421\u0442\u0430\u0440\u04421"
     Background: {fileID: 6671712109767435573, guid: a5be91b8934b93446951be595541a34d, type: 3}
     HeroType: 1
-    HeroSprite: {fileID: 0}
-    InterpritationName: 
+    HeroSprite: {fileID: 3466717829335739024, guid: 079c3abf4825495418a0d7452ea36e5f, type: 3}
+    InterpritationName: "\u0411\u0435\u0440\u0442\u0440\u0430\u043D"
     IsFavorite: 0
     IsMainHero: 0
     FavoriteName: 
@@ -252,14 +252,14 @@ MonoBehaviour:
   - SlideIndex: 5
     SlideName: "\u0421\u0442\u0430\u0440\u04423"
     Background: {fileID: 6671712109767435573, guid: a5be91b8934b93446951be595541a34d, type: 3}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
-    InterpritationName: 
+    HeroType: 2
+    HeroSprite: {fileID: -8357188086974385125, guid: 9fbaad9fc0cf2624ca7e10d18e683346, type: 3}
+    InterpritationName: "\u0420\u043E\u0439"
     IsFavorite: 0
     IsMainHero: 0
     FavoriteName: 
     IsThinking: 0
-    IsImportantScin: 0
+    IsImportantScin: 1
     IsHaveButtons: 0
     IsHaveTimer: 0
     TimerSeconds: 0
