@@ -30,7 +30,7 @@ MonoBehaviour:
     SlideName: "\u0421\u0442\u0430\u0440\u04421"
     Background: {fileID: 6671712109767435573, guid: a5be91b8934b93446951be595541a34d, type: 3}
     HeroType: 1
-    HeroSprite: {fileID: 3466717829335739024, guid: 079c3abf4825495418a0d7452ea36e5f, type: 3}
+    HeroSprite: {fileID: -8538803629500087355, guid: 034b3b416a1d3e741bd4480f41f7848d, type: 3}
     InterpritationName: "\u0411\u0435\u0440\u0442\u0440\u0430\u043D"
     IsFavorite: 0
     IsMainHero: 0
@@ -76,12 +76,12 @@ MonoBehaviour:
     GameTextBox: 0
     HorrorTextBox: 0
     FunTextBox: 0
-    NextSlideToOpen: 5
+    NextSlideToOpen: 1
   - SlideIndex: 1
     SlideName: "\u0421\u0442\u0430\u0440\u04422"
     Background: {fileID: 6671712109767435573, guid: a5be91b8934b93446951be595541a34d, type: 3}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
+    HeroType: 1
+    HeroSprite: {fileID: -1624088817047432126, guid: 2de6d3966a1dfb942ab8429c6a208828, type: 3}
     InterpritationName: 
     IsFavorite: 0
     IsMainHero: 0
@@ -122,8 +122,8 @@ MonoBehaviour:
   - SlideIndex: 2
     SlideName: "\u0421\u0442\u0430\u0440\u04425"
     Background: {fileID: 4323241998942584210, guid: d618b6f1e7bfc4a43b7f954b123e39ac, type: 3}
-    HeroType: 0
-    HeroSprite: {fileID: 0}
+    HeroType: 2
+    HeroSprite: {fileID: 4264214997844534846, guid: 8e4b2c7576d95bc47a3ec19f4dd06d45, type: 3}
     InterpritationName: 
     IsFavorite: 0
     IsMainHero: 0
