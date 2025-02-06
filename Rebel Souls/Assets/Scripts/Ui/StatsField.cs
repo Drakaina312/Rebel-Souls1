@@ -8,4 +8,5 @@ public class StatsField : MonoBehaviour
     public TextMeshProUGUI StatCount;
     public Image StatImage;
     public StatsAddingButtons StatAddingButtons;
+    public Button StatButton;
 }

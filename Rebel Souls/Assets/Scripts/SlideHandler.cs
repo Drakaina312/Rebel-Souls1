@@ -21,6 +21,7 @@ public class SlideHandler : MonoBehaviour
     [SerializeField] private ButtonsHandler _buttonsHandler;
     [SerializeField] private AudioSource _audioSourceForVoices;
     [SerializeField] private AudioSource _audioSourceForEffects;
+    [SerializeField] private CutSceneHandler _cutSceneHandler;
 
     [SerializeField] private TextMeshProUGUI _achievemnetText;
     [SerializeField] private Image _achievemnetImage;
@@ -74,7 +75,25 @@ public class SlideHandler : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadSceneAsync(0);
+    }
+
+    public void ChooseDifficulte(int f)
+    {
+        switch (f)
+        {
+            case 0:
+                _masterSave.CurrentProfile.DifficultyType = DifficultyType.Easy; break;
+            case 1:
+                _masterSave.CurrentProfile.DifficultyType = DifficultyType.Medium; break;
+            case 2:
+                _masterSave.CurrentProfile.DifficultyType = DifficultyType.Hard; break;
+        }
+    }
+
+    public void GetLink(string link)
+    {
+        Application.OpenURL(link);
     }
 
     private void Start()
@@ -361,6 +380,13 @@ public class SlideHandler : MonoBehaviour
         ActivateNotation(slideIndex);
 
         TypeTextIfCan(slideIndex);
+
+        if (_storyLine.SlideDataList[slideIndex].IsHaveCutScene)
+        {
+            IsMainFlowActive = false;
+            _cutSceneHandler.ActivateCutScene(_storyLine.SlideDataList[slideIndex].CutSceneSprite);
+            _cutSceneHandler.OnCutSceneEnd += ActivateMainFlow;
+        }
     }
 
     private void SavePassedSlideToProfile(int slideIndex)
@@ -485,81 +511,169 @@ public class SlideHandler : MonoBehaviour
         _heroLeft.gameObject.SetActive(false);
         _heroRight.gameObject.SetActive(false);
 
-
-
-
-
-        switch (slideData.HeroType)
+        if (slideData.HeroType == HeroType.NoHero)
         {
-            case HeroType.HeroLeft:
-                _NameHeroRight.gameObject.SetActive(false);
-                _NameHeroLeft.gameObject.SetActive(true);
-                _NameHeroLeft.text = slideData.InterpritationName;
-                if (slideData.IsThinking)
-                {
-                    _textImage.sprite = _heroLeftThinking;
-                }
-                else _textImage.sprite = _heroLeftTalking;
-
-                _heroLeft.gameObject.SetActive(true);
-
-                if (slideData.IsMainHero)
-                    _heroLeft.sprite = Resources.Load<Sprite>(_currentSaveStats.MainHeroSpritePath);
-
-                if (!slideData.IsFavorite)
-                    _heroLeft.sprite = slideData.HeroSprite;
-                else
-                {
-                    if (slideData.IsImportantScin)
-                        _heroLeft.sprite = slideData.HeroSprite;
-                    else
-                    {
-                        var loadedSprite = Resources.Load<Sprite>(_currentSaveStats.FindStat(slideData.FavoriteName).PathToFavoriteScin);
-                        if (loadedSprite != null)
-                            _heroLeft.sprite = loadedSprite;
-                        else
-                            _heroLeft.sprite = slideData.HeroSprite;
-                    }
-                }
-                break;
-            case HeroType.HeroRight:
-                _NameHeroLeft.gameObject.SetActive(false);
-                _NameHeroRight.gameObject.SetActive(true);
-                _NameHeroRight.text = slideData.InterpritationName;
-
-                if (slideData.IsThinking)
-                {
-                    _textImage.sprite = _heroRightThinking;
-                }
-                else _textImage.sprite = _heroRightTalking;
-                _heroRight.gameObject.SetActive(true);
-
-                if (slideData.IsMainHero)
-                    _heroRight.sprite = Resources.Load<Sprite>(_currentSaveStats.MainHeroSpritePath);
-
-                if (!slideData.IsFavorite)
-                    _heroRight.sprite = slideData.HeroSprite;
-                else
-                {
-                    if (slideData.IsImportantScin)
-                        _heroRight.sprite = slideData.HeroSprite;
-                    else
-                    {
-                        var loadedSprite = Resources.Load<Sprite>(_currentSaveStats.FindStat(slideData.FavoriteName).PathToFavoriteScin);
-                        if (loadedSprite != null)
-                            _heroRight.sprite = loadedSprite;
-                        else
-                            _heroRight.sprite = slideData.HeroSprite;
-                    }
-                }
-                break;
-
-            case HeroType.NoHero:
-                _NameHeroRight.gameObject.SetActive(false);
-                _NameHeroLeft.gameObject.SetActive(false);
-                _textImage.sprite = _defolt;
-                break;
+            _NameHeroRight.gameObject.SetActive(false);
+            _NameHeroLeft.gameObject.SetActive(false);
+            _textImage.sprite = _defolt;
+            return;
         }
+
+        if (slideData.IsFirstAppearance)
+        {
+            _currentSaveStats.FindStat(slideData.FavoriteName).IsFavoriteAppeared = true;
+        }
+
+
+
+        var activeName = (slideData.HeroType == HeroType.HeroLeft) ? _NameHeroLeft : _NameHeroRight;
+        var inactiveName = (slideData.HeroType == HeroType.HeroLeft) ? _NameHeroRight : _NameHeroLeft;
+
+        var thinkingSprite = (slideData.HeroType == HeroType.HeroLeft) ? _heroLeftThinking : _heroRightThinking;
+        var talkingSprite = (slideData.HeroType == HeroType.HeroLeft) ? _heroLeftTalking : _heroRightTalking;
+
+
+
+        var heroImage = (slideData.HeroType == HeroType.HeroLeft) ? _heroLeft : _heroRight;
+
+        inactiveName.gameObject.SetActive(false);
+        activeName.gameObject.SetActive(true);
+        activeName.text = slideData.InterpritationName;
+
+
+        _textImage.sprite = slideData.IsThinking ? thinkingSprite : talkingSprite;
+
+        heroImage.gameObject.SetActive(true);
+
+        Sprite choosedSprite = null;
+
+        Debug.Log("Cheking");
+
+        if (slideData.IsFavorite)
+        {
+            if (slideData.IsImportantScin)
+            {
+                choosedSprite = slideData.HeroSprite;
+            }
+            else
+            {
+                var favoriteStat = _currentSaveStats.FindStat(slideData.FavoriteName);
+                var loadedSprite = Sprite.Create(Resources.Load<Texture2D>(favoriteStat.StatisticName), new Rect(0, 0, 700, 1600), new Vector2(0.5f, 0.5f), 100, 0, SpriteMeshType.FullRect, Vector4.zero, true);
+                Debug.Log("Спрайты загружены");
+                if (loadedSprite != null)
+                {
+                    Debug.Log("Он не пуст");
+
+                    choosedSprite = loadedSprite;
+                }
+                else
+                {
+                    choosedSprite = slideData.HeroSprite;
+                }
+            }
+        }
+        else if (slideData.IsMainHero)
+        {
+            if (slideData.IsImportantScin)
+            {
+                choosedSprite = slideData.HeroSprite;
+            }
+            else
+            {
+                var loadedSprite = Sprite.Create(Resources.Load<Texture2D>(_currentSaveStats.MainHeroName), new Rect(0, 0, 700, 1600), new Vector2(0.5f, 0.5f), 100, 0, SpriteMeshType.FullRect, Vector4.zero, true);
+
+                if (loadedSprite != null)
+                    choosedSprite = loadedSprite;
+            }
+        }
+        else if (!slideData.IsFavorite && !slideData.IsMainHero)
+        {
+            choosedSprite = slideData.HeroSprite;
+        }
+
+
+
+        heroImage.sprite = choosedSprite;
+
+        ///////////
+        ///
+
+        //switch (slideData.HeroType)
+        //{
+        //    case HeroType.HeroLeft:
+        //        _NameHeroRight.gameObject.SetActive(false);
+        //        _NameHeroLeft.gameObject.SetActive(true);
+        //        _NameHeroLeft.text = slideData.InterpritationName;
+        //        if (slideData.IsThinking)
+        //        {
+        //            _textImage.sprite = _heroLeftThinking;
+        //        }
+        //        else _textImage.sprite = _heroLeftTalking;
+
+        //        _heroLeft.gameObject.SetActive(true);
+
+        //        if (slideData.IsMainHero)
+        //            if (!slideData.IsImportantScin)
+        //                _heroLeft.sprite = Resources.Load<Sprite>(_currentSaveStats.MainHeroSpritePath);
+        //            else
+        //            {
+        //                _heroLeft.sprite = slideData.HeroSprite;
+        //            }
+
+        //        if (!slideData.IsFavorite)
+        //            _heroLeft.sprite = slideData.HeroSprite;
+        //        else
+        //        {
+        //            if (slideData.IsImportantScin)
+        //                _heroLeft.sprite = slideData.HeroSprite;
+        //            else
+        //            {
+        //                var loadedSprite = Resources.Load<Sprite>(_currentSaveStats.FindStat(slideData.FavoriteName).PathToFavoriteScin);
+        //                if (loadedSprite != null)
+        //                    _heroLeft.sprite = loadedSprite;
+        //                else
+        //                    _heroLeft.sprite = slideData.HeroSprite;
+        //            }
+        //        }
+        //        break;
+        //    case HeroType.HeroRight:
+        //        _NameHeroLeft.gameObject.SetActive(false);
+        //        _NameHeroRight.gameObject.SetActive(true);
+        //        _NameHeroRight.text = slideData.InterpritationName;
+
+        //        if (slideData.IsThinking)
+        //        {
+        //            _textImage.sprite = _heroRightThinking;
+        //        }
+        //        else _textImage.sprite = _heroRightTalking;
+        //        _heroRight.gameObject.SetActive(true);
+
+        //        if (slideData.IsMainHero)
+        //            _heroRight.sprite = Resources.Load<Sprite>(_currentSaveStats.MainHeroSpritePath);
+
+        //        if (!slideData.IsFavorite)
+        //            _heroRight.sprite = slideData.HeroSprite;
+        //        else
+        //        {
+        //            if (slideData.IsImportantScin)
+        //                _heroRight.sprite = slideData.HeroSprite;
+        //            else
+        //            {
+        //                var loadedSprite = Resources.Load<Sprite>(_currentSaveStats.FindStat(slideData.FavoriteName).PathToFavoriteScin);
+        //                if (loadedSprite != null)
+        //                    _heroRight.sprite = loadedSprite;
+        //                else
+        //                    _heroRight.sprite = slideData.HeroSprite;
+        //            }
+        //        }
+        //        break;
+
+        //    case HeroType.NoHero:
+        //        _NameHeroRight.gameObject.SetActive(false);
+        //        _NameHeroLeft.gameObject.SetActive(false);
+        //        _textImage.sprite = _defolt;
+        //        break;
+        //}
     }
 
     private IEnumerator TypeText(string fullText)

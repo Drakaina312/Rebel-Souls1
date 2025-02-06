@@ -38,11 +38,14 @@ public class SlideData
     [FoldoutGroup("Split/Settings", false)]
     public string FavoriteName;
 
+    [ShowIf(nameof(IsFavorite))]
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsFirstAppearance;
+
     [HideIf("HeroType", HeroType.NoHero)]
     [FoldoutGroup("Split/Settings", false)]
     public bool IsThinking;
 
-    [ShowIf(nameof(IsFavorite))]
     [FoldoutGroup("Split/Settings", false)]
     public bool IsImportantScin;
 
@@ -132,6 +135,15 @@ public class SlideData
     [ShowIf(nameof(IsHaveAchievement))]
     [FoldoutGroup("Split/Settings", false)]
     public Sprite AchievemntSprite;
+
+    [FoldoutGroup("Split/Settings", false)]
+    public bool IsHaveCutScene;
+
+    [FoldoutGroup("Split/Settings", false)]
+    [ShowIf(nameof(IsHaveCutScene))]
+    public Sprite CutSceneSprite;
+
+
 
     [Title("Conditions")]
     [FoldoutGroup("Split/Settings", false)]

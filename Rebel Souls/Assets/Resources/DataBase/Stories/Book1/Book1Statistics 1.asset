@@ -62,6 +62,9 @@ MonoBehaviour:
     - Name: PathToFavoriteScin
       Entry: 6
       Data: 
+    - Name: IsFavoriteAppeared
+      Entry: 5
+      Data: false
     - Name: StatisticSprite
       Entry: 1
       Data: MyImages/BG/MainMenu/photo_5353024651510540476_y
@@ -83,6 +86,9 @@ MonoBehaviour:
     - Name: PathToFavoriteScin
       Entry: 6
       Data: 
+    - Name: IsFavoriteAppeared
+      Entry: 5
+      Data: false
     - Name: StatisticSprite
       Entry: 1
       Data: MyImages/BG/MainMenu/12
@@ -125,6 +131,9 @@ MonoBehaviour:
     - Name: PathToFavoriteScin
       Entry: 6
       Data: 
+    - Name: IsFavoriteAppeared
+      Entry: 5
+      Data: false
     - Name: StatisticSprite
       Entry: 1
       Data: MyImages/BG/MainMenu/12
@@ -146,6 +155,9 @@ MonoBehaviour:
     - Name: PathToFavoriteScin
       Entry: 6
       Data: 
+    - Name: IsFavoriteAppeared
+      Entry: 5
+      Data: false
     - Name: StatisticSprite
       Entry: 1
       Data: MyImages/BG/MainMenu/photo_5353024651510540476_y
@@ -188,9 +200,12 @@ MonoBehaviour:
     - Name: PathToFavoriteScin
       Entry: 6
       Data: 
+    - Name: IsFavoriteAppeared
+      Entry: 5
+      Data: false
     - Name: StatisticSprite
       Entry: 1
-      Data: MyImages/BG/MainMenu/12
+      Data: MyImages/BG/OV1/Sprites/Bertran
     - Name: 
       Entry: 8
       Data: 

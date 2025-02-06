@@ -13,7 +13,7 @@ public class MasterSave
 
     public SaveData SaveData { get; private set; } = new SaveData();
 
-    public Action OnProfileChoosed;
+    public Action OnProfileChoosed { get; set; }
 
     public void ChooseCurrentProfile(Profile profile)
     {  

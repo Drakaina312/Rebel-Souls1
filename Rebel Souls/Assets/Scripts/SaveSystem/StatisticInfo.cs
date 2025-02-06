@@ -9,6 +9,7 @@ public class StatisticInfo
     public int StatisticCount;
     public bool IsRelationship;
     public string PathToFavoriteScin;
+    public bool IsFavoriteAppeared;
 
     [FilePath]
     public string StatisticSprite;

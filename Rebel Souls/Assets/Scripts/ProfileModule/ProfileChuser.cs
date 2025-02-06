@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,19 +11,19 @@ public class ProfileChuser : MonoBehaviour
     [SerializeField] private ProfileButtonHendler _profileButtonHendler;
     private MasterSave _masterSave;
     [Inject]
-    public void Conctruct(MasterSave masterSave) 
+    public void Conctruct(MasterSave masterSave)
     {
         _masterSave = masterSave;
-        StartCoroutine(LoadDataCourutine());
+        LoadDataCourutine().Forget();
     }
     public void AddNewProfile(string profileName)
     {
         ProfileButton profileButton = _profileButtonHendler.ProfileButtonsList.FirstOrDefault(button => button.IsBlocked != true && button.IsEmpty == true);
 
         if (profileName == "")
-        { 
+        {
             Debug.Log(" Имя пустое");
-            return; 
+            return;
         }
         if (profileButton != null)
         {
@@ -34,25 +35,25 @@ public class ProfileChuser : MonoBehaviour
             profileButton.ProfileToChoose = _masterSave.CurrentProfile;
 
         }
-        else 
+        else
         {
             Debug.LogError(" Не удалось создать профиль ");
         }
     }
 
-    private IEnumerator LoadDataCourutine()
+    private async UniTask LoadDataCourutine()
     {
-        yield return new WaitWhile(() => _masterSave.IsDataLoadComnplete == false);
+        await UniTask.WaitWhile(() => _masterSave.IsDataLoadComnplete == false);
         int i = 0;
         foreach (var profileButton in _profileButtonHendler.ProfileButtonsList)
         {
             if (profileButton.IsBlocked == false && _masterSave.SaveData.Profiles[i].IsEmpty == false)
 
-            { 
+            {
                 profileButton.ProfileName.text = _masterSave.SaveData.Profiles[i].ProfileName;
                 profileButton.ProfileToChoose = _masterSave.SaveData.Profiles[i];
                 profileButton.IsEmpty = false;
-                i ++;
+                i++;
             }
         }
 

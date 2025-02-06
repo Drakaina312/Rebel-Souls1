@@ -3,13 +3,15 @@ using Zenject;
 
 public class ProjectInstaler : MonoInstaller
 {
+
     public override void InstallBindings()
     {
         BindInGameDataBase();
         BindInPutAction();
         BindMasterSave();
-
     }
+
+
 
     public override void Start()
     {

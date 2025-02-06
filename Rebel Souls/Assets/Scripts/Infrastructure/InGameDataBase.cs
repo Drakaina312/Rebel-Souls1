@@ -8,4 +8,5 @@ public class InGameDataBase
     public int SlideIndex;
     public bool IsRestartChapter;
     public bool IsContiniueStory;
+    internal Sprite Sprite;
 }

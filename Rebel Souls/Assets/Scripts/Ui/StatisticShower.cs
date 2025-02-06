@@ -38,8 +38,11 @@ public class StatisticShower : MonoBehaviour
         if (CanDropStat)
             _bGGStatistic.sprite = _inGameDataBase.ActStatistics.BGStatistic;
 
-        StatsBook statsBook = _masterSave.CurrentProfile.BooksStat
-            .FirstOrDefault(predict => predict.IsLastSave == true && predict.ChapterSortingConditions.BookName == _inGameDataBase.BookName);
+
+        StatsBook statsBook = _masterSave.CurrentProfile.FindChapterStatsFromSave(_inGameDataBase.StoryLine.ChapterSortingCondition);
+
+        //StatsBook statsBook = _masterSave.CurrentProfile.BooksStat
+        //    .FirstOrDefault(predict => predict.IsLastSave == true && predict.ChapterSortingConditions.BookName == _inGameDataBase.BookName);
 
         if (statsBook == null)
         {
