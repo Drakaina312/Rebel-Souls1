@@ -61,21 +61,6 @@ public class PhotoCamera : MonoBehaviour
             return;
         }
 
-        //// ≈сли спрайт имеет обрезанный пр€моугольник (Rect) от исходной текстуры,
-        //// и вам нужна именно эта часть, можно извлечь нужные пиксели:
-        //Rect spriteRect = spriteToSave.rect;
-        //Texture2D spriteTexture = new Texture2D((int)spriteRect.width, (int)spriteRect.height, texture.format, false);
-        //Color[] pixels = texture.GetPixels(
-        //    (int)spriteRect.x,
-        //    (int)spriteRect.y,
-        //    (int)spriteRect.width,
-        //    (int)spriteRect.height
-        //);
-        //spriteTexture.SetPixels(pixels);
-        //spriteTexture.Apply();
-
-        //  одируем текстуру в PNG
-
         Debug.Log("FFFFFFFFFFF");
         byte[] pngData = texture.EncodeToPNG();
 

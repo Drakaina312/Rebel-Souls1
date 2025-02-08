@@ -74,7 +74,7 @@ MonoBehaviour:
         ChekingStatName: 
         ChekingFavoriteName: 
       SlideToOpen: 2
-    IsTextWritingSlide: 1
+    IsTextWritingSlide: 0
     MainHeroTextBox: 1
     GameTextBox: 0
     HorrorTextBox: 0
